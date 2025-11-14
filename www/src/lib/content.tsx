@@ -142,3 +142,18 @@ export const NAVIGATION_MENU: MenuItem[] = [
     ],
   },
 ];
+
+export const FOOTER_MENU: MenuItem[] = [
+  {
+    label: "Privacy Policy",
+    href: Paths.PRIVACY_POLICY,
+  },
+  {
+    label: "Contact Us",
+    href: Paths.CONTACT,
+  },
+  {
+    label: "FAQs",
+    href: Paths.FAQS,
+  },
+];

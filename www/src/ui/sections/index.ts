@@ -1,2 +1,11 @@
-export { default as TextImageSplit } from "./textImageSplit";
+export { default as ArticleHero } from "./articleHero";
+export { default as CtaCard } from "./ctaCard";
+export { default as FeatureGrid } from "./featureGrid";
+export { default as GlobalMap } from "./globalMap";
+export { default as SpecTable } from "./specTable";
 export { default as TakeoverGrid } from "./takeoverGrid";
+export { default as TakeoverHeading } from "./takeoverHeading";
+export { default as Text } from "./text";
+export { default as TextImageSplit } from "./textImageSplit";
+export { default as ValueGrid } from "./valueGrid";
+export { default as VideoFeature } from "./videoFeature";

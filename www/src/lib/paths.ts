@@ -20,3 +20,4 @@ export const OUR_STORY = "/about/art-guard";
 export const TEAM = "/about/team";
 export const PRESS = "/about/press";
 export const SATISFIED_CUSTOMERS = "/about/satisfied-customers";
+export const PRIVACY_POLICY = "/privacy-policy";

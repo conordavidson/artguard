@@ -214,6 +214,7 @@ export default function RootLayout({
           <Ui.Announcement.Bar />
           <Ui.Nav />
           {children}
+          <Ui.Footer />
         </Ui.Page.RootLayout>
       </body>
     </html>

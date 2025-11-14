@@ -4,14 +4,14 @@ import * as Page from "@/ui/page";
 import * as Types from "@/lib/types";
 
 type TakeoverGridProps = {
-  section: Types.TakeoverGridSection;
+  section: Types.ValueGridSection;
 };
 
 const TakeoverGrid: React.FC<TakeoverGridProps> = (props) => {
   return (
     <div
       className={Utils.cx(
-        "dark-theme col-span-full grid grid-cols-subgrid bg-emphasis pt-16 pb-24",
+        "col-span-full grid grid-cols-subgrid",
         props.section.className
       )}
     >
@@ -22,15 +22,14 @@ const TakeoverGrid: React.FC<TakeoverGridProps> = (props) => {
           ctas={props.section.ctas}
         />
       </Page.Container>
-      <Page.Container className="grid grid-cols-subgrid mt-12 gap-4 auto-rows-fr">
-        {props.section.cards.map((card, index) => (
-          <div
-            key={index}
-            className="col-span-full sm:col-span-6 lg:col-span-4"
-          >
-            <Ui.PowerCard {...card} className="h-full" />
-          </div>
-        ))}
+      <Page.Container className="mt-12 max-w-[1000px] mx-auto">
+        <div className="grid grid-cols-12 gap-x-12 gap-y-16 auto-rows-fr">
+          {props.section.cards.map((card, index) => (
+            <div key={index} className="col-span-6 lg:col-span-4">
+              <Ui.SimpleCard {...card} className="h-full" />
+            </div>
+          ))}
+        </div>
       </Page.Container>
     </div>
   );

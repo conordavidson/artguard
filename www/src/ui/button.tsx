@@ -30,7 +30,7 @@ type LinkProps = {
 
 const Base: React.FC<BaseProps> = (props) => {
   const className = Utils.cx(
-    `inline-flex justify-center items-center h-button-height whitespace-nowrap enabled:cursor-pointer transition-colors disabled:pointer-events-none px-3 rounded-full min-w-[160px]`,
+    `inline-flex justify-center items-center h-button-height whitespace-nowrap enabled:cursor-pointer transition-colors disabled:pointer-events-none px-8 rounded-full min-w-[160px]`,
     {
       "w-full": !props.inline,
     },
