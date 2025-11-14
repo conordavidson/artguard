@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+:root {
+  --color-foreground: #000;
+  --color-background: #fff;
+  --color-brand: #eb262a;
+  --color-white: #fff;
+  --color-lime: #edffcd;
+
+  --color-emphasis: #1e1e1e;
+  --color-muted: #333333;
+  --color-subtle: #6a6767;
+  --color-faint: #b4b4b4;
+  --color-panel: #f9f9f9;
+  --color-outline: #e7e7e7;
+
+  --gradient-dark: linear-gradient(
+    89.4deg,
+    var(--color-dark) 0.37%,
+    #272727 99.67%
+  );
+
+  --gradient-white-horizontal: linear-gradient(
+    90deg,
+    var(--color-white) 0%,
+    transparent 50%
+  );
+
+  --gradient-white-vertical: linear-gradient(
+    180deg,
+    var(--color-white) 5%,
+    transparent 50%,
+    var(--color-white) 100%
+  );
+
+  --shadow-power: 0px 0px 25px 1px rgba(0, 0, 0, 0.3);
+  --gradient-power: linear-gradient(
+    129.5deg,
+    rgba(57, 57, 57, 0.87) 30.54%,
+    rgba(47, 42, 42, 0.87) 69.52%
+  );
+
+  --gutter: 1rem;
+  --nav-height: 5rem;
+  --announcement-height: 3rem;
+  --button-height: 40px;
+}
+
+.dark-theme {
+  --color-foreground: #fff;
+  --color-background: #000;
+  --color-outline: #444444;
+  --color-foreground: #ffffff;
+  --color-muted: #b4b4b4;
+  --color-subtle: #736e6e;
+}
+
+@screen md {
+  :root {
+    --gutter: 2rem;
+  }
+}
+
+@theme inline {
+  --font-display: var(--font-display);
+  --font-interface: var(--font-interface);
+
+  --spacing-nav-height: var(--nav-height);
+  --spacing-announcement-height: var(--announcement-height);
+  --spacing-button-height: var(--button-height);
+  --spacing-gutter: var(--gutter);
+
+  --color-foreground: var(--color-foreground);
+  --color-background: var(--color-background);
+  --color-brand: var(--color-brand);
+  --color-lime: var(--color-lime);
+  --color-white: var(--color-white);
+
+  --color-emphasis: var(--color-emphasis);
+  --color-muted: var(--color-muted);
+  --color-subtle: var(--color-subtle);
+  --color-faint: var(--color-faint);
+  --color-panel: var(--color-panel);
+  --color-outline: var(--color-outline);
+
+  --shadow-power: var(--shadow-power);
+}
+
+body {
+  font-family: var(--font-interface);
+  font-size: 0.9375rem;
+  line-height: 1.125rem;
+}
+
+.gradient-white-horizontal {
+  background: var(--gradient-white-horizontal);
+}
+
+.gradient-white-vertical {
+  background: var(--gradient-white-vertical);
+}
+
+.gradient-power {
+  background: var(--gradient-power);
+}
+
+.root-layout {
+  display: grid;
+  grid-template-columns:
+    [left-gutter] minmax(var(--gutter), 1fr)
+    [main-start] repeat(12, minmax(0, 100px))
+    [main-end right-gutter] minmax(var(--gutter), 1fr);
+}
+
+.display-24,
+.display-24-bold {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.8125rem;
+}
+
+.display-24 {
+  font-weight: 500;
+}
+
+.display-24-bold {
+  font-weight: 700;
+}
+
+.display-32,
+.display-32-bold {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.display-32 {
+  font-weight: 300;
+}
+
+.display-32-bold {
+  font-weight: 700;
+}
+
+.interface-12,
+.interface-12-bold {
+  font-family: var(--font-interface);
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.interface-12 {
+  font-weight: 500;
+}
+
+.interface-12-bold {
+  font-weight: 700;
+}
+
+.interface-14,
+.interface-14-bold {
+  font-family: var(--font-interface);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.interface-14 {
+  font-weight: 300;
+}
+
+.interface-14-bold {
+  font-weight: 700;
+}
+
+.interface-16,
+.interface-16-bold {
+  font-family: var(--font-interface);
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+.interface-16 {
+  font-weight: 400;
+}
+
+.interface-16-bold {
+  font-weight: 600;
+}
+
+.interface-18,
+.interface-18-bold {
+  font-family: var(--font-interface);
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+}
+
+.interface-18 {
+  font-weight: 400;
+}
+
+.interface-18-bold {
+  font-weight: 700;
+}
+
+.interface-20,
+.interface-20-bold {
+  font-family: var(--font-interface);
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+.interface-20 {
+  font-weight: 400;
+}
+
+.interface-20-bold {
+  font-weight: 700;
+}
