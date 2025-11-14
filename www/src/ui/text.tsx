@@ -4,7 +4,7 @@ import * as Utils from "@/lib/utils";
 type TextProps = {
   bold?: boolean;
   className?: string;
-  as?: keyof React.ReactElement;
+  as?: string;
   [x: string]: unknown;
 };
 

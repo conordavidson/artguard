@@ -1,9 +1,7 @@
-import * as Button from "@/ui/button";
 import * as Ui from "@/ui";
 import * as Utils from "@/lib/utils";
 import * as Page from "@/ui/page";
-
-import Image, { StaticImageData } from "next/image";
+import * as Types from "@/lib/types";
 
 type TakeoverGridProps = {
   className?: string;
@@ -16,7 +14,7 @@ type TakeoverGridProps = {
   cards: {
     heading: string;
     body: string;
-    icon?: React.ReactNode;
+    icon?: Types.Icon;
   }[];
 };
 
