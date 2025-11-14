@@ -11,7 +11,7 @@ const TakeoverHeading: React.FC<TakeoverHeadingProps> = (props) => {
   return (
     <div
       className={Utils.cx(
-        "col-span-full grid grid-cols-subgrid pt-16 pb-24",
+        "col-span-full grid grid-cols-subgrid pt-16 pb-24 bg-panel",
         props.section.className
       )}
     >
