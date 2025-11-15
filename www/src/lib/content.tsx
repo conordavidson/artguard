@@ -18,8 +18,20 @@ export const CURRENT_ANNOUNCEMENT = WHITEPAPER_ANNOUNCEMENT;
 
 type MenuItem = {
   label: string;
-  href?: string;
-  submenu?: MenuItem[];
+} & (
+  | {
+      submenu: SubmenuItem[];
+      href?: string;
+    }
+  | {
+      href: string;
+    }
+);
+
+type SubmenuItem = {
+  label: string;
+  href: string;
+  subheading?: string;
 };
 
 export const NAVIGATION_MENU: MenuItem[] = [
@@ -29,18 +41,22 @@ export const NAVIGATION_MENU: MenuItem[] = [
       {
         label: "Security Products",
         href: Paths.SECURITY_PRODUCTS,
+        subheading: "For Fine Art And Valuable Assets",
       },
       {
         label: "MAP Sensors",
         href: Paths.MAP_SENSORS,
+        subheading: "MAP v3 Wireless Sensors",
       },
       {
         label: "MAP System",
         href: Paths.MAP_SYSTEM,
+        subheading: "Control Panels",
       },
       {
         label: "Accessories",
         href: Paths.ACCESSORIES,
+        subheading: "For Map Systems & Sensors",
       },
     ],
   },

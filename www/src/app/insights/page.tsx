@@ -1,8 +1,14 @@
+"use client";
+
 import * as Ui from "@/ui";
+import * as SiteContext from "@/lib/siteContext";
+import * as Paths from "@/lib/paths";
 
 import Highvalueartinsurance from "@images/highvalueartinsurance.jpg";
 
 export default function Insights() {
+  SiteContext.setPath(Paths.INSIGHTS);
+
   return (
     <div className="grid grid-cols-subgrid col-span-full">
       <Ui.Sections.ArticleHero

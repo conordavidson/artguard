@@ -1,3 +1,4 @@
+export const HOME = "/";
 export const SECURITY_PRODUCTS = "/security-products";
 export const MAP_SENSORS = "/security-products/map";
 export const MAP_SYSTEM = "/security-products/map-system";

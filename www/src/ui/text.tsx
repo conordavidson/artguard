@@ -80,3 +80,9 @@ export const Interface20: TextComponent = (props) =>
     baseWeight: "interface-20",
     boldWeight: "interface-20-bold",
   });
+
+export const Interface24: TextComponent = (props) =>
+  TextStyle(props, {
+    baseWeight: "interface-24",
+    boldWeight: "interface-24-bold",
+  });

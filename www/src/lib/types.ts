@@ -1,8 +1,11 @@
 import * as Icons from "@/ui/icons";
 import * as NextImage from "next/image";
 import * as Button from "@/ui/button";
+import * as Paths from "@/lib/paths";
 
 export type Icon = keyof typeof Icons;
+
+export type Path = (typeof Paths)[keyof typeof Paths];
 
 export type MapSection = {
   className?: string;

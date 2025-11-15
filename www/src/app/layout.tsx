@@ -1,5 +1,6 @@
 import * as Next from "next";
 import * as Ui from "@/ui";
+import * as SiteContext from "@/lib/siteContext";
 
 import localFont from "next/font/local";
 
@@ -208,15 +209,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${Bradford.variable} ${TrueSans.variable} antialiased`}>
-        <Ui.Page.RootLayout>
-          <Ui.Announcement.Bar />
-          <Ui.Nav />
-          {children}
-          <Ui.Footer />
-        </Ui.Page.RootLayout>
-      </body>
-    </html>
+    <SiteContext.Provider>
+      <html lang="en">
+        <body
+          className={`${Bradford.variable} ${TrueSans.variable} antialiased`}
+        >
+          <Ui.Page.RootLayout>
+            <Ui.Announcement.Bar />
+            <Ui.Nav />
+            {children}
+            <Ui.Footer />
+          </Ui.Page.RootLayout>
+        </body>
+      </html>
+    </SiteContext.Provider>
   );
 }
