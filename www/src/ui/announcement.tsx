@@ -1,5 +1,4 @@
 import * as Content from "@/lib/content";
-import * as Page from "@/ui/page";
 import * as Text from "@/ui/text";
 import * as Utils from "@/lib/utils";
 

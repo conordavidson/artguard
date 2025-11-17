@@ -140,7 +140,7 @@ const MobileNav: React.FC<MobileNavProps> = (props) => {
       </Page.Container>
       <div
         className={Utils.cx(
-          "dark-theme absolute z-40 top-0 left-0 right-0 min-h-screen bg-emphasis/95 backdrop-blur-md root-layout pt-32 pb-10 transition-all border-b border-outline opacity-0 pointer-events-none -translate-y-[4px]",
+          "dark-theme absolute z-40 top-0 left-0 right-0 min-h-screen bg-emphasis/95 backdrop-blur-md root-layout pt-32 pb-10 transition-all border-y border-outline opacity-0 pointer-events-none -translate-y-[4px]",
           {
             "opacity-100 pointer-events-auto translate-y-0":
               props.isMobileMenuOpen,
@@ -366,7 +366,7 @@ const DesktopNav: React.FC<DesktopNavProps> = (props) => {
 
       <div
         className={Utils.cx(
-          "dark-theme absolute z-40 top-0 left-0 right-0 bg-emphasis/95 backdrop-blur-md root-layout pt-nav-height pb-10 transition-all border-b border-outline opacity-0 pointer-events-none -translate-y-[4px]",
+          "dark-theme absolute z-40 top-0 left-0 right-0 bg-emphasis/95 backdrop-blur-md root-layout pt-nav-height pb-10 transition-all border-y border-outline opacity-0 pointer-events-none -translate-y-[4px]",
           {
             "opacity-100 pointer-events-auto translate-y-0":
               !!props.activeMenuId,

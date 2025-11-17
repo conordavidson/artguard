@@ -18,7 +18,7 @@ const TextImageSplit: React.FC<TextImageSplitProps> = (props) => {
     >
       <div
         className={Utils.cx(
-          "relative z-10 row-start-1 row-end-2 pt-16 md:pt-40 md:pb-64 col-start-2 col-end-14",
+          "relative z-10 row-start-1 row-end-2 pt-16 md:pt-64 md:pb-64 col-start-2 col-end-14",
           {
             "sm:col-end-10 md:col-end-8 lg:col-end-6": !props.section.reversed,
             "sm:col-start-6 md:col-start-8 lg:col-start-9":

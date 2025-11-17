@@ -173,3 +173,22 @@ export type ArticleHeroSection = {
     alt: string;
   };
 };
+
+export type TeamMember = {
+  name: string;
+  title?: string;
+  bio: string | React.ReactNode;
+  linkedinUrl?: string;
+  image?: {
+    src: NextImage.StaticImageData;
+    alt: string;
+  };
+};
+
+export type TeamSection = {
+  className?: string;
+  heading: string | React.ReactNode;
+  featuredFounder: TeamMember;
+  secondaryFounder: TeamMember;
+  boardOfAdvisors: TeamMember[];
+};
