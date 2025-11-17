@@ -26,7 +26,11 @@ const TakeoverGrid: React.FC<TakeoverGridProps> = (props) => {
         {props.section.cards.map((card, index) => (
           <div
             key={index}
-            className="col-span-full sm:col-span-6 lg:col-span-4"
+            className={Utils.cx("col-span-full sm:col-span-6", {
+              "lg:col-span-4":
+                props.section.cards.length === 3 ||
+                props.section.cards.length > 4,
+            })}
           >
             <Ui.PowerCard {...card} className="h-full" />
           </div>

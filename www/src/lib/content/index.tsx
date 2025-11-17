@@ -35,7 +35,7 @@ export const NAVIGATION_MENU: Types.MenuItem[] = [
       {
         label: "MAP System",
         href: Paths.MAP_SYSTEM,
-        subheading: "Control Panels",
+        subheading: "Complete Standalone Protection",
       },
       {
         label: "Accessories",
@@ -50,14 +50,17 @@ export const NAVIGATION_MENU: Types.MenuItem[] = [
       {
         label: "Museums",
         href: Paths.MUSEUMS,
+        subheading: "Object-Specific Protection for Collections of Any Size",
       },
       {
         label: "Galleries",
         href: Paths.GALLERIES,
+        subheading: "Security for Rotating Collections",
       },
       {
         label: "Historic Homes",
         href: Paths.HISTORIC_HOMES,
+        subheading: "Fortify Historically Accurate Displays",
       },
     ],
   },
@@ -67,6 +70,7 @@ export const NAVIGATION_MENU: Types.MenuItem[] = [
       {
         label: "Private Collections",
         href: Paths.PRIVATE_COLLECTIONS,
+        subheading: "Private Art Collections and Valuable Stationary Assets",
       },
       {
         label: "Hotels",

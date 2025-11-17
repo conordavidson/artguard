@@ -32,8 +32,9 @@ export const Bar = () => {
           </div>
           <div className="relative overflow-hidden">
             <div className="absolute z-10 left-0 top-0 bottom-0 w-3 bg-linear-to-r to-transparent from-emphasis"></div>
+            <div className="absolute z-10 right-0 top-0 bottom-0 w-3 bg-linear-to-l to-transparent from-emphasis"></div>
             <Marquee autoFill speed={30} pauseOnHover>
-              <div className="flex gap-x-8 pl-8 announcement-content">
+              <div className="flex gap-x-8 pl-8 pr-8 announcement-content">
                 <Text.Interface16 className="text-white whitespace-nowrap">
                   {Content.CURRENT_ANNOUNCEMENT.message}
                 </Text.Interface16>

@@ -10,8 +10,26 @@ import Technician from "@images/technician.jpg";
 import CompatibilityLogos from "@images/compatibilitylogos.svg";
 import GlobalMap from "@images/globalprotection.svg";
 
+const STANDARD_SPACING_CLASSNAME = "space-y-42";
+const TEXT_HERO_CLASSNAME = "pt-8 md:pt-16";
+const NUDGED_UP_CLASSNAME = "-mt-6";
+
+const STANDARD_CTA_CARD: Types.CtaCardSection = {
+  type: "CtaCard",
+  heading: "Protect Your Collection",
+  subheading: "Contact us to discuss security solutions for your institution",
+  ctas: [
+    {
+      label: "Contact Us",
+      href: Paths.CONTACT,
+      type: "button",
+      variant: "primary",
+    },
+  ],
+};
+
 export const HOME_PAGE: Types.Page = {
-  className: "space-y-24",
+  className: `${STANDARD_SPACING_CLASSNAME}`,
   path: Paths.HOME,
   metadata: {
     title: "Home",
@@ -229,10 +247,8 @@ export const HOME_PAGE: Types.Page = {
 
 import BillAnderson from "@images/billanderson.jpg";
 
-const TEXT_HERO_CLASSNAME = "pt-8 md:pt-16";
-
 export const TEAM_PAGE: Types.Page = {
-  className: TEXT_HERO_CLASSNAME,
+  className: `${STANDARD_SPACING_CLASSNAME} ${TEXT_HERO_CLASSNAME}`,
   path: Paths.TEAM,
   metadata: {
     title: "Our Team",
@@ -436,7 +452,7 @@ export const SECURITY_PRODUCTS_PAGE: Types.Page = {
 import MapSensorsHero from "@images/mapsensorshero.jpg";
 
 export const MAP_SENSORS_PAGE: Types.Page = {
-  className: "space-y-24",
+  className: STANDARD_SPACING_CLASSNAME,
   path: Paths.MAP_SENSORS,
   metadata: {
     title: "MAP Wireless Sensors",
@@ -471,7 +487,7 @@ export const MAP_SENSORS_PAGE: Types.Page = {
     },
     {
       type: "VideoFeature",
-      className: "md:-mt-24",
+      className: "md:-mt-36",
       heading: "Complete Protection, Simply Deployed",
       video: {
         src: "https://player.vimeo.com/video/1130331510?h=4a9f97b82c",
@@ -654,10 +670,190 @@ export const MAP_SENSORS_PAGE: Types.Page = {
   ],
 };
 
+import Museum from "@images/museum.jpg";
+
+export const MUSEUMS_PAGE: Types.Page = {
+  className: STANDARD_SPACING_CLASSNAME,
+  path: Paths.MUSEUMS,
+  metadata: {
+    title: "Security Solutions for Museums",
+    description: "Museum-grade protection for your collection",
+    keywords: ["Art Guard", "Museums", "Museum-grade protection"],
+    image: {
+      src: Museum,
+      alt: "Image of museum",
+    },
+  },
+  sections: [
+    {
+      type: "TextImageSplit",
+      className: "md:-mt-nav-height",
+      heading: "Security for Museums and Galleries",
+      subheading: "Object-specific protection for collections of any size",
+      body: "MAP sensors deliver comprehensive, discreet security for artwork, artifacts, and exhibits—from masterpiece paintings to small historical objects.",
+      ctas: [
+        {
+          type: "button",
+          label: "Explore Solutions",
+          variant: "primary",
+          href: Paths.SECURITY_PRODUCTS,
+        },
+        {
+          type: "button",
+          label: "Contact Us",
+          variant: "secondary",
+          href: Paths.CONTACT,
+        },
+      ],
+      image: {
+        src: Museum,
+        alt: "Image of museum",
+      },
+    },
+    {
+      type: "Text",
+      heading: "Complete Protection, Simply Deployed",
+      className: NUDGED_UP_CLASSNAME,
+      body: (
+        <>
+          <p>
+            Museums must balance public engagement with security for
+            irreplaceable objects. Traditional perimeter security goes offline
+            during operating hours, leaving individual pieces vulnerable to the
+            most common threat: grab-and-run theft, which accounts for over 50%
+            of art losses. Recovery rates remain at just 3-4%.
+          </p>
+          <p>
+            Museum collections present unique challenges. A single gallery might
+            contain paintings, small artifacts, documents, and sculptures—all
+            requiring different protection approaches. Traditional motion
+            sensors can&apos;t distinguish authorized handling from theft, and
+            vibration sensors may be too sensitive for delicate works or
+            high-traffic environments.
+          </p>
+          <p>
+            Traveling exhibitions, loans between institutions, and special
+            displays require flexible protection that adapts quickly to changing
+            needs.
+          </p>
+        </>
+      ),
+    },
+    {
+      type: "Text",
+      heading: "The Solution",
+      className: NUDGED_UP_CLASSNAME,
+      body: (
+        <>
+          <p>
+            MAP sensors create an invisible security perimeter around each
+            individual object. A small rare-earth magnet attaches discreetly to
+            the piece using museum-approved adhesives. The sensor is placed
+            nearby—behind hanging works or beneath seated objects. Both are
+            completely hidden from view. Any unauthorized movement triggers an
+            immediate, location-specific alert.
+          </p>
+          <p>
+            Conservators approve MAP because the magnet attachment is less
+            invasive than mounting sensors directly on artwork. The system
+            scales from protecting vulnerable pieces to comprehensive gallery
+            coverage, works for permanent installations or temporary
+            exhibitions, and sensors can travel with loaned works to satisfy
+            protection requirements.
+          </p>
+        </>
+      ),
+    },
+    {
+      type: "TakeoverGrid",
+      heading: "Why Museums Choose MAP",
+      cards: [
+        {
+          heading: "A Favorite of Conservators",
+          body: "MAP's unique technology serves the demands for safety of the object, which often limits the use of other motion or vibration sensors. A small rare earth magnet is affixed to the object with inert museum wax or even wheat or rice paste. The MAP sensor is placed in close proximity. Affixing a tiny magnet instead of the sensor significantly decreases the affect on the fabric of the object and eliminates any danger of battery leakage.",
+          icon: "ShieldLock",
+        },
+        {
+          heading: "Dedicated and Versatile",
+          body: "MAP is installed in some of the country's most prestigious museums, protecting nearly every conceivable type of asset from masterpiece paintings to small pieces of jewelry and from wall-mounted to seated pieces to the doors of cabinets and vitrines.",
+          icon: "Instituion",
+        },
+        {
+          heading: "Flexible and Scalable",
+          body: "It can be used on just a few vulnerable works of art, as an added layer of protection for works on loan or to alarm entire rooms. Registrars should be aware of the ability of a MAP system to travel with works loaned out, satisfying any legal concerns for protection.",
+          icon: "Move",
+        },
+      ],
+    },
+    {
+      type: "ValueGrid",
+      heading: "MAP for Museums",
+      cards: [
+        {
+          heading: "Reliable",
+          body: "Employed by some of the most highly regarded institutions in the U.S. Effective and discreet coverage with minimal false alarms. Industry standard check-in and 4-5 year battery life with low battery alert.",
+          icon: "CheckRibbon",
+        },
+        {
+          heading: "Comprehensive",
+          body: "No means of object-specific protection is as versatile as MAP. Can be applied to any stationary object, as well as to cabinet doors and vitrines.",
+          icon: "Layered",
+        },
+        {
+          heading: "Safety",
+          body: "The tiny magnet can be attached with an inert adhesive or buffered with another material.",
+          icon: "Leaf",
+        },
+        {
+          heading: "Flexible",
+          body: "MAP can be deployed throughout a museum or in specific locations. A MAP system can be designed to travel with a show or works on loan. MAP systems are completely scalable.",
+          icon: "Move",
+        },
+        {
+          heading: "Affordable",
+          body: "No other security system as comprehensive in its coverage costs as little initially and over the course of its life as MAP.",
+          icon: "Coins",
+        },
+      ],
+    },
+    {
+      type: "TakeoverHeading",
+      icon: "Quote",
+      heading: "Trusted by Leading Institutions",
+      body: (
+        <>
+          &quot;We are a large mid-western museum and have used both Art Guard
+          Safe Hook and the MAP sensors for several years now. MAP in particular
+          has been most helpful in applications where stealth, dependability,
+          and sensitivity to the art material being protected is required.
+          It&apos;s versatility and dependability have helped us protect
+          masterpieces and meet the requirements of lenders from museums around
+          the world.&quot;
+        </>
+      ),
+      byline: "—Director of Security, Large Midwest Museum",
+    },
+    {
+      type: "CtaCard",
+      heading: "Protect Your Collection",
+      subheading:
+        "Contact us to discuss security solutions for your institution",
+      ctas: [
+        {
+          label: "Contact Us",
+          href: Paths.CONTACT,
+          type: "button",
+          variant: "primary",
+        },
+      ],
+    },
+  ],
+};
+
 import Gallery from "@images/gallery.jpg";
 
 export const GALLERIES_PAGE: Types.Page = {
-  className: "space-y-24",
+  className: STANDARD_SPACING_CLASSNAME,
   path: Paths.GALLERIES,
   metadata: {
     title: "Security Solutions for Art Galleries and Dealers | Art Guard",
@@ -680,25 +876,7 @@ export const GALLERIES_PAGE: Types.Page = {
       className: "md:-mt-nav-height",
       heading: "Security Solutions for Art Galleries and Dealers",
       subheading: "Museum-grade protection for continuously changing works",
-      body: (
-        <>
-          <p>
-            Art galleries have different security needs from museums or other
-            facilities that display art. Shows change frequently so flexibility
-            and ease of use in a security apparatus is critical. Entrances are
-            open for free movement and often poorly supervised. Works for
-            special or group shows increasingly require special security demands
-            by the lender.
-          </p>
-          <p>
-            Whether &quot;grab and run&quot; or more surreptitious thefts,
-            galleries suffer from particular vulnerability. Very few have guards
-            or cameras. Works hanging near the entrance are often an invitation
-            to theft, especially when gallery personnel are engaged with a
-            client or on the phone at some distance from the front door.
-          </p>
-        </>
-      ),
+      body: "Art galleries have different security needs from museums or other facilities that display art. Shows change frequently so flexibility and ease of use in a security apparatus is critical. Entrances are open for free movement and often poorly supervised. Works for special or group shows increasingly require special security demands by the lender.",
       ctas: [
         {
           type: "button",
@@ -718,10 +896,30 @@ export const GALLERIES_PAGE: Types.Page = {
         alt: "Gallery exhibits and visitors",
       },
     },
-
     {
-      type: "TakeoverGrid",
+      type: "Text",
+      heading: "The Reality of Gallery Theft",
+      className: NUDGED_UP_CLASSNAME,
+      body: (
+        <>
+          <p>
+            Whether &quot;grab and run&quot; or more surreptitious thefts,
+            galleries suffer from particular vulnerability. Very few have guards
+            or cameras. Works hanging near the entrance are often an invitation
+            to theft, especially when gallery personnel are engaged with a
+            client or on the phone at some distance from the front door.
+          </p>
+          <p>
+            Art Guard offers flexible solutions designed specifically for these
+            challenges.
+          </p>
+        </>
+      ),
+    },
+    {
+      type: "ValueGrid",
       heading: "Art Guard Solutions for Galleries",
+
       cards: [
         {
           heading: "Flexible Protection",
@@ -754,19 +952,153 @@ export const GALLERIES_PAGE: Types.Page = {
       ),
       byline: "—Amy Hussey, Nahmad Contemporary",
     },
+    STANDARD_CTA_CARD,
+  ],
+};
 
+import HistoricHome from "@images/historichome.jpg";
+
+export const HISTORIC_HOMES_PAGE: Types.Page = {
+  className: "space-y-24",
+  path: Paths.HISTORIC_HOMES,
+  metadata: {
+    title: "Historic Houses",
+    description:
+      "Wireless protection that preserves historic architecture while securing collections.",
+    keywords: [
+      "historic house security",
+      "history museum",
+      "wireless sensors",
+      "MAP sensors",
+    ],
+  },
+  sections: [
     {
-      type: "CtaCard",
-      heading: "Ready to Secure Your Gallery?",
-      subheading: "Contact us to discuss the right solution for your space",
+      type: "TextImageSplit",
+      className: "md:-mt-nav-height",
+      heading: "Security for Historic Houses and History Museums",
+      subheading:
+        "Protect collections without compromising historic architecture",
+      body: "Historic houses and history museums face unique security challenges. Collections often include furniture, decorative arts, documents, and personal artifacts spread across multiple rooms in buildings where traditional hardwired systems would require damaging original architecture.",
       ctas: [
         {
-          label: "Contact Us",
-          href: Paths.CONTACT,
           type: "button",
+          label: "Explore Solutions",
           variant: "primary",
+          href: Paths.SECURITY_PRODUCTS,
+        },
+        {
+          type: "button",
+          label: "Contact Us",
+          variant: "secondary",
+          href: Paths.CONTACT,
+        },
+      ],
+      image: {
+        src: HistoricHome,
+        alt: "Historic house interior",
+      },
+    },
+
+    {
+      type: "Text",
+      heading: "The Challenge",
+      className: NUDGED_UP_CLASSNAME,
+      body: (
+        <>
+          <p>
+            Historic houses present layered security challenges. Buildings
+            designed for private life now serve as public museums. Original
+            layouts create blind spots and multiple access points. Period rooms
+            contain dozens of small, valuable objects—any of which could be
+            removed without triggering perimeter alarms.
+          </p>
+          <p>
+            Installing traditional hardwired security systems means running
+            conduit through historic walls, drilling into original woodwork, and
+            compromising the architectural integrity these institutions exist to
+            preserve. Wireless solutions eliminate infrastructure damage, but
+            most motion sensors can&apos;t distinguish between authorized docent
+            movement and theft attempts.
+          </p>
+        </>
+      ),
+    },
+
+    {
+      type: "Text",
+      heading: "The Solution",
+      className: NUDGED_UP_CLASSNAME,
+      body: (
+        <>
+          <p>
+            MAP wireless sensors provide object-specific protection without any
+            permanent installation. Each piece receives individual
+            monitoring—furniture, decorative objects, documents, textiles, even
+            cabinet doors. The system operates during public hours, alerting
+            staff immediately if any object is moved without authorization.
+          </p>
+          <p>
+            Because MAP is completely wireless and sensors attach directly to
+            objects rather than architecture, historic fabric remains untouched.
+            Small magnets affix to pieces using museum-approved adhesives.
+            Sensors place nearby—behind frames, beneath furniture, inside
+            cabinets—completely hidden from visitors. The entire system installs
+            without drilling, wiring, or structural modification.
+          </p>
+        </>
+      ),
+    },
+
+    {
+      type: "TakeoverGrid",
+      heading: "Why Historic Sites Choose MAP",
+      cards: [
+        {
+          heading: "Zero Architectural Impact",
+          body: "No drilling, no wiring, no damage to historic fabric. Wireless system installs without touching original architecture.",
+          icon: "Home",
+        },
+        {
+          heading: "Protects During Operating Hours",
+          body: "Object-specific alerts work while visitors tour rooms. Doesn't rely on perimeter security that must be disabled for public access.",
+          icon: "Schedule",
+        },
+        {
+          heading: "Room-by-Room Coverage",
+          body: "Protect entire period rooms or individual significant pieces. Scales from a few vulnerable objects to comprehensive site coverage.",
+          icon: "Grid",
+        },
+        {
+          heading: "Hidden from View",
+          body: "Sensors and magnets completely invisible to visitors. Maintains the historic atmosphere and period aesthetic.",
+          icon: "Hidden",
         },
       ],
     },
+
+    {
+      type: "TextHighlights",
+      heading: "Common Applications",
+      highlights: [
+        {
+          heading: "Period Furnishings",
+          body: "Protect chairs, tables, cabinets, and decorative furniture in room settings. Sensors beneath pieces detect any movement.",
+        },
+        {
+          heading: "Decorative Objects",
+          body: "Secure ceramics, silver, clocks, and small artifacts on tables and shelves. Individual protection for each piece.",
+        },
+        {
+          heading: "Documents and Books",
+          body: "Protect papers, letters, rare books, and manuscripts. Sensors on shelves or in display cases detect removal.",
+        },
+        {
+          heading: "Textiles and Costumes",
+          body: "Monitor quilts, samplers, clothing, and fabric artifacts. Gentle magnetic attachment approved for delicate materials.",
+        },
+      ],
+    },
+    STANDARD_CTA_CARD,
   ],
 };

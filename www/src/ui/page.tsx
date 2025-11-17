@@ -30,11 +30,11 @@ export const Sections: React.FC<SectionsProps> = (props) => {
         props.page.className
       )}
     >
-      {props.page.sections.map((section) => {
+      {props.page.sections.map((section, index) => {
         const SectionComponent =
           SectionComponents[section.type as keyof typeof SectionComponents];
 
-        return <SectionComponent key={section.type} section={section} />;
+        return <SectionComponent key={index} section={section} />;
       })}
     </div>
   );

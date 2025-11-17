@@ -66,7 +66,7 @@ const Nav: React.FC = () => {
 
   return (
     <nav
-      className="sticky top-0 z-50 h-nav-height grid grid-cols-subgrid col-span-full"
+      className="sticky top-0 z-50 h-nav-height grid grid-cols-subgrid col-span-full bg-linear-to-b from-background from-30% to-transparent"
       onMouseLeave={() => setActiveMenuId(null)}
     >
       <DesktopNav
