@@ -75,10 +75,12 @@ export const NAVIGATION_MENU: Types.MenuItem[] = [
       {
         label: "Hotels",
         href: Paths.HOTELS,
+        subheading: "Public Spaces and Guest Rooms",
       },
       {
         label: "Auction Houses",
         href: Paths.AUCTION_HOUSES,
+        subheading: "For continuously changing inventory",
       },
     ],
   },

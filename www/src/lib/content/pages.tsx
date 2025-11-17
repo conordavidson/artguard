@@ -1102,3 +1102,713 @@ export const HISTORIC_HOMES_PAGE: Types.Page = {
     STANDARD_CTA_CARD,
   ],
 };
+
+import HotelLobby from "@images/hotellobby.jpg";
+
+export const HOTELS_PAGE: Types.Page = {
+  className: STANDARD_SPACING_CLASSNAME,
+  path: Paths.HOTELS,
+  metadata: {
+    title: "Hotels",
+    description:
+      "Discreet protection for artwork and decorative objects in hotel public spaces and guest rooms.",
+    keywords: [
+      "hotel security",
+      "hotel art protection",
+      "MAP sensors",
+      "hospitality security",
+    ],
+  },
+  sections: [
+    {
+      type: "TextImageSplit",
+      className: "md:-mt-nav-height",
+      heading: "Asset Protection for Hotels Against Theft",
+      subheading: "Protection from theft for any art and decorative object",
+      body: "Being the perfect host with imperfect guests, hotels and resorts strive to create an environment that elevates their guests' feelings of privilege and comfort. This is achieved through original artwork and designer fixtures, which have become commonplace in many properties. However, hotels are not museums, and guests are given the benefit of the doubt. This approach, while beneficial for guests, poses a liability for hotels.",
+      ctas: [
+        {
+          type: "button",
+          label: "Explore Solutions",
+          variant: "primary",
+          href: Paths.SECURITY_PRODUCTS,
+        },
+        {
+          type: "button",
+          label: "Contact Us",
+          variant: "secondary",
+          href: Paths.CONTACT,
+        },
+      ],
+      image: {
+        src: HotelLobby, // **IMAGE NEEDED: Hotel lobby with artwork displayed**
+        alt: "Hotel lobby with artwork",
+      },
+    },
+
+    {
+      type: "Text",
+      heading: "The Challenge",
+      className: NUDGED_UP_CLASSNAME,
+      body: (
+        <>
+          <p>
+            Discreet protection for any valuable object is essential, especially
+            in public spaces where there is little control over who enters and
+            exits. Art Guard security devices are designed to discreetly alarm
+            objects on display, providing 24/7 protection. Conventional systems
+            and practices have limitations:
+          </p>
+          <ul>
+            <li>Hotel personnel cannot be constantly vigilant.</li>
+            <li>
+              Security guards can be costly, obtrusive, and limited in their
+              effectiveness.
+            </li>
+            <li>Cameras can document theft but not prevent it.</li>
+            <li>
+              Standard motion and vibration sensors have size and performance
+              limitations.
+            </li>
+          </ul>
+        </>
+      ),
+    },
+
+    {
+      type: "Text",
+      heading: "Art Guard MAP: Discreet, Museum-Grade Protection",
+      className: NUDGED_UP_CLASSNAME,
+      body: (
+        <>
+          <p>
+            Art Guard&apos;s MAP wireless sensor is used in prestigious museums,
+            galleries, and homes of high-end collectors. MAP Sensors can protect
+            nearly any stationary object, regardless of size. MAP can be used to
+            secure decorative items in the lobby, art in public spaces, and even
+            artwork in guest rooms. MAP can discreetly alert the front desk or
+            any other designated party in the hotel of any object movement.
+          </p>
+        </>
+      ),
+    },
+
+    {
+      type: "ValueGrid",
+      heading: "Hotel Applications",
+      cards: [
+        {
+          heading: "Lobby and Public Spaces",
+          body: "Secure decorative items, sculpture, and artwork in high-traffic areas where constant monitoring is impractical.",
+          icon: "Lounge",
+        },
+        {
+          heading: "Corridors and Common Areas",
+          body: "Protect artwork along hallways and in shared spaces throughout the property with wireless, hidden sensors.",
+          icon: "Hallway",
+        },
+        {
+          heading: "Guest Rooms",
+          body: "Discreetly secure artwork in premium suites and guest rooms without impacting the guest experience.",
+          icon: "Door",
+        },
+      ],
+    },
+
+    STANDARD_CTA_CARD,
+  ],
+};
+
+import AuctionHouse from "@images/auctionhouse.jpg";
+
+export const AUCTION_HOUSES_PAGE: Types.Page = {
+  className: STANDARD_SPACING_CLASSNAME,
+  path: Paths.AUCTION_HOUSES,
+  metadata: {
+    title: "Auction Houses",
+    description:
+      "Flexible, comprehensive protection for continuously changing inventory in auction previews and sales.",
+    keywords: [
+      "auction house security",
+      "auction security",
+      "MAP sensors",
+      "lot protection",
+    ],
+  },
+  sections: [
+    {
+      type: "TextImageSplit",
+      className: "md:-mt-nav-height",
+      heading: "Asset Security for Auction Houses",
+      subheading: "Flexible protection for continuously changing inventory",
+      body: "Auction houses are unique in placing demands for flexibility on any security system designed to protect objects. Objects of enormous variety are continuously being moved and changed, maybe more so than in any other facility displaying valuable assets. Ease-of-use should be a hallmark. And a system has to be equally adept at securing a painting and a piece of jewelry.",
+      ctas: [
+        {
+          type: "button",
+          label: "Explore Solutions",
+          variant: "primary",
+          href: Paths.SECURITY_PRODUCTS,
+        },
+        {
+          type: "button",
+          label: "Contact Us",
+          variant: "secondary",
+          href: Paths.CONTACT,
+        },
+      ],
+      image: {
+        src: AuctionHouse,
+        alt: "Auction house preview room",
+      },
+    },
+
+    {
+      type: "Text",
+      heading: "Comprehensive Protection for Every Lot",
+      className: NUDGED_UP_CLASSNAME,
+      body: (
+        <p>
+          Art Guard MAP offers the most comprehensive protection for stationary
+          objects of any technology or security measure. This is MAP&apos;s
+          hallmark. Exhibiting objects individually or in lots as openly as
+          possible to prospective buyers while discreetly protecting them is
+          paramount. Employing MAP is equal to having a separate guard on every
+          lot, watching every painting, every sculpture, every snuff box and
+          every pendant.
+        </p>
+      ),
+    },
+
+    {
+      type: "ValueGrid",
+      heading: "A Balance of Flexibility and Presentation with Protection",
+      cards: [
+        {
+          heading: "System Flexibility",
+          body: "MAP sensors can be employed in a host of currently-installed or dedicated security panels, as well as in the MAP System, which offers the ultimate convenience in set-up and management.",
+          icon: "NetworkCloud",
+        },
+        {
+          heading: "Easy Installation",
+          body: "MAP sensors are easy to install to accommodate changing displays. Sensors can be temporarily by-passed to move individual pieces.",
+          icon: "Move",
+        },
+        {
+          heading: "Configurable Alerts",
+          body: "Responses to an event can be anything from a local alarm (loud or subtle) to a cell phone text.",
+          icon: "Alert",
+        },
+        {
+          heading: "Universal Coverage",
+          body: "No other object-specific security is capable of protecting each and every asset, no matter the size.",
+          icon: "ShieldLock",
+        },
+      ],
+    },
+    {
+      type: "TakeoverHeading",
+      icon: "Quote",
+      heading: "Trusted by Leading Auction Houses",
+      body: "Art Guard MAP provided the added security we needed for one of the largest exhibitions we've ever put on. We were very pleased with the ease of set-up and use, and the fantastic service. We felt we had the right amount of protection for such an important collection and will be using the system again and again.",
+      byline: "—Prominent Canadian Gallery/Auction House",
+    },
+
+    STANDARD_CTA_CARD,
+  ],
+};
+
+export const PRIVATE_COLLECTIONS_PAGE: Types.Page = {
+  className: STANDARD_SPACING_CLASSNAME,
+  path: Paths.PRIVATE_COLLECTIONS,
+  metadata: {
+    title: "Private Collections",
+    description:
+      "24/7 dedicated, discreet protection for art and valuable assets in private residences.",
+    keywords: [
+      "private art collection security",
+      "home art security",
+      "MAP sensors",
+      "residential security",
+    ],
+  },
+  sections: [
+    {
+      type: "TextImageSplit",
+      className: "md:-mt-nav-height",
+      heading:
+        "Asset Protection for Private Art Collections and Valuable Stationary Assets Against Theft",
+      subheading:
+        "24/7, dedicated, discreet and pinpoint security for art and assets",
+      body: "No home is immune to theft. Because many homeowners believe their perimeter security system offers adequate protection they are particularly vulnerable. In fact over 50% of art thefts are from private residences. And once valuable art is stolen the chance that it will ever be recovered is just 4%.",
+      ctas: [
+        {
+          type: "button",
+          label: "Explore Solutions",
+          variant: "primary",
+          href: Paths.SECURITY_PRODUCTS,
+        },
+        {
+          type: "button",
+          label: "Contact Us",
+          variant: "secondary",
+          href: Paths.CONTACT,
+        },
+      ],
+      image: {
+        src: PrivateCollection, // Using existing image from home page
+        alt: "Private art collection",
+      },
+    },
+
+    {
+      type: "Text",
+      heading: "Best Practices in Art Security",
+      className: NUDGED_UP_CLASSNAME,
+      body: (
+        <>
+          <p>
+            Best practices in art security highly recommend a dedicated system
+            for art and valuable assets in a redundant, blended approach to
+            security. Art Guard MAP provides unparalleled around-the-clock
+            protection to individual objects, whether perimeter/intrusion
+            security is on or off to allow for the daily activities of a
+            home&apos;s residents, staff, workers and guests or is compromised.
+          </p>
+        </>
+      ),
+    },
+
+    {
+      type: "Text",
+      heading: "Protection for Each and Every Stationary Object",
+      className: NUDGED_UP_CLASSNAME,
+      body: (
+        <>
+          <p>
+            MAP provides museum-grade security for nearly any stationary object
+            in the home, including art, jewelry, tapestry, antiques,
+            collectibles, memorabilia, wine and firearms. MAP sensors can even
+            tell if a car is moved. Sensors and magnets are completely hidden
+            from view. Real-time alerts allow for a quick response during those
+            crucial seconds before a priceless object is lost forever.
+          </p>
+        </>
+      ),
+    },
+
+    {
+      type: "FeatureGrid",
+      heading: "Choose Your Solution",
+      items: [
+        {
+          heading: "Complete Standalone Solution",
+          subheading: "MAP Gold System",
+          body: (
+            <>
+              <p>
+                All-in-one wireless system perfect for special exhibitions,
+                traveling shows, or institutions without existing security
+                infrastructure. Control from your phone, no installer required.
+              </p>
+              <p>
+                <strong>Features:</strong>
+              </p>
+              <ul>
+                <li>Award-winning Alula Connect+ panel</li>
+                <li>Up to 96 pre-enrolled sensors</li>
+                <li>Dual-path communication (4G LTE + IP)</li>
+                <li>Mobile app management</li>
+              </ul>
+            </>
+          ),
+          image: {
+            src: MapGold,
+            alt: "MAP Gold System",
+          },
+          ctas: [
+            {
+              type: "button",
+              label: "Explore MAP Gold System",
+              href: Paths.MAP_SYSTEM,
+              variant: "secondary",
+            },
+          ],
+        },
+        {
+          heading: "Professional Integration for Established Systems",
+          subheading: "MAP Sensors",
+          body: (
+            <>
+              <p>
+                Professional-grade wireless sensors that integrate with all
+                major security platforms. Ideal for museums with existing
+                infrastructure seeking comprehensive object-specific protection.
+              </p>
+              <p>
+                <strong>Features:</strong>
+              </p>
+              <ul>
+                <li>
+                  Integrates with Honeywell, DSC, DMP, Qolsys, 2GIG, and major
+                  access control systems
+                </li>
+                <li>345 and 433 MHz options</li>
+                <li>400+ foot range (extendable with repeaters)</li>
+                <li>Museum-tested reliability</li>
+              </ul>
+            </>
+          ),
+          image: {
+            src: MapSensors,
+            alt: "MAP Sensors",
+          },
+          ctas: [
+            {
+              type: "button",
+              label: "Explore MAP Sensors",
+              href: Paths.MAP_SENSORS,
+              variant: "secondary",
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      type: "TakeoverHeading",
+      icon: "Tools",
+      heading: "Installation and Support",
+      body: (
+        <>
+          <p>
+            In any case, sensors and magnets should be applied by a qualified
+            art handler working with the security installer. Whichever system is
+            employed, no other security solution provides the unique ability to
+            protect nearly any object of value and do so with such reliability,
+            safety for the asset, flexibility and affordability, offering the
+            ultimate peace of mind for any private collector.
+          </p>
+          <p>
+            <em>
+              Art Guard sells only the MAP sensor and magnets and the MAP
+              System. Art Guard does not do installations. MAP System DIY
+              installations are completely supported by Art Guard with video and
+              telephone customer support. Standard security panels and
+              associated equipment, installation and monitoring are provided by
+              your local security installer. If you would like information on
+              local installers, please contact us.
+            </em>
+          </p>
+        </>
+      ),
+      ctas: [
+        {
+          type: "button",
+          label: "Contact Us",
+          variant: "secondary",
+          href: Paths.CONTACT,
+        },
+      ],
+    },
+
+    {
+      type: "ValueGrid",
+      heading: "Why Private Collectors Choose MAP",
+      cards: [
+        {
+          heading: "Reliability",
+          body: "Museum-grade and used by the world's most prestigious institutions. Movement of either the sensor or magnet triggers a customized alert. Backed by the insurance industry. Supervised sensors with 4-5 year battery life and low battery alert. Any attempt to tamper with the sensor produces an alert. Cellular backup immediately takes over in case of Internet interruption. Programmed to minimize false alarms.",
+          icon: "ShieldLock",
+        },
+        {
+          heading: "Comprehensive",
+          body: "Object-specific protection for any piece of art and valuable asset, no matter how small. 400 ft. wireless sensor transmission can be extended with the use of inexpensive repeaters to cover any size home. MAP can be used just as easily for outdoor sculpture or objects within 400 ft. of the home.",
+          icon: "Layered",
+        },
+        {
+          heading: "Flexible",
+          body: "Completely scalable for any size collection or application. Multiple objects can be protected by a single sensor. Alerts are completely customizable to suit your alarm and response needs, including audio alarm, emails, text or calls to multiple parties, a relay to a central station or triggering a camera or lights.",
+          icon: "Settings",
+        },
+        {
+          heading: "Affordable",
+          body: "No other system compares in initial and life-cycle cost.",
+          icon: "Coins",
+        },
+      ],
+    },
+    STANDARD_CTA_CARD,
+  ],
+};
+
+export const OUR_STORY_PAGE: Types.Page = {
+  className: `${STANDARD_SPACING_CLASSNAME} ${TEXT_HERO_CLASSNAME}`,
+  path: Paths.OUR_STORY,
+  metadata: {
+    title: "Our Story",
+    description:
+      "Two decades of innovation in art and asset protection technology.",
+    keywords: ["Art Guard", "about", "company history", "MAP sensors"],
+  },
+  sections: [
+    {
+      type: "Text",
+      heading: "About Art Guard",
+      subheading: "Consistently refining asset protection",
+      body: (
+        <p>
+          Art Guard has been a leader in providing innovative, cost-effective
+          security solutions for the protection of art and cultural assets in a
+          wide array of institutions, facilities and private collections around
+          the world.
+        </p>
+      ),
+    },
+
+    {
+      type: "VideoFeature",
+      heading: "Our Story",
+      className: NUDGED_UP_CLASSNAME,
+      video: {
+        src: "https://player.vimeo.com/video/183547629?title=0&byline=0&portrait=0",
+        alt: "Art Guard company video",
+        type: "vimeo",
+      },
+      cards: [
+        {
+          heading: "2006",
+          body: "Art Guard founded in response to dramatic increases in art valuations and corresponding rise in grab-and-run theft. Safe Hook introduced to alarm hanging art.",
+          icon: "Flag",
+        },
+        {
+          heading: "2012",
+          body: "Began development on wireless sensor to protect seated objects as well as hanging, 24/7 and regardless of size.",
+          icon: "Lightbulb",
+        },
+        {
+          heading: "2014",
+          body: "Introduced MAP (Magnetic Asset Protection), patented wireless technology providing object-specific theft protection for nearly any stationary object.",
+          icon: "CheckRibbon",
+        },
+      ],
+    },
+
+    {
+      type: "Text",
+      heading: "Continued Innovation",
+      body: (
+        <p>
+          Art Guard continues to innovate with additional features, its own DIY
+          systems and the development of MAP sensors in multiple security
+          protocols, with the goal being to make MAP available anywhere in the
+          world and on most major security panels and access control systems.
+        </p>
+      ),
+    },
+    {
+      type: "CtaCard",
+      heading: "Learn More About Our Team",
+      subheading:
+        "Meet the people behind Art Guard's innovative security solutions",
+      className: NUDGED_UP_CLASSNAME,
+      ctas: [
+        {
+          label: "Meet Our Team",
+          href: Paths.TEAM,
+          type: "button",
+          variant: "primary",
+        },
+        {
+          label: "Contact Us",
+          href: Paths.CONTACT,
+          type: "button",
+          variant: "secondary",
+        },
+      ],
+    },
+  ],
+};
+
+export const FAQS_PAGE: Types.Page = {
+  className: `${STANDARD_SPACING_CLASSNAME} ${TEXT_HERO_CLASSNAME}`,
+  path: Paths.FAQS,
+  metadata: {
+    title: "FAQs",
+    description: "Frequently asked questions about Art Guard and MAP.",
+    keywords: ["Art Guard", "FAQs", "MAP"],
+  },
+  sections: [
+    {
+      type: "Faqs",
+      heading: "MAP v2 Sensor FAQ’s",
+      faqs: [
+        {
+          question:
+            "How is Art Guard’s MAP v3 sensor different from other technologies?",
+          answer:
+            "The MAP v3 triple mode is truly universal. It offers the combination of a unique technology with the broadest of  applications, safety for the asset and better economics than other object-specific security solutions, including video and motion/vibration sensors, either on RFID or standard security systems. Three easily changeable modes — two for hanging objects and one for seated objects — offer optimal performance on nearly any object in any environment.  MAP’s patented use of a small rare earth magnet to indicate movement of an asset makes protecting almost any stationary object, regardless of size, possible. MAP is also agnostic in its integration into a broad array of panels and systems.",
+        },
+        {
+          question: "How safe is MAP for delicate objects?",
+          answer:
+            "Seated objects in particular often demand extreme care because of the delicacy of their surface, whether a parchment, porcelain, tapestry or other. The choice of benign adhesives (see next) or opposing magnets held in place by their attraction, possibly with a small piece of velum to avoid contact, or placing a magnet in foam and resting it inside a vessel may be called for.",
+        },
+        {
+          question: "What adhesives do we recommend?",
+          answer:
+            " MAP sensor comes with a strip of 3M tape that can be used whole or cut into smaller pieces. We also recommend 3M Command tape or conservation tape, both available in MAP Sensor Accessories. To affix the magnet, painter’s or conservation tape is usually used. A small piece of the 3M tape can also be used. Museum Wax can be used in certain situations but its effectiveness is compromised by certain surfaces and  temperatures. In the most extreme cases where a tiny magnet can be used on a very delicate surface, wheat or rice paste can be used. In any case make sure surfaces are clean before affixing either sensor or magnet.",
+        },
+        {
+          question: "What is the lifespan of a MAP sensor?",
+          answer:
+            "Two coin-cell batteries last 4-5 yrs. with normal usage and can be replaced. Batteries are available in MAP Sensor Accessories.",
+        },
+        {
+          question: "How do I know which magnet to use?",
+          answer:
+            "This will be dictated by the situation and each is different. Magnets come in all shapes and sizes, again viewable and available on in MAP Sensor Accessories. Art Guard ships a small disk-shaped magnet with each sensor for hanging works unless otherwise instructed. We are available to help you determine the best fit and placement.",
+        },
+        {
+          question: "How far can MAP transmit?",
+          answer:
+            "Transmission distance often depends on a number of factors. The average range to a panel/receiver is over 400 ft. In open air it can be far greater but can also be shorter depending on configurations of a space and construction materials. Repeaters can easily be added to boost signals making coverage in a large facility, even between floors, possible.",
+        },
+        {
+          question: "Why are there no prices on your site?",
+          answer:
+            "Since every situation is different we prefer to discuss the particulars of what is being protected, the type of features and performance guidelines for every client and whether you are an end-user of installer/integrator.",
+        },
+        {
+          question:
+            "What if I want to move or replace a piece or send it out on loan?",
+          answer:
+            "The sensor and magnet can simply be removed and placed on another piece. If the sensor has the name of the object associated with it that can be changed. If the sensor is no longer attached to a piece, it can be by-passed or deleted from the system and re-enrolled when needed.",
+        },
+        {
+          question: "What is the return policy?",
+          answer:
+            "Contact Art Guard for details. Unused and undamaged goods may be returned for a full refund within 30 days of customer receipt of product, confirmed by UPS records of delivery.",
+        },
+        {
+          question: "What applications might present problems?",
+          answer:
+            "There are very few but there may be situations where a seated object doesn’t allow discreet placement of the magnet or the supporting surface prevents placement of the sensor. Art Guard is happy to help explore alternative solutions.",
+        },
+      ],
+    },
+    {
+      type: "Faqs",
+      heading: "MAP Gold System FAQ's",
+      faqs: [
+        {
+          question:
+            "How does the MAP Gold System differ from other security systems?",
+          answer:
+            "Gold is a fully interactive and completely dedicated wireless system with unparalleled flexibility. It acts in stand-alone mode, operating 24/7 in the background with no connection to activities on the main security system, particularly arming, disarming and troubles. The panel can be set up anywhere internet, wi-fi or cellular are available and affixed to the wall or sitting in its own stand. Gold can be moved without any interruption. Gold is a hybrid of a standard security system with the ease of a home automation system.",
+        },
+        {
+          question: "Does Art Guard install the system? ",
+          answer:
+            "We do installations in the NYC tri-state area. Otherwise, we ship Gold as a dedicated, plug-and-play system throughout the world with full, no-cost support.",
+        },
+        {
+          question: "Can Gold be interfaced with my main security?",
+          answer:
+            "No. Gold is completed dedicated and cannot be integrated with any other systems. There are no outputs for hard wiring. Most art security advisers recommend a dedicated system because it is unaffected by the arming/disarming and any compromises of the main security.",
+        },
+        {
+          question: "Can I move the system?",
+          answer:
+            " The Gold system is completely portable and can be moved within a facility or from one facility to another, as with traveling exhibitions.",
+        },
+        {
+          question:
+            "Can I deactivate the system and reactivate it at a later date? What’s involved?",
+          answer:
+            "Many institutions use Gold for special exhibits because of this flexibility. The system can be deactivated and monitoring stopped and brought back into service at any time without affecting the enrolled sensors. We will simply turn off monitoring and deactivate the system and reactive both at your direction.",
+        },
+        {
+          question: "What kind of response can I get to alarms or troubles?",
+          answer:
+            "The panel has a built-in siren that can be deactivated. A remote siren is also available. Normal data response includes push notifications from a mobile app or sms texts and emails. Phone calls to the system user, police or other physical response service can be added.",
+        },
+        {
+          question: "Can I use my own monitoring company?",
+          answer:
+            "No, Art Guard uses Alula’s back-end for delivery of texts and emails. If central station monitoring for phone calls and physical response is requested, Art Guard uses Rapid Response, a leading national monitoring service.",
+        },
+        {
+          question: "How many people can be notified of an event?",
+          answer:
+            "Any number of people can be added as users with various access and managing privileges.",
+        },
+        {
+          question: "What happens if the internet goes down?",
+          answer:
+            "The system quickly transitions to cellular. If the Internet is prone to interruptions an option is to operate on wi-fi with a cellular back up.",
+        },
+        {
+          question: "Can I get a reduction on my insurance by installing Gold?",
+          answer:
+            "Insurance companies will often suggest purchasing the Gold system but will not advertise discounts for doing so. However, inquiries after the fact with proof of installation from Art Guard may result in a discount.",
+        },
+        {
+          question: "Are there any other charges associated with the system?",
+          answer:
+            "Aside from the original equipment costs and monthly monitoring, there are no other fees.",
+        },
+      ],
+    },
+  ],
+};
+
+const PRODUCT_SHEETS = [
+  {
+    label: "Art Guard MAP Sensor Data Sheet",
+    href: "https://www.artguard.net/resources/Art-Guard-MAP-345-sensor.pdf",
+  },
+  {
+    label: "Art Guard MAP System Data Sheet",
+    href: "https://www.artguard.net/resources/Art-Guard-MAP-system-Gold.pdf",
+  },
+  {
+    label: "Art Guard MAP Conservationist Curator Notes",
+    href: "https://www.artguard.net/resources/ArtGuard-MAPConservationist-curator-notes.pdf",
+  },
+  {
+    label: "Art Guard MAP for Historical Museums and Houses",
+    href: "https://www.artguard.net/resources/ArtGuard-MAPforHistoricalMuseumsAndHouses.pdf",
+  },
+  {
+    label: "Enroll MAP sensors into DMP",
+    href: "https://www.artguard.net/resources/Enroll-MAP-sensors-into-DMP.pdf",
+  },
+  {
+    label:
+      "Object-Specific Protection: The Untapped Market in Home Security (2025)",
+    href: "https://www.artguard.net/resources/Art-Guard-White-Paper_OSP.pdf",
+  },
+];
+
+export const PRODUCT_SHEETS_PAGE: Types.Page = {
+  className: `${STANDARD_SPACING_CLASSNAME} ${TEXT_HERO_CLASSNAME}`,
+  path: Paths.PRODUCT_SHEETS,
+  metadata: {
+    title: "Product Sheets",
+    description: "Product sheets for Art Guard security products",
+    keywords: ["Art Guard", "Product Sheets", "Security Products"],
+  },
+  sections: [
+    {
+      type: "LinkGrid",
+      heading: "Data Sheets and Product Information Sheets",
+      links: PRODUCT_SHEETS.map((product) => ({
+        label: product.label,
+        icon: "Pdf",
+        href: product.href,
+        ctaLabel: "Download",
+        target: "_blank",
+      })),
+    },
+  ],
+};

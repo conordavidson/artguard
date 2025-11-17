@@ -4,6 +4,7 @@ import * as Button from "@/ui/button";
 import * as Content from "@/lib/content";
 import * as Graphics from "@/ui/graphics";
 import * as Page from "@/ui/page";
+import * as Paths from "@/lib/paths";
 import * as React from "react";
 import * as Text from "@/ui/text";
 import * as Utils from "@/lib/utils";
@@ -104,7 +105,7 @@ const MobileNav: React.FC<MobileNavProps> = (props) => {
     <>
       <Page.Container className="relative z-50 items-center justify-between flex lg:hidden">
         <Link
-          href="/"
+          href={Paths.HOME}
           className="flex items-center gap-2 hover:opacity-70 transition-opacity"
         >
           <div className="h-[24px]">
@@ -120,7 +121,7 @@ const MobileNav: React.FC<MobileNavProps> = (props) => {
         </Link>
         <div className="flex items-center gap-x-8">
           <div className="hidden sm:block">
-            <Button.Primary href="/contact">Get in touch</Button.Primary>
+            <Button.Primary href={Paths.CONTACT}>Get in touch</Button.Primary>
           </div>
           <button
             type="button"
@@ -227,6 +228,7 @@ const MobileNavItem: React.FC<MobileNavItemProps> = (props) => {
 
     return (
       <div className="relative">
+        <div className="-z-10 absolute -top-1 -bottom-2 -left-4 -right-4 group-hover:bg-brand/15 blur-sm transition-colors rounded-xl"></div>
         <div className="-z-10 absolute -left-3 top-0 bottom-0 flex items-center">
           <div
             className={Utils.cx(
@@ -245,6 +247,13 @@ const MobileNavItem: React.FC<MobileNavItemProps> = (props) => {
         >
           {props.menuItem.label}
         </Text.Interface24>
+        {"subheading" in props.menuItem && props.menuItem.subheading && (
+          <div className="mt-1">
+            <Text.Interface16 className={"text-muted"}>
+              {props.menuItem.subheading}
+            </Text.Interface16>
+          </div>
+        )}
       </div>
     );
   };
@@ -287,7 +296,10 @@ const DesktopNav: React.FC<DesktopNavProps> = (props) => {
     <div className="hidden lg:grid col-span-full grid-cols-subgrid">
       <Page.Container className="flex relative z-50 items-center justify-between">
         <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center gap-2 hover:opacity-70">
+          <Link
+            href={Paths.HOME}
+            className="flex items-center gap-2 hover:opacity-70"
+          >
             <div className="h-[24px]">
               <Graphics.Logomark />
             </div>
@@ -360,7 +372,7 @@ const DesktopNav: React.FC<DesktopNavProps> = (props) => {
           </div>
         </div>
         <div>
-          <Button.Primary href="/contact">Get in touch</Button.Primary>
+          <Button.Primary href={Paths.CONTACT}>Get in touch</Button.Primary>
         </div>
       </Page.Container>
 

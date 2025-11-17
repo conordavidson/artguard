@@ -3,11 +3,11 @@ import * as Utils from "@/lib/utils";
 import * as Page from "@/ui/page";
 import * as Types from "@/lib/types";
 
-type ValueGridProps = {
-  section: Types.ValueGridSection;
+type FaqsProps = {
+  section: Types.FaqsSection;
 };
 
-const ValueGrid: React.FC<ValueGridProps> = (props) => {
+const Faqs: React.FC<FaqsProps> = (props) => {
   return (
     <div
       className={Utils.cx(
@@ -19,21 +19,17 @@ const ValueGrid: React.FC<ValueGridProps> = (props) => {
         <Ui.Heading.CenterStack
           heading={props.section.heading}
           subheading={props.section.subheading}
-          ctas={props.section.ctas}
         />
       </Page.Container>
       <Page.Container className="mt-12 max-w-[1000px] mx-auto">
-        <div className="grid grid-cols-12 sm:gap-x-12 lg:gap-x-12 gap-y-16 auto-rows-fr">
-          {props.section.cards.map((card, index) => (
-            <div
-              key={index}
-              className={Utils.cx("col-span-12 sm:col-span-6", {
-                "lg:col-span-4":
-                  props.section.cards.length === 3 ||
-                  props.section.cards.length > 4,
-              })}
-            >
-              <Ui.SimpleCard {...card} className="h-full" />
+        <div className="grid grid-cols-12 sm:gap-x-12 lg:gap-x-12 gap-y-12">
+          {props.section.faqs.map((faq, index) => (
+            <div key={index} className={Utils.cx("col-span-12 sm:col-span-6")}>
+              <Ui.SimpleCard
+                heading={faq.question}
+                body={faq.answer}
+                className="h-full"
+              />
             </div>
           ))}
         </div>
@@ -42,4 +38,4 @@ const ValueGrid: React.FC<ValueGridProps> = (props) => {
   );
 };
 
-export default ValueGrid;
+export default Faqs;

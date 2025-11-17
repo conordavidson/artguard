@@ -110,8 +110,35 @@ export type ValueGridSection = {
   ctas?: Cta[];
   cards: {
     heading: string;
-    body: string;
+    body?: string | React.ReactNode;
     icon?: Icon;
+    ctas?: Cta[];
+  }[];
+};
+
+export type LinkGridSection = {
+  type: "LinkGrid";
+  className?: string;
+  heading: string | React.ReactNode;
+  subheading?: string | React.ReactNode;
+  ctas?: Cta[];
+  links: {
+    icon?: Icon;
+    label: string;
+    href: string;
+    ctaLabel: string;
+    target?: string;
+  }[];
+};
+
+export type FaqsSection = {
+  type: "Faqs";
+  className?: string;
+  heading: string | React.ReactNode;
+  subheading?: string | React.ReactNode;
+  faqs: {
+    question: string;
+    answer: string;
   }[];
 };
 
@@ -150,6 +177,7 @@ export type TextSection = {
   type: "Text";
   className?: string;
   heading?: string | React.ReactNode;
+  subheading?: string | React.ReactNode;
   body: string | React.ReactNode;
 };
 
@@ -244,4 +272,6 @@ export type Section =
   | FeatureGridSection
   | ArticleHeroSection
   | TeamSection
-  | TextHighlightsSection;
+  | TextHighlightsSection
+  | FaqsSection
+  | LinkGridSection;

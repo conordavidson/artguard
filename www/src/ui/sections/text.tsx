@@ -24,6 +24,13 @@ const TextSection: React.FC<TextSectionProps> = (props) => {
             {props.section.heading}
           </Text.Display32>
         )}
+        {props.section.subheading && (
+          <div className="mt-3 text-center">
+            <Text.Interface18 className="text-subtle text-pretty">
+              {props.section.subheading}
+            </Text.Interface18>
+          </div>
+        )}
         <div className="mt-8 editorial">{props.section.body}</div>
       </Page.Container>
     </div>
