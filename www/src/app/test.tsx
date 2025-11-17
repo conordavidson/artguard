@@ -17,6 +17,7 @@ export default function Home() {
     <div className="grid grid-cols-subgrid space-y-24 col-span-full">
       <Ui.Sections.TextImageSplit
         section={{
+          type: "TextImageSplit",
           className: "md:-mt-nav-height",
           heading: "Museum-Grade Art Protection for Any Environment",
           subheading:
@@ -44,6 +45,7 @@ export default function Home() {
 
       <Ui.Sections.TextImageSplit
         section={{
+          type: "TextImageSplit",
           heading: "Designed for Private Collections",
           // subheading="Wireless sensor technology trusted by Sotheby's, MOMA, and leading collectors worldwide"
           reversed: true,
@@ -94,6 +96,7 @@ export default function Home() {
       />
       <Ui.Sections.TakeoverGrid
         section={{
+          type: "TakeoverGrid",
           heading: "Advanced Protection Without Compromise",
           subheading:
             "Wireless sensor technology designed for the world's most valuable collections.",
@@ -123,8 +126,9 @@ export default function Home() {
           ],
         }}
       />
-      <Ui.Sections.GlobalMap
+      <Ui.Sections.Map
         section={{
+          type: "Map",
           heading: "Global Protection for Global Collections",
           subheading: "Trusted in major cities across five continents",
           columns: [
@@ -168,6 +172,7 @@ export default function Home() {
       />
       <Ui.Sections.ValueGrid
         section={{
+          type: "ValueGrid",
           heading: "Why MAP Sensors",
           subheading:
             "Built for professional installation, trusted by leading institutions",
@@ -207,6 +212,7 @@ export default function Home() {
       />
       <Ui.Sections.SpecTable
         section={{
+          type: "SpecTable",
           heading: "Technical Specifications",
           rows: [
             {
@@ -252,6 +258,7 @@ export default function Home() {
       />
       <Ui.Sections.TakeoverHeading
         section={{
+          type: "TakeoverHeading",
           icon: "Instituion",
           heading: "Trusted by Leading Institutions",
           subheading:
@@ -268,6 +275,7 @@ export default function Home() {
       />
       <Ui.Sections.TakeoverHeading
         section={{
+          type: "TakeoverHeading",
           icon: "Instituion",
           heading: "Trusted by Leading Institutions",
           subheading:
@@ -277,6 +285,7 @@ export default function Home() {
       />
       <Ui.Sections.VideoFeature
         section={{
+          type: "VideoFeature",
           heading: "Complete Protection, Simply Deployed",
           video: {
             src: "https://player.vimeo.com/video/1130331510?h=4a9f97b82c",
@@ -304,6 +313,7 @@ export default function Home() {
       />
       <Ui.Sections.Text
         section={{
+          type: "Text",
           heading: "Complete Protection, Simply Deployed",
           body: (
             <>
@@ -334,6 +344,7 @@ export default function Home() {
       />
       <Ui.Sections.Text
         section={{
+          type: "Text",
           heading: "The Solution",
           body: (
             <>
@@ -359,6 +370,7 @@ export default function Home() {
       />
       <Ui.Sections.FeatureGrid
         section={{
+          type: "FeatureGrid",
           heading: "Choose Your Solution",
           items: [
             {
@@ -429,6 +441,7 @@ export default function Home() {
       />
       <Ui.Sections.FeatureGrid
         section={{
+          type: "FeatureGrid",
           heading: "Art Guard Security Solutions",
           subheading: "Choose the right protection for your needs",
           items: [
@@ -544,6 +557,7 @@ export default function Home() {
       />
       <Ui.Sections.CtaCard
         section={{
+          type: "CtaCard",
           heading: "Ready to Protect Your Collection?",
           subheading:
             "Contact us for pricing and availability or download complete system specifications",

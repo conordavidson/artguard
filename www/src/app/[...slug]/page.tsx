@@ -25,7 +25,7 @@ export const generateMetadata = async ({
     title: page.metadata.title,
     description: page.metadata.description,
     keywords: page.metadata.keywords,
-    image: page.image?.src,
+    image: page.metadata.image?.src,
   };
 };
 
@@ -41,6 +41,7 @@ export default async function Page({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  console.log("slug", slug);
   const page = pageForSlug(slug);
   if (!page) return Navigation.notFound();
   return <Ui.Page.Sections page={page} />;

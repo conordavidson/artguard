@@ -26,6 +26,7 @@ export type Icon = keyof typeof Icons;
 export type Path = (typeof Paths)[keyof typeof Paths];
 
 export type MapSection = {
+  type: "Map";
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -40,6 +41,7 @@ export type MapSection = {
 };
 
 export type TakeoverGridSection = {
+  type: "TakeoverGrid";
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -64,6 +66,7 @@ export type Cta = {
 );
 
 export type TakeoverHeadingSection = {
+  type: "TakeoverHeading";
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -74,6 +77,7 @@ export type TakeoverHeadingSection = {
 };
 
 export type CtaCardSection = {
+  type: "CtaCard";
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -84,6 +88,7 @@ export type CtaCardSection = {
 };
 
 export type TextImageSplitSection = {
+  type: "TextImageSplit";
   className?: string;
   reversed?: boolean;
   heading: string | React.ReactNode;
@@ -98,6 +103,7 @@ export type TextImageSplitSection = {
 };
 
 export type ValueGridSection = {
+  type: "ValueGrid";
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -110,6 +116,7 @@ export type ValueGridSection = {
 };
 
 export type VideoFeatureSection = {
+  type: "VideoFeature";
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -127,6 +134,7 @@ export type VideoFeatureSection = {
 };
 
 export type SpecTableSection = {
+  type: "SpecTable";
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -139,12 +147,14 @@ export type SpecTableSection = {
 };
 
 export type TextSection = {
+  type: "Text";
   className?: string;
   heading?: string | React.ReactNode;
   body: string | React.ReactNode;
 };
 
 export type FeatureGridSection = {
+  type: "FeatureGrid";
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -162,6 +172,7 @@ export type FeatureGridSection = {
 };
 
 export type ArticleHeroSection = {
+  type: "ArticleHero";
   className?: string;
   heading: string | React.ReactNode;
   author: string;
@@ -186,6 +197,7 @@ export type TeamMember = {
 };
 
 export type TeamSection = {
+  type: "Team";
   className?: string;
   heading: string | React.ReactNode;
   featuredFounder: TeamMember;
@@ -194,6 +206,7 @@ export type TeamSection = {
 };
 
 export type TextHighlightsSection = {
+  type: "TextHighlights";
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -202,3 +215,33 @@ export type TextHighlightsSection = {
     body: string;
   }[];
 };
+
+export type Page = {
+  className?: string;
+  sections: Section[];
+  path: Path;
+  metadata: {
+    title: string;
+    description: string;
+    keywords: string[];
+    image?: {
+      src: NextImage.StaticImageData;
+      alt: string;
+    };
+  };
+};
+
+export type Section =
+  | MapSection
+  | TakeoverGridSection
+  | TakeoverHeadingSection
+  | CtaCardSection
+  | TextImageSplitSection
+  | ValueGridSection
+  | VideoFeatureSection
+  | SpecTableSection
+  | TextSection
+  | FeatureGridSection
+  | ArticleHeroSection
+  | TeamSection
+  | TextHighlightsSection;

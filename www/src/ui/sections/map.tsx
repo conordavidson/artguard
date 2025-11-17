@@ -5,11 +5,11 @@ import * as Types from "@/lib/types";
 
 import Image from "next/image";
 
-type GlobalMapProps = {
+type MapSectionProps = {
   section: Types.MapSection;
 };
 
-const GlobalMap: React.FC<GlobalMapProps> = (props) => {
+const MapSection: React.FC<MapSectionProps> = (props) => {
   return (
     <div
       className={Utils.cx(
@@ -50,4 +50,4 @@ const GlobalMap: React.FC<GlobalMapProps> = (props) => {
   );
 };
 
-export default GlobalMap;
+export default MapSection;

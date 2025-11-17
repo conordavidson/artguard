@@ -1,7 +1,7 @@
 export { default as ArticleHero } from "./articleHero";
 export { default as CtaCard } from "./ctaCard";
 export { default as FeatureGrid } from "./featureGrid";
-export { default as GlobalMap } from "./globalMap";
+export { default as Map } from "./map";
 export { default as SpecTable } from "./specTable";
 export { default as TakeoverGrid } from "./takeoverGrid";
 export { default as TakeoverHeading } from "./takeoverHeading";
