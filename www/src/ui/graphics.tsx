@@ -75,3 +75,18 @@ export const Logomark = () => {
     </svg>
   );
 };
+
+export const MenuIcon = () => {
+  return (
+    <svg
+      width="auto"
+      height="100%"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M0 11H40V15H0V11Z" fill="currentColor"></path>
+      <path d="M0 25H40V29H0V25Z" fill="currentColor"></path>
+    </svg>
+  );
+};

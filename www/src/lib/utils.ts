@@ -24,6 +24,14 @@ export const cx = (...classes: Class[]) => {
   return twMerge(combinedClasses);
 };
 
+export const formatDateShort = (date: string) => {
+  return new Date(date).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+};
+
 export const formatDate = (date: string) => {
   return new Date(date).toLocaleDateString("en-US", {
     month: "long",

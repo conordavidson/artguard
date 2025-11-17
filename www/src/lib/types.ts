@@ -3,6 +3,24 @@ import * as NextImage from "next/image";
 import * as Button from "@/ui/button";
 import * as Paths from "@/lib/paths";
 
+export type MenuItem = {
+  label: string;
+} & (
+  | {
+      submenu: SubmenuItem[];
+      href?: string;
+    }
+  | {
+      href: string;
+    }
+);
+
+export type SubmenuItem = {
+  label: string;
+  href: string;
+  subheading?: string;
+};
+
 export type Icon = keyof typeof Icons;
 
 export type Path = (typeof Paths)[keyof typeof Paths];

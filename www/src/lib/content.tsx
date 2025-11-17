@@ -1,4 +1,5 @@
 import * as Paths from "@/lib/paths";
+import * as Types from "@/lib/types";
 
 const WHITEPAPER_ANNOUNCEMENT = {
   publishedAt: "2025-11-16",
@@ -16,25 +17,7 @@ const WHITEPAPER_ANNOUNCEMENT = {
 
 export const CURRENT_ANNOUNCEMENT = WHITEPAPER_ANNOUNCEMENT;
 
-type MenuItem = {
-  label: string;
-} & (
-  | {
-      submenu: SubmenuItem[];
-      href?: string;
-    }
-  | {
-      href: string;
-    }
-);
-
-type SubmenuItem = {
-  label: string;
-  href: string;
-  subheading?: string;
-};
-
-export const NAVIGATION_MENU: MenuItem[] = [
+export const NAVIGATION_MENU: Types.MenuItem[] = [
   {
     label: "Solutions",
     submenu: [
@@ -159,7 +142,7 @@ export const NAVIGATION_MENU: MenuItem[] = [
   },
 ];
 
-export const FOOTER_MENU: MenuItem[] = [
+export const FOOTER_MENU: Types.MenuItem[] = [
   {
     label: "Privacy Policy",
     href: Paths.PRIVACY_POLICY,
