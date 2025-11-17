@@ -8,5 +8,6 @@ export { default as TakeoverHeading } from "./takeoverHeading";
 export { default as Text } from "./text";
 export { default as TextImageSplit } from "./textImageSplit";
 export { default as Team } from "./team";
+export { default as TextHighlights } from "./textHighlights";
 export { default as ValueGrid } from "./valueGrid";
 export { default as VideoFeature } from "./videoFeature";

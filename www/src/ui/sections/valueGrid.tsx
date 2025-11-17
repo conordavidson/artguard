@@ -23,9 +23,12 @@ const TakeoverGrid: React.FC<TakeoverGridProps> = (props) => {
         />
       </Page.Container>
       <Page.Container className="mt-12 max-w-[1000px] mx-auto">
-        <div className="grid grid-cols-12 gap-x-12 gap-y-16 auto-rows-fr">
+        <div className="grid grid-cols-12 sm:gap-x-12 lg:gap-x-12 gap-y-16 auto-rows-fr">
           {props.section.cards.map((card, index) => (
-            <div key={index} className="col-span-6 lg:col-span-4">
+            <div
+              key={index}
+              className="col-span-12 sm:col-span-6 lg:col-span-4"
+            >
               <Ui.SimpleCard {...card} className="h-full" />
             </div>
           ))}

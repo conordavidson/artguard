@@ -28,7 +28,7 @@ const SpecTable: React.FC<SpecTableProps> = (props) => {
           {props.section.rows.map((row, index) => (
             <div
               key={index}
-              className="grid grid-cols-12 gap-x-12 gap-y-2 py-6 pl-7 pr-12"
+              className="grid grid-cols-12 sm:gap-x-12 gap-y-2 py-6 pl-7 pr-12"
             >
               <div className="col-span-12 sm:col-span-5">
                 {row.isHeader ? (

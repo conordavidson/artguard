@@ -192,3 +192,13 @@ export type TeamSection = {
   secondaryFounder: TeamMember;
   boardOfAdvisors: TeamMember[];
 };
+
+export type TextHighlightsSection = {
+  className?: string;
+  heading: string | React.ReactNode;
+  subheading?: string | React.ReactNode;
+  highlights: {
+    heading: string;
+    body: string;
+  }[];
+};

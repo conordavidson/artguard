@@ -36,14 +36,12 @@ export default function SecurityProducts() {
                     major security systems. Ideal for installers and
                     integrators.
                   </p>
-                  <p>
-                    <ul>
-                      <li>Integrates with all major security systems</li>
-                      <li>Triple-mode protection for any object</li>
-                      <li>Available in 345 and 433 MHz frequencies</li>
-                      <li>Museum-tested, conservator-approved</li>
-                    </ul>
-                  </p>
+                  <ul>
+                    <li>Integrates with all major security systems</li>
+                    <li>Triple-mode protection for any object</li>
+                    <li>Available in 345 and 433 MHz frequencies</li>
+                    <li>Museum-tested, conservator-approved</li>
+                  </ul>
                 </>
               ),
             },
@@ -70,17 +68,15 @@ export default function SecurityProducts() {
                     galleries, and smaller institutions. Control from your
                     phone, no installer required.
                   </p>
-                  <p>
-                    <ul>
-                      <li>
-                        Integrates with all major security systemsPlug-and-play
-                        standalone solution
-                      </li>
-                      <li>Supports up to 96 wireless sensors</li>
-                      <li>Dual-path communication (4G LTE and Wi-Fi)</li>
-                      <li>Built on Alula Connect+ panel</li>
-                    </ul>
-                  </p>
+                  <ul>
+                    <li>
+                      Integrates with all major security systemsPlug-and-play
+                      standalone solution
+                    </li>
+                    <li>Supports up to 96 wireless sensors</li>
+                    <li>Dual-path communication (4G LTE and Wi-Fi)</li>
+                    <li>Built on Alula Connect+ panel</li>
+                  </ul>
                 </>
               ),
             },
@@ -107,17 +103,15 @@ export default function SecurityProducts() {
                     galleries, and smaller institutions. Control from your
                     phone, no installer required.
                   </p>
-                  <p>
-                    <ul>
-                      <li>
-                        Integrates with all major security systemsPlug-and-play
-                        standalone solution
-                      </li>
-                      <li>Supports up to 96 wireless sensors</li>
-                      <li>Dual-path communication (4G LTE and Wi-Fi)</li>
-                      <li>Built on Alula Connect+ panel</li>
-                    </ul>
-                  </p>
+                  <ul>
+                    <li>
+                      Integrates with all major security systemsPlug-and-play
+                      standalone solution
+                    </li>
+                    <li>Supports up to 96 wireless sensors</li>
+                    <li>Dual-path communication (4G LTE and Wi-Fi)</li>
+                    <li>Built on Alula Connect+ panel</li>
+                  </ul>
                 </>
               ),
             },

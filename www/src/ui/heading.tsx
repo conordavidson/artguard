@@ -21,6 +21,7 @@ type StackProps = {
   };
   ctasSlammed?: boolean;
   imageClassName?: string;
+  headingClassName?: string;
 };
 
 export const Stack: React.FC<React.PropsWithChildren<StackProps>> = (props) => {
@@ -32,7 +33,10 @@ export const Stack: React.FC<React.PropsWithChildren<StackProps>> = (props) => {
     >
       <div>
         {props.heading && (
-          <Text.Display32 as="h2" className="text-pretty">
+          <Text.Display32
+            as="h2"
+            className={Utils.cx("text-pretty", props.headingClassName)}
+          >
             {props.heading}
           </Text.Display32>
         )}
@@ -66,7 +70,7 @@ export const Stack: React.FC<React.PropsWithChildren<StackProps>> = (props) => {
       </div>
       {props.ctas && (
         <div
-          className={Utils.cx("mt-6 flex gap-3", {
+          className={Utils.cx("mt-6 flex flex-wrap gap-3", {
             "mt-6": !props.ctasSlammed,
             "mt-8": !!props.ctasSlammed,
           })}

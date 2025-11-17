@@ -123,6 +123,29 @@ export default function MapSensorsPage() {
           ],
         }}
       />
+      <Ui.Sections.TextHighlights
+        section={{
+          heading: "Ideal For",
+          highlights: [
+            {
+              heading: "Private Collections",
+              body: "Discreet protection for home collections with complete privacy and mobile convenience",
+            },
+            {
+              heading: "Galleries",
+              body: "Flexible system for rotating exhibitions with easy setup and no installation costs",
+            },
+            {
+              heading: "Museums",
+              body: "Perfect for special exhibitions and temporary displays that require portable, self-contained security",
+            },
+            {
+              heading: "Corporate Collections",
+              body: "Comprehensive security for office art installations with professional monitoring options",
+            },
+          ],
+        }}
+      />
       <Ui.Sections.SpecTable
         section={{
           heading: "Technical Specifications",

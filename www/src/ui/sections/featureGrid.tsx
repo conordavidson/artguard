@@ -41,6 +41,9 @@ const FeatureGrid: React.FC<FeatureGridProps> = (props) => {
                 image={item.image}
                 ctasSlammed
                 className="h-full"
+                headingClassName={Utils.cx({
+                  "md:text-center": props.section.items.length > 2,
+                })}
                 imageClassName={Utils.cx("h-[175px]", {
                   "object-left lg:object-center":
                     props.section.items.length > 2,
