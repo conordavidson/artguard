@@ -135,6 +135,7 @@ export type LinkGridSection = {
     href: string;
     ctaLabel: string;
     target?: string;
+    eyebrow?: string;
   }[];
 };
 

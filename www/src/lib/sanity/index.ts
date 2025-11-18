@@ -22,7 +22,7 @@ const IMAGE_QUERY = `
 
 const RICHTEXT_QUERY = `
   ...,
-  type == "image" => {
+  _type == "image" => {
     ${IMAGE_QUERY}
   }
 `;

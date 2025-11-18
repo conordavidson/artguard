@@ -11,28 +11,19 @@ type RichtextProps = {
 
 const BaseStyles: Partial<Pt.PortableTextReactComponents> = {
   block: {
-    normal: ({ children }) => <Text.Display18 className="mb-5">{children}</Text.Display18>,
-    h2: ({ children }) => (
-      <Text.Display32 className="mt-16 first:mt-0 mb-8">{children}</Text.Display32>
-    ),
-    h3: ({ children }) => (
-      <Text.Display24 className="mt-12 first:mt-0 mb-6">{children}</Text.Display24>
-    ),
-    h4: ({ children }) => (
-      <Text.Interface20 bold className="mt-8 first:mt-0 mb-4">
-        {children}
-      </Text.Interface20>
-    ),
+    normal: ({ children }) => <p>{children}</p>,
+    h2: ({ children }) => <h2>{children}</h2>,
+    h3: ({ children }) => <h3>{children}</h3>,
+    h4: ({ children }) => <h4>{children}</h4>,
   },
-  listItem: ({ children }) => (
-    <Text.Display18 as="li" className="list-disc list-outside ml-4">
-      {children}
-    </Text.Display18>
-  ),
-  list: ({ children }) => <ul className="space-y-3 mb-5">{children}</ul>,
+  listItem: ({ children }) => <li>{children}</li>,
+  list: ({ children }) => <ul>{children}</ul>,
 };
 
-type RichtextImage = Extract<Sanity.Types.RichtextWithImages[0], { _type: 'image' }>;
+type RichtextImage = Extract<
+  NonNullable<Sanity.Types.GET_POST_BY_SLUG_QUERYResult>['content'][0],
+  { _type: 'image' }
+>;
 
 const RichtextComponents: Partial<Pt.PortableTextReactComponents> = {
   ...BaseStyles,
@@ -53,7 +44,11 @@ const RichtextComponents: Partial<Pt.PortableTextReactComponents> = {
 };
 
 const Richtext: React.FC<RichtextProps> = (props) => {
-  return <Pt.PortableText value={props.content} components={RichtextComponents} />;
+  return (
+    <div className="editorial">
+      <Pt.PortableText value={props.content} components={RichtextComponents} />
+    </div>
+  );
 };
 
 export default Richtext;

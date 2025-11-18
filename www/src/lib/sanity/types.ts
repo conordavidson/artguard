@@ -299,7 +299,7 @@ export type AllSanitySchemaTypes =
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ../www/src/lib/sanity/index.ts
 // Variable: INDEX_POSTS_QUERY
-// Query: *[_type == "post"] | order(publishedAt desc) {   ...,  author -> {    name,    slug,  },  tags[] -> {    title,    slug,  },  coverImage {      ...,  asset -> {    ...  }  },  content[] {      ...,  type == "image" => {      ...,  asset -> {    ...  }  }  }, }
+// Query: *[_type == "post"] | order(publishedAt desc) {   ...,  author -> {    name,    slug,  },  tags[] -> {    title,    slug,  },  coverImage {      ...,  asset -> {    ...  }  },  content[] {      ...,  _type == "image" => {      ...,  asset -> {    ...  }  }  }, }
 export type INDEX_POSTS_QUERYResult = Array<{
   _id: string;
   _type: 'post';
@@ -365,12 +365,28 @@ export type INDEX_POSTS_QUERYResult = Array<{
         _key: string;
       }
     | {
-        asset?: {
-          _ref: string;
-          _type: 'reference';
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-        };
+        asset: {
+          _id: string;
+          _type: 'sanity.imageAsset';
+          _createdAt: string;
+          _updatedAt: string;
+          _rev: string;
+          originalFilename?: string;
+          label?: string;
+          title?: string;
+          description?: string;
+          altText?: string;
+          sha1hash?: string;
+          extension?: string;
+          mimeType?: string;
+          size?: number;
+          assetId?: string;
+          uploadId?: string;
+          path?: string;
+          url?: string;
+          metadata?: SanityImageMetadata;
+          source?: SanityAssetSourceData;
+        } | null;
         media?: unknown;
         hotspot?: SanityImageHotspot;
         crop?: SanityImageCrop;
@@ -382,7 +398,7 @@ export type INDEX_POSTS_QUERYResult = Array<{
   >;
 }>;
 // Variable: GET_POST_BY_SLUG_QUERY
-// Query: *[_type == "post" && slug.current == $slug][0] {   ...,  author -> {    name,    slug,  },  tags[] -> {    title,    slug,  },  coverImage {      ...,  asset -> {    ...  }  },  content[] {      ...,  type == "image" => {      ...,  asset -> {    ...  }  }  }, }
+// Query: *[_type == "post" && slug.current == $slug][0] {   ...,  author -> {    name,    slug,  },  tags[] -> {    title,    slug,  },  coverImage {      ...,  asset -> {    ...  }  },  content[] {      ...,  _type == "image" => {      ...,  asset -> {    ...  }  }  }, }
 export type GET_POST_BY_SLUG_QUERYResult = {
   _id: string;
   _type: 'post';
@@ -448,12 +464,28 @@ export type GET_POST_BY_SLUG_QUERYResult = {
         _key: string;
       }
     | {
-        asset?: {
-          _ref: string;
-          _type: 'reference';
-          _weak?: boolean;
-          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
-        };
+        asset: {
+          _id: string;
+          _type: 'sanity.imageAsset';
+          _createdAt: string;
+          _updatedAt: string;
+          _rev: string;
+          originalFilename?: string;
+          label?: string;
+          title?: string;
+          description?: string;
+          altText?: string;
+          sha1hash?: string;
+          extension?: string;
+          mimeType?: string;
+          size?: number;
+          assetId?: string;
+          uploadId?: string;
+          path?: string;
+          url?: string;
+          metadata?: SanityImageMetadata;
+          source?: SanityAssetSourceData;
+        } | null;
         media?: unknown;
         hotspot?: SanityImageHotspot;
         crop?: SanityImageCrop;
@@ -469,7 +501,7 @@ export type GET_POST_BY_SLUG_QUERYResult = {
 import '@sanity/client';
 declare module '@sanity/client' {
   interface SanityQueries {
-    '*[_type == "post"] | order(publishedAt desc) { \n  ...,\n  author -> {\n    name,\n    slug,\n  },\n  tags[] -> {\n    title,\n    slug,\n  },\n  coverImage {\n    \n  ...,\n  asset -> {\n    ...\n  }\n\n  },\n  content[] {\n    \n  ...,\n  type == "image" => {\n    \n  ...,\n  asset -> {\n    ...\n  }\n\n  }\n\n  },\n }': INDEX_POSTS_QUERYResult;
-    '*[_type == "post" && slug.current == $slug][0] { \n  ...,\n  author -> {\n    name,\n    slug,\n  },\n  tags[] -> {\n    title,\n    slug,\n  },\n  coverImage {\n    \n  ...,\n  asset -> {\n    ...\n  }\n\n  },\n  content[] {\n    \n  ...,\n  type == "image" => {\n    \n  ...,\n  asset -> {\n    ...\n  }\n\n  }\n\n  },\n }': GET_POST_BY_SLUG_QUERYResult;
+    '*[_type == "post"] | order(publishedAt desc) { \n  ...,\n  author -> {\n    name,\n    slug,\n  },\n  tags[] -> {\n    title,\n    slug,\n  },\n  coverImage {\n    \n  ...,\n  asset -> {\n    ...\n  }\n\n  },\n  content[] {\n    \n  ...,\n  _type == "image" => {\n    \n  ...,\n  asset -> {\n    ...\n  }\n\n  }\n\n  },\n }': INDEX_POSTS_QUERYResult;
+    '*[_type == "post" && slug.current == $slug][0] { \n  ...,\n  author -> {\n    name,\n    slug,\n  },\n  tags[] -> {\n    title,\n    slug,\n  },\n  coverImage {\n    \n  ...,\n  asset -> {\n    ...\n  }\n\n  },\n  content[] {\n    \n  ...,\n  _type == "image" => {\n    \n  ...,\n  asset -> {\n    ...\n  }\n\n  }\n\n  },\n }': GET_POST_BY_SLUG_QUERYResult;
   }
 }
