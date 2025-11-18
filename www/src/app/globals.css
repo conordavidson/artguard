@@ -37,6 +37,14 @@
     var(--color-white) 100%
   );
 
+  --gradient-light: linear-gradient(
+    204.96deg,
+    rgba(255, 255, 255, 0) 3.18%,
+    rgba(216, 38, 45, 0.08) 27.22%,
+    rgba(216, 38, 45, 0.07) 62.8%,
+    rgba(255, 255, 255, 0) 84.24%
+  );
+
   --shadow-power: 0px 0px 25px 1px rgba(0, 0, 0, 0.3);
   --gradient-power: linear-gradient(
     129.5deg,
@@ -125,6 +133,10 @@ li {
 
 .gradient-power {
   background: var(--gradient-power);
+}
+
+.gradient-light {
+  background: var(--gradient-light);
 }
 
 .root-layout {
@@ -288,19 +300,72 @@ li {
   font-weight: 700;
 }
 
-.animate-sidescroll {
-  animation: sidescroll 100s linear infinite;
-}
-
-@keyframes sidescroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 .rfm-initial-child-container .announcement-content {
   padding-left: theme(spacing.3);
+}
+
+@keyframes beacon-dot {
+  0% {
+    transform: scale(0);
+    box-shadow: 0 0 0 0 currentColor;
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.25);
+    box-shadow: 0 0 0 0 currentColor;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    box-shadow: 0 0 0 0 currentColor;
+    opacity: 0;
+  }
+}
+
+@keyframes beacon-ring-inner {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes beacon-ring-outer {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.beacon-dot {
+  animation: beacon-dot 2s ease-out infinite;
+  transform-origin: center;
+  will-change: transform, box-shadow, opacity;
+}
+
+.beacon-ring-inner {
+  animation: beacon-ring-inner 2s ease-out infinite;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.beacon-ring-outer {
+  animation: beacon-ring-outer 2s ease-out infinite;
+  transform-origin: center;
+  will-change: transform, opacity;
 }

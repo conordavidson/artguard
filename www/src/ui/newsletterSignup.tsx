@@ -76,7 +76,7 @@ const NewsletterSignup = () => {
         >
           <div className="flex-2 w-full max-w-[320px]">
             <Inputs.Text
-              name="email"
+              id="email"
               placeholder="Enter your email"
               value={state.email}
               onChange={onChangeEmail}

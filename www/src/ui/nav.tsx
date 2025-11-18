@@ -313,10 +313,10 @@ const DesktopNav: React.FC<DesktopNavProps> = (props) => {
           </Link>
           <div className="pl-6 xl:pl-8 flex items-center gap-x-6 xl:gap-x-8">
             {Content.NAVIGATION_MENU.map((item) => {
-              const content = () => {
-                const isPathActive = props.currentPath === item.href;
-                const isMenuActive = props.visibleMenu?.label === item.label;
+              const isPathActive = props.currentPath === item.href;
+              const isMenuActive = props.visibleMenu?.label === item.label;
 
+              const content = () => {
                 return (
                   <div className="relative">
                     <div className="-z-10 absolute -top-1.5 left-0 right-0 flex justify-center">
@@ -362,10 +362,19 @@ const DesktopNav: React.FC<DesktopNavProps> = (props) => {
                 <Link
                   key={item.label}
                   href={item.href}
-                  onMouseEnter={() => props.onChangeActiveMenuId(null)}
                   className="group/nav-link"
                 >
-                  {content()}
+                  <Text.Interface16
+                    className={Utils.cx(
+                      "cursor-pointer text-foreground group-hover:opacity-70 group-hover/nav-link:text-brand transition-all duration-50",
+                      {
+                        "text-white": !!props.visibleMenu,
+                        "text-brand": isPathActive || isMenuActive,
+                      }
+                    )}
+                  >
+                    {item.label}
+                  </Text.Interface16>
                 </Link>
               );
             })}

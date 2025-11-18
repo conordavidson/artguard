@@ -1,4 +1,5 @@
 export { default as ArticleHero } from "./articleHero";
+export { default as ContactForm } from "./contactForm";
 export { default as CtaCard } from "./ctaCard";
 export { default as Faqs } from "./faqs";
 export { default as FeatureGrid } from "./featureGrid";
@@ -13,3 +14,4 @@ export { default as Team } from "./team";
 export { default as TextHighlights } from "./textHighlights";
 export { default as ValueGrid } from "./valueGrid";
 export { default as VideoFeature } from "./videoFeature";
+export { default as VideoGrid } from "./videoGrid";

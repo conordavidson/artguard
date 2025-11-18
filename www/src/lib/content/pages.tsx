@@ -1365,16 +1365,14 @@ export const PRIVATE_COLLECTIONS_PAGE: Types.Page = {
       heading: "Best Practices in Art Security",
       className: NUDGED_UP_CLASSNAME,
       body: (
-        <>
-          <p>
-            Best practices in art security highly recommend a dedicated system
-            for art and valuable assets in a redundant, blended approach to
-            security. Art Guard MAP provides unparalleled around-the-clock
-            protection to individual objects, whether perimeter/intrusion
-            security is on or off to allow for the daily activities of a
-            home&apos;s residents, staff, workers and guests or is compromised.
-          </p>
-        </>
+        <p>
+          Best practices in art security highly recommend a dedicated system for
+          art and valuable assets in a redundant, blended approach to security.
+          Art Guard MAP provides unparalleled around-the-clock protection to
+          individual objects, whether perimeter/intrusion security is on or off
+          to allow for the daily activities of a home&apos;s residents, staff,
+          workers and guests or is compromised.
+        </p>
       ),
     },
 
@@ -1383,16 +1381,14 @@ export const PRIVATE_COLLECTIONS_PAGE: Types.Page = {
       heading: "Protection for Each and Every Stationary Object",
       className: NUDGED_UP_CLASSNAME,
       body: (
-        <>
-          <p>
-            MAP provides museum-grade security for nearly any stationary object
-            in the home, including art, jewelry, tapestry, antiques,
-            collectibles, memorabilia, wine and firearms. MAP sensors can even
-            tell if a car is moved. Sensors and magnets are completely hidden
-            from view. Real-time alerts allow for a quick response during those
-            crucial seconds before a priceless object is lost forever.
-          </p>
-        </>
+        <p>
+          MAP provides museum-grade security for nearly any stationary object in
+          the home, including art, jewelry, tapestry, antiques, collectibles,
+          memorabilia, wine and firearms. MAP sensors can even tell if a car is
+          moved. Sensors and magnets are completely hidden from view. Real-time
+          alerts allow for a quick response during those crucial seconds before
+          a priceless object is lost forever.
+        </p>
       ),
     },
 
@@ -1764,27 +1760,27 @@ export const FAQS_PAGE: Types.Page = {
 
 const PRODUCT_SHEETS = [
   {
-    label: "Art Guard MAP Sensor Data Sheet",
+    heading: "Art Guard MAP Sensor Data Sheet",
     href: "https://www.artguard.net/resources/Art-Guard-MAP-345-sensor.pdf",
   },
   {
-    label: "Art Guard MAP System Data Sheet",
+    heading: "Art Guard MAP System Data Sheet",
     href: "https://www.artguard.net/resources/Art-Guard-MAP-system-Gold.pdf",
   },
   {
-    label: "Art Guard MAP Conservationist Curator Notes",
+    heading: "Art Guard MAP Conservationist Curator Notes",
     href: "https://www.artguard.net/resources/ArtGuard-MAPConservationist-curator-notes.pdf",
   },
   {
-    label: "Art Guard MAP for Historical Museums and Houses",
+    heading: "Art Guard MAP for Historical Museums and Houses",
     href: "https://www.artguard.net/resources/ArtGuard-MAPforHistoricalMuseumsAndHouses.pdf",
   },
   {
-    label: "Enroll MAP sensors into DMP",
+    heading: "Enroll MAP sensors into DMP",
     href: "https://www.artguard.net/resources/Enroll-MAP-sensors-into-DMP.pdf",
   },
   {
-    label:
+    heading:
       "Object-Specific Protection: The Untapped Market in Home Security (2025)",
     href: "https://www.artguard.net/resources/Art-Guard-White-Paper_OSP.pdf",
   },
@@ -1803,12 +1799,258 @@ export const PRODUCT_SHEETS_PAGE: Types.Page = {
       type: "LinkGrid",
       heading: "Data Sheets and Product Information Sheets",
       links: PRODUCT_SHEETS.map((product) => ({
-        label: product.label,
+        heading: product.heading,
         icon: "Pdf",
         href: product.href,
         ctaLabel: "Download",
         target: "_blank",
       })),
+    },
+  ],
+};
+
+const PRESS_ITEMS = [
+  {
+    heading: "Artnet News, July 2021",
+    body: "Foiled! How Advanced Technology Is Stopping Art Thieves, Looters, and Fraudsters From Hatching Their Schemes",
+    href: "https://news.artnet.com/art-world/technology-art-theft-1990767",
+  },
+  {
+    heading: "Butera Art Advisory Newsletter, June 2021",
+    body: "Common Myths in Art Protection",
+    href: "https://www.buteraartadvisory.com/monthly-newsletter/2021/6/28/art-theft",
+  },
+  {
+    heading: "ArtRatio, March 2021",
+    body: "“The State of Art Protection” Bill Anderson of ArtGuard looks at the current state of art protection technologies for museums and private collections.",
+    href: "https://www.artratio.co.uk/state-of-art-protection",
+  },
+  {
+    heading: "The Hack Post, January 2020",
+    body: "Latest High Tech Safety Features That Improve Home and Personal Security",
+    href: "https://thehackpost.com/latest-high-tech-safety-features-that-improve-home-and-personal-security.html",
+  },
+  {
+    heading: "Robb Report, August 2019",
+    body: " “Forget Panic Rooms and Alarms, State-of-the-Art Security Is Now Insanely High-Tech—and Nearly Invisible“",
+    href: "https://robbreport.com/shelter/home-design/home-security-modern-world-2859018/",
+  },
+  {
+    heading: "ArtWork Archive, June 2019",
+    body: "4 Questions with an Art Collection Security Expert.",
+    href: "https://www.artworkarchive.com/blog/4-questions-with-an-art-collection-security-expert",
+  },
+  {
+    heading: "Security Sales & Integration, April 2019 Issue",
+    body: "“Canvass Art Customers About Object-Specific Protection Possibilities“",
+    href: "https://www.artguard.net/wp-content/uploads/2019/04/Sec.-Sales-Int-article.tiff",
+  },
+  {
+    heading: "SDM April 1, 2019",
+    body: "Alula + Art Guard: Protecting the Priceless",
+    href: "https://www.sdmmag.com/articles/96415-alula-art-guard-protecting-the-priceless",
+  },
+  {
+    heading: "Insurance Innovation Reporter, October 5, 2017",
+    body: "Art Guard Launches Security Tech Program for Insurers of Fine Art",
+    href: "http://iireporter.com/art-guard-launches-security-tech-program-for-insurers-of-fine-art/",
+  },
+  {
+    heading: "Rough Notes, June 2017",
+    body: "Managing Risk for High Net Worth Clients",
+    href: "https://www.artguard.net/Managing_Risk_for_High-Net-Worth_Clients_Rough_Notes_June_2017_50-54_1.pdf",
+  },
+  {
+    heading: "Insurance Journal, April 2017",
+    body: "Q&A: Art Theft and Its Impact on the Insurance Industry",
+    href: "http://www.insurancejournal.com/news/east/2017/04/11/446866.htm",
+  },
+];
+
+export const PRESS_PAGE: Types.Page = {
+  className: `${STANDARD_SPACING_CLASSNAME} ${TEXT_HERO_CLASSNAME}`,
+  path: Paths.PRESS,
+  metadata: {
+    title: "Press",
+    description: "Press releases and media coverage for Art Guard",
+    keywords: ["Art Guard", "Press", "Media Coverage"],
+  },
+  sections: [
+    {
+      type: "LinkGrid",
+      heading: "Art Risks Press Releases and Published Articles",
+      links: PRESS_ITEMS.map((press) => ({
+        heading: press.heading,
+        body: press.body,
+        href: press.href,
+        ctaLabel: "Read Article",
+        target: "_blank",
+      })),
+    },
+  ],
+};
+
+import SecurityPartnersLogos from "@images/securitypartnerslogos.png";
+
+export const SATISFIED_CUSTOMERS_PAGE: Types.Page = {
+  className: `${STANDARD_SPACING_CLASSNAME}`,
+  path: Paths.SATISFIED_CUSTOMERS,
+  metadata: {
+    title: "Satisfied Customers",
+    description:
+      "Trusted by museums, galleries, private collectors, and security professionals worldwide.",
+    keywords: ["Art Guard", "testimonials", "clients", "museums", "galleries"],
+  },
+  sections: [
+    {
+      type: "TakeoverHeading",
+      className: "-mt-nav-height pt-42",
+      heading: "The Art Guard Team",
+      body: "The Art Guard team is made up of professionals from both the art market and veterans from the security industry and fine art insurance. Art Guard's engineers have over 60 years of cumulative experience in developing sensor technologies for GE, DSC and other leaders in the security component sector. Advisors include museum security directors and art conservators. Nothing has been left to chance in addressing the needs of the industry.",
+      ctas: [
+        {
+          label: "Meet Our Team",
+          href: Paths.TEAM,
+          type: "button",
+          variant: "secondary",
+        },
+      ],
+    },
+    {
+      type: "Text",
+      heading: "Clients",
+      className: NUDGED_UP_CLASSNAME,
+      body: (
+        <>
+          <p>
+            <strong>Private Collectors:</strong> Throughout the US and in
+            Mexico, Canada, U.K., France, UAE, Israel, Hong Kong and Bangkok
+          </p>
+          <p>
+            <strong>Museums:</strong> Isabella Gardner, The Morgan Library,
+            MOMA, SF Asian Art Museum, Minneapolis Inst. of Art, The Hammer
+            Museum, Peabody Essex, Orlando Museum, Portland Museum
+          </p>
+          <p>
+            <strong>Galleries:</strong> Sotheby&apos;s, Pace, Gagosian NY and
+            Paris, Nahmad Contemporary, Booth School London
+          </p>
+          <p>
+            <strong>Corporate Collections:</strong> Pt 72, Deutsche Bank NY and
+            London, UBS, AT&T, Norfolk Southern
+          </p>
+        </>
+      ),
+    },
+
+    {
+      type: "TextHighlights",
+      heading: "What Our Clients Say",
+      highlights: [
+        {
+          heading:
+            "—Michael Seremetis, former Director of Security, Sotheby's Worldwide",
+          body: "“The UK's incomparable Chatsworth House collection presented at Sotheby's NY would not have happened without Art Guard's MAP Gold System.”",
+        },
+        {
+          heading:
+            "—Jack Quigley, former Director of Security, The Morgan Library, NYC",
+          body: "“Art Guard's MAP sensor has given both security and the conservators a genuine sense of comfort that no other security product has been able to. Providing this type of object-specific security is vital for museums and private collectors looking for a heightened level of protection.”",
+        },
+        {
+          heading: "—Matt Townsend, TriStar Commercial",
+          body: "“The Art Guard sensors have been extremely useful for us in commercial installations where accommodating the limitations of existing security systems makes the availability of dependable and comprehensive sensors slim. We have enrolled MAP in a way that other sensors won't. Their utility is unique. And Art Guard's support has been superb.”",
+        },
+        {
+          heading:
+            "—Madan Devaiah, The Crescent Group for private collector, Dubai, UAE",
+          body: "“The Art Guard Gold System is straightforward and quick. The way it communicates between its components is seamless and easy to set up. And the system allows the flexibility to create multiple arming options in different zones of the home. Gold is ideal for high-end clients.”",
+        },
+      ],
+    },
+    {
+      type: "Text",
+      heading: "Security Partners",
+      body: (
+        <>
+          <p>
+            Art Guard MAP sensors integrate with all major security platforms
+            and work with leading security installers and integrators worldwide.
+          </p>
+          <Image
+            src={SecurityPartnersLogos}
+            alt="Security partners logos"
+            width={1000}
+            height={1000}
+          />
+        </>
+      ),
+    },
+    STANDARD_CTA_CARD,
+  ],
+};
+
+export const VIDEO_PAGE: Types.Page = {
+  className: TEXT_HERO_CLASSNAME,
+  path: Paths.SUPPORT_VIDEOS,
+  metadata: {
+    title: "Support Videos",
+    description: "Support videos for Art Guard",
+    keywords: ["Art Guard", "Support Videos", "Security Products"],
+  },
+  sections: [
+    {
+      type: "VideoGrid",
+      heading: "Support Videos",
+      videos: [
+        {
+          heading: "Introduction to MAP Sensor",
+          video: {
+            src: "https://player.vimeo.com/video/993060821?badge=0&autopause=0&player_id=0&app_id=58479",
+            alt: "Introduction to MAP Sensor",
+            type: "vimeo",
+          },
+        },
+        {
+          heading: "MAP for Seated Works",
+          video: {
+            src: "https://player.vimeo.com/video/178490352?title=0&byline=0&portrait=0",
+            alt: "MAP for Seated Works",
+            type: "vimeo",
+          },
+        },
+        {
+          heading: "MAP for Hanging Works",
+          video: {
+            src: "https://player.vimeo.com/video/178490351?title=0&byline=0&portrait=0",
+            alt: "MAP for Hanging Works",
+            type: "vimeo",
+          },
+        },
+      ],
+    },
+  ],
+};
+
+export const CONTACT_PAGE: Types.Page = {
+  className: `${TEXT_HERO_CLASSNAME}`,
+  path: Paths.CONTACT,
+  theme: {
+    lightGradientBg: true,
+  },
+  metadata: {
+    title: "Contact",
+    description: "Contact us for Art Guard",
+    keywords: ["Art Guard", "Contact", "Contact Us"],
+  },
+  sections: [
+    {
+      type: "ContactForm",
+      heading: "Contact Us",
+      subheading:
+        "Art Guard is pleased to announce that the MAP security solution is available for international applications. We welcome inquiries and  invite you to complete this form.",
+      email: "info@artguard.net",
+      phone: "+1 (212) 989-1494",
     },
   ],
 };

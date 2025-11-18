@@ -127,7 +127,10 @@ export const CenterStack: React.FC<CenterStackProps> = (props) => {
       )}
       {props.body && (
         <div className="mt-4">
-          <Text.Interface16 className="text-subtle space-y-3">
+          <Text.Interface16
+            as={typeof props.body === "string" ? "p" : "div"}
+            className="text-subtle space-y-3"
+          >
             {props.body}
           </Text.Interface16>
         </div>

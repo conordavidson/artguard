@@ -1,9 +1,32 @@
+"use client";
+
 import * as Utils from "@/lib/utils";
 import * as SectionComponents from "@/ui/sections";
 import * as Types from "@/lib/types";
+import * as Navigation from "next/navigation";
+import * as Content from "@/lib/content";
 
 export const RootLayout = (props: React.PropsWithChildren) => {
-  return <div className="root-layout">{props.children}</div>;
+  const pathname = Navigation.usePathname();
+
+  const getThemeForPage = () => {
+    const page = Content.Pages.find((page) => page.path === pathname);
+    if (!page) return null;
+    if (!page.theme) return null;
+    return page.theme;
+  };
+
+  const theme = getThemeForPage();
+
+  return (
+    <div
+      className={Utils.cx("root-layout", {
+        "gradient-light": !!theme?.lightGradientBg,
+      })}
+    >
+      {props.children}
+    </div>
+  );
 };
 
 type ContainerProps = React.PropsWithChildren<{
@@ -34,6 +57,7 @@ export const Sections: React.FC<SectionsProps> = (props) => {
         const SectionComponent =
           SectionComponents[section.type as keyof typeof SectionComponents];
 
+        // @ts-expect-error - This is a valid type assertion
         return <SectionComponent key={index} section={section} />;
       })}
     </div>

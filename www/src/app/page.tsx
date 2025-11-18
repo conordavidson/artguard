@@ -25,7 +25,7 @@ export const generateMetadata = async ({
     title: page.metadata.title,
     description: page.metadata.description,
     keywords: page.metadata.keywords,
-    image: page.image?.src,
+    image: page.metadata.image?.src,
   };
 };
 

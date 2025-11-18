@@ -124,7 +124,8 @@ export type LinkGridSection = {
   ctas?: Cta[];
   links: {
     icon?: Icon;
-    label: string;
+    heading: string;
+    body?: string | React.ReactNode;
     href: string;
     ctaLabel: string;
     target?: string;
@@ -142,21 +143,35 @@ export type FaqsSection = {
   }[];
 };
 
+type Video = {
+  src: string;
+  alt: string;
+  type: "vimeo";
+};
+
 export type VideoFeatureSection = {
   type: "VideoFeature";
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
   ctas?: Cta[];
-  video: {
-    src: string;
-    alt: string;
-    type: "vimeo";
-  };
+  video: Video;
   cards: {
     heading: string;
     body: string;
     icon?: Icon;
+  }[];
+};
+
+export type VideoGridSection = {
+  type: "VideoGrid";
+  className?: string;
+  heading: string | React.ReactNode;
+  subheading?: string | React.ReactNode;
+  ctas?: Cta[];
+  videos: {
+    heading: string;
+    video: Video;
   }[];
 };
 
@@ -244,10 +259,22 @@ export type TextHighlightsSection = {
   }[];
 };
 
+export type ContactFormSection = {
+  type: "ContactForm";
+  className?: string;
+  heading: string | React.ReactNode;
+  subheading?: string | React.ReactNode;
+  email: string;
+  phone: string;
+};
+
 export type Page = {
   className?: string;
   sections: Section[];
   path: Path;
+  theme?: {
+    lightGradientBg?: boolean;
+  };
   metadata: {
     title: string;
     description: string;
@@ -274,4 +301,6 @@ export type Section =
   | TeamSection
   | TextHighlightsSection
   | FaqsSection
-  | LinkGridSection;
+  | LinkGridSection
+  | VideoGridSection
+  | ContactFormSection;

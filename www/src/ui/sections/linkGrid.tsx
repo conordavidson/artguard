@@ -44,14 +44,21 @@ const LinkGrid: React.FC<LinkGridProps> = (props) => {
             >
               <div>
                 {link.icon && (
-                  <div>
+                  <div className="mb-3">
                     <Icon icon={link.icon} className="text-brand" />
                   </div>
                 )}
-                <div className="mt-3">
+                <div>
                   <Text.Interface20 className="text-muted">
-                    {link.label}
+                    {link.heading}
                   </Text.Interface20>
+                  {link.body && (
+                    <div className="mt-3">
+                      <Text.Interface16 className="text-muted">
+                        {link.body}
+                      </Text.Interface16>
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="mt-5">

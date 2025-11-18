@@ -7,6 +7,7 @@ export default function Insights() {
     <div className="grid grid-cols-subgrid col-span-full">
       <Ui.Sections.ArticleHero
         section={{
+          type: "ArticleHero",
           className: "md:-mt-nav-height",
           publishedAt: "10-31-2025",
           heading: "The Collector’s Guide to High-Value Art Insurance",
@@ -20,7 +21,8 @@ export default function Insights() {
       />
       <Ui.Sections.Text
         section={{
-          className: "md:-mt-24",
+          type: "Text",
+          className: "md:-mt-12",
           body: (
             <>
               <h2>
