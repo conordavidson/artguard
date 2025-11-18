@@ -3,6 +3,7 @@ export * as Graphics from './graphics';
 export * as Heading from './heading';
 export * as Inputs from './inputs';
 export * as Page from './page';
+export * as Layout from './layout';
 export * as Sections from './sections';
 export * as Text from './text';
 

@@ -274,6 +274,13 @@ export type ContactFormSection = {
   phone: string;
 };
 
+export type RecentInsightsSection = {
+  type: 'RecentInsights';
+  className?: string;
+  heading: string | React.ReactNode;
+  subheading?: string | React.ReactNode;
+};
+
 export type Page = {
   className?: string;
   sections: Section[];
@@ -309,4 +316,5 @@ export type Section =
   | FaqsSection
   | LinkGridSection
   | VideoGridSection
-  | ContactFormSection;
+  | ContactFormSection
+  | RecentInsightsSection;
