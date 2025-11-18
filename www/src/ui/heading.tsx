@@ -1,12 +1,12 @@
-import * as Button from "@/ui/button";
-import * as Text from "@/ui/text";
-import * as Types from "@/lib/types";
-import * as NextImage from "next/image";
-import * as Utils from "@/lib/utils";
+import * as Button from '@/ui/button';
+import * as Text from '@/ui/text';
+import * as Types from '@/lib/types';
+import * as NextImage from 'next/image';
+import * as Utils from '@/lib/utils';
 
-import Icon from "@/ui/icon";
-import Link from "next/link";
-import Image from "next/image";
+import Icon from '@/ui/icon';
+import Link from 'next/link';
+import Image from 'next/image';
 
 type StackProps = {
   className?: string;
@@ -27,16 +27,13 @@ type StackProps = {
 export const Stack: React.FC<React.PropsWithChildren<StackProps>> = (props) => {
   return (
     <div
-      className={Utils.cx("flex flex-col", props.className, {
-        "justify-between": !!props.ctasSlammed,
+      className={Utils.cx('flex flex-col', props.className, {
+        'justify-between': !!props.ctasSlammed,
       })}
     >
       <div>
         {props.heading && (
-          <Text.Display32
-            as="h2"
-            className={Utils.cx("text-pretty", props.headingClassName)}
-          >
+          <Text.Display32 as="h2" className={Utils.cx('text-pretty', props.headingClassName)}>
             {props.heading}
           </Text.Display32>
         )}
@@ -48,12 +45,12 @@ export const Stack: React.FC<React.PropsWithChildren<StackProps>> = (props) => {
           </div>
         )}
         {props.image && (
-          <div className="mt-2 h-[175px]">
+          <div className="mt-2">
             <Image
               src={props.image.src}
               alt={props.image.alt}
               className={Utils.cx(
-                "w-full h-full object-contain object-center",
+                'w-full h-full object-contain object-center',
                 props.imageClassName
               )}
             />
@@ -70,13 +67,13 @@ export const Stack: React.FC<React.PropsWithChildren<StackProps>> = (props) => {
       </div>
       {props.ctas && (
         <div
-          className={Utils.cx("mt-6 flex flex-wrap gap-3", {
-            "mt-6": !props.ctasSlammed,
-            "mt-8": !!props.ctasSlammed,
+          className={Utils.cx('mt-6 flex flex-wrap gap-3', {
+            'mt-6': !props.ctasSlammed,
+            'mt-8': !!props.ctasSlammed,
           })}
         >
           {props.ctas.map((cta) => {
-            if (cta.type === "button") {
+            if (cta.type === 'button') {
               return <Button.Variant key={cta.label} inline {...cta} />;
             }
             return (
@@ -128,7 +125,7 @@ export const CenterStack: React.FC<CenterStackProps> = (props) => {
       {props.body && (
         <div className="mt-4">
           <Text.Interface16
-            as={typeof props.body === "string" ? "p" : "div"}
+            as={typeof props.body === 'string' ? 'p' : 'div'}
             className="text-subtle space-y-3"
           >
             {props.body}
@@ -145,7 +142,7 @@ export const CenterStack: React.FC<CenterStackProps> = (props) => {
       {props.ctas && (
         <div className="mt-7 flex gap-x-3 flex-wrap gap-y-2 justify-center">
           {props.ctas.map((cta) => {
-            if (cta.type === "button") {
+            if (cta.type === 'button') {
               return <Button.Variant key={cta.label} inline {...cta} />;
             }
             return (

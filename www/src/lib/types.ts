@@ -208,6 +208,8 @@ export type FeatureGridSection = {
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
+  imagePadding?: boolean;
+  footerCtas?: Cta[];
   items: {
     heading: string;
     subheading?: string | React.ReactNode;
@@ -261,7 +263,7 @@ export type TextHighlightsSection = {
   subheading?: string | React.ReactNode;
   highlights: {
     heading: string;
-    body: string;
+    body: string | React.ReactNode;
   }[];
 };
 

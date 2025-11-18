@@ -32,8 +32,8 @@ export const HOME_PAGE: Types.Page = {
   className: `${STANDARD_SPACING_CLASSNAME}`,
   path: Paths.HOME,
   metadata: {
-    title: 'Home',
-    description: 'Home page',
+    title: 'Art Guard',
+    description: 'Museum-Grade Art Protection for Any Environment',
     keywords: ['Art Guard', 'Home', 'Home page'],
     image: {
       src: GalleryRadar,
@@ -1957,6 +1957,196 @@ export const CONTACT_PAGE: Types.Page = {
         'Art Guard is pleased to announce that the MAP security solution is available for international applications. We welcome inquiries and  invite you to complete this form.',
       email: 'info@artguard.net',
       phone: '+1 (212) 989-1494',
+    },
+  ],
+};
+
+import CompatiblePanels from '@images/compatiblepanels.png';
+import CompatibleAccessControls from '@images/compatileaccesscontrols.png';
+
+export const SECURITY_INSTALLERS_PAGE: Types.Page = {
+  className: STANDARD_SPACING_CLASSNAME,
+  path: Paths.SECURITY_INSTALLERS,
+  metadata: {
+    title: 'Security Installers & Integrators',
+    description:
+      'Expand your services with museum-grade object-specific protection for high-value clients.',
+    keywords: ['security installers', 'integrators', 'MAP sensors', 'asset protection'],
+  },
+  sections: [
+    {
+      type: 'TextImageSplit',
+      heading: 'Think Beyond Intrusion and Fire',
+      className: 'md:-mt-nav-height',
+      image: {
+        src: Technician,
+        alt: 'Image of technician installing MAP sensors',
+      },
+      body: (
+        <>
+          <p>
+            Intrusion security is not art and asset protection. And that&apos;s good for installers
+            and integrators, because it gives you the opportunity to sell and install 2nd and 3rd
+            layers of protection in any facility with valuable objects.
+          </p>
+          <p>
+            Whether large museums or high-end residences and anything in between, perimeter security
+            is off anywhere from 8-16 hours of the day. Even if cameras or personnel on watch are
+            employed, the ultimate protection comes down to an object-specific alert.
+          </p>
+        </>
+      ),
+      ctas: [
+        {
+          type: 'button',
+          label: 'Download Datasheet',
+          variant: 'primary',
+          href: '/resources/ArtGuard-MAPsensor-DataSheet.pdf',
+        },
+        {
+          type: 'button',
+          label: 'Contact Us',
+          variant: 'secondary',
+          href: Paths.CONTACT,
+        },
+      ],
+    },
+
+    {
+      type: 'Text',
+      heading: 'Asset Protection Made Easy',
+      body: (
+        <>
+          <p>
+            Art Guard&apos;s MAP (Magnetic Asset Protection) sensor is the end point in the process
+            of securing art, antiques, jewelry, collectibles, memorabilia, cases, safes, books,
+            tapestries and even wine—anything that is portable and of value, large or small, indoors
+            or out. With easy enrollment and application.
+          </p>
+        </>
+      ),
+    },
+
+    {
+      type: 'ValueGrid',
+      heading: 'Why MAP for Your Clients?',
+      cards: [
+        {
+          heading: 'Why Object-Specific Protection?',
+          body: "$6 Billion! That's the value of just art stolen annually, to say nothing of other assets. Homes are particularly vulnerable because they depend almost entirely on perimeter security and 50% of art theft occurs there, usually by people already in the home. The rest is from institutions whose job it is to safeguard the art.",
+          icon: 'Alert',
+        },
+        {
+          heading: 'Why MAP?',
+          body: "It's Universal. It's Simple. Both you and your client want a means of protection that doesn't depend on what the object is or what the system is. MAP protects anything. And it can be integrated into the majority of popular intrusion panels and interface with the majority of access controls.",
+          icon: 'Plugs',
+        },
+      ],
+    },
+
+    {
+      type: 'TextHighlights',
+      heading: 'What Installers Say',
+      highlights: [
+        {
+          heading: 'MAP is Trusted',
+          body: (
+            <>
+              <p>
+                &quot;I&apos;ve used standard motion sensors in prior installs and nothing compares
+                with the MAP sensor in ease of use, flexibility and its ability to cover any item my
+                clients want to protect.&quot;
+              </p>
+              <p className="mt-2">
+                <strong>—Top 10 National Integrator</strong>
+              </p>
+            </>
+          ),
+        },
+        {
+          heading: 'MAP is Simple and Time Saving',
+          body: (
+            <>
+              <p>
+                &quot;I just wanted to take a minute to let you know that the install of the MAP
+                sensors could not have gone better. They were very easy to setup and install and
+                worked wonderfully. The art curator was so impressed with the system they are going
+                to recommend them to all their clients. In a matter of 4 hours we had protected 25
+                pieces valued in the millions. Simply amazing! Everyone was ecstatic on how well
+                things went.&quot;
+              </p>
+              <p className="mt-2">
+                <strong>—Chris Svendsen, Vantage Security, VA</strong>
+              </p>
+            </>
+          ),
+        },
+      ],
+    },
+
+    {
+      type: 'FeatureGrid',
+      heading: 'Compatible Systems',
+      subheading: 'MAP integrates with all major security platforms and access control systems',
+      imagePadding: true,
+      footerCtas: [
+        {
+          label: 'Download All Interface Options',
+          href: '/wp-content/uploads/2020/02/integrations2.pdf',
+          type: 'button',
+          variant: 'primary',
+        },
+      ],
+      items: [
+        {
+          heading: 'Panels',
+          subheading: 'Honeywell/Ademco, DMP, Qolsys, 2GIG, Resideo, Elk, Alula, DSC',
+          body: ' MAP sensors are available in 345 MHz and 433 MHz frequencies to ensure compatibility with the security panels your clients already use. DSC Neo requires HSM2164RF module.',
+          image: {
+            src: CompatiblePanels,
+            alt: 'Compatible security panel brands',
+          },
+        },
+        {
+          heading: 'Access Controls',
+          subheading: 'CCure 9000, Kantech, and major access control systems',
+          body: ' MAP sensors interface seamlessly with leading access control platforms, providing object-specific protection alongside your existing perimeter and access security infrastructure.',
+          image: {
+            src: CompatibleAccessControls,
+            alt: 'Compatible access control brands',
+          },
+        },
+      ],
+    },
+    {
+      type: 'TakeoverHeading',
+      icon: 'Handshake', // OPTIONS: users, handshake, award
+      heading: 'MAP Partner Program',
+      subheading: 'Build a competitive advantage with a recognized solution',
+      body: 'Join our partner program for preferred pricing, engineering support, co-branding opportunities, and digital marketing support. We provide the knowledge and dedication to ensure your clients are satisfied with results.',
+      ctas: [
+        {
+          label: 'Learn About Partner Program',
+          href: Paths.PARTNER_PROGRAM,
+          type: 'button',
+          variant: 'primary',
+        },
+      ],
+    },
+
+    {
+      type: 'CtaCard',
+      heading: 'How to Order',
+      subheading: 'Contact Art Guard for pricing and any further information',
+      body: 'At Art Guard we provide installers and integrators the chance to increase revenue with reliable security products, backed by personal support and trusted by some of the most prestigious museums, galleries and collectors in the world.',
+      ctas: [
+        {
+          type: 'button',
+          label: 'Contact Us',
+          variant: 'primary',
+          href: Paths.CONTACT,
+        },
+      ],
     },
   ],
 };

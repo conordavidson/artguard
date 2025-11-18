@@ -1,8 +1,12 @@
-import * as Ui from "@/ui";
-import * as Utils from "@/lib/utils";
-import * as Page from "@/ui/page";
-import * as Types from "@/lib/types";
-import * as Heading from "@/ui/heading";
+import * as Ui from '@/ui';
+import * as Utils from '@/lib/utils';
+import * as Page from '@/ui/page';
+import * as Types from '@/lib/types';
+import * as Heading from '@/ui/heading';
+import * as Button from '@/ui/button';
+import * as Text from '@/ui/text';
+
+import Link from 'next/link';
 
 type FeatureGridProps = {
   section: Types.FeatureGridSection;
@@ -10,12 +14,7 @@ type FeatureGridProps = {
 
 const FeatureGrid: React.FC<FeatureGridProps> = (props) => {
   return (
-    <div
-      className={Utils.cx(
-        "col-span-full grid grid-cols-subgrid",
-        props.section.className
-      )}
-    >
+    <div className={Utils.cx('col-span-full grid grid-cols-subgrid', props.section.className)}>
       <Page.Container className="text-center max-w-[500px] mx-auto">
         <Ui.Heading.CenterStack
           heading={props.section.heading}
@@ -23,13 +22,13 @@ const FeatureGrid: React.FC<FeatureGridProps> = (props) => {
         />
       </Page.Container>
       <Page.Container
-        className={Utils.cx("mt-14", {
-          "max-w-[1000px] mx-auto": props.section.items.length < 3,
+        className={Utils.cx('mt-14', {
+          'max-w-[1000px] mx-auto': props.section.items.length < 3,
         })}
       >
         <div
           className={Utils.cx(
-            "flex flex-col md:flex-row md:flex-wrap gap-x-16 gap-y-16 items-stretch"
+            'flex flex-col md:flex-row md:flex-wrap gap-x-16 gap-y-16 items-stretch'
           )}
         >
           {props.section.items.map((item, index) => (
@@ -42,19 +41,39 @@ const FeatureGrid: React.FC<FeatureGridProps> = (props) => {
                 ctasSlammed
                 className="h-full"
                 headingClassName={Utils.cx({
-                  "md:text-center": props.section.items.length > 2,
+                  'md:text-center': props.section.items.length > 2,
                 })}
-                imageClassName={Utils.cx("h-[175px]", {
-                  "object-left lg:object-center":
-                    props.section.items.length > 2,
-                  "object-center md:object-center":
-                    props.section.items.length < 3,
+                imageClassName={Utils.cx('h-[175px]', {
+                  'object-left lg:object-center': props.section.items.length > 2,
+                  'object-center md:object-center': props.section.items.length < 3,
+                  'mt-8 mb-8': !!props.section.imagePadding,
                 })}
               />
             </div>
           ))}
         </div>
       </Page.Container>
+      {props.section.footerCtas && (
+        <Page.Container className="mt-16">
+          <div className="flex flex-wrap gap-3 justify-center">
+            {props.section.footerCtas.map((cta) => {
+              if (cta.type === 'button') {
+                return <Button.Variant key={cta.label} inline {...cta} />;
+              }
+              return (
+                <Link key={cta.label} href={cta.href}>
+                  <Text.Interface16
+                    bold
+                    className="text-foreground underline decoration-dotted hover:opacity-70 transition-opacity"
+                  >
+                    {cta.label}
+                  </Text.Interface16>
+                </Link>
+              );
+            })}
+          </div>
+        </Page.Container>
+      )}
     </div>
   );
 };
