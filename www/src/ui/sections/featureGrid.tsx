@@ -15,12 +15,14 @@ type FeatureGridProps = {
 const FeatureGrid: React.FC<FeatureGridProps> = (props) => {
   return (
     <div className={Utils.cx('col-span-full grid grid-cols-subgrid', props.section.className)}>
-      <Page.Container className="text-center max-w-[500px] mx-auto">
-        <Ui.Heading.CenterStack
-          heading={props.section.heading}
-          subheading={props.section.subheading}
-        />
-      </Page.Container>
+      {(props.section.heading || props.section.subheading) && (
+        <Page.Container className="text-center max-w-[500px] mx-auto">
+          <Ui.Heading.CenterStack
+            heading={props.section.heading}
+            subheading={props.section.subheading}
+          />
+        </Page.Container>
+      )}
       <Page.Container
         className={Utils.cx('mt-14', {
           'max-w-[1000px] mx-auto': props.section.items.length < 3,
@@ -38,6 +40,7 @@ const FeatureGrid: React.FC<FeatureGridProps> = (props) => {
                 body={item.body}
                 ctas={item.ctas}
                 image={item.image}
+                icon={item.icon}
                 ctasSlammed
                 className="h-full"
                 headingClassName={Utils.cx({

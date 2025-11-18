@@ -32,9 +32,14 @@ export const NAVIGATION_MENU: Types.MenuItem[] = [
         subheading: 'MAP v3 Wireless Sensors',
       },
       {
-        label: 'MAP System',
-        href: Paths.MAP_SYSTEM,
-        subheading: 'Complete Standalone Protection',
+        label: 'MAP System Gold',
+        href: Paths.MAP_SYSTEM_GOLD,
+        subheading: 'A Complete System for Art and Asset Protection',
+      },
+      {
+        label: 'MAP System Silver',
+        href: Paths.MAP_SYSTEM_SILVER,
+        subheading: 'Security Peace of Mind for Galleries & Small Museums',
       },
       {
         label: 'Accessories',
@@ -79,7 +84,7 @@ export const NAVIGATION_MENU: Types.MenuItem[] = [
       {
         label: 'Auction Houses',
         href: Paths.AUCTION_HOUSES,
-        subheading: 'For continuously changing inventory',
+        subheading: 'For Continuously Changing Inventory',
       },
     ],
   },
@@ -94,10 +99,12 @@ export const NAVIGATION_MENU: Types.MenuItem[] = [
       {
         label: 'Partner Program',
         href: Paths.PARTNER_PROGRAM,
+        subheading: 'Toward Satisfied Clients',
       },
       {
         label: 'Insurers & Brokers',
         href: Paths.INSURERS_BROKERS,
+        subheading: 'Risk Mitigation through Object-Specific Protection',
       },
     ],
   },

@@ -206,7 +206,7 @@ export type TextSection = {
 export type FeatureGridSection = {
   type: 'FeatureGrid';
   className?: string;
-  heading: string | React.ReactNode;
+  heading?: string | React.ReactNode;
   subheading?: string | React.ReactNode;
   imagePadding?: boolean;
   footerCtas?: Cta[];

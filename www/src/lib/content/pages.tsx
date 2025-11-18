@@ -350,7 +350,7 @@ export const SECURITY_PRODUCTS_PAGE: Types.Page = {
             {
               type: 'button',
               label: 'Explore MAP Gold System',
-              href: Paths.MAP_SYSTEM,
+              href: Paths.MAP_SYSTEM_GOLD,
               variant: 'secondary',
             },
           ],
@@ -380,7 +380,7 @@ export const SECURITY_PRODUCTS_PAGE: Types.Page = {
             {
               type: 'button',
               label: 'Explore MAP Silver System',
-              href: Paths.MAP_SYSTEM,
+              href: Paths.MAP_SYSTEM_SILVER,
               variant: 'secondary',
             },
           ],
@@ -1344,7 +1344,7 @@ export const PRIVATE_COLLECTIONS_PAGE: Types.Page = {
             {
               type: 'button',
               label: 'Explore MAP Gold System',
-              href: Paths.MAP_SYSTEM,
+              href: Paths.MAP_SYSTEM_GOLD,
               variant: 'secondary',
             },
           ],
@@ -2139,6 +2139,719 @@ export const SECURITY_INSTALLERS_PAGE: Types.Page = {
       heading: 'How to Order',
       subheading: 'Contact Art Guard for pricing and any further information',
       body: 'At Art Guard we provide installers and integrators the chance to increase revenue with reliable security products, backed by personal support and trusted by some of the most prestigious museums, galleries and collectors in the world.',
+      ctas: [
+        {
+          type: 'button',
+          label: 'Contact Us',
+          variant: 'primary',
+          href: Paths.CONTACT,
+        },
+      ],
+    },
+  ],
+};
+
+export const PARTNER_PROGRAM_PAGE: Types.Page = {
+  className: STANDARD_SPACING_CLASSNAME,
+  path: Paths.PARTNER_PROGRAM,
+  metadata: {
+    title: 'Partner Program',
+    description:
+      'Join the Art Guard Partner Program for preferred pricing, engineering support, and co-branding opportunities.',
+    keywords: ['partner program', 'security partners', 'MAP sensors', 'installer program'],
+  },
+  sections: [
+    {
+      type: 'TakeoverHeading',
+      className: 'md:-mt-nav-height pt-40',
+      heading: 'Partner Program: Toward Satisfied Clients',
+      icon: 'Handshake',
+      body: 'Art Guard recognizes that selecting a security partner is a major decision and a commitment — and the best partnerships are built on competencies and trust. When you partner with Art Guard, you benefit from the years of experience and knowledge gained from our long-standing relationships with galleries, major museums and high-end private collectors.',
+    },
+
+    {
+      type: 'Text',
+      heading: 'A Competitive Advantage with a Recognized Solution',
+      body: (
+        <p>
+          The Art Guard Partner Program provides not only opportunities for upselling and increased
+          revenue but our personal dedication to go the extra mile to make certain that your client
+          is satisfied with the end result and knowing it came from you. Our technology is not a
+          one-size-tries-to-fit-all solution, so it requires our knowledge of the equipment and
+          systems you&apos;re working with to provide a seamless interface.
+        </p>
+      ),
+    },
+
+    {
+      type: 'FeatureGrid',
+      heading: 'Program Benefits',
+      items: [
+        {
+          heading: 'For Your Company',
+          icon: 'Briefcase',
+          body: (
+            <>
+              <ul>
+                <li>New and existing customer contact initiatives</li>
+                <li>Increased revenue opportunities from product, service and monitoring</li>
+                <li>Engineering support to work toward easiest and most attractive solution</li>
+                <li>Preferred pricing</li>
+                <li>Co-branding opportunities</li>
+                <li>Digital marketing support with social media outreach</li>
+                <li>Demo kits</li>
+              </ul>
+            </>
+          ),
+        },
+        {
+          heading: 'For Your Clients',
+          icon: 'UserGroup',
+          body: (
+            <>
+              <ul>
+                <li>Peace of mind with layered 24/7 protection</li>
+                <li>New and innovative protective coverage, whether primary or secondary</li>
+                <li>Minimal impact on the art with maximum coverage</li>
+                <li>State of the art technology with ever expanding features</li>
+                <li>Knowledge of best practices in handling art</li>
+                <li>Certificate of protection for insurers</li>
+              </ul>
+            </>
+          ),
+        },
+      ],
+    },
+
+    {
+      type: 'CtaCard',
+      heading: 'Join The Art Guard Partner Program',
+      subheading: (
+        <>
+          Call us at{' '}
+          <a
+            className="underline decoration-dotted hover:opacity-70 transition-opacity"
+            href="tel:+12129891594"
+          >
+            (212) 989-1594
+          </a>{' '}
+          or get in touch below
+        </>
+      ),
+      ctas: [
+        {
+          type: 'button',
+          label: 'Contact Us',
+          variant: 'primary',
+          href: Paths.CONTACT,
+        },
+      ],
+    },
+  ],
+};
+
+import GalleryInterior from '@images/galleryinterior.jpg';
+
+export const INSURERS_BROKERS_PAGE: Types.Page = {
+  className: STANDARD_SPACING_CLASSNAME,
+  path: Paths.INSURERS_BROKERS,
+  metadata: {
+    title: 'For Insurers & Brokers',
+    description:
+      'Risk mitigation solutions for fine art insurers and brokers with object-specific protection technology.',
+    keywords: ['art insurance', 'insurance brokers', 'MAP sensors', 'risk mitigation'],
+  },
+  sections: [
+    {
+      type: 'TextImageSplit',
+      className: 'md:-mt-nav-height',
+      heading: 'Fine Art Insurers and Insurance Brokers',
+      subheading: 'Risk mitigation through object-specific protection',
+      body: 'Risk mitigation in the art market is becoming a catch phrase for insurers as the price of art rises and cost of covering losses becomes more prohibitive, especially in the face of fierce competition to capture and retain clients. The paradox of lower margins and higher payouts necessitates a program to educate and induce clients, both private and public, to appreciate the value of protection.',
+      ctas: [
+        {
+          type: 'button',
+          label: 'Explore Solutions',
+          variant: 'primary',
+          href: Paths.SECURITY_PRODUCTS,
+        },
+        {
+          type: 'button',
+          label: 'Contact Us',
+          variant: 'secondary',
+          href: Paths.CONTACT,
+        },
+      ],
+      image: {
+        src: GalleryInterior,
+        alt: 'Gallery interior',
+      },
+    },
+
+    {
+      type: 'Text',
+      heading: 'Object-Specific Protection Reduces Risk',
+      body: (
+        <>
+          <p>
+            For art and other valuable assets, whether antiques, jewelry, collectibles, memorabilia,
+            tapestries, coins, wine and even wall safes, a solution that consists not just of
+            perimeter/intrusion security but one that adds a layer or layers of object-specific
+            protection will dramatically reduce the threat of monetary loss for both insurer and
+            insured, the chance of litigation for insurer and emotional loss for the client. After
+            all, only 3-5% of stolen art is ever recovered.
+          </p>
+        </>
+      ),
+    },
+
+    {
+      type: 'VideoFeature',
+      heading: 'Art Guard Solutions for Risk Mitigation',
+      subheading: 'Patented technology for 24/7 object-specific protection',
+      video: {
+        src: 'https://player.vimeo.com/video/212981006',
+        alt: 'Video for insurers of fine art and assets',
+        type: 'vimeo',
+      },
+      cards: [
+        {
+          heading: 'MAP Sensors',
+          body: 'Integrate into existing security systems in homes, providing 24/7 protection when intrusion security is off or compromised.',
+          icon: 'ShieldLock',
+        },
+        {
+          heading: 'MAP Gold System',
+          body: 'Plug-and-play standalone solution ideal for protecting individual objects of any size or shape.',
+          icon: 'CheckRibbon',
+        },
+        {
+          heading: 'Flexible Coverage',
+          body: 'In museum settings, MAP covers entire collections, special shows, or works on loan with unmatched flexibility.',
+          icon: 'Layered',
+        },
+      ],
+    },
+    {
+      type: 'ValueGrid',
+      heading: 'Resources for Insurers',
+      cards: [
+        {
+          heading: 'Webinar Video',
+          body: 'Webinar video for insurers and brokers of fine art and assets',
+          ctas: [
+            {
+              type: 'button',
+              label: 'Watch Webinar',
+              variant: 'secondary',
+              href: 'https://www.artguard.net/insurance/insurance-industry-webinar/',
+            },
+          ],
+        },
+        {
+          heading: 'Art Guard Launches Security Tech Program for Insurers of Fine Art',
+          body: '—Insurance Innovation Reporter',
+          ctas: [
+            {
+              type: 'button',
+              label: 'Read Article',
+              variant: 'secondary',
+              href: 'http://iireporter.com/art-guard-launches-security-tech-program-for-insurers-of-fine-art/',
+            },
+          ],
+        },
+        {
+          heading: 'Q&A: Art Theft and Its Impact on the Insurance Industry',
+          body: '—Insurance Journal',
+          ctas: [
+            {
+              type: 'button',
+              label: 'Read Article',
+              variant: 'secondary',
+              href: 'http://www.insurancejournal.com/news/east/2017/04/11/446866.htm',
+            },
+          ],
+        },
+        {
+          heading: 'Managing Risk for High Net Worth Clients',
+          body: '—Rough Notes, June 2017',
+          ctas: [
+            {
+              type: 'button',
+              label: 'Download PDF',
+              variant: 'secondary',
+              href: 'https://www.artguard.net/Managing_Risk_for_High-Net-Worth_Clients_Rough_Notes_June_2017_50-54_1.pdf',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: 'CtaCard',
+      heading: 'Partner with Art Guard',
+      subheading: 'Learn about our rebate program for insurance partners',
+      ctas: [
+        {
+          type: 'button',
+          label: 'Contact Us',
+          variant: 'primary',
+          href: Paths.CONTACT,
+        },
+      ],
+    },
+  ],
+};
+
+export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
+  className: STANDARD_SPACING_CLASSNAME,
+  path: Paths.MAP_SYSTEM_GOLD,
+  metadata: {
+    title: 'MAP System Gold',
+    description:
+      'User-friendly DIY solution for high-end art and asset protection with award-winning Alula Connect+ panel.',
+    keywords: ['MAP System Gold', 'Alula Connect+', 'wireless security', 'art protection'],
+  },
+  sections: [
+    {
+      type: 'TextImageSplit',
+      className: 'md:-mt-nav-height',
+      heading: 'MAP System Gold',
+      subheading: 'A Complete System for Art and Asset Protection',
+      body: "The MAP Gold System is the ultimate in dedicated, stand-alone protection for art and valuable stationary assets of any kind. It is the easiest and most effective way for collectors of any stripe to confidently secure their art against theft. It's also an indispensable tool for prominent galleries and museums with rotating protection needs to offer guarantees to lenders of their works' safety. For smaller museums Gold can provide comprehensive security.",
+      ctas: [
+        {
+          type: 'button',
+          label: 'Download Datasheet',
+          variant: 'primary',
+          href: 'https://www.artguard.net/wp-content/uploads/2019/07/Art-Guard-MAP-System-Gold.pdf',
+        },
+        {
+          type: 'button',
+          label: 'Contact Us',
+          variant: 'secondary',
+          href: Paths.CONTACT,
+        },
+      ],
+      image: {
+        src: MapGold,
+        alt: 'MAP System Gold with sensors',
+      },
+    },
+
+    {
+      type: 'VideoFeature',
+      heading: 'Complete Protection, Simply Deployed',
+      className: 'md:-mt-36',
+      video: {
+        src: 'https://player.vimeo.com/video/844027380',
+        alt: 'MAP System Gold video',
+        type: 'vimeo',
+      },
+      cards: [
+        {
+          heading: 'Ease-of-Use',
+          body: 'The hallmarks are ease of installation and management and full range of alerts with the convenience of home automation.',
+          icon: 'TouchPanel',
+        },
+        {
+          heading: 'Tested and Trusted',
+          body: 'For over 10 years Gold has been used by high-end private collectors with multiple homes, corporations with multiple floors of art, art institutions with varying demands and insurers with the highest standards for protection worldwide.',
+          icon: 'CheckRibbon',
+        },
+        {
+          heading: 'Flexible',
+          body: 'The control hub can be placed anywhere, operates 24/7 in the background as a permanent, fully monitored separate layer of protection for art or taken in and out of service as needed for changing exhibits.',
+          icon: 'Move',
+        },
+        {
+          heading: 'Comprehensive',
+          body: 'Unlike other solutions that target certain applications Gold is capable of protecting hanging and seated assets of any size, from art to memorabilia to jewelry.',
+          icon: 'ShieldLock',
+        },
+        {
+          heading: 'Affordable',
+          body: 'Without the need for costly professional installation and running wires Gold is priced for any private residence or institution. It offers the highest level of security at a low initial investment and negligible lifetime costs.',
+          icon: 'Coins',
+        },
+      ],
+    },
+
+    {
+      type: 'SpecTable',
+      heading: 'Technical Specifications',
+      rows: [
+        {
+          heading: 'Control Panel',
+          value: 'Alula Connect+ (BAT-Connect+)',
+        },
+        {
+          heading: 'Sensor Capacity',
+          value: 'Up to 96 MAP v3 wireless sensors (pre-enrolled)',
+        },
+        {
+          heading: 'Communication',
+          value: 'Dual-path: Ethernet (IP) and 4G LTE cellular, Wi-Fi optional',
+        },
+        {
+          heading: 'Backup Battery',
+          value: '24-hour panel battery backup',
+        },
+        {
+          heading: 'Management',
+          value: 'Mobile app and web portal for arming, disarming, and monitoring',
+        },
+        {
+          heading: 'Notifications',
+          value: 'Siren, push notifications, text, email, phone calls to multiple parties',
+        },
+        {
+          heading: 'Monitoring',
+          value: 'Low battery alerts, sensor tamper, signal loss condition reports',
+        },
+        {
+          heading: 'Security',
+          value: 'Encrypted communication with system portability for traveling shows',
+        },
+      ],
+    },
+
+    {
+      type: 'TextHighlights',
+      heading: 'Ideal For',
+      highlights: [
+        {
+          heading: 'Private Collectors',
+          body: 'High-end collectors with multiple homes requiring comprehensive protection',
+        },
+        {
+          heading: 'Galleries',
+          body: 'Prominent galleries with rotating protection needs offering guarantees to lenders',
+        },
+        {
+          heading: 'Museums',
+          body: 'Smaller museums requiring comprehensive security and larger institutions with varying demands',
+        },
+        {
+          heading: 'Corporate Collections',
+          body: 'Corporations with multiple floors of art requiring flexible protection',
+        },
+      ],
+    },
+
+    {
+      type: 'Text',
+      heading: 'Other Integrations',
+      body: (
+        <p>
+          For integration of MAP Sensors into your existing security system, contact your security
+          installer or integrator.
+        </p>
+      ),
+    },
+
+    {
+      type: 'CtaCard',
+      heading: 'How to Order',
+      subheading: 'Contact Art Guard directly to purchase the MAP System.',
+      ctas: [
+        {
+          type: 'button',
+          label: 'Contact Us',
+          variant: 'primary',
+          href: Paths.CONTACT,
+        },
+      ],
+    },
+  ],
+};
+
+export const MAP_SYSTEM_SILVER_PAGE: Types.Page = {
+  className: STANDARD_SPACING_CLASSNAME,
+  path: Paths.MAP_SYSTEM_SILVER,
+  metadata: {
+    title: 'MAP System Silver',
+    description:
+      'Security peace of mind for galleries and small museums. Affordable daytime theft protection with audible alerts.',
+    keywords: ['MAP System Silver', 'Resideo', 'gallery security', 'museum protection'],
+  },
+  sections: [
+    {
+      type: 'TextImageSplit',
+      className: 'md:-mt-nav-height',
+      heading: 'MAP System Silver',
+      subheading: 'Security peace of mind for galleries & small museums',
+      body: "The MAP Silver System provides small institutions protection from exposure to daytime grab-and-run theft. With a panel siren that can be heard by anyone in audible range if an asset is moved without authorization Silver offers reliable security at an affordable price for budget-minded facilities that don't have sophisticated security apparatus.",
+      ctas: [
+        {
+          type: 'button',
+          label: 'Download Datasheet',
+          variant: 'primary',
+          href: '/wp-content/uploads/Art_Guard_MAP_Silver_System.pdf',
+        },
+        {
+          type: 'button',
+          label: 'Contact Us',
+          variant: 'secondary',
+          href: Paths.CONTACT,
+        },
+      ],
+      image: {
+        src: MapSilver,
+        alt: 'MAP System Silver with sensors',
+      },
+    },
+    {
+      type: 'Text',
+      heading: 'Flexible Protection for Lenders and Insurers',
+      className: 'md:-mt-36',
+      body: (
+        <p>
+          Silver offers the flexibility to be deployed whenever and wherever the need arises. Silver
+          is the solution for any museum with questions from lenders and insurers who are not
+          comfortable with security that has to be turned off during daytime hours, leaving objects
+          completely vulnerable.
+        </p>
+      ),
+    },
+    {
+      type: 'TakeoverGrid',
+      heading: 'Why Museums and Galleries Choose Silver',
+      subheading:
+        'Silver provides lenders with the assurance that their works have the requisite primary layer of protection.',
+      cards: [
+        {
+          heading: 'Dependability',
+          body: "With Honeywell/Resideo panel and Art Guard's latest MAP sensors Silver is a most effective way to alert responders to unauthorized movement and daytime theft attempts. And it has a 24-hr back-up battery.",
+          icon: 'ShieldLock',
+        },
+        {
+          heading: 'Marketability',
+          body: 'Silver provides lenders with the assurance that their works have the requisite primary layer of protection.',
+          icon: 'CheckRibbon',
+        },
+        {
+          heading: 'Ease-of-Use',
+          body: 'Simply plug the touchscreen panel into AC power and install up to 127 pre-enrolled sensors for quick deployment.',
+          icon: 'TouchPanel',
+        },
+        {
+          heading: 'Versatility',
+          body: 'Use from show-to-show and gallery-to-gallery in special exhibits and traveling exhibitions and for permanent protection in galleries, small museums, libraries and historic houses.',
+          icon: 'Move',
+        },
+        {
+          heading: 'Coverage',
+          body: 'Like all solutions with the MAP v3 sensor theft protection can be applied to nearly any valuable stationary object, regardless of size, shape or placement.',
+          icon: 'Grid',
+        },
+      ],
+    },
+
+    {
+      type: 'SpecTable',
+      heading: 'Technical Specifications',
+      rows: [
+        {
+          heading: 'Control Panel',
+          value: 'Honeywell/Resideo ProSeries touchscreen panel (UL tested)',
+        },
+        {
+          heading: 'Sensor Capacity',
+          value: 'Up to 127 MAP v3 wireless sensors (pre-enrolled)',
+        },
+        {
+          heading: 'Alert Type',
+          value: 'Panel alarm siren, supports remote wireless sirens and strobes',
+        },
+        {
+          heading: 'Backup Battery',
+          value: '24-hour panel battery backup',
+        },
+        {
+          heading: 'Management',
+          value: 'Touch screen panel operation, plugs into any standard power source',
+        },
+        {
+          heading: 'Portability',
+          value: 'Completely portable. Use from show to show or gallery to gallery',
+        },
+        {
+          heading: 'Sensor Details',
+          isHeader: true,
+        },
+        {
+          heading: 'Sensor Dimensions',
+          value: '2" × 2" × ¼"',
+        },
+        {
+          heading: 'Power',
+          value: '2 × CR2450 Lithium coin cell batteries',
+        },
+        {
+          heading: 'Battery Life',
+          value: '4-5 years typical operation',
+        },
+        {
+          heading: 'Range',
+          value: '400+ feet (extendable with repeaters)',
+        },
+        {
+          heading: 'Operation Modes',
+          value: '3 modes optimize for any hanging and seated objects',
+        },
+      ],
+    },
+
+    {
+      type: 'TextHighlights',
+      heading: 'Ideal For',
+      highlights: [
+        {
+          heading: 'Galleries',
+          body: 'Primary daytime protection from grab-and-run theft with audible alerts',
+        },
+        {
+          heading: 'Small Museums & Historic Houses',
+          body: 'Budget-minded facilities without sophisticated security apparatus',
+        },
+        {
+          heading: 'Special Exhibitions',
+          body: 'Temporary exhibits or traveling shows requiring flexible deployment',
+        },
+        {
+          heading: 'Libraries',
+          body: 'Protection for rare books, manuscripts, and valuable collections',
+        },
+      ],
+    },
+
+    {
+      type: 'Text',
+      heading: 'Other Integrations',
+      body: (
+        <p>
+          For integration of MAP Sensors into your existing security system, contact your security
+          installer or integrator.
+        </p>
+      ),
+    },
+
+    {
+      type: 'CtaCard',
+      heading: 'How to Order',
+      subheading: 'Contact Art Guard directly to purchase the MAP Silver System.',
+      ctas: [
+        {
+          type: 'button',
+          label: 'Contact Us',
+          variant: 'primary',
+          href: Paths.CONTACT,
+        },
+      ],
+    },
+  ],
+};
+
+import Cr2450 from '@images/cr2450.jpg';
+import CommandStrips from '@images/commandstripes.jpg';
+import RareEarthMagnets from '@images/rareearthmagnets.jpg';
+import TssartArtTape from '@images/tsarttape.jpg';
+
+export const ACCESSORIES_PAGE: Types.Page = {
+  className: STANDARD_SPACING_CLASSNAME,
+  path: Paths.ACCESSORIES,
+  metadata: {
+    title: 'Accessories',
+    description: 'Accessories for MAP Sensors including batteries, magnets, and mounting supplies.',
+    keywords: ['MAP accessories', 'sensor batteries', 'neodymium magnets', 'mounting supplies'],
+  },
+  sections: [
+    {
+      type: 'TakeoverHeading',
+      className: 'md:-mt-nav-height pt-40',
+      heading: 'Accessories for the MAP Sensor',
+      subheading: 'Click the direct link to order',
+    },
+    {
+      type: 'FeatureGrid',
+      imagePadding: true,
+      className: '-mt-24',
+      items: [
+        {
+          heading: 'Panasonic CR2450 Lithium 3v Battery (2-pack)',
+          body: 'Replacement batteries for MAP sensors with 4-5 year typical life.',
+          image: {
+            src: Cr2450,
+            alt: 'Panasonic CR2450 batteries',
+          },
+          ctas: [
+            {
+              type: 'button',
+              label: 'Order on Amazon',
+              variant: 'secondary',
+              href: 'https://www.amazon.com/gp/product/B00K5Z0AIM/ref=oh_aui_search_detailpage?ie=UTF8&psc=1',
+              target: '_blank',
+            },
+          ],
+        },
+        {
+          heading: 'Command Hanging Strips',
+          body: 'Removable adhesive strips for mounting sensors without damaging surfaces.',
+          image: {
+            src: CommandStrips,
+            alt: 'Command hanging strips',
+          },
+          ctas: [
+            {
+              type: 'button',
+              variant: 'secondary',
+              label: 'Order on Amazon',
+              href: 'https://www.amazon.com/s?k=command+strips&ref=pd_sl_6ipzf1wxkb_e',
+              target: '_blank',
+            },
+          ],
+        },
+        {
+          heading: 'Neodymium (Rare Earth) Magnets',
+          body: 'Small rare earth magnets for attaching to artwork and valuable objects.',
+          image: {
+            src: RareEarthMagnets,
+            alt: 'Neodymium rare earth magnets',
+          },
+          ctas: [
+            {
+              type: 'button',
+              variant: 'secondary',
+              label: 'Order from Magnet4Less',
+              href: 'https://www.magnet4less.com/neodymium-disc-cylinder-rare-earth-magnets',
+              target: '_blank',
+            },
+          ],
+        },
+        {
+          heading: 'TSSART Art Tape',
+          body: 'Museum-quality tape for safely attaching magnets to artwork.',
+          image: {
+            src: TssartArtTape,
+            alt: 'TSSART art tape',
+          },
+          ctas: [
+            {
+              type: 'button',
+              variant: 'secondary',
+              label: 'Order on Amazon',
+              href: 'https://www.amazon.com/dp/B09H62X81B?ref=ppx_yo2ov_dt_b_product_details&th=1',
+              target: '_blank',
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      type: 'CtaCard',
+      heading: 'Questions About Accessories?',
+      subheading: 'Contact us for recommendations on the right supplies for your installation',
       ctas: [
         {
           type: 'button',

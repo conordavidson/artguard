@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import * as Button from "@/ui/button";
-import * as Content from "@/lib/content";
-import * as Graphics from "@/ui/graphics";
-import * as Page from "@/ui/page";
-import * as Paths from "@/lib/paths";
-import * as React from "react";
-import * as Text from "@/ui/text";
-import * as Utils from "@/lib/utils";
-import * as Navigation from "next/navigation";
-import * as Types from "@/lib/types";
+import * as Button from '@/ui/button';
+import * as Content from '@/lib/content';
+import * as Graphics from '@/ui/graphics';
+import * as Page from '@/ui/page';
+import * as Paths from '@/lib/paths';
+import * as React from 'react';
+import * as Text from '@/ui/text';
+import * as Utils from '@/lib/utils';
+import * as Navigation from 'next/navigation';
+import * as Types from '@/lib/types';
 
-import Icon from "@/ui/icon";
-import Link from "next/link";
+import Icon from '@/ui/icon';
+import Link from 'next/link';
 
 const Nav: React.FC = () => {
   const currentPath = Navigation.usePathname();
@@ -21,9 +21,7 @@ const Nav: React.FC = () => {
   const [lastMobileMenuOpen, setLastMobileMenuOpen] = React.useState(false);
 
   const [activeMenuId, setActiveMenuId] = React.useState<string | null>(null);
-  const [lastActiveMenuId, setLastActiveMenuId] = React.useState<string | null>(
-    null
-  );
+  const [lastActiveMenuId, setLastActiveMenuId] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setActiveMenuId(null);
@@ -45,11 +43,9 @@ const Nav: React.FC = () => {
   const visibleMenu = React.useMemo(() => {
     const label = activeMenuId ?? lastActiveMenuId;
     if (!label) return null;
-    const activeMenu = Content.NAVIGATION_MENU.find(
-      (item) => item.label === label
-    );
+    const activeMenu = Content.NAVIGATION_MENU.find((item) => item.label === label);
     if (!activeMenu) return null;
-    if (!("submenu" in activeMenu)) return null;
+    if (!('submenu' in activeMenu)) return null;
     return activeMenu;
   }, [activeMenuId, lastActiveMenuId]);
 
@@ -61,8 +57,8 @@ const Nav: React.FC = () => {
         setIsMobileMenuOpen(false);
       }
     };
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
   }, []);
 
   return (
@@ -112,8 +108,8 @@ const MobileNav: React.FC<MobileNavProps> = (props) => {
             <Graphics.Logomark />
           </div>
           <div
-            className={Utils.cx("h-[16px]", {
-              "text-white": props.isMobileMenuOpen,
+            className={Utils.cx('h-[16px]', {
+              'text-white': props.isMobileMenuOpen,
             })}
           >
             <Graphics.Wordmark />
@@ -126,14 +122,12 @@ const MobileNav: React.FC<MobileNavProps> = (props) => {
           <button
             type="button"
             className={Utils.cx(
-              "w-[24px] h-[24px] text-muted cursor-pointer hover:opacity-70 transition-opacity",
+              'w-[24px] h-[24px] text-muted cursor-pointer hover:opacity-70 transition-opacity',
               {
-                "text-white": props.isMobileMenuOpen,
+                'text-white': props.isMobileMenuOpen,
               }
             )}
-            onClick={() =>
-              props.onChangeIsMobileMenuOpen(!props.isMobileMenuOpen)
-            }
+            onClick={() => props.onChangeIsMobileMenuOpen(!props.isMobileMenuOpen)}
           >
             <Graphics.MenuIcon />
           </button>
@@ -141,20 +135,19 @@ const MobileNav: React.FC<MobileNavProps> = (props) => {
       </Page.Container>
       <div
         className={Utils.cx(
-          "dark-theme absolute z-40 top-0 left-0 right-0 min-h-screen bg-emphasis/95 backdrop-blur-md root-layout pt-32 pb-10 transition-all border-y border-outline opacity-0 pointer-events-none -translate-y-[4px]",
+          'dark-theme absolute z-40 top-0 left-0 right-0 min-h-screen bg-emphasis/95 backdrop-blur-md root-layout pt-32 pb-10 transition-all border-y border-outline opacity-0 pointer-events-none -translate-y-[4px]',
           {
-            "opacity-100 pointer-events-auto translate-y-0":
-              props.isMobileMenuOpen,
+            'opacity-100 pointer-events-auto translate-y-0': props.isMobileMenuOpen,
           }
         )}
         onTransitionEnd={(e) => {
           if (e.target !== e.currentTarget) return;
-          if (e.propertyName !== "opacity") return;
+          if (e.propertyName !== 'opacity') return;
           if (!props.isMobileMenuOpen) props.onChangeLastMobileMenuOpen(false);
         }}
       >
         <Page.Container>
-          {props.visibleMenu && "submenu" in props.visibleMenu && (
+          {props.visibleMenu && 'submenu' in props.visibleMenu && (
             <div>
               <button
                 type="button"
@@ -178,9 +171,7 @@ const MobileNav: React.FC<MobileNavProps> = (props) => {
                       props.onChangeLastActiveMenuId(id);
                     }}
                     menuItem={item}
-                    onCloseMobileMenu={() =>
-                      props.onChangeIsMobileMenuOpen(false)
-                    }
+                    onCloseMobileMenu={() => props.onChangeIsMobileMenuOpen(false)}
                   />
                 ))}
               </div>
@@ -199,9 +190,7 @@ const MobileNav: React.FC<MobileNavProps> = (props) => {
                       props.onChangeLastActiveMenuId(id);
                     }}
                     menuItem={item}
-                    onCloseMobileMenu={() =>
-                      props.onChangeIsMobileMenuOpen(false)
-                    }
+                    onCloseMobileMenu={() => props.onChangeIsMobileMenuOpen(false)}
                   />
                 );
               })}
@@ -232,24 +221,24 @@ const MobileNavItem: React.FC<MobileNavItemProps> = (props) => {
         <div className="-z-10 absolute -left-3 top-0 bottom-0 flex items-center">
           <div
             className={Utils.cx(
-              "h-[4px] w-[4px] bg-brand opacity-0 group-hover:opacity-100 transition-all rounded-full"
+              'h-[4px] w-[4px] bg-brand opacity-0 group-hover:opacity-100 transition-all rounded-full'
             )}
           ></div>
         </div>
         <Text.Interface24
           className={Utils.cx(
-            "cursor-pointer text-foreground group-hover:opacity-70 transition-all duration-50",
+            'cursor-pointer text-foreground group-hover:opacity-70 transition-all duration-50',
             {
-              "text-white": !!props.visibleMenu,
-              "text-brand": isPathActive || isMenuActive,
+              'text-white': !!props.visibleMenu,
+              'text-brand': isPathActive || isMenuActive,
             }
           )}
         >
           {props.menuItem.label}
         </Text.Interface24>
-        {"subheading" in props.menuItem && props.menuItem.subheading && (
+        {'subheading' in props.menuItem && props.menuItem.subheading && (
           <div className="mt-1">
-            <Text.Interface16 className={"text-muted"}>
+            <Text.Interface16 className={'text-muted'}>
               {props.menuItem.subheading}
             </Text.Interface16>
           </div>
@@ -258,7 +247,7 @@ const MobileNavItem: React.FC<MobileNavItemProps> = (props) => {
     );
   };
 
-  if ("submenu" in props.menuItem) {
+  if ('submenu' in props.menuItem) {
     return (
       <button
         type="button"
@@ -294,24 +283,21 @@ type DesktopNavProps = {
 const DesktopNav: React.FC<DesktopNavProps> = (props) => {
   return (
     <div className="hidden lg:grid col-span-full grid-cols-subgrid">
-      <Page.Container className="flex relative z-50 items-center justify-between">
+      <Page.Container className="flex relative z-50 items-center gap-x-4 justify-between">
         <div className="flex items-center gap-2">
-          <Link
-            href={Paths.HOME}
-            className="flex items-center gap-2 hover:opacity-70"
-          >
+          <Link href={Paths.HOME} className="flex items-center gap-2 hover:opacity-70">
             <div className="h-[24px]">
               <Graphics.Logomark />
             </div>
             <div
-              className={Utils.cx("h-[16px] transition-colors duration-50", {
-                "text-white": !!props.visibleMenu,
+              className={Utils.cx('h-[16px] transition-colors duration-50', {
+                'text-white': !!props.visibleMenu,
               })}
             >
               <Graphics.Wordmark />
             </div>
           </Link>
-          <div className="pl-6 xl:pl-8 flex items-center gap-x-6 xl:gap-x-8">
+          <div className="pl-3 xl:pl-8 flex items-center gap-x-6 xl:gap-x-8">
             {Content.NAVIGATION_MENU.map((item) => {
               const isPathActive = props.currentPath === item.href;
               const isMenuActive = props.visibleMenu?.label === item.label;
@@ -322,19 +308,19 @@ const DesktopNav: React.FC<DesktopNavProps> = (props) => {
                     <div className="-z-10 absolute -top-1.5 left-0 right-0 flex justify-center">
                       <div
                         className={Utils.cx(
-                          "h-[4px] w-[4px] bg-brand opacity-0 group-hover/nav-link:opacity-100 transition-all rounded-full",
+                          'h-[4px] w-[4px] bg-brand opacity-0 group-hover/nav-link:opacity-100 transition-all rounded-full',
                           {
-                            "opacity-100": isMenuActive,
+                            'opacity-100': isMenuActive,
                           }
                         )}
                       ></div>
                     </div>
                     <Text.Interface16
                       className={Utils.cx(
-                        "cursor-pointer text-foreground group-hover:opacity-70 group-hover/nav-link:text-brand transition-all duration-50",
+                        'cursor-pointer text-foreground group-hover:opacity-70 group-hover/nav-link:text-brand transition-all duration-50',
                         {
-                          "text-white": !!props.visibleMenu,
-                          "text-brand": isPathActive || isMenuActive,
+                          'text-white': !!props.visibleMenu,
+                          'text-brand': isPathActive || isMenuActive,
                         }
                       )}
                     >
@@ -344,7 +330,7 @@ const DesktopNav: React.FC<DesktopNavProps> = (props) => {
                 );
               };
 
-              if ("submenu" in item) {
+              if ('submenu' in item) {
                 return (
                   <button
                     type="button"
@@ -359,17 +345,13 @@ const DesktopNav: React.FC<DesktopNavProps> = (props) => {
               }
 
               return (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="group/nav-link"
-                >
+                <Link key={item.label} href={item.href} className="group/nav-link">
                   <Text.Interface16
                     className={Utils.cx(
-                      "cursor-pointer text-foreground group-hover:opacity-70 group-hover/nav-link:text-brand transition-all duration-50",
+                      'cursor-pointer text-foreground group-hover:opacity-70 group-hover/nav-link:text-brand transition-all duration-50',
                       {
-                        "text-white": !!props.visibleMenu,
-                        "text-brand": isPathActive || isMenuActive,
+                        'text-white': !!props.visibleMenu,
+                        'text-brand': isPathActive || isMenuActive,
                       }
                     )}
                   >
@@ -387,39 +369,34 @@ const DesktopNav: React.FC<DesktopNavProps> = (props) => {
 
       <div
         className={Utils.cx(
-          "dark-theme absolute z-40 top-0 left-0 right-0 bg-emphasis/95 backdrop-blur-md root-layout pt-nav-height pb-10 transition-all border-y border-outline opacity-0 pointer-events-none -translate-y-[4px]",
+          'dark-theme absolute z-40 top-0 left-0 right-0 bg-emphasis/95 backdrop-blur-md root-layout pt-nav-height pb-10 transition-all border-y border-outline opacity-0 pointer-events-none -translate-y-[4px]',
           {
-            "opacity-100 pointer-events-auto translate-y-0":
-              !!props.activeMenuId,
+            'opacity-100 pointer-events-auto translate-y-0': !!props.activeMenuId,
           }
         )}
         onTransitionEnd={(e) => {
           if (e.target !== e.currentTarget) return;
-          if (e.propertyName !== "opacity") return;
+          if (e.propertyName !== 'opacity') return;
           if (!props.activeMenuId) props.onChangeLastActiveMenuId(null);
         }}
       >
         <Page.Container>
           <div className="flex flex-col gap-y-4">
             {props.visibleMenu &&
-              "submenu" in props.visibleMenu &&
+              'submenu' in props.visibleMenu &&
               props.visibleMenu.submenu.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="w-fit relative group"
-                >
+                <Link key={item.label} href={item.href} className="w-fit relative group">
                   <div className="-z-10 absolute -top-1 -bottom-2 -left-4 -right-4 group-hover:bg-brand/15 blur-sm transition-colors rounded-xl"></div>
                   <Text.Interface24
-                    className={Utils.cx("text-foreground transition-colors", {
-                      "text-[#fa3d41]": props.currentPath === item.href,
+                    className={Utils.cx('text-foreground transition-colors', {
+                      'text-[#fa3d41]': props.currentPath === item.href,
                     })}
                   >
                     {item.label}
                   </Text.Interface24>
                   {item.subheading && (
                     <div className="mt-1">
-                      <Text.Interface16 className={"text-muted"}>
+                      <Text.Interface16 className={'text-muted'}>
                         {item.subheading}
                       </Text.Interface16>
                     </div>

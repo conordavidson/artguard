@@ -1,7 +1,7 @@
-import * as Utils from "@/lib/utils";
-import * as Page from "@/ui/page";
-import * as Types from "@/lib/types";
-import * as Text from "@/ui/text";
+import * as Utils from '@/lib/utils';
+import * as Page from '@/ui/page';
+import * as Types from '@/lib/types';
+import * as Text from '@/ui/text';
 
 type TextSectionProps = {
   section: Types.TextSection;
@@ -9,12 +9,7 @@ type TextSectionProps = {
 
 const TextSection: React.FC<TextSectionProps> = (props) => {
   return (
-    <div
-      className={Utils.cx(
-        "col-span-full grid grid-cols-subgrid",
-        props.section.className
-      )}
-    >
+    <div className={Utils.cx('col-span-full grid grid-cols-subgrid', props.section.className)}>
       <Page.Container className="max-w-[575px] mx-auto">
         {props.section.heading && (
           <Text.Display32

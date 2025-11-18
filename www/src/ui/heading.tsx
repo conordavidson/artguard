@@ -9,6 +9,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 type StackProps = {
+  icon?: Types.Icon;
   className?: string;
   heading?: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -32,6 +33,11 @@ export const Stack: React.FC<React.PropsWithChildren<StackProps>> = (props) => {
       })}
     >
       <div>
+        {props.icon && (
+          <div className="mb-3">
+            <Icon icon={props.icon} className="text-brand" />
+          </div>
+        )}
         {props.heading && (
           <Text.Display32 as="h2" className={Utils.cx('text-pretty', props.headingClassName)}>
             {props.heading}
