@@ -6,9 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "gen-types": "cd ../cms && pnpm run gen-types"
   },
   "dependencies": {
+    "@portabletext/react": "^5.0.0",
+    "@sanity/client": "^7.12.1",
+    "@sanity/image-url": "^1.2.0",
+    "groq": "^4.15.0",
     "next": "16.0.3",
     "radix-ui": "^1.4.3",
     "react": "19.2.0",

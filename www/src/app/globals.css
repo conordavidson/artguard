@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --transition-duration: 75ms;
@@ -17,17 +17,9 @@
   --color-panel: #f9f9f9;
   --color-outline: #e7e7e7;
 
-  --gradient-dark: linear-gradient(
-    89.4deg,
-    var(--color-emphasis) 0.37%,
-    #272727 99.67%
-  );
+  --gradient-dark: linear-gradient(89.4deg, var(--color-emphasis) 0.37%, #272727 99.67%);
 
-  --gradient-white-horizontal: linear-gradient(
-    90deg,
-    var(--color-white) 0%,
-    transparent 50%
-  );
+  --gradient-white-horizontal: linear-gradient(90deg, var(--color-white) 0%, transparent 50%);
 
   --gradient-white-vertical: linear-gradient(
     180deg,
@@ -207,7 +199,7 @@ li {
 .display-18-bold {
   font-family: var(--font-display);
   font-size: 1.125rem;
-  line-height: 1.375rem;
+  line-height: 1.6rem;
 }
 
 .interface-12,

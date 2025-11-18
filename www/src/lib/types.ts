@@ -1,7 +1,13 @@
-import * as Icons from "@/ui/icons";
-import * as NextImage from "next/image";
-import * as Button from "@/ui/button";
-import * as Paths from "@/lib/paths";
+import * as Icons from '@/ui/icons';
+import * as NextImage from 'next/image';
+import * as Button from '@/ui/button';
+import * as Paths from '@/lib/paths';
+import * as Sanity from '@/lib/sanity';
+
+export type PortableText = {
+  _type: 'block' | string;
+  _key?: string;
+}[];
 
 export type MenuItem = {
   label: string;
@@ -26,7 +32,7 @@ export type Icon = keyof typeof Icons;
 export type Path = (typeof Paths)[keyof typeof Paths];
 
 export type MapSection = {
-  type: "Map";
+  type: 'Map';
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -41,7 +47,7 @@ export type MapSection = {
 };
 
 export type TakeoverGridSection = {
-  type: "TakeoverGrid";
+  type: 'TakeoverGrid';
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -58,15 +64,15 @@ export type Cta = {
   href: string;
 } & (
   | {
-      type: "link";
+      type: 'link';
     }
   | ({
-      type: "button";
+      type: 'button';
     } & Button.VariantProps)
 );
 
 export type TakeoverHeadingSection = {
-  type: "TakeoverHeading";
+  type: 'TakeoverHeading';
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -77,7 +83,7 @@ export type TakeoverHeadingSection = {
 };
 
 export type CtaCardSection = {
-  type: "CtaCard";
+  type: 'CtaCard';
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -88,7 +94,7 @@ export type CtaCardSection = {
 };
 
 export type TextImageSplitSection = {
-  type: "TextImageSplit";
+  type: 'TextImageSplit';
   className?: string;
   reversed?: boolean;
   heading: string | React.ReactNode;
@@ -103,7 +109,7 @@ export type TextImageSplitSection = {
 };
 
 export type ValueGridSection = {
-  type: "ValueGrid";
+  type: 'ValueGrid';
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -117,7 +123,7 @@ export type ValueGridSection = {
 };
 
 export type LinkGridSection = {
-  type: "LinkGrid";
+  type: 'LinkGrid';
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -133,7 +139,7 @@ export type LinkGridSection = {
 };
 
 export type FaqsSection = {
-  type: "Faqs";
+  type: 'Faqs';
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -146,11 +152,11 @@ export type FaqsSection = {
 type Video = {
   src: string;
   alt: string;
-  type: "vimeo";
+  type: 'vimeo';
 };
 
 export type VideoFeatureSection = {
-  type: "VideoFeature";
+  type: 'VideoFeature';
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -164,7 +170,7 @@ export type VideoFeatureSection = {
 };
 
 export type VideoGridSection = {
-  type: "VideoGrid";
+  type: 'VideoGrid';
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -176,7 +182,7 @@ export type VideoGridSection = {
 };
 
 export type SpecTableSection = {
-  type: "SpecTable";
+  type: 'SpecTable';
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -189,7 +195,7 @@ export type SpecTableSection = {
 };
 
 export type TextSection = {
-  type: "Text";
+  type: 'Text';
   className?: string;
   heading?: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -197,7 +203,7 @@ export type TextSection = {
 };
 
 export type FeatureGridSection = {
-  type: "FeatureGrid";
+  type: 'FeatureGrid';
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -215,7 +221,7 @@ export type FeatureGridSection = {
 };
 
 export type ArticleHeroSection = {
-  type: "ArticleHero";
+  type: 'ArticleHero';
   className?: string;
   heading: string | React.ReactNode;
   author: string;
@@ -223,8 +229,7 @@ export type ArticleHeroSection = {
   tags: string[];
   body?: string | React.ReactNode;
   image: {
-    src: NextImage.StaticImageData;
-    alt: string;
+    asset?: Sanity.Types.SanityImageAsset | null;
   };
 };
 
@@ -240,7 +245,7 @@ export type TeamMember = {
 };
 
 export type TeamSection = {
-  type: "Team";
+  type: 'Team';
   className?: string;
   heading: string | React.ReactNode;
   featuredFounder: TeamMember;
@@ -249,7 +254,7 @@ export type TeamSection = {
 };
 
 export type TextHighlightsSection = {
-  type: "TextHighlights";
+  type: 'TextHighlights';
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;
@@ -260,7 +265,7 @@ export type TextHighlightsSection = {
 };
 
 export type ContactFormSection = {
-  type: "ContactForm";
+  type: 'ContactForm';
   className?: string;
   heading: string | React.ReactNode;
   subheading?: string | React.ReactNode;

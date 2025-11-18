@@ -1564,7 +1564,7 @@ export const OUR_STORY_PAGE: Types.Page = {
     {
       type: "VideoFeature",
       heading: "Our Story",
-      className: NUDGED_UP_CLASSNAME,
+      className: `-mt-20`,
       video: {
         src: "https://player.vimeo.com/video/183547629?title=0&byline=0&portrait=0",
         alt: "Art Guard company video",

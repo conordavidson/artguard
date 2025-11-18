@@ -1,9 +1,8 @@
-import * as Ui from "@/ui";
-import * as Utils from "@/lib/utils";
-import * as Types from "@/lib/types";
-import * as Text from "@/ui/text";
+import * as Utils from '@/lib/utils';
+import * as Types from '@/lib/types';
+import * as Text from '@/ui/text';
 
-import Image from "next/image";
+import SanityImage from '@/ui/sanityImage';
 
 type ArticleHeroProps = {
   section: Types.ArticleHeroSection;
@@ -11,15 +10,10 @@ type ArticleHeroProps = {
 
 const ArticleHero: React.FC<ArticleHeroProps> = (props) => {
   return (
-    <div
-      className={Utils.cx(
-        "col-span-full grid grid-cols-subgrid",
-        props.section.className
-      )}
-    >
+    <div className={Utils.cx('col-span-full grid grid-cols-subgrid', props.section.className)}>
       <div
         className={Utils.cx(
-          "relative z-10 row-start-1 row-end-2 pt-12 md:pt-40 md:pb-64 col-start-2 col-end-14 sm:col-end-10 md:col-end-8 lg:col-end-6"
+          'relative z-10 row-start-1 row-end-2 pt-12 md:pt-40 md:pb-64 col-start-2 col-end-14 sm:col-end-10 md:col-end-8 lg:col-end-6'
         )}
       >
         <div>
@@ -29,10 +23,7 @@ const ArticleHero: React.FC<ArticleHeroProps> = (props) => {
             </Text.Interface14>
             <div>
               {props.section.tags.map((tag) => (
-                <div
-                  key={tag}
-                  className="border border-brand rounded-md px-1 py-0.5"
-                >
+                <div key={tag} className="border border-brand rounded-md px-1 py-0.5">
                   <Text.Interface12 key={tag} bold className="text-brand">
                     {tag.toUpperCase()}
                   </Text.Interface12>
@@ -42,10 +33,7 @@ const ArticleHero: React.FC<ArticleHeroProps> = (props) => {
           </div>
 
           <div className="mt-3">
-            <Text.Display32
-              as="h1"
-              className="text-foreground text-pretty italic"
-            >
+            <Text.Display32 as="h1" className="text-foreground text-pretty italic">
               {props.section.heading}
             </Text.Display32>
           </div>
@@ -65,20 +53,20 @@ const ArticleHero: React.FC<ArticleHeroProps> = (props) => {
       </div>
       <div
         className={Utils.cx(
-          "z-0 relative md:row-start-1 md:row-end-2 col-start-1 col-end-15 md:col-start-5 h-[500px]"
+          'z-0 relative md:row-start-1 md:row-end-2 col-start-1 col-end-15 md:col-start-5 h-[500px]'
         )}
       >
         <div
-          className={Utils.cx(
-            "hidden md:block absolute inset-0 gradient-white-horizontal"
-          )}
+          className={Utils.cx('hidden md:block absolute inset-0 gradient-white-horizontal')}
         ></div>
         <div className="absolute inset-0 gradient-white-vertical"></div>
-        <Image
-          src={props.section.image.src}
-          alt={props.section.image.alt}
-          className="w-full h-full object-cover"
-        />
+        {props.section.image.asset && (
+          <SanityImage
+            image={props.section.image.asset}
+            alt={props.section.image.asset.altText || ''}
+            className="w-full h-full object-cover"
+          />
+        )}
       </div>
     </div>
   );
