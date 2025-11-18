@@ -87,17 +87,17 @@ export const HOME_PAGE: Types.Page = {
         {
           heading: 'Universal Compatibility',
           body: 'Protects objects of any shape, size, or material—from sculpture to paintings to installations. A single sensor solution for your entire collection.',
-          icon: 'Instituion',
+          icon: 'Plugs',
         },
         {
           heading: 'Instant Detection',
           body: 'Real-time alerts for theft and tampering with wireless reliability. Know immediately when your collection is at risk, anywhere in the world.',
-          icon: 'SpringInMotion',
+          icon: 'Alert',
         },
         {
           heading: 'Seamless Integration',
           body: 'Works within existing security infrastructure or as a standalone system. Professional-grade protection that adapts to your environment.',
-          icon: 'Instituion',
+          icon: 'TouchPanel',
         },
       ],
     },
@@ -2768,7 +2768,7 @@ export const ACCESSORIES_PAGE: Types.Page = {
   sections: [
     {
       type: 'TakeoverHeading',
-      className: 'md:-mt-nav-height pt-40',
+      className: '-mt-nav-height pt-42',
       heading: 'Accessories for the MAP Sensor',
       subheading: 'Click the direct link to order',
     },
