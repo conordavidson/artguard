@@ -1,39 +1,39 @@
-import * as React from "react";
-import * as Button from "@/ui/button";
-import * as Inputs from "@/ui/inputs";
-import * as Page from "@/ui/page";
-import * as Text from "@/ui/text";
+import * as React from 'react';
+import * as Button from '@/ui/button';
+import * as Inputs from '@/ui/inputs';
+import * as Page from '@/ui/page';
+import * as Text from '@/ui/text';
 
 type State =
   | {
-      status: "IDLE";
+      status: 'IDLE';
       email: string;
     }
   | {
-      status: "PENDING";
+      status: 'PENDING';
       email: string;
     }
   | {
-      status: "SUCCESS";
+      status: 'SUCCESS';
       email: string;
     }
   | {
-      status: "ERROR";
+      status: 'ERROR';
       error: string;
       email: string;
     };
 
 const NewsletterSignup = () => {
   const [state, setState] = React.useState<State>({
-    status: "IDLE",
-    email: "",
+    status: 'IDLE',
+    email: '',
   });
 
   const onChangeEmail = (email: string) => {
-    if (state.status === "PENDING") return;
+    if (state.status === 'PENDING') return;
 
     setState({
-      status: "IDLE",
+      status: 'IDLE',
       email,
     });
   };
@@ -41,27 +41,27 @@ const NewsletterSignup = () => {
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (state.email.trim() === "") return;
-    if (state.status === "PENDING") return;
+    if (state.email.trim() === '') return;
+    if (state.status === 'PENDING') return;
 
     setState({
-      status: "PENDING",
+      status: 'PENDING',
       email: state.email,
     });
 
     setTimeout(() => {
       setState({
-        status: "SUCCESS",
+        status: 'SUCCESS',
         email: state.email,
       });
     }, 1000);
   };
 
   const buttonLabel = () => {
-    if (state.status === "PENDING") return "Submitting...";
-    if (state.status === "SUCCESS") return "Subscribed!";
-    if (state.status === "ERROR") return "Error";
-    return "Sign Up";
+    if (state.status === 'PENDING') return 'Submitting...';
+    if (state.status === 'SUCCESS') return 'Subscribed!';
+    if (state.status === 'ERROR') return 'Error';
+    return 'Sign Up';
   };
 
   return (
@@ -72,9 +72,9 @@ const NewsletterSignup = () => {
         </Text.Interface20>
         <form
           onSubmit={onSubmit}
-          className="pt-6 flex flex-col md:flex-row items-center gap-x-4 gap-y-3"
+          className="pt-6 flex flex-col md:flex-row items-center justify-center gap-x-4 gap-y-3 max-w-[500px] mx-auto"
         >
-          <div className="flex-2 w-full max-w-[320px]">
+          <div className="flex-2 w-full">
             <Inputs.Text
               id="email"
               placeholder="Enter your email"

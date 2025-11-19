@@ -426,22 +426,22 @@ export const MAP_SENSORS_PAGE: Types.Page = {
   path: Paths.MAP_SENSORS,
   metadata: {
     title: 'MAP Wireless Sensors',
-    description: 'Universal protection for art and valuable assets',
-    keywords: ['Art Guard', 'MAP', 'Wireless Sensors'],
+    description: 'The most unique and versatile solution for art and asset protection',
+    keywords: ['Art Guard', 'MAP', 'Wireless Sensors', 'magnetometer'],
   },
   sections: [
     {
       type: 'TextImageSplit',
       className: 'md:-mt-nav-height',
       heading: 'MAP Wireless Sensors',
-      subheading: 'Universal protection for art and valuable assets',
-      body: "MAP sensors provide object-specific security for artwork, antiques, and collectibles of any size or shape. Using patented magnetometer technology, MAP detects unauthorized movement and triggers immediate alerts—delivering museum-grade protection that's completely hidden from view.",
+      subheading: 'The most unique and versatile solution for art and asset protection',
+      body: "Art Guard's patented wireless MAP Sensor is at the heart of art security systems everywhere. The unique MAP (Magnetic Asset Protection) technology of the sensor's magnetometer paired with a rare earth magnet on a piece of art or valuable object allows for the comprehensive protection of nearly all objects, regardless of size or shape, whether hanging or seated and in almost any environment.",
       ctas: [
         {
           type: 'button',
           label: 'Download Datasheet',
           variant: 'primary',
-          href: Paths.SECURITY_PRODUCTS,
+          href: '/resources/ArtGuard-MAPsensor-DataSheet.pdf',
         },
         {
           type: 'button',
@@ -452,51 +452,45 @@ export const MAP_SENSORS_PAGE: Types.Page = {
       ],
       image: {
         src: MapSensorsHero,
-        alt: 'Image of MAP sensors',
+        alt: 'MAP wireless sensors',
       },
     },
+
+    {
+      type: 'Text',
+      heading: 'Critical Primary Layer of Protection',
+      className: '-mt-24',
+      body: (
+        <p>
+          The MAP sensor detects the presence and movement of a small magnet whose distance from the
+          sensor is determined by the size of the magnet, which is available in a wide variety of
+          sizes and configurations to meet any condition and application. Once enrolled in a control
+          panel or access control system any movement of the sensor or magnet and the object to
+          which it is safely attached, triggers an immediate alert and specific ID location. MAP is
+          the critical primary layer of protection at the point of contact whether other security is
+          on or off to allow daily movement in any facility.
+        </p>
+      ),
+    },
+
     {
       type: 'VideoFeature',
-      className: 'md:-mt-36',
-      heading: 'Complete Protection, Simply Deployed',
+      heading: 'How MAP Sensors Work',
       video: {
         src: 'https://player.vimeo.com/video/1130331510?h=4a9f97b82c',
-        alt: 'Video of the MAP Gold System',
+        alt: 'MAP sensor demonstration video',
         type: 'vimeo',
       },
       cards: [
         {
-          heading: 'Wireless Sensors',
-          body: 'Up to 96 MAP v3 sensors protect your entire collection. Each piece gets individual monitoring.',
-          icon: 'Instituion',
-        },
-        {
-          heading: 'Alula Connect+ Panel',
-          body: 'Award-winning control panel manages all sensors. Place anywhere—no wiring required.',
-          icon: 'Instituion',
-        },
-        {
-          heading: 'Mobile Control',
-          body: 'Arm, disarm, and monitor your system from your phone or web portal. Complete remote access.',
-          icon: 'Instituion',
-        },
-      ],
-    },
-    {
-      type: 'TakeoverGrid',
-      heading: 'Flexible Protection for Any Environment',
-      subheading:
-        'Three user-friendly modes of operation to optimize protection in different environments and situations.',
-      cards: [
-        {
           heading: 'Magnetometer (Hanging)',
           body: 'Detects movement of magnet on hanging artwork. Sensor placed behind the piece.',
-          icon: 'Instituion',
+          icon: 'HangingFrame',
         },
         {
           heading: 'Magnetometer (Seated)',
           body: 'Detects movement of magnet on sculptures and objects. Sensor placed beneath.',
-          icon: 'SpringInMotion',
+          icon: 'Sculpture',
         },
         {
           heading: 'Accelerometer',
@@ -505,65 +499,73 @@ export const MAP_SENSORS_PAGE: Types.Page = {
         },
       ],
     },
+
     {
-      type: 'ValueGrid',
+      type: 'TakeoverGrid',
       heading: 'Why MAP Sensors',
       subheading: 'Built for professional installation, trusted by leading institutions',
       cards: [
         {
-          heading: 'Museum-Grade Reliability',
-          body: 'Trusted by leading institutions and top national integrators worldwide.',
-          icon: 'Instituion',
+          heading: 'Unique',
+          body: 'No other security solution offers the comprehensive protection of a MAP sensor.',
+          icon: 'CheckRibbon',
         },
         {
-          heading: 'Universal Compatibility',
-          body: 'Integrates with Honeywell, DSC, DMP, Qolsys, 2GIG, and all major security platforms.',
-          icon: 'SpringInMotion',
+          heading: 'Reliable',
+          body: 'Clients from high-end collectors to major galleries, museums and auction houses around the world depend on MAP to provide dependable protection for peace of mind.',
+          icon: 'ShieldLock',
         },
         {
-          heading: 'Completely Hidden',
-          body: 'Both sensors and magnets invisible to viewers. Maintains aesthetic integrity.',
-          icon: 'Instituion',
+          heading: 'Easy to Apply',
+          body: 'The tolerance for placement offers flexibility in how the sensor and magnet can be affixed.',
+          icon: 'Tools',
         },
         {
-          heading: 'Museum-Grade Reliability',
-          body: 'Trusted by leading institutions and top national integrators worldwide.',
-          icon: 'Instituion',
+          heading: 'Targeted',
+          body: 'MAP offers 3 modes of operation that can easily be changed by the user to optimize performance on hanging and seated objects.',
+          icon: 'Target',
         },
         {
-          heading: 'Universal Compatibility',
-          body: 'Integrates with Honeywell, DSC, DMP, Qolsys, 2GIG, and all major security platforms.',
-          icon: 'SpringInMotion',
+          heading: 'Universal',
+          body: "MAP is available in multiple protocols to allow integration in a wide variety of manufacturer's security systems.",
+          icon: 'Plugs',
         },
         {
-          heading: 'Completely Hidden',
-          body: 'Both sensors and magnets invisible to viewers. Maintains aesthetic integrity.',
-          icon: 'Instituion',
+          heading: 'Safe',
+          body: 'Unlike other sensors that are placed on the object, use of a tiny rare earth magnet reduces the footprint of contact and keeps batteries away from the asset.',
+          icon: 'Lock',
+        },
+        {
+          heading: 'Discreet',
+          body: 'MAP sensors are small enough to disguise behind or under the supporting surface of most objects.',
+          icon: 'Hidden',
         },
       ],
     },
+
     {
       type: 'TextHighlights',
       heading: 'Ideal For',
       highlights: [
         {
-          heading: 'Private Collections',
-          body: 'Discreet protection for home collections with complete privacy and mobile convenience',
+          heading: 'Museums',
+          body: 'Professional installation for permanent collections and special exhibitions',
         },
         {
           heading: 'Galleries',
-          body: 'Flexible system for rotating exhibitions with easy setup and no installation costs',
+          body: 'Flexible protection for rotating exhibitions integrated with existing security',
         },
         {
-          heading: 'Museums',
-          body: 'Perfect for special exhibitions and temporary displays that require portable, self-contained security',
+          heading: 'Private Collections',
+          body: 'Discreet integration with home security systems for comprehensive protection',
         },
         {
           heading: 'Corporate Collections',
-          body: 'Comprehensive security for office art installations with professional monitoring options',
+          body: 'Professional security installations for office art and valuable assets',
         },
       ],
     },
+
     {
       type: 'SpecTable',
       heading: 'Technical Specifications',
@@ -593,6 +595,10 @@ export const MAP_SENSORS_PAGE: Types.Page = {
           value: 'Industry standard 60 minutes',
         },
         {
+          heading: 'Operation Modes',
+          value: '3 user-selectable modes (2 magnetometer, 1 accelerometer)',
+        },
+        {
           heading: 'Compatibility',
           isHeader: true,
         },
@@ -606,14 +612,16 @@ export const MAP_SENSORS_PAGE: Types.Page = {
         },
       ],
     },
+
     {
       type: 'TakeoverHeading',
       icon: 'Instituion',
       heading: 'Trusted by Leading Institutions',
       subheading:
-        "The MAP Gold System has been deployed by Sotheby's, major museums, and discerning private collectors worldwide. When Sotheby's needed to secure a high-value exhibition, they selected our technology for its reliability and ease of deployment.",
+        "MAP sensors have been deployed by Sotheby's, major museums, and discerning private collectors worldwide. When Sotheby's needed to secure a high-value exhibition, they selected our technology for its reliability and ease of deployment.",
       byline: '—Chief of Security, Major NYC Museum',
     },
+
     {
       type: 'CtaCard',
       heading: 'Specify MAP Sensors for Your Next Installation',
@@ -621,7 +629,7 @@ export const MAP_SENSORS_PAGE: Types.Page = {
       ctas: [
         {
           label: 'Download Datasheet',
-          href: Paths.SECURITY_PRODUCTS,
+          href: '/resources/ArtGuard-MAPsensor-DataSheet.pdf',
           type: 'button',
           variant: 'primary',
         },
