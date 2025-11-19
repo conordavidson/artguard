@@ -32,10 +32,12 @@ const TextImageSplit: React.FC<TextImageSplitProps> = (props) => {
       </div>
       <div
         className={Utils.cx(
-          'z-0 relative md:row-start-1 md:row-end-2 col-start-1 col-end-15 mt-4 md:mt-0 max-h-[800px]',
+          'z-0 relative md:row-start-1 md:row-end-2 col-start-1 col-end-15 mt-4 md:mt-0',
           {
             'md:col-start-5': !props.section.reversed,
             'md:col-end-11': !!props.section.reversed,
+            'max-h-[800px]': 'image' in props.section,
+            'h-[400px] md:h-[600px]': 'useHomepageHero' in props.section,
           }
         )}
       >
@@ -58,8 +60,10 @@ const TextImageSplit: React.FC<TextImageSplitProps> = (props) => {
               src={GalleryHero}
               alt="Image of gallery with active alarm sensors"
               className="w-full h-full object-cover"
+              loading="eager"
             />
             <svg
+              id="homepage-hero-svg"
               className="absolute z-30 inset-0 w-full h-full"
               viewBox="0 0 2200 1467"
               preserveAspectRatio="xMidYMid slice"
