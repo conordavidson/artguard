@@ -110,7 +110,7 @@ const SvgBeacon: React.FC<SvgBeaconProps> = (props) => {
             fill="#faffee0c"
             stroke="currentColor"
             strokeWidth={1}
-            // strokeDasharray={100}
+            strokeDasharray={150}
             strokeLinecap="round"
             vectorEffect="non-scaling-stroke"
             className={`alarm-ring alarm-ring-${i}`}
