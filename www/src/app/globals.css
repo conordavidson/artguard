@@ -7,7 +7,7 @@
   --color-background: #fff;
   --color-brand: #eb262a;
   --color-white: #fff;
-  --color-lime: #edffcd;
+  --color-lime: #e8fda1;
 
   --color-emphasis: #1e1e1e;
   --color-muted: #333333;
@@ -407,3 +407,147 @@ li {
   transform-origin: center;
   will-change: transform, opacity;
 }
+
+@keyframes alarm-ring-0 {
+  0% {
+    transform: scale(var(--start-scale));
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  60% {
+    transform: scale(var(--end-scale));
+  }
+  100% {
+    transform: scale(var(--end-scale));
+    opacity: 0;
+  }
+}
+
+@keyframes alarm-ring-1 {
+  0% {
+    transform: scale(var(--start-scale));
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 0;
+  }
+  70% {
+    transform: scale(var(--end-scale));
+  }
+  100% {
+    transform: scale(var(--end-scale));
+    opacity: 0;
+  }
+}
+
+@keyframes alarm-ring-2 {
+  0% {
+    transform: scale(var(--start-scale));
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  75% {
+    transform: scale(var(--end-scale));
+  }
+  100% {
+    transform: scale(var(--end-scale));
+    opacity: 0;
+  }
+}
+
+@keyframes alarm-ring-3 {
+  0% {
+    transform: scale(var(--start-scale));
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  90% {
+    transform: scale(var(--end-scale));
+  }
+  100% {
+    transform: scale(var(--end-scale));
+    opacity: 0;
+  }
+}
+
+.alarm-ring {
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.24, 0.56, 0.49, 0.85);
+  animation-delay: calc((var(--wave-index, 0) * 0.25s) + var(--delay, 0s));
+  will-change: transform, opacity;
+  animation-fill-mode: forwards;
+}
+
+.alarm-ring-0 {
+  animation-name: alarm-ring-0;
+}
+.alarm-ring-1 {
+  animation-name: alarm-ring-1;
+}
+.alarm-ring-2 {
+  animation-name: alarm-ring-2;
+}
+.alarm-ring-3 {
+  animation-name: alarm-ring-3;
+}
+
+/* .alarm-ring {
+  animation: alarm-ring var(--duration) ease-out infinite;
+  will-change: transform, opacity;
+} */
+
+/* 
+.alarm-dot {
+  animation: alarm-dot 2s ease-in-out infinite;
+}
+
+.alarm-ring {
+  will-change: transform, opacity;
+}
+
+.alarm-ring-1 {
+  animation: alarm-ring-1 3s ease-out infinite;
+}
+
+.alarm-ring-2 {
+  animation: alarm-ring-2 3s ease-out infinite;
+}
+
+.alarm-ring-3 {
+  animation: alarm-ring-3 3s ease-out infinite;
+}
+
+.alarm-ring-4 {
+  animation: alarm-ring-4 3s ease-out infinite;
+} */

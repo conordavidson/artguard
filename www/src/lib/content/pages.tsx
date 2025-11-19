@@ -61,10 +61,7 @@ export const HOME_PAGE: Types.Page = {
           href: Paths.SECURITY_INSTALLERS,
         },
       ],
-      image: {
-        src: GalleryRadar,
-        alt: 'Image of gallery with active alarm sensors',
-      },
+      useHomepageHero: true,
     },
     {
       type: 'RecentInsights',

@@ -102,11 +102,17 @@ export type TextImageSplitSection = {
   body?: string | React.ReactNode;
   auxContent?: string | React.ReactNode;
   ctas: Cta[];
-  image: {
-    src: NextImage.StaticImageData;
-    alt: string;
-  };
-};
+} & (
+  | {
+      image: {
+        src: NextImage.StaticImageData;
+        alt: string;
+      };
+    }
+  | {
+      useHomepageHero: true;
+    }
+);
 
 export type ValueGridSection = {
   type: 'ValueGrid';
