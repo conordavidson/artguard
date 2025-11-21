@@ -113,10 +113,10 @@ export const LinkedInIcon = () => {
 export const FacebookIcon = () => {
   return (
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#clip0_123_107)">
+      <g clipPath="url(#clip0_123_107)">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M3.11111 28H24.8889C26.6071 28 28 26.6071 28 24.8889V3.11111C28 1.39289 26.6071 0 24.8889 0H3.11111C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6071 1.39289 28 3.11111 28Z"
           fill="currentColor"
         />
@@ -137,14 +137,14 @@ export const FacebookIcon = () => {
 export const XLogo = () => {
   return (
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#clip0_123_118)">
+      <g clipPath="url(#clip0_123_118)">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M3.11111 28H24.8889C26.6071 28 28 26.6071 28 24.8889V3.11111C28 1.39289 26.6071 0 24.8889 0H3.11111C1.39289 0 0 1.39289 0 3.11111V24.8889C0 26.6071 1.39289 28 3.11111 28Z"
           fill="currentColor"
         />
-        <g clip-path="url(#clip1_123_118)">
+        <g clipPath="url(#clip1_123_118)">
           <path
             d="M15.7142 12.6226L22.4162 5H20.8286L15.0068 11.6173L10.3604 5H5L12.0278 15.0074L5 22.9999H6.5876L12.7316 16.0104L17.6396 22.9999H23M7.1606 6.17142H9.5996L20.8274 21.8861H18.3878"
             fill="#1e1e1e"

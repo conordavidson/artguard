@@ -1775,7 +1775,7 @@ export const SATISFIED_CUSTOMERS_PAGE: Types.Page = {
   sections: [
     {
       type: 'TakeoverHeading',
-
+      icon: 'UserGroup',
       heading: 'The Art Guard Team',
       body: "The Art Guard team is made up of professionals from both the art market and veterans from the security industry and fine art insurance. Art Guard's engineers have over 60 years of cumulative experience in developing sensor technologies for GE, DSC and other leaders in the security component sector. Advisors include museum security directors and art conservators. Nothing has been left to chance in addressing the needs of the industry.",
       ctas: [
