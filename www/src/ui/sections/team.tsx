@@ -1,12 +1,12 @@
-import * as Ui from "@/ui";
-import * as Utils from "@/lib/utils";
-import * as Page from "@/ui/page";
-import * as Types from "@/lib/types";
-import * as Text from "@/ui/text";
-import * as Graphics from "@/ui/graphics";
+import * as Ui from '@/ui';
+import * as Utils from '@/lib/utils';
+import * as Page from '@/ui/page';
+import * as Types from '@/lib/types';
+import * as Text from '@/ui/text';
+import * as Graphics from '@/ui/graphics';
 
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 type TeamSectionProps = {
   section: Types.TeamSection;
@@ -14,9 +14,9 @@ type TeamSectionProps = {
 
 const TeamSection: React.FC<TeamSectionProps> = (props) => {
   return (
-    <div
+    <section
       className={Utils.cx(
-        "col-span-full grid grid-cols-subgrid",
+        'section team-section col-span-full grid grid-cols-subgrid',
         props.section.className
       )}
     >
@@ -118,7 +118,7 @@ const TeamSection: React.FC<TeamSectionProps> = (props) => {
           </div>
         </div>
       </Page.Container>
-    </div>
+    </section>
   );
 };
 

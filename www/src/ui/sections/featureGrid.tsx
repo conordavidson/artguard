@@ -14,7 +14,12 @@ type FeatureGridProps = {
 
 const FeatureGrid: React.FC<FeatureGridProps> = (props) => {
   return (
-    <div className={Utils.cx('col-span-full grid grid-cols-subgrid', props.section.className)}>
+    <section
+      className={Utils.cx(
+        'section feature-grid-section col-span-full grid grid-cols-subgrid',
+        props.section.className
+      )}
+    >
       {(props.section.heading || props.section.subheading) && (
         <Page.Container className="text-center max-w-[500px] mx-auto">
           <Ui.Heading.CenterStack
@@ -77,7 +82,7 @@ const FeatureGrid: React.FC<FeatureGridProps> = (props) => {
           </div>
         </Page.Container>
       )}
-    </div>
+    </section>
   );
 };
 

@@ -77,9 +77,11 @@ const NewsletterSignup = () => {
           <div className="flex-2 w-full">
             <Inputs.Text
               id="email"
+              autoComplete="email"
               placeholder="Enter your email"
               value={state.email}
               onChange={onChangeEmail}
+              required
             />
           </div>
           <div className="flex-1">

@@ -1,8 +1,8 @@
-import * as Ui from "@/ui";
-import * as Utils from "@/lib/utils";
-import * as Page from "@/ui/page";
-import * as Types from "@/lib/types";
-import * as Text from "@/ui/text";
+import * as Ui from '@/ui';
+import * as Utils from '@/lib/utils';
+import * as Page from '@/ui/page';
+import * as Types from '@/lib/types';
+import * as Text from '@/ui/text';
 
 type VideoGridProps = {
   section: Types.VideoGridSection;
@@ -10,9 +10,9 @@ type VideoGridProps = {
 
 const VideoGrid: React.FC<VideoGridProps> = (props) => {
   return (
-    <div
+    <section
       className={Utils.cx(
-        "col-span-full grid grid-cols-subgrid",
+        'section video-grid-section col-span-full grid grid-cols-subgrid',
         props.section.className
       )}
     >
@@ -43,7 +43,7 @@ const VideoGrid: React.FC<VideoGridProps> = (props) => {
           ))}
         </div>
       </Page.Container>
-    </div>
+    </section>
   );
 };
 

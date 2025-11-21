@@ -1,9 +1,9 @@
-import * as Ui from "@/ui";
-import * as Utils from "@/lib/utils";
-import * as Text from "@/ui/text";
-import * as Types from "@/lib/types";
+import * as Ui from '@/ui';
+import * as Utils from '@/lib/utils';
+import * as Text from '@/ui/text';
+import * as Types from '@/lib/types';
 
-import Image from "next/image";
+import Image from 'next/image';
 
 type MapSectionProps = {
   section: Types.MapSection;
@@ -11,9 +11,9 @@ type MapSectionProps = {
 
 const MapSection: React.FC<MapSectionProps> = (props) => {
   return (
-    <div
+    <section
       className={Utils.cx(
-        "col-span-full grid grid-cols-subgrid",
+        'section map-section col-span-full grid grid-cols-subgrid',
         props.section.className
       )}
     >
@@ -46,7 +46,7 @@ const MapSection: React.FC<MapSectionProps> = (props) => {
           ))}
         </div>
       </Ui.Page.Container>
-    </div>
+    </section>
   );
 };
 

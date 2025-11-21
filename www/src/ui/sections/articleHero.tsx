@@ -10,7 +10,12 @@ type ArticleHeroProps = {
 
 const ArticleHero: React.FC<ArticleHeroProps> = (props) => {
   return (
-    <div className={Utils.cx('col-span-full grid grid-cols-subgrid', props.section.className)}>
+    <section
+      className={Utils.cx(
+        'article-hero-section section col-span-full grid grid-cols-subgrid',
+        props.section.className
+      )}
+    >
       <div
         className={Utils.cx(
           'relative z-10 row-start-1 row-end-2 pt-12 md:pt-40 md:pb-64 col-start-2 col-end-14 sm:col-end-10 md:col-end-8 lg:col-end-6'
@@ -43,13 +48,6 @@ const ArticleHero: React.FC<ArticleHeroProps> = (props) => {
             </Text.Interface18>
           </div>
         </div>
-        {/* <Ui.Heading.Stack
-          heading={props.section.heading}
-          // subheading={props.section.subheading}
-          body={props.section.body}
-          // ctas={props.section.ctas}
-          // auxContent={props.section.auxContent}
-        /> */}
       </div>
       <div
         className={Utils.cx(
@@ -68,7 +66,7 @@ const ArticleHero: React.FC<ArticleHeroProps> = (props) => {
           />
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -522,32 +522,43 @@ li {
   animation-name: alarm-ring-3;
 }
 
-/* .alarm-ring {
-  animation: alarm-ring var(--duration) ease-out infinite;
-  will-change: transform, opacity;
-} */
+.sections-container {
+  & > *:first-child {
+    margin-top: 4rem;
+  }
 
-/* 
-.alarm-dot {
-  animation: alarm-dot 2s ease-in-out infinite;
+  & > * {
+    margin-top: 8rem;
+  }
 }
 
-.alarm-ring {
-  will-change: transform, opacity;
+.text-image-split-section:first-child {
+  margin-top: 4rem;
 }
 
-.alarm-ring-1 {
-  animation: alarm-ring-1 3s ease-out infinite;
+.text-image-split-section {
+  margin-top: 6rem;
 }
 
-.alarm-ring-2 {
-  animation: alarm-ring-2 3s ease-out infinite;
+@media (min-width: theme(screens.md)) {
+  .text-image-split-section:first-child {
+    margin-top: calc(-1 * var(--nav-height));
+  }
 }
 
-.alarm-ring-3 {
-  animation: alarm-ring-3 3s ease-out infinite;
+.text-image-split-section + .section {
+  margin-top: 5rem;
 }
 
-.alarm-ring-4 {
-  animation: alarm-ring-4 3s ease-out infinite;
-} */
+.text-section + .text-section {
+  margin-top: 4rem;
+}
+
+.cta-card-section {
+  margin-top: 7rem;
+}
+
+.takeover-heading-section:first-child {
+  margin-top: calc(-1 * var(--nav-height)) !important;
+  padding-top: 8rem !important;
+}

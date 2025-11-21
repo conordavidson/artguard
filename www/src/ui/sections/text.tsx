@@ -9,7 +9,12 @@ type TextSectionProps = {
 
 const TextSection: React.FC<TextSectionProps> = (props) => {
   return (
-    <div className={Utils.cx('col-span-full grid grid-cols-subgrid', props.section.className)}>
+    <section
+      className={Utils.cx(
+        'section text-section col-span-full grid grid-cols-subgrid',
+        props.section.className
+      )}
+    >
       <Page.Container className="max-w-[575px] mx-auto">
         {props.section.heading && (
           <Text.Display32
@@ -28,7 +33,7 @@ const TextSection: React.FC<TextSectionProps> = (props) => {
         )}
         <div className="mt-8 editorial">{props.section.body}</div>
       </Page.Container>
-    </div>
+    </section>
   );
 };
 

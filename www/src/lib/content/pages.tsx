@@ -29,7 +29,6 @@ const STANDARD_CTA_CARD: Types.CtaCardSection = {
 };
 
 export const HOME_PAGE: Types.Page = {
-  className: `${STANDARD_SPACING_CLASSNAME}`,
   path: Paths.HOME,
   metadata: {
     title: 'Art Guard',
@@ -43,7 +42,6 @@ export const HOME_PAGE: Types.Page = {
   sections: [
     {
       type: 'TextImageSplit',
-      className: 'md:-mt-nav-height',
       heading: 'Museum-Grade Art Protection for Any Environment',
       subheading:
         "Wireless sensor technology trusted by Sotheby's, MOMA, and leading collectors worldwide",
@@ -66,11 +64,9 @@ export const HOME_PAGE: Types.Page = {
     {
       type: 'RecentInsights',
       heading: 'Recent Insights',
-      className: '-mt-24',
     },
     {
       type: 'TakeoverGrid',
-      className: '-mt-8',
       heading: 'Advanced Protection Without Compromise',
       subheading: "Wireless sensor technology designed for the world's most valuable collections.",
       ctas: [
@@ -227,7 +223,6 @@ export const HOME_PAGE: Types.Page = {
 import BillAnderson from '@images/billanderson.jpg';
 
 export const TEAM_PAGE: Types.Page = {
-  className: `${STANDARD_SPACING_CLASSNAME} ${TEXT_HERO_CLASSNAME}`,
   path: Paths.TEAM,
   metadata: {
     title: 'Our Team',
@@ -288,7 +283,6 @@ import MapSilver from '@images/mapsilver.jpg';
 import MapSensors from '@images/mapsensors.jpg';
 
 export const SECURITY_PRODUCTS_PAGE: Types.Page = {
-  className: 'space-y-24',
   path: Paths.SECURITY_PRODUCTS,
   metadata: {
     title: 'Security Products',
@@ -302,7 +296,6 @@ export const SECURITY_PRODUCTS_PAGE: Types.Page = {
   sections: [
     {
       type: 'FeatureGrid',
-      className: 'pt-16',
       heading: 'Art Guard Security Solutions',
       subheading: 'Choose the right protection for your needs',
       items: [
@@ -405,14 +398,10 @@ export const SECURITY_PRODUCTS_PAGE: Types.Page = {
         "Whether you're ready to order, need technical specifications, or have questions about the right solution for your needs, we're here to help.",
       ctas: [
         {
-          label: '(212) 989-1494',
-          href: 'tel:+12129891494',
-          type: 'link',
-        },
-        {
-          label: 'info@artguard.net',
-          href: 'mailto:info@artguard.net',
-          type: 'link',
+          label: 'Contact Us',
+          href: Paths.CONTACT,
+          type: 'button',
+          variant: 'primary',
         },
       ],
     },
@@ -422,7 +411,6 @@ export const SECURITY_PRODUCTS_PAGE: Types.Page = {
 import MapSensorsHero from '@images/mapsensorshero.jpg';
 
 export const MAP_SENSORS_PAGE: Types.Page = {
-  className: STANDARD_SPACING_CLASSNAME,
   path: Paths.MAP_SENSORS,
   metadata: {
     title: 'MAP Wireless Sensors',
@@ -432,7 +420,6 @@ export const MAP_SENSORS_PAGE: Types.Page = {
   sections: [
     {
       type: 'TextImageSplit',
-      className: 'md:-mt-nav-height',
       heading: 'MAP Wireless Sensors',
       subheading: 'The most unique and versatile solution for art and asset protection',
       body: "Art Guard's patented wireless MAP Sensor is at the heart of art security systems everywhere. The unique MAP (Magnetic Asset Protection) technology of the sensor's magnetometer paired with a rare earth magnet on a piece of art or valuable object allows for the comprehensive protection of nearly all objects, regardless of size or shape, whether hanging or seated and in almost any environment.",
@@ -459,7 +446,6 @@ export const MAP_SENSORS_PAGE: Types.Page = {
     {
       type: 'Text',
       heading: 'Critical Primary Layer of Protection',
-      className: '-mt-24',
       body: (
         <p>
           The MAP sensor detects the presence and movement of a small magnet whose distance from the
@@ -477,7 +463,7 @@ export const MAP_SENSORS_PAGE: Types.Page = {
       type: 'VideoFeature',
       heading: 'How MAP Sensors Work',
       video: {
-        src: 'https://player.vimeo.com/video/1130331510?h=4a9f97b82c',
+        src: 'https://player.vimeo.com/video/844028466',
         alt: 'MAP sensor demonstration video',
         type: 'vimeo',
       },
@@ -647,7 +633,6 @@ export const MAP_SENSORS_PAGE: Types.Page = {
 import Museum from '@images/museum.jpg';
 
 export const MUSEUMS_PAGE: Types.Page = {
-  className: STANDARD_SPACING_CLASSNAME,
   path: Paths.MUSEUMS,
   metadata: {
     title: 'Security Solutions for Museums',
@@ -661,7 +646,6 @@ export const MUSEUMS_PAGE: Types.Page = {
   sections: [
     {
       type: 'TextImageSplit',
-      className: 'md:-mt-nav-height',
       heading: 'Security for Museums and Galleries',
       subheading: 'Object-specific protection for collections of any size',
       body: 'MAP sensors deliver comprehensive, discreet security for artwork, artifacts, and exhibits—from masterpiece paintings to small historical objects.',
@@ -687,7 +671,6 @@ export const MUSEUMS_PAGE: Types.Page = {
     {
       type: 'Text',
       heading: 'Complete Protection, Simply Deployed',
-      className: NUDGED_UP_CLASSNAME,
       body: (
         <>
           <p>
@@ -713,7 +696,6 @@ export const MUSEUMS_PAGE: Types.Page = {
     {
       type: 'Text',
       heading: 'The Solution',
-      className: NUDGED_UP_CLASSNAME,
       body: (
         <>
           <p>
@@ -819,7 +801,6 @@ export const MUSEUMS_PAGE: Types.Page = {
 import Gallery from '@images/gallery.jpg';
 
 export const GALLERIES_PAGE: Types.Page = {
-  className: STANDARD_SPACING_CLASSNAME,
   path: Paths.GALLERIES,
   metadata: {
     title: 'Security Solutions for Art Galleries and Dealers | Art Guard',
@@ -834,7 +815,6 @@ export const GALLERIES_PAGE: Types.Page = {
   sections: [
     {
       type: 'TextImageSplit',
-      className: 'md:-mt-nav-height',
       heading: 'Security Solutions for Art Galleries and Dealers',
       subheading: 'Museum-grade protection for continuously changing works',
       body: 'Art galleries have different security needs from museums or other facilities that display art. Shows change frequently so flexibility and ease of use in a security apparatus is critical. Entrances are open for free movement and often poorly supervised. Works for special or group shows increasingly require special security demands by the lender.',
@@ -860,7 +840,6 @@ export const GALLERIES_PAGE: Types.Page = {
     {
       type: 'Text',
       heading: 'The Reality of Gallery Theft',
-      className: NUDGED_UP_CLASSNAME,
       body: (
         <>
           <p>
@@ -916,7 +895,6 @@ export const GALLERIES_PAGE: Types.Page = {
 import HistoricHome from '@images/historichome.jpg';
 
 export const HISTORIC_HOMES_PAGE: Types.Page = {
-  className: 'space-y-24',
   path: Paths.HISTORIC_HOMES,
   metadata: {
     title: 'Historic Houses',
@@ -927,7 +905,6 @@ export const HISTORIC_HOMES_PAGE: Types.Page = {
   sections: [
     {
       type: 'TextImageSplit',
-      className: 'md:-mt-nav-height',
       heading: 'Security for Historic Houses and History Museums',
       subheading: 'Protect collections without compromising historic architecture',
       body: 'Historic houses and history museums face unique security challenges. Collections often include furniture, decorative arts, documents, and personal artifacts spread across multiple rooms in buildings where traditional hardwired systems would require damaging original architecture.',
@@ -954,7 +931,6 @@ export const HISTORIC_HOMES_PAGE: Types.Page = {
     {
       type: 'Text',
       heading: 'The Challenge',
-      className: NUDGED_UP_CLASSNAME,
       body: (
         <>
           <p>
@@ -977,7 +953,6 @@ export const HISTORIC_HOMES_PAGE: Types.Page = {
     {
       type: 'Text',
       heading: 'The Solution',
-      className: NUDGED_UP_CLASSNAME,
       body: (
         <>
           <p>
@@ -1053,7 +1028,6 @@ export const HISTORIC_HOMES_PAGE: Types.Page = {
 import HotelLobby from '@images/hotellobby.jpg';
 
 export const HOTELS_PAGE: Types.Page = {
-  className: STANDARD_SPACING_CLASSNAME,
   path: Paths.HOTELS,
   metadata: {
     title: 'Hotels',
@@ -1064,7 +1038,6 @@ export const HOTELS_PAGE: Types.Page = {
   sections: [
     {
       type: 'TextImageSplit',
-      className: 'md:-mt-nav-height',
       heading: 'Asset Protection for Hotels Against Theft',
       subheading: 'Protection from theft for any art and decorative object',
       body: "Being the perfect host with imperfect guests, hotels and resorts strive to create an environment that elevates their guests' feelings of privilege and comfort. This is achieved through original artwork and designer fixtures, which have become commonplace in many properties. However, hotels are not museums, and guests are given the benefit of the doubt. This approach, while beneficial for guests, poses a liability for hotels.",
@@ -1091,7 +1064,6 @@ export const HOTELS_PAGE: Types.Page = {
     {
       type: 'Text',
       heading: 'The Challenge',
-      className: NUDGED_UP_CLASSNAME,
       body: (
         <>
           <p>
@@ -1113,7 +1085,6 @@ export const HOTELS_PAGE: Types.Page = {
     {
       type: 'Text',
       heading: 'Art Guard MAP: Discreet, Museum-Grade Protection',
-      className: NUDGED_UP_CLASSNAME,
       body: (
         <>
           <p>
@@ -1156,7 +1127,6 @@ export const HOTELS_PAGE: Types.Page = {
 import AuctionHouse from '@images/auctionhouse.jpg';
 
 export const AUCTION_HOUSES_PAGE: Types.Page = {
-  className: STANDARD_SPACING_CLASSNAME,
   path: Paths.AUCTION_HOUSES,
   metadata: {
     title: 'Auction Houses',
@@ -1167,7 +1137,6 @@ export const AUCTION_HOUSES_PAGE: Types.Page = {
   sections: [
     {
       type: 'TextImageSplit',
-      className: 'md:-mt-nav-height',
       heading: 'Asset Security for Auction Houses',
       subheading: 'Flexible protection for continuously changing inventory',
       body: 'Auction houses are unique in placing demands for flexibility on any security system designed to protect objects. Objects of enormous variety are continuously being moved and changed, maybe more so than in any other facility displaying valuable assets. Ease-of-use should be a hallmark. And a system has to be equally adept at securing a painting and a piece of jewelry.',
@@ -1194,7 +1163,6 @@ export const AUCTION_HOUSES_PAGE: Types.Page = {
     {
       type: 'Text',
       heading: 'Comprehensive Protection for Every Lot',
-      className: NUDGED_UP_CLASSNAME,
       body: (
         <p>
           Art Guard MAP offers the most comprehensive protection for stationary objects of any
@@ -1245,7 +1213,6 @@ export const AUCTION_HOUSES_PAGE: Types.Page = {
 };
 
 export const PRIVATE_COLLECTIONS_PAGE: Types.Page = {
-  className: STANDARD_SPACING_CLASSNAME,
   path: Paths.PRIVATE_COLLECTIONS,
   metadata: {
     title: 'Private Collections',
@@ -1261,7 +1228,6 @@ export const PRIVATE_COLLECTIONS_PAGE: Types.Page = {
   sections: [
     {
       type: 'TextImageSplit',
-      className: 'md:-mt-nav-height',
       heading:
         'Asset Protection for Private Art Collections and Valuable Stationary Assets Against Theft',
       subheading: '24/7, dedicated, discreet and pinpoint security for art and assets',
@@ -1289,7 +1255,6 @@ export const PRIVATE_COLLECTIONS_PAGE: Types.Page = {
     {
       type: 'Text',
       heading: 'Best Practices in Art Security',
-      className: NUDGED_UP_CLASSNAME,
       body: (
         <p>
           Best practices in art security highly recommend a dedicated system for art and valuable
@@ -1304,7 +1269,6 @@ export const PRIVATE_COLLECTIONS_PAGE: Types.Page = {
     {
       type: 'Text',
       heading: 'Protection for Each and Every Stationary Object',
-      className: NUDGED_UP_CLASSNAME,
       body: (
         <p>
           MAP provides museum-grade security for nearly any stationary object in the home, including
@@ -1459,7 +1423,6 @@ export const PRIVATE_COLLECTIONS_PAGE: Types.Page = {
 };
 
 export const OUR_STORY_PAGE: Types.Page = {
-  className: `${STANDARD_SPACING_CLASSNAME} ${TEXT_HERO_CLASSNAME}`,
   path: Paths.OUR_STORY,
   metadata: {
     title: 'Our Story',
@@ -1483,7 +1446,6 @@ export const OUR_STORY_PAGE: Types.Page = {
     {
       type: 'VideoFeature',
       heading: 'Our Story',
-      className: `-mt-20`,
       video: {
         src: 'https://player.vimeo.com/video/183547629?title=0&byline=0&portrait=0',
         alt: 'Art Guard company video',
@@ -1524,7 +1486,6 @@ export const OUR_STORY_PAGE: Types.Page = {
       type: 'CtaCard',
       heading: 'Learn More About Our Team',
       subheading: "Meet the people behind Art Guard's innovative security solutions",
-      className: NUDGED_UP_CLASSNAME,
       ctas: [
         {
           label: 'Meet Our Team',
@@ -1544,7 +1505,6 @@ export const OUR_STORY_PAGE: Types.Page = {
 };
 
 export const FAQS_PAGE: Types.Page = {
-  className: `${STANDARD_SPACING_CLASSNAME} ${TEXT_HERO_CLASSNAME}`,
   path: Paths.FAQS,
   metadata: {
     title: 'FAQs',
@@ -1701,7 +1661,6 @@ const PRODUCT_SHEETS = [
 ];
 
 export const PRODUCT_SHEETS_PAGE: Types.Page = {
-  className: `${STANDARD_SPACING_CLASSNAME} ${TEXT_HERO_CLASSNAME}`,
   path: Paths.PRODUCT_SHEETS,
   metadata: {
     title: 'Product Sheets',
@@ -1782,7 +1741,6 @@ const PRESS_ITEMS = [
 ];
 
 export const PRESS_PAGE: Types.Page = {
-  className: `${STANDARD_SPACING_CLASSNAME} ${TEXT_HERO_CLASSNAME}`,
   path: Paths.PRESS,
   metadata: {
     title: 'Press',
@@ -1807,7 +1765,6 @@ export const PRESS_PAGE: Types.Page = {
 import SecurityPartnersLogos from '@images/securitypartnerslogos.png';
 
 export const SATISFIED_CUSTOMERS_PAGE: Types.Page = {
-  className: `${STANDARD_SPACING_CLASSNAME}`,
   path: Paths.SATISFIED_CUSTOMERS,
   metadata: {
     title: 'Satisfied Customers',
@@ -1818,7 +1775,7 @@ export const SATISFIED_CUSTOMERS_PAGE: Types.Page = {
   sections: [
     {
       type: 'TakeoverHeading',
-      className: '-mt-nav-height pt-42',
+
       heading: 'The Art Guard Team',
       body: "The Art Guard team is made up of professionals from both the art market and veterans from the security industry and fine art insurance. Art Guard's engineers have over 60 years of cumulative experience in developing sensor technologies for GE, DSC and other leaders in the security component sector. Advisors include museum security directors and art conservators. Nothing has been left to chance in addressing the needs of the industry.",
       ctas: [
@@ -1833,7 +1790,7 @@ export const SATISFIED_CUSTOMERS_PAGE: Types.Page = {
     {
       type: 'Text',
       heading: 'Clients',
-      className: NUDGED_UP_CLASSNAME,
+
       body: (
         <>
           <p>
@@ -1902,7 +1859,6 @@ export const SATISFIED_CUSTOMERS_PAGE: Types.Page = {
 };
 
 export const VIDEO_PAGE: Types.Page = {
-  className: TEXT_HERO_CLASSNAME,
   path: Paths.SUPPORT_VIDEOS,
   metadata: {
     title: 'Support Videos',
@@ -1944,7 +1900,6 @@ export const VIDEO_PAGE: Types.Page = {
 };
 
 export const CONTACT_PAGE: Types.Page = {
-  className: `${TEXT_HERO_CLASSNAME}`,
   path: Paths.CONTACT,
   theme: {
     lightGradientBg: true,
@@ -1970,7 +1925,6 @@ import CompatiblePanels from '@images/compatiblepanels.png';
 import CompatibleAccessControls from '@images/compatileaccesscontrols.png';
 
 export const SECURITY_INSTALLERS_PAGE: Types.Page = {
-  className: STANDARD_SPACING_CLASSNAME,
   path: Paths.SECURITY_INSTALLERS,
   metadata: {
     title: 'Security Installers & Integrators',
@@ -1982,7 +1936,7 @@ export const SECURITY_INSTALLERS_PAGE: Types.Page = {
     {
       type: 'TextImageSplit',
       heading: 'Think Beyond Intrusion and Fire',
-      className: 'md:-mt-nav-height',
+
       image: {
         src: Technician,
         alt: 'Image of technician installing MAP sensors',
@@ -2157,7 +2111,6 @@ export const SECURITY_INSTALLERS_PAGE: Types.Page = {
 };
 
 export const PARTNER_PROGRAM_PAGE: Types.Page = {
-  className: STANDARD_SPACING_CLASSNAME,
   path: Paths.PARTNER_PROGRAM,
   metadata: {
     title: 'Partner Program',
@@ -2168,7 +2121,7 @@ export const PARTNER_PROGRAM_PAGE: Types.Page = {
   sections: [
     {
       type: 'TakeoverHeading',
-      className: 'md:-mt-nav-height pt-40',
+
       heading: 'Partner Program: Toward Satisfied Clients',
       icon: 'Handshake',
       body: 'Art Guard recognizes that selecting a security partner is a major decision and a commitment — and the best partnerships are built on competencies and trust. When you partner with Art Guard, you benefit from the years of experience and knowledge gained from our long-standing relationships with galleries, major museums and high-end private collectors.',
@@ -2258,7 +2211,6 @@ export const PARTNER_PROGRAM_PAGE: Types.Page = {
 import GalleryInterior from '@images/galleryinterior.jpg';
 
 export const INSURERS_BROKERS_PAGE: Types.Page = {
-  className: STANDARD_SPACING_CLASSNAME,
   path: Paths.INSURERS_BROKERS,
   metadata: {
     title: 'For Insurers & Brokers',
@@ -2269,7 +2221,7 @@ export const INSURERS_BROKERS_PAGE: Types.Page = {
   sections: [
     {
       type: 'TextImageSplit',
-      className: 'md:-mt-nav-height',
+
       heading: 'Fine Art Insurers and Insurance Brokers',
       subheading: 'Risk mitigation through object-specific protection',
       body: 'Risk mitigation in the art market is becoming a catch phrase for insurers as the price of art rises and cost of covering losses becomes more prohibitive, especially in the face of fierce competition to capture and retain clients. The paradox of lower margins and higher payouts necessitates a program to educate and induce clients, both private and public, to appreciate the value of protection.',
@@ -2350,6 +2302,7 @@ export const INSURERS_BROKERS_PAGE: Types.Page = {
               label: 'Watch Webinar',
               variant: 'secondary',
               href: 'https://www.artguard.net/insurance/insurance-industry-webinar/',
+              target: '_blank',
             },
           ],
         },
@@ -2362,6 +2315,7 @@ export const INSURERS_BROKERS_PAGE: Types.Page = {
               label: 'Read Article',
               variant: 'secondary',
               href: 'http://iireporter.com/art-guard-launches-security-tech-program-for-insurers-of-fine-art/',
+              target: '_blank',
             },
           ],
         },
@@ -2374,6 +2328,7 @@ export const INSURERS_BROKERS_PAGE: Types.Page = {
               label: 'Read Article',
               variant: 'secondary',
               href: 'http://www.insurancejournal.com/news/east/2017/04/11/446866.htm',
+              target: '_blank',
             },
           ],
         },
@@ -2386,6 +2341,7 @@ export const INSURERS_BROKERS_PAGE: Types.Page = {
               label: 'Download PDF',
               variant: 'secondary',
               href: 'https://www.artguard.net/Managing_Risk_for_High-Net-Worth_Clients_Rough_Notes_June_2017_50-54_1.pdf',
+              target: '_blank',
             },
           ],
         },
@@ -2408,7 +2364,6 @@ export const INSURERS_BROKERS_PAGE: Types.Page = {
 };
 
 export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
-  className: STANDARD_SPACING_CLASSNAME,
   path: Paths.MAP_SYSTEM_GOLD,
   metadata: {
     title: 'MAP System Gold',
@@ -2419,7 +2374,7 @@ export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
   sections: [
     {
       type: 'TextImageSplit',
-      className: 'md:-mt-nav-height',
+
       heading: 'MAP System Gold',
       subheading: 'A Complete System for Art and Asset Protection',
       body: "The MAP Gold System is the ultimate in dedicated, stand-alone protection for art and valuable stationary assets of any kind. It is the easiest and most effective way for collectors of any stripe to confidently secure their art against theft. It's also an indispensable tool for prominent galleries and museums with rotating protection needs to offer guarantees to lenders of their works' safety. For smaller museums Gold can provide comprehensive security.",
@@ -2446,7 +2401,7 @@ export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
     {
       type: 'VideoFeature',
       heading: 'Complete Protection, Simply Deployed',
-      className: 'md:-mt-36',
+
       video: {
         src: 'https://player.vimeo.com/video/844027380',
         alt: 'MAP System Gold video',
@@ -2571,7 +2526,6 @@ export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
 };
 
 export const MAP_SYSTEM_SILVER_PAGE: Types.Page = {
-  className: STANDARD_SPACING_CLASSNAME,
   path: Paths.MAP_SYSTEM_SILVER,
   metadata: {
     title: 'MAP System Silver',
@@ -2582,7 +2536,7 @@ export const MAP_SYSTEM_SILVER_PAGE: Types.Page = {
   sections: [
     {
       type: 'TextImageSplit',
-      className: 'md:-mt-nav-height',
+
       heading: 'MAP System Silver',
       subheading: 'Security peace of mind for galleries & small museums',
       body: "The MAP Silver System provides small institutions protection from exposure to daytime grab-and-run theft. With a panel siren that can be heard by anyone in audible range if an asset is moved without authorization Silver offers reliable security at an affordable price for budget-minded facilities that don't have sophisticated security apparatus.",
@@ -2608,7 +2562,7 @@ export const MAP_SYSTEM_SILVER_PAGE: Types.Page = {
     {
       type: 'Text',
       heading: 'Flexible Protection for Lenders and Insurers',
-      className: 'md:-mt-36',
+
       body: (
         <p>
           Silver offers the flexibility to be deployed whenever and wherever the need arises. Silver
@@ -2763,7 +2717,6 @@ import RareEarthMagnets from '@images/rareearthmagnets.jpg';
 import TssartArtTape from '@images/tsarttape.jpg';
 
 export const ACCESSORIES_PAGE: Types.Page = {
-  className: STANDARD_SPACING_CLASSNAME,
   path: Paths.ACCESSORIES,
   metadata: {
     title: 'Accessories',
@@ -2773,14 +2726,12 @@ export const ACCESSORIES_PAGE: Types.Page = {
   sections: [
     {
       type: 'TakeoverHeading',
-      className: '-mt-nav-height pt-42',
       heading: 'Accessories for the MAP Sensor',
       subheading: 'Click the direct link to order',
     },
     {
       type: 'FeatureGrid',
       imagePadding: true,
-      className: '-mt-24',
       items: [
         {
           heading: 'Panasonic CR2450 Lithium 3v Battery (2-pack)',

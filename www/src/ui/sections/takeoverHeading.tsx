@@ -1,7 +1,7 @@
-import * as Ui from "@/ui";
-import * as Utils from "@/lib/utils";
-import * as Page from "@/ui/page";
-import * as Types from "@/lib/types";
+import * as Ui from '@/ui';
+import * as Utils from '@/lib/utils';
+import * as Page from '@/ui/page';
+import * as Types from '@/lib/types';
 
 type TakeoverHeadingProps = {
   section: Types.TakeoverHeadingSection;
@@ -9,9 +9,9 @@ type TakeoverHeadingProps = {
 
 const TakeoverHeading: React.FC<TakeoverHeadingProps> = (props) => {
   return (
-    <div
+    <section
       className={Utils.cx(
-        "col-span-full grid grid-cols-subgrid pt-16 pb-24 bg-panel",
+        'section takeover-heading-section col-span-full grid grid-cols-subgrid pt-16 pb-24 bg-panel',
         props.section.className
       )}
     >
@@ -25,7 +25,7 @@ const TakeoverHeading: React.FC<TakeoverHeadingProps> = (props) => {
           byline={props.section.byline}
         />
       </Page.Container>
-    </div>
+    </section>
   );
 };
 

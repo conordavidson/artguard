@@ -1,7 +1,7 @@
-import * as Ui from "@/ui";
-import * as Utils from "@/lib/utils";
-import * as Page from "@/ui/page";
-import * as Types from "@/lib/types";
+import * as Ui from '@/ui';
+import * as Utils from '@/lib/utils';
+import * as Page from '@/ui/page';
+import * as Types from '@/lib/types';
 
 type VideoFeatureProps = {
   section: Types.VideoFeatureSection;
@@ -9,9 +9,9 @@ type VideoFeatureProps = {
 
 const VideoFeature: React.FC<VideoFeatureProps> = (props) => {
   return (
-    <div
+    <section
       className={Utils.cx(
-        "col-span-full grid grid-cols-subgrid",
+        'section video-feature-section col-span-full grid grid-cols-subgrid',
         props.section.className
       )}
     >
@@ -38,16 +38,13 @@ const VideoFeature: React.FC<VideoFeatureProps> = (props) => {
       <Page.Container className="mt-12 max-w-[1000px] mx-auto">
         <div className="grid grid-cols-12 sm:gap-x-12 lg:gap-x-12 gap-y-16 auto-rows-fr">
           {props.section.cards.map((card, index) => (
-            <div
-              key={index}
-              className="col-span-12 sm:col-span-6 lg:col-span-4"
-            >
+            <div key={index} className="col-span-12 sm:col-span-6 lg:col-span-4">
               <Ui.SimpleCard {...card} className="h-full" />
             </div>
           ))}
         </div>
       </Page.Container>
-    </div>
+    </section>
   );
 };
 

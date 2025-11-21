@@ -10,7 +10,12 @@ type TextHighlightsProps = {
 
 const TextHighlights: React.FC<TextHighlightsProps> = (props) => {
   return (
-    <div className={Utils.cx('col-span-full grid grid-cols-subgrid', props.section.className)}>
+    <section
+      className={Utils.cx(
+        'section text-highlights-section col-span-full grid grid-cols-subgrid',
+        props.section.className
+      )}
+    >
       <Page.Container className="text-center max-w-[500px] mx-auto">
         <Ui.Heading.CenterStack
           heading={props.section.heading}
@@ -40,7 +45,7 @@ const TextHighlights: React.FC<TextHighlightsProps> = (props) => {
           ))}
         </div>
       </Page.Container>
-    </div>
+    </section>
   );
 };
 

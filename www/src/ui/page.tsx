@@ -25,7 +25,12 @@ export const Sections: React.FC<SectionsProps> = (props) => {
   };
 
   return (
-    <div className={Utils.cx('grid grid-cols-subgrid col-span-full', props.page.className)}>
+    <div
+      className={Utils.cx(
+        'sections-container grid grid-cols-subgrid col-span-full'
+        // props.page.className
+      )}
+    >
       {props.page.sections.map((section, index) => {
         const SectionComponent = allSections[section.type as keyof typeof SectionComponents];
 

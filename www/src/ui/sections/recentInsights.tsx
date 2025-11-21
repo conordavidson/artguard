@@ -19,7 +19,12 @@ const RecentInsights: React.FC<RecentInsightsProps> = async (props) => {
   const recentPosts = posts.slice(0, 20);
 
   return (
-    <div className={Utils.cx('col-span-full grid grid-cols-subgrid', props.section.className)}>
+    <section
+      className={Utils.cx(
+        'section recent-insights-section col-span-full grid grid-cols-subgrid',
+        props.section.className
+      )}
+    >
       <Page.Container>
         <Heading.Stack heading={props.section.heading} />
       </Page.Container>
@@ -82,7 +87,7 @@ const RecentInsights: React.FC<RecentInsightsProps> = async (props) => {
           </div>
         </Marquee>
       </div>
-    </div>
+    </section>
   );
 };
 

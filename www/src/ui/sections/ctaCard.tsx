@@ -1,7 +1,7 @@
-import * as Ui from "@/ui";
-import * as Utils from "@/lib/utils";
-import * as Page from "@/ui/page";
-import * as Types from "@/lib/types";
+import * as Ui from '@/ui';
+import * as Utils from '@/lib/utils';
+import * as Page from '@/ui/page';
+import * as Types from '@/lib/types';
 
 type CtaCardProps = {
   section: Types.CtaCardSection;
@@ -9,9 +9,9 @@ type CtaCardProps = {
 
 const CtaCard: React.FC<CtaCardProps> = (props) => {
   return (
-    <div
+    <section
       className={Utils.cx(
-        "col-span-full grid grid-cols-subgrid",
+        'section cta-card-section col-span-full grid grid-cols-subgrid',
         props.section.className
       )}
     >
@@ -27,7 +27,7 @@ const CtaCard: React.FC<CtaCardProps> = (props) => {
           />
         </div>
       </Page.Container>
-    </div>
+    </section>
   );
 };
 

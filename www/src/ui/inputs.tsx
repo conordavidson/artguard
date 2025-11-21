@@ -7,6 +7,8 @@ type TextProps = {
   value: string;
   onChange: (value: string) => void;
   id: string;
+  autoComplete?: React.HTMLInputAutoCompleteAttribute;
+  required?: boolean;
 };
 
 const INPUT_CLASSNAME =
@@ -17,10 +19,12 @@ export const Text: React.FC<TextProps> = (props) => {
     <input
       type="text"
       id={props.id}
+      autoComplete={props.autoComplete}
       className={Utils.cx(INPUT_CLASSNAME, 'h-input-height')}
       placeholder={props.placeholder}
       value={props.value}
       onChange={(e) => props.onChange(e.target.value)}
+      required={props.required}
     />
   );
 };

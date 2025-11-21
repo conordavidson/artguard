@@ -102,9 +102,9 @@ const MobileNav: React.FC<MobileNavProps> = (props) => {
       <Page.Container className="relative z-50 items-center justify-between flex lg:hidden">
         <Link
           href={Paths.HOME}
-          className="flex items-center gap-2 hover:opacity-70 transition-opacity"
+          className="flex items-center gap-2.5 hover:opacity-70 transition-opacity"
         >
-          <div className="h-[24px]">
+          <div className="h-[30px]">
             <Graphics.Logomark />
           </div>
           <div
@@ -285,8 +285,8 @@ const DesktopNav: React.FC<DesktopNavProps> = (props) => {
     <div className="hidden lg:grid col-span-full grid-cols-subgrid">
       <Page.Container className="h-nav-height flex relative z-50 items-center gap-x-4 justify-between">
         <div className="flex items-center gap-2">
-          <Link href={Paths.HOME} className="flex items-center gap-2 hover:opacity-70">
-            <div className="h-[24px]">
+          <Link href={Paths.HOME} className="flex items-center gap-2.5 hover:opacity-70">
+            <div className="h-[30px]">
               <Graphics.Logomark />
             </div>
             <div

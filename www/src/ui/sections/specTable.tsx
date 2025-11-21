@@ -1,8 +1,8 @@
-import * as Ui from "@/ui";
-import * as Utils from "@/lib/utils";
-import * as Page from "@/ui/page";
-import * as Types from "@/lib/types";
-import * as Text from "@/ui/text";
+import * as Ui from '@/ui';
+import * as Utils from '@/lib/utils';
+import * as Page from '@/ui/page';
+import * as Types from '@/lib/types';
+import * as Text from '@/ui/text';
 
 type SpecTableProps = {
   section: Types.SpecTableSection;
@@ -10,9 +10,9 @@ type SpecTableProps = {
 
 const SpecTable: React.FC<SpecTableProps> = (props) => {
   return (
-    <div
+    <section
       className={Utils.cx(
-        "col-span-full grid grid-cols-subgrid",
+        'section spec-table-section col-span-full grid grid-cols-subgrid',
         props.section.className
       )}
     >
@@ -26,10 +26,7 @@ const SpecTable: React.FC<SpecTableProps> = (props) => {
       <Page.Container className="mt-7 max-w-[800px] mx-auto">
         <div className="gradient-dark dark-theme divide-y divide-outline rounded-xl overflow-hidden">
           {props.section.rows.map((row, index) => (
-            <div
-              key={index}
-              className="grid grid-cols-12 sm:gap-x-12 gap-y-2 py-6 pl-7 pr-12"
-            >
+            <div key={index} className="grid grid-cols-12 sm:gap-x-12 gap-y-2 py-6 pl-7 pr-12">
               <div className="col-span-12 sm:col-span-5">
                 {row.isHeader ? (
                   <Text.Interface20 bold className="text-foreground" as="h2">
@@ -43,16 +40,14 @@ const SpecTable: React.FC<SpecTableProps> = (props) => {
               </div>
               {row.value && (
                 <div className="col-span-12 sm:col-span-7">
-                  <Text.Interface16 className="text-foreground">
-                    {row.value}
-                  </Text.Interface16>
+                  <Text.Interface16 className="text-foreground">{row.value}</Text.Interface16>
                 </div>
               )}
             </div>
           ))}
         </div>
       </Page.Container>
-    </div>
+    </section>
   );
 };
 

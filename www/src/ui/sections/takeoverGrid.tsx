@@ -1,7 +1,7 @@
-import * as Ui from "@/ui";
-import * as Utils from "@/lib/utils";
-import * as Page from "@/ui/page";
-import * as Types from "@/lib/types";
+import * as Ui from '@/ui';
+import * as Utils from '@/lib/utils';
+import * as Page from '@/ui/page';
+import * as Types from '@/lib/types';
 
 type TakeoverGridProps = {
   section: Types.TakeoverGridSection;
@@ -9,9 +9,9 @@ type TakeoverGridProps = {
 
 const TakeoverGrid: React.FC<TakeoverGridProps> = (props) => {
   return (
-    <div
+    <section
       className={Utils.cx(
-        "dark-theme col-span-full grid grid-cols-subgrid bg-emphasis pt-16 pb-24",
+        'section takeover-grid-section dark-theme col-span-full grid grid-cols-subgrid bg-emphasis pt-16 pb-24',
         props.section.className
       )}
     >
@@ -26,17 +26,15 @@ const TakeoverGrid: React.FC<TakeoverGridProps> = (props) => {
         {props.section.cards.map((card, index) => (
           <div
             key={index}
-            className={Utils.cx("col-span-full sm:col-span-6", {
-              "lg:col-span-4":
-                props.section.cards.length === 3 ||
-                props.section.cards.length > 4,
+            className={Utils.cx('col-span-full sm:col-span-6', {
+              'lg:col-span-4': props.section.cards.length === 3 || props.section.cards.length > 4,
             })}
           >
             <Ui.PowerCard {...card} className="h-full" />
           </div>
         ))}
       </Page.Container>
-    </div>
+    </section>
   );
 };
 

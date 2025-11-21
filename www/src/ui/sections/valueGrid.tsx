@@ -1,7 +1,7 @@
-import * as Ui from "@/ui";
-import * as Utils from "@/lib/utils";
-import * as Page from "@/ui/page";
-import * as Types from "@/lib/types";
+import * as Ui from '@/ui';
+import * as Utils from '@/lib/utils';
+import * as Page from '@/ui/page';
+import * as Types from '@/lib/types';
 
 type ValueGridProps = {
   section: Types.ValueGridSection;
@@ -9,9 +9,9 @@ type ValueGridProps = {
 
 const ValueGrid: React.FC<ValueGridProps> = (props) => {
   return (
-    <div
+    <section
       className={Utils.cx(
-        "col-span-full grid grid-cols-subgrid",
+        'section value-grid-section col-span-full grid grid-cols-subgrid',
         props.section.className
       )}
     >
@@ -27,10 +27,8 @@ const ValueGrid: React.FC<ValueGridProps> = (props) => {
           {props.section.cards.map((card, index) => (
             <div
               key={index}
-              className={Utils.cx("col-span-12 sm:col-span-6", {
-                "lg:col-span-4":
-                  props.section.cards.length === 3 ||
-                  props.section.cards.length > 4,
+              className={Utils.cx('col-span-12 sm:col-span-6', {
+                'lg:col-span-4': props.section.cards.length === 3 || props.section.cards.length > 4,
               })}
             >
               <Ui.SimpleCard {...card} className="h-full" />
@@ -38,7 +36,7 @@ const ValueGrid: React.FC<ValueGridProps> = (props) => {
           ))}
         </div>
       </Page.Container>
-    </div>
+    </section>
   );
 };
 
