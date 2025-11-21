@@ -91,7 +91,11 @@ export const MenuIcon = () => {
   );
 };
 
-export const LinkedInIcon = () => {
+type LinkedInIconProps = {
+  innerFill: string;
+};
+
+export const LinkedInIcon = (props: LinkedInIconProps) => {
   return (
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -104,13 +108,17 @@ export const LinkedInIcon = () => {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M24.1109 24.1111H19.9559V17.0342C19.9559 15.0939 19.2186 14.0096 17.6828 14.0096C16.0121 14.0096 15.1393 15.138 15.1393 17.0342V24.1111H11.135V10.6297H15.1393V12.4456C15.1393 12.4456 16.3432 10.2178 19.2041 10.2178C22.0637 10.2178 24.1109 11.964 24.1109 15.5755V24.1111ZM6.35786 8.86437C4.99392 8.86437 3.88867 7.75045 3.88867 6.37664C3.88867 5.00283 4.99392 3.88892 6.35786 3.88892C7.72181 3.88892 8.8264 5.00283 8.8264 6.37664C8.8264 7.75045 7.72181 8.86437 6.35786 8.86437ZM4.29022 24.1111H8.46566V10.6297H4.29022V24.1111Z"
-        fill="#1e1e1e"
+        fill={props.innerFill}
       />
     </svg>
   );
 };
 
-export const FacebookIcon = () => {
+type FacebookIconProps = {
+  innerFill: string;
+};
+
+export const FacebookIcon = (props: FacebookIconProps) => {
   return (
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_123_107)">
@@ -122,19 +130,23 @@ export const FacebookIcon = () => {
         />
         <path
           d="M15.3741 9.56562C15.3741 8.51953 16.2545 8.14375 17.2401 8.14375C18.2258 8.14375 19.2784 8.46875 19.2784 8.46875L19.91 4.4875C19.91 4.4875 18.5703 4 15.3741 4C13.4124 4 12.2736 4.79219 11.4411 5.96016C10.6564 7.06719 10.6277 8.84453 10.6277 9.99219V12.6023H8.0918V16.4922H10.6277V30H15.3741V16.4922H19.1349L19.4124 12.6023H15.3741V9.56562Z"
-          fill="#1e1e1e"
+          fill={props.innerFill}
         />
       </g>
       <defs>
         <clipPath id="clip0_123_107">
-          <rect width="28" height="28" fill="#1e1e1e" />
+          <rect width="28" height="28" fill={props.innerFill} />
         </clipPath>
       </defs>
     </svg>
   );
 };
 
-export const XLogo = () => {
+type XLogoProps = {
+  innerFill: string;
+};
+
+export const XLogo = (props: XLogoProps) => {
   return (
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_123_118)">
@@ -147,7 +159,7 @@ export const XLogo = () => {
         <g clipPath="url(#clip1_123_118)">
           <path
             d="M15.7142 12.6226L22.4162 5H20.8286L15.0068 11.6173L10.3604 5H5L12.0278 15.0074L5 22.9999H6.5876L12.7316 16.0104L17.6396 22.9999H23M7.1606 6.17142H9.5996L20.8274 21.8861H18.3878"
-            fill="#1e1e1e"
+            fill={props.innerFill}
           />
         </g>
       </g>

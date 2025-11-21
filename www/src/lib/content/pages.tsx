@@ -10,10 +10,6 @@ import Technician from '@images/technician.jpg';
 import CompatibilityLogos from '@images/compatibilitylogos.svg';
 import GlobalMap from '@images/globalprotection.svg';
 
-const STANDARD_SPACING_CLASSNAME = 'space-y-42';
-const TEXT_HERO_CLASSNAME = 'pt-8 md:pt-16';
-const NUDGED_UP_CLASSNAME = '-mt-6';
-
 const STANDARD_CTA_CARD: Types.CtaCardSection = {
   type: 'CtaCard',
   heading: 'Protect Your Collection',
@@ -127,15 +123,16 @@ export const HOME_PAGE: Types.Page = {
       body: (
         <>
           <p>
-            Protecting art in private residences requires discretion and reliability.{' '}
-            <strong>Art Guard&apos;s wireless MAP sensors deliver</strong> museum-grade security
-            without compromising your home&apos;s aesthetics or requiring invasive installation.
+            Protecting art in private residences requires trust, flexibility, and reliability. The
+            completely standalone <strong>MAP Gold System</strong>—with dual-path communication and
+            the ease of home automation—has been delivering on these demands for high-end collectors
+            for nearly 10 years.
           </p>
           <p>
-            MAP sensors integrate with all leading security systems including{' '}
-            <strong>Johnson Controls</strong>, <strong>Honeywell</strong>, <strong>DSC</strong>, and{' '}
-            <strong>ADT</strong>. Or deploy them with our award-winning MAP System—a complete
-            standalone solution built on the Alula Connect+ control panel.
+            MAP sensors also integrate with all leading home security systems including{' '}
+            <strong>Honeywell</strong>,<strong>DMP</strong>, <strong>DSC</strong>,{' '}
+            <strong>Qolsys</strong>, and more—offering the same unique coverage and performance
+            within your existing infrastructure.
           </p>
         </>
       ),
@@ -201,15 +198,37 @@ export const HOME_PAGE: Types.Page = {
       columns: [
         {
           heading: 'North America',
-          children: ['New York', 'Chicago', 'Los Angeles', 'Toronto', 'Montreal'],
+          children: [
+            'New York',
+            'Chicago',
+            'Los Angeles',
+            'San Francisco',
+            'Houston',
+            'Portland',
+            'Seattle',
+            'Boston',
+            'Miami',
+            'Toronto',
+            'Montreal',
+          ],
         },
         {
           heading: 'Europe',
-          children: ['London', 'Paris', 'Amsterdam', 'Brussels', 'Berlin', 'Madrid'],
+          children: [
+            'London',
+            'Paris',
+            'Amsterdam',
+            'Venice',
+            'Rome',
+            'Copenhagen',
+            'Brussels',
+            'Berlin',
+            'Madrid',
+          ],
         },
         {
           heading: 'Middle East & Asia',
-          children: ['Tel Aviv', 'Dubai', 'Bangkok', 'Hong Kong', 'Valletta'],
+          children: ['Tel Aviv', 'Dubai', 'Bangkok', 'Hong Kong', 'Abu Dhabi', 'Tokyo', 'Valletta'],
         },
       ],
       image: {
@@ -317,13 +336,12 @@ export const SECURITY_PRODUCTS_PAGE: Types.Page = {
           body: (
             <>
               <p>
-                Professional-grade wireless sensors that integrate with all major security systems.
+                Professional-grade wireless sensors that integrate with most major security systems.
                 Ideal for installers and integrators.
               </p>
               <ul>
-                <li>Integrates with all major security systems</li>
-                <li>Triple-mode protection for any object</li>
                 <li>Available in 345 and 433 MHz frequencies</li>
+                <li>Triple-mode settings for optimized protection of any object</li>
                 <li>Museum-tested, conservator-approved</li>
               </ul>
             </>
@@ -347,21 +365,20 @@ export const SECURITY_PRODUCTS_PAGE: Types.Page = {
           body: (
             <>
               <p>
-                Complete standalone system for private collectors, galleries, and smaller
-                institutions. Control from your phone, no installer required.
+                Dedicated, plug-and-play solution for private collectors, galleries, and smaller
+                institutions.
               </p>
               <ul>
-                <li>Integrates with all major security systemsPlug-and-play standalone solution</li>
                 <li>Supports up to 96 wireless sensors</li>
-                <li>Dual-path communication (4G LTE and Wi-Fi)</li>
-                <li>Built on Alula Connect+ panel</li>
+                <li>Dual-path communication</li>
+                <li>Built on the award-winning Alula panel</li>
               </ul>
             </>
           ),
         },
         {
           heading: 'MAP Silver System',
-          subheading: 'Complete standalone system with Alula Connect+ panel',
+          subheading: 'Standalone audible alarm system',
           image: {
             src: MapSilver,
             alt: 'Image of MAP Silver System',
@@ -376,15 +393,12 @@ export const SECURITY_PRODUCTS_PAGE: Types.Page = {
           ],
           body: (
             <>
-              <p>
-                Complete standalone system for private collectors, galleries, and smaller
-                institutions. Control from your phone, no installer required.
-              </p>
+              <p>Standalone audible alarm system for galleries and smaller institutions.</p>
               <ul>
-                <li>Integrates with all major security systemsPlug-and-play standalone solution</li>
-                <li>Supports up to 96 wireless sensors</li>
-                <li>Dual-path communication (4G LTE and Wi-Fi)</li>
-                <li>Built on Alula Connect+ panel</li>
+                <li>Plug-and-play standalone solution</li>
+                <li>Designed to thwart daytime theft</li>
+                <li>Supports up to 127 wireless sensors</li>
+                <li>Built on the popular Resideo touch-screen panel</li>
               </ul>
             </>
           ),
@@ -428,7 +442,7 @@ export const MAP_SENSORS_PAGE: Types.Page = {
           type: 'button',
           label: 'Download Datasheet',
           variant: 'primary',
-          href: '/resources/ArtGuard-MAPsensor-DataSheet.pdf',
+          href: '/resources/artguard-map-sensor-data-sheet.pdf',
         },
         {
           type: 'button',
@@ -452,9 +466,10 @@ export const MAP_SENSORS_PAGE: Types.Page = {
           sensor is determined by the size of the magnet, which is available in a wide variety of
           sizes and configurations to meet any condition and application. Once enrolled in a control
           panel or access control system any movement of the sensor or magnet and the object to
-          which it is safely attached, triggers an immediate alert and specific ID location. MAP is
+          which it is safely attached triggers an immediate alert and specific ID location. MAP is
           the critical primary layer of protection at the point of contact whether other security is
-          on or off to allow daily movement in any facility.
+          on or off to allow daily movement of occupants, visitors, staff and workers in any
+          facility.
         </p>
       ),
     },
@@ -475,7 +490,7 @@ export const MAP_SENSORS_PAGE: Types.Page = {
         },
         {
           heading: 'Magnetometer (Seated)',
-          body: 'Detects movement of magnet on sculptures and objects. Sensor placed beneath.',
+          body: 'Detects movement of seated objects. Sensor placed beneath the piece or under the supporting surface.',
           icon: 'Sculpture',
         },
         {
@@ -535,19 +550,19 @@ export const MAP_SENSORS_PAGE: Types.Page = {
       highlights: [
         {
           heading: 'Museums',
-          body: 'Professional installation for permanent collections and special exhibitions',
+          body: 'Professional installation for permanent collections in existing panels and access controls and in dedicated MAP systems for special and traveling exhibitions',
         },
         {
           heading: 'Galleries',
-          body: 'Flexible protection for rotating exhibitions integrated with existing security',
+          body: 'One of MAP dedicated systems depending on size and need',
         },
         {
           heading: 'Private Collections',
-          body: 'Discreet integration with home security systems for comprehensive protection',
+          body: 'MAP Gold System for the ultimate in layered protection or integrated into existing security',
         },
         {
           heading: 'Corporate Collections',
-          body: 'Professional security installations for office art and valuable assets',
+          body: 'MAP Gold System for flexibility and specific protection',
         },
       ],
     },
@@ -558,7 +573,7 @@ export const MAP_SENSORS_PAGE: Types.Page = {
       rows: [
         {
           heading: 'Sensor Dimensions',
-          value: '2" × 2" × ½"',
+          value: '2" × 2" × ¼"',
         },
         {
           heading: 'Power',
@@ -605,7 +620,6 @@ export const MAP_SENSORS_PAGE: Types.Page = {
       heading: 'Trusted by Leading Institutions',
       subheading:
         "MAP sensors have been deployed by Sotheby's, major museums, and discerning private collectors worldwide. When Sotheby's needed to secure a high-value exhibition, they selected our technology for its reliability and ease of deployment.",
-      byline: '—Chief of Security, Major NYC Museum',
     },
 
     {
@@ -615,7 +629,7 @@ export const MAP_SENSORS_PAGE: Types.Page = {
       ctas: [
         {
           label: 'Download Datasheet',
-          href: '/resources/ArtGuard-MAPsensor-DataSheet.pdf',
+          href: '/resources/artguard-map-sensor-data-sheet.pdf',
           type: 'button',
           variant: 'primary',
         },
@@ -629,7 +643,6 @@ export const MAP_SENSORS_PAGE: Types.Page = {
     },
   ],
 };
-
 import Museum from '@images/museum.jpg';
 
 export const MUSEUMS_PAGE: Types.Page = {
@@ -1916,7 +1929,7 @@ export const CONTACT_PAGE: Types.Page = {
       subheading:
         'Art Guard is pleased to announce that the MAP security solution is available for international applications. We welcome inquiries and  invite you to complete this form.',
       email: 'info@artguard.net',
-      phone: '+1 (212) 989-1494',
+      phone: '+1 (212) 989-1594',
     },
   ],
 };
@@ -2051,7 +2064,7 @@ export const SECURITY_INSTALLERS_PAGE: Types.Page = {
       footerCtas: [
         {
           label: 'Download All Interface Options',
-          href: '/wp-content/uploads/2020/02/integrations2.pdf',
+          href: '/resources/integrations.pdf',
           type: 'button',
           variant: 'primary',
         },
@@ -2366,16 +2379,16 @@ export const INSURERS_BROKERS_PAGE: Types.Page = {
 export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
   path: Paths.MAP_SYSTEM_GOLD,
   metadata: {
-    title: 'MAP System Gold',
+    title: 'MAP Gold System',
     description:
       'User-friendly DIY solution for high-end art and asset protection with award-winning Alula Connect+ panel.',
-    keywords: ['MAP System Gold', 'Alula Connect+', 'wireless security', 'art protection'],
+    keywords: ['MAP Gold System', 'Alula Connect+', 'wireless security', 'art protection'],
   },
   sections: [
     {
       type: 'TextImageSplit',
 
-      heading: 'MAP System Gold',
+      heading: 'MAP Gold System',
       subheading: 'A Complete System for Art and Asset Protection',
       body: "The MAP Gold System is the ultimate in dedicated, stand-alone protection for art and valuable stationary assets of any kind. It is the easiest and most effective way for collectors of any stripe to confidently secure their art against theft. It's also an indispensable tool for prominent galleries and museums with rotating protection needs to offer guarantees to lenders of their works' safety. For smaller museums Gold can provide comprehensive security.",
       ctas: [
@@ -2383,7 +2396,7 @@ export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
           type: 'button',
           label: 'Download Datasheet',
           variant: 'primary',
-          href: 'https://www.artguard.net/wp-content/uploads/2019/07/Art-Guard-MAP-System-Gold.pdf',
+          href: '/resources/art-guard-map-system-gold.pdf',
         },
         {
           type: 'button',
@@ -2394,7 +2407,7 @@ export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
       ],
       image: {
         src: MapGold,
-        alt: 'MAP System Gold with sensors',
+        alt: 'MAP Gold System with sensors',
       },
     },
 
@@ -2404,7 +2417,7 @@ export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
 
       video: {
         src: 'https://player.vimeo.com/video/844027380',
-        alt: 'MAP System Gold video',
+        alt: 'MAP Gold System video',
         type: 'vimeo',
       },
       cards: [
@@ -2442,7 +2455,7 @@ export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
       rows: [
         {
           heading: 'Control Panel',
-          value: 'Alula Connect+ (BAT-Connect+)',
+          value: 'Award-winning Alula Connect',
         },
         {
           heading: 'Sensor Capacity',
@@ -2458,15 +2471,13 @@ export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
         },
         {
           heading: 'Management',
-          value: 'Mobile app and web portal for arming, disarming, and monitoring',
-        },
-        {
-          heading: 'Notifications',
-          value: 'Siren, push notifications, text, email, phone calls to multiple parties',
+          value:
+            'Mobile app, web portal and optional touchscreen keypad for arming, disarming and all programming',
         },
         {
           heading: 'Monitoring',
-          value: 'Low battery alerts, sensor tamper, signal loss condition reports',
+          value:
+            'Immediate alerts with sensor ID of any movement, AC and internet loss, supervisory problems and low batteries',
         },
         {
           heading: 'Security',
@@ -2481,7 +2492,7 @@ export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
       highlights: [
         {
           heading: 'Private Collectors',
-          body: 'High-end collectors with multiple homes requiring comprehensive protection',
+          body: 'Single or multiple homes with high demands for protection and easy and comprehensive management with a mobile app',
         },
         {
           heading: 'Galleries',
@@ -2493,7 +2504,11 @@ export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
         },
         {
           heading: 'Corporate Collections',
-          body: 'Corporations with multiple floors of art requiring flexible protection',
+          body: 'Corporations with single or multiple floors of art requiring flexible protection and seamless management',
+        },
+        {
+          heading: 'Hotels',
+          body: 'For art in common spaces without the feeling of supervision',
         },
       ],
     },
@@ -2528,16 +2543,16 @@ export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
 export const MAP_SYSTEM_SILVER_PAGE: Types.Page = {
   path: Paths.MAP_SYSTEM_SILVER,
   metadata: {
-    title: 'MAP System Silver',
+    title: 'MAP Silver System',
     description:
       'Security peace of mind for galleries and small museums. Affordable daytime theft protection with audible alerts.',
-    keywords: ['MAP System Silver', 'Resideo', 'gallery security', 'museum protection'],
+    keywords: ['MAP Silver System', 'Resideo', 'gallery security', 'museum protection'],
   },
   sections: [
     {
       type: 'TextImageSplit',
 
-      heading: 'MAP System Silver',
+      heading: 'MAP Silver System',
       subheading: 'Security peace of mind for galleries & small museums',
       body: "The MAP Silver System provides small institutions protection from exposure to daytime grab-and-run theft. With a panel siren that can be heard by anyone in audible range if an asset is moved without authorization Silver offers reliable security at an affordable price for budget-minded facilities that don't have sophisticated security apparatus.",
       ctas: [
@@ -2545,7 +2560,7 @@ export const MAP_SYSTEM_SILVER_PAGE: Types.Page = {
           type: 'button',
           label: 'Download Datasheet',
           variant: 'primary',
-          href: '/wp-content/uploads/Art_Guard_MAP_Silver_System.pdf',
+          href: '/resources/art-guard-map-system-silver.pdf',
         },
         {
           type: 'button',
@@ -2556,7 +2571,7 @@ export const MAP_SYSTEM_SILVER_PAGE: Types.Page = {
       ],
       image: {
         src: MapSilver,
-        alt: 'MAP System Silver with sensors',
+        alt: 'MAP Silver System with sensors',
       },
     },
     {
@@ -2745,7 +2760,7 @@ export const ACCESSORIES_PAGE: Types.Page = {
               type: 'button',
               label: 'Order on Amazon',
               variant: 'secondary',
-              href: 'https://www.amazon.com/gp/product/B00K5Z0AIM/ref=oh_aui_search_detailpage?ie=UTF8&psc=1',
+              href: 'https://www.amazon.com/s?k=panasonic+cr2450+3v+battery&crid=2KL9IP4ICWQTT&sprefix=panasonic+%2Caps%2C120&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_1_10',
               target: '_blank',
             },
           ],

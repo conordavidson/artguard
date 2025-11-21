@@ -58,7 +58,7 @@ const TeamSection: React.FC<TeamSectionProps> = (props) => {
                     className="text-muted hover:opacity-70 transition-opacity"
                   >
                     <div className="w-[28px] h-[28px]">
-                      <Graphics.LinkedInIcon />
+                      <Graphics.LinkedInIcon innerFill="var(--color-background)" />
                     </div>
                   </Link>
                 </div>

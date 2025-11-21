@@ -57,6 +57,11 @@ const nextConfig: NextConfig = {
         destination: '/resources/art-guard-white-paper-osp.pdf',
         permanent: true,
       },
+      {
+        source: '/Managing_Risk_for_High-Net-Worth_Clients_Rough_Notes_June_2017_50-54_1.pdf',
+        destination: '/resources/managing-risk-for-high-net-worth-clients.pdf',
+        permanent: true,
+      },
 
       /*
       Pages

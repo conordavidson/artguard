@@ -32,12 +32,12 @@ export const NAVIGATION_MENU: Types.MenuItem[] = [
         subheading: 'MAP v3 Wireless Sensors',
       },
       {
-        label: 'MAP System Gold',
+        label: 'MAP Gold System',
         href: Paths.MAP_SYSTEM_GOLD,
         subheading: 'A Complete System for Art and Asset Protection',
       },
       {
-        label: 'MAP System Silver',
+        label: 'MAP Silver System',
         href: Paths.MAP_SYSTEM_SILVER,
         subheading: 'Security Peace of Mind for Galleries & Small Museums',
       },

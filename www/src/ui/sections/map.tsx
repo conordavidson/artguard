@@ -58,25 +58,64 @@ export const MapGraphic = () => {
 };
 
 const Coordinates = {
-  NewYork: {
-    x: 220,
-    y: 140,
+  // West Coast North America
+  Seattle: {
+    x: 70,
+    y: 120,
   },
-  Chicago: {
-    x: 190,
-    y: 136,
+  Portland: {
+    x: 75,
+    y: 128,
+  },
+  SanFrancisco: {
+    x: 75,
+    y: 145,
   },
   LosAngeles: {
     x: 80,
     y: 160,
   },
+
+  // Central/South USA
+  Dallas: {
+    x: 165,
+    y: 160,
+  },
+  Houston: {
+    x: 170,
+    y: 170,
+  },
+  Chicago: {
+    x: 190,
+    y: 136,
+  },
+
+  // East Coast North America
+  Miami: {
+    x: 210,
+    y: 185,
+  },
   Toronto: {
     x: 215,
     y: 130,
   },
+  Boston: {
+    x: 225,
+    y: 132,
+  },
+  NewYork: {
+    x: 220,
+    y: 140,
+  },
   Montreal: {
     x: 235,
     y: 125,
+  },
+
+  // Western Europe
+  Madrid: {
+    x: 445,
+    y: 145,
   },
   London: {
     x: 450,
@@ -86,41 +125,65 @@ const Coordinates = {
     x: 465,
     y: 125,
   },
-  Amsterdam: {
-    x: 470,
-    y: 115,
-  },
   Brussels: {
     x: 468,
     y: 120,
   },
+  Amsterdam: {
+    x: 470,
+    y: 115,
+  },
+
+  // Central/Northern Europe
   Berlin: {
     x: 485,
     y: 115,
   },
-  Madrid: {
-    x: 445,
-    y: 145,
+  Copenhagen: {
+    x: 488,
+    y: 105,
   },
+
+  // Southern Europe
+  Valletta: {
+    x: 485,
+    y: 150,
+  },
+  Rome: {
+    x: 488,
+    y: 138,
+  },
+  Venice: {
+    x: 490,
+    y: 132,
+  },
+
+  // Middle East
   TelAviv: {
     x: 540,
     y: 160,
   },
   Dubai: {
-    x: 618,
-    y: 180,
+    x: 620,
+    y: 175,
   },
+  AbuDhabi: {
+    x: 615,
+    y: 178,
+  },
+
+  // Asia
   Bangkok: {
     x: 760,
     y: 240,
   },
   HongKong: {
-    x: 800,
-    y: 200,
+    x: 810,
+    y: 220,
   },
-  Valletta: {
-    x: 485,
-    y: 150,
+  Tokyo: {
+    x: 860,
+    y: 160,
   },
 };
 
@@ -133,8 +196,8 @@ export const MapPins = () => {
             <feDropShadow dx="0" dy="0" stdDeviation="3" floodOpacity="0.5" />
           </filter>
         </defs>
-        {Object.entries(Coordinates).map(([key, value]) => (
-          <MapPin key={key} coordinates={value} />
+        {Object.entries(Coordinates).map(([key, value], index: number) => (
+          <MapPin key={key} coordinates={value} delay={index * 0.1} />
         ))}
       </svg>
     </div>
@@ -146,6 +209,7 @@ type MapPinProps = {
     x: number;
     y: number;
   };
+  delay?: number;
 };
 
 export const MapPin: React.FC<MapPinProps> = (props) => {
@@ -156,7 +220,7 @@ export const MapPin: React.FC<MapPinProps> = (props) => {
         cy={props.coordinates.y}
         radius={25}
         numberOfWaves={4}
-        delay={1}
+        delay={props.delay}
       />
       <circle
         cx={props.coordinates.x}

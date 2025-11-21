@@ -26,7 +26,7 @@ const ArticleHero: React.FC<ArticleHeroProps> = (props) => {
             <Text.Interface14 bold className="text-muted text-pretty">
               {Utils.formatDate(props.section.publishedAt)}
             </Text.Interface14>
-            <div>
+            <div className="flex items-center gap-x-2">
               {props.section.tags.map((tag) => (
                 <div key={tag} className="border border-brand rounded-md px-1 py-0.5">
                   <Text.Interface12 key={tag} bold className="text-brand">

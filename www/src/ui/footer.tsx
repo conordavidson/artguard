@@ -18,11 +18,11 @@ const Footer = () => {
       <footer className="gradient-dark dark-theme relative min-h-footer-height z-10 grid grid-cols-subgrid col-span-full pt-6 pb-8">
         <Page.Container className="flex flex-col justify-between">
           <div className="flex flex-col md:flex-row md:items-start justify-between">
-            <Link href="/" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
-              <div className="h-[24px]">
+            <Link href="/" className="flex items-center gap-3 hover:opacity-70 transition-opacity">
+              <div className="h-[32px]">
                 <Graphics.Logomark />
               </div>
-              <div className="h-[16px] text-foreground">
+              <div className="h-[20px] text-foreground">
                 <Graphics.Wordmark />
               </div>
             </Link>
@@ -45,7 +45,7 @@ const Footer = () => {
                   className="text-foreground hover:opacity-70 transition-opacity"
                   target="_blank"
                 >
-                  <Graphics.FacebookIcon />
+                  <Graphics.FacebookIcon innerFill="var(--color-emphasis)" />
                 </Link>
                 <Link
                   href={Content.TWITTER_LINK}
@@ -53,7 +53,7 @@ const Footer = () => {
                   className="text-foreground hover:opacity-70 transition-opacity"
                   target="_blank"
                 >
-                  <Graphics.XLogo />
+                  <Graphics.XLogo innerFill="var(--color-emphasis)" />
                 </Link>
                 <Link
                   href={Content.LINKEDIN_LINK}
@@ -61,7 +61,7 @@ const Footer = () => {
                   className="text-foreground hover:opacity-70 transition-opacity"
                   target="_blank"
                 >
-                  <Graphics.LinkedInIcon />
+                  <Graphics.LinkedInIcon innerFill="var(--color-emphasis)" />
                 </Link>
               </div>
             </div>
