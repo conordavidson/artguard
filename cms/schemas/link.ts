@@ -18,10 +18,11 @@ const Link = Sanity.defineType({
       name: 'href',
       title: 'Href',
       type: 'url',
-      options: {
-        allowRelative: true,
-      },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) =>
+        Rule.required().uri({
+          allowRelative: true,
+          scheme: ['http', 'https', 'mailto', 'tel'],
+        }),
     },
     {
       name: 'openInNewTab',

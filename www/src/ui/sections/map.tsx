@@ -130,7 +130,7 @@ export const MapPins = () => {
       <svg className="w-full h-full" height="100%" width="100%" viewBox="0 0 921 484">
         <defs>
           <filter id="map-pin-shadow">
-            <feDropShadow dx="0" dy="0" stdDeviation="3" flood-opacity="0.5" />
+            <feDropShadow dx="0" dy="0" stdDeviation="3" floodOpacity="0.5" />
           </filter>
         </defs>
         {Object.entries(Coordinates).map(([key, value]) => (
