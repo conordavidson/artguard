@@ -205,7 +205,7 @@ li {
 
 .editorial h3,
 .display-24 {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .display-24-bold {
@@ -222,7 +222,7 @@ li {
 
 .editorial h2,
 .display-32 {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .display-32-bold {
@@ -238,10 +238,13 @@ li {
   line-height: 1.6rem;
 }
 
+.editorial p,
+.editorial li,
 .display-18 {
   font-weight: 400;
 }
 
+.editorial strong,
 .display-18-bold {
   font-weight: 700;
 }

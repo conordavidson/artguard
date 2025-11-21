@@ -197,6 +197,34 @@ const MobileNav: React.FC<MobileNavProps> = (props) => {
             </div>
           )}
         </Page.Container>
+        {/* <div className="fixed top-0 bottom-0 left-0 right-0 z-10 bg-white">
+          <div className="flex items-center gap-x-3">
+            <Link
+              href={Content.FACEBOOK_LINK}
+              aria-label="Facebook"
+              className="text-foreground hover:opacity-70 transition-opacity"
+              target="_blank"
+            >
+              <Graphics.FacebookIcon />
+            </Link>
+            <Link
+              href={Content.TWITTER_LINK}
+              aria-label="Twitter"
+              className="text-foreground hover:opacity-70 transition-opacity"
+              target="_blank"
+            >
+              <Graphics.XLogo />
+            </Link>
+            <Link
+              href={Content.LINKEDIN_LINK}
+              aria-label="LinkedIn"
+              className="text-foreground hover:opacity-70 transition-opacity"
+              target="_blank"
+            >
+              <Graphics.LinkedInIcon />
+            </Link>
+          </div>
+        </div> */}
       </div>
     </>
   );

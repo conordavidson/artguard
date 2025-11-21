@@ -2819,3 +2819,195 @@ export const ACCESSORIES_PAGE: Types.Page = {
     },
   ],
 };
+
+const PRIVACY_POLICY_HTML = (
+  <div>
+    <p>
+      We take your privacy seriously. This statement discloses the information practices for
+      ArtGuard.net/Vootner Goushe LLC, including the type of information that is collected and
+      tracked when you visit our site, how the information is used and with whom the information is
+      shared. Your use of this website constitutes your acceptance of this Privacy Policy and your
+      consent to the practices it describes.
+    </p>
+    <p>ArtGuard.net/Vootner Goushe LLC's privacy policies are as follows:</p>
+    <p>
+      <strong>Anonymous Information Collection</strong>
+    </p>
+    <p>
+      Certain anonymous information about your visit to ArtGuard.net/Vootner Goushe LLC is
+      automatically logged, as it would be on any web site. This may include information about the
+      type of browser you use, the server name and IP address through which you access the Internet,
+      the date and time you access ArtGuard.net/Vootner Goushe LLC, the pages you access while
+      visiting ArtGuard.net/Vootner Goushe LLC, and the Internet address of the website, if any,
+      from which you linked directly to us. This information is not personally identifiable.
+    </p>
+    <p>
+      <strong>Personally Identifiable Information</strong>
+    </p>
+    <p>
+      Personally Identifiable Information is any information that concerns you, individually, and
+      would permit someone to contact you; for example, your name, address, telephone/fax number,
+      social security number, email address or any information you submitted to ArtGuard.net/Vootner
+      Goushe LLC that identifies you individually.
+    </p>
+    <p>
+      ArtGuard.net/Vootner Goushe LLC does not collect personally identifiable information about you
+      unless you provide it. Therefore, if you do not want ArtGuard.net/Vootner Goushe LLC to obtain
+      such personally identifiable information, please do not submit it.
+    </p>
+    <p>
+      You can visit and browse all pages of ArtGuard.net/Vootner Goushe LLC without revealing
+      personally identifiable information about yourself. If you so choose to share it,
+      ArtGuard.net/Vootner Goushe LLC may collect personally identifiable information about you as
+      follows:
+    </p>
+    <ul>
+      <li>
+        Activities and Transactions – If you conduct transactions through ArtGuard.net/Vootner
+        Goushe LLC, information is collected about the transactions you engage in and other related
+        activity that you conduct on the site. This information may include, without limitation,
+        transaction type, download or submit, transaction amount, payment, shipping and billing
+        information, specific content that you view, areas of the website that you visit, as well as
+        the nature, quantity and price of the items or services you exchange and the individuals or
+        entities with whom you communicate or transact business.
+      </li>
+      <li>
+        Email and Other Voluntary Communications – You may also choose to communicate with
+        ArtGuard.net/Vootner Goushe LLC directly through email, via our website, by telephone, in
+        writing, or though other means. We collect the information in these communications, and such
+        information may be personally identifiable.
+      </li>
+    </ul>
+    <p>
+      <strong>Information Use</strong>
+    </p>
+    <p>
+      ArtGuard.net/Vootner Goushe LLC may use the personally identifiable information that you
+      provide to:
+    </p>
+    <ul>
+      <li>Process, service or enforce orders and send related communications;</li>
+      <li>Provide services and support to users;</li>
+      <li>Help to establish and verify the identity of users;</li>
+    </ul>
+    <p>
+      <strong>Opt-In/Opt-Out</strong>
+    </p>
+    <p>
+      ArtGuard.net/Vootner Goushe LLC is an opt-out organization. Once we receive your information,
+      we may send you communications that contain valuable offers and other content. You always have
+      the ability to opt-in or opt-out of receiving future marketing communications from
+      ArtGuard.net/Vootner Goushe LLC.
+    </p>
+    <p>
+      To opt-out of or opt-in to receiving communications from ArtGuard.net/Vootner Goushe LLC,
+      please fill out the requisite ArtGuard.net/Vootner Goushe LLC form, or contact us at{' '}
+      <a href="mailto:info@artguard.net" target="_blank" rel="noopener">
+        info@artguard.net.
+      </a>
+    </p>
+    <p>
+      <strong>Disclosure of Information</strong>
+    </p>
+    <p>
+      ArtGuard.net/Vootner Goushe LLC does not provide personally identifiable information to
+      unaffiliated third parties for their use in marketing directly to you.
+    </p>
+    <p>
+      From time to time, we may be required to share personally identifiable information in response
+      to a valid court order, subpoena, government investigation, or as otherwise required by law.
+      We also reserve the right to report to law enforcement agencies any activities that we, in
+      good faith, believe to be unlawful. We may also share certain personal information when we
+      believe that such release is reasonably necessary to protect the rights, property and safety
+      of others and ourselves. We may also transfer personal information in the event of a corporate
+      sale, merger, acquisition, dissolution or similar event.
+    </p>
+    <p>
+      <strong>Data Quality/Access</strong>
+    </p>
+    <p>
+      ArtGuard.net/Vootner Goushe LLC enables you to change, update, or delete the information you
+      may have already provided in your optional registration form. If you would like to change,
+      update, or delete specific personal information, please send an email containing your request
+      to{' '}
+      <a href="mailto:info@artguard.net" target="_blank" rel="noopener">
+        info@artguard.net.
+      </a>
+    </p>
+    <p>
+      <strong>Cookies</strong>
+    </p>
+    <p>
+      A &quot;cookie&quot; is a small piece of computer code that enables Web servers to recognize
+      visitors. When a user visits a Web site that uses cookie technology, the Web site adds a
+      cookie to the user&apos;s browser that includes identification information, which is then
+      stored on the user&apos;s desktop. Each time the user initiates a session on our Web site, the
+      site sets the cookie in order to identify the user and his/her access privileges on the site.
+      Cookies can contain only as much information as you provide to the site.
+    </p>
+    <p>
+      Most web browser applications (such as Microsoft Internet Explorer, Edge, Mozilla Firefox,
+      Google Chrome, Safari, and others) have features that can notify you when you receive a cookie
+      or prevent cookies from being sent. You have the ability to delete these cookie files from
+      your hard drive at any time. However, you should know that cookies might be necessary to
+      provide you access to content or features available on the various pages of
+      ArtGuard.net/Vootner Goushe LLC or on the web sites of our affiliates.
+    </p>
+    <p>
+      <strong>External Links</strong>
+    </p>
+    <p>
+      ArtGuard.net/Vootner Goushe LLC may contain links to other websites, including those of
+      advertisers or third party content providers who offer downloads on ArtGuard.net/Vootner
+      Goushe LLC. Please be aware that ArtGuard.net/Vootner Goushe LLC is not responsible for the
+      privacy practices or the content of other websites. Websites that are accessible by hyperlinks
+      from the ArtGuard.net/Vootner Goushe LLC may use cookies. Iluren encourages you to read the
+      privacy policies provided by other websites before you provide personally identifiable
+      information to them.
+    </p>
+    <p>
+      <strong>Security</strong>
+    </p>
+    <p>
+      ArtGuard.net/Vootner Goushe LLC maintains physical, electronic, and procedural safeguards to
+      help guard personally identifiable information. If any specific transactions are offered on
+      the site, transaction information is transmitted to and from ArtGuard.net/Vootner Goushe LLC
+      in encrypted form using industry-standard Secure Socket Layer (SSL) connections to help
+      protect such information from interception. ArtGuard.net/Vootner Goushe LLC restricts
+      authorized access to your personal information to those persons who have a legitimate purpose
+      to know that information, to provide products or services to you, and to those persons you
+      have authorized to have access to such information. Please be aware, however, that email or
+      any other transmissions that you send through the Internet cannot be completely protected
+      against unauthorized interception.
+    </p>
+    <p>
+      <strong>Disclaimer</strong>
+    </p>
+    <p>
+      ArtGuard.net/Vootner Goushe LLC, at its sole discretion, may choose to change the terms,
+      conditions and operation of this Web site at any time.
+    </p>
+    <p>
+      Questions about this policy should be directed to{' '}
+      <a href="mailto:info@artguard.net" target="_blank" rel="noopener">
+        info@artguard.net.
+      </a>
+    </p>
+  </div>
+);
+
+export const PRIVACY_POLICY_PAGE: Types.Page = {
+  path: Paths.PRIVACY_POLICY,
+  metadata: {
+    title: 'Privacy Policy',
+    description: 'Privacy policy for Art Guard',
+    keywords: ['Art Guard', 'Privacy Policy', 'Privacy'],
+  },
+  sections: [
+    {
+      type: 'Text',
+      heading: 'Privacy Policy',
+      body: PRIVACY_POLICY_HTML,
+    },
+  ],
+};

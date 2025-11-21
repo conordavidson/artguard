@@ -41,11 +41,6 @@ export const NAVIGATION_MENU: Types.MenuItem[] = [
         href: Paths.MAP_SYSTEM_SILVER,
         subheading: 'Security Peace of Mind for Galleries & Small Museums',
       },
-      {
-        label: 'Accessories',
-        href: Paths.ACCESSORIES,
-        subheading: 'For Map Systems & Sensors',
-      },
     ],
   },
   {
@@ -123,19 +118,15 @@ export const NAVIGATION_MENU: Types.MenuItem[] = [
         label: 'Videos',
         href: Paths.SUPPORT_VIDEOS,
       },
+      {
+        label: 'Accessories',
+        href: Paths.ACCESSORIES,
+      },
     ],
-  },
-  {
-    label: 'Insights',
-    href: Paths.INSIGHTS,
   },
   {
     label: 'About',
     submenu: [
-      {
-        label: 'Contact Us',
-        href: Paths.CONTACT,
-      },
       {
         label: 'Our Story',
         href: Paths.OUR_STORY,
@@ -145,12 +136,20 @@ export const NAVIGATION_MENU: Types.MenuItem[] = [
         href: Paths.TEAM,
       },
       {
+        label: 'Insights',
+        href: Paths.INSIGHTS,
+      },
+      {
         label: 'Press',
         href: Paths.PRESS,
       },
       {
         label: 'Satisfied Customers',
         href: Paths.SATISFIED_CUSTOMERS,
+      },
+      {
+        label: 'Contact Us',
+        href: Paths.CONTACT,
       },
     ],
   },
@@ -172,3 +171,7 @@ export const FOOTER_MENU: Types.MenuItem[] = [
 ];
 
 export const Pages = Object.values(PageContent);
+
+export const FACEBOOK_LINK = 'https://www.facebook.com/ArtGuardAssetProtection';
+export const TWITTER_LINK = 'https://twitter.com/artguardus';
+export const LINKEDIN_LINK = 'https://www.linkedin.com/company/art-guard';

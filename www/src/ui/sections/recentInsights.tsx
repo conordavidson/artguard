@@ -76,7 +76,7 @@ const RecentInsights: React.FC<RecentInsightsProps> = async (props) => {
                   <div className="mt-3">
                     <Text.Display24
                       as="h3"
-                      className="text-muted italic text-balance group-hover:text-brand transition-colors"
+                      className="text-muted italic text-pretty group-hover:text-brand transition-colors"
                     >
                       {post.title}
                     </Text.Display24>
