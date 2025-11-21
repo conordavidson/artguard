@@ -14,6 +14,9 @@ const nextConfig: NextConfig = {
 
   redirects: async () => {
     return [
+      /*
+      Resources & Assets
+      */
       {
         source: '/wp-content/uploads/2019/07/Art-Guard-MAP-System-Gold.pdf',
         destination: '/resources/artguard-map-system-gold.pdf',
@@ -32,11 +35,6 @@ const nextConfig: NextConfig = {
       {
         source: '/wp-content/uploads/2020/02/integrations2.pdf',
         destination: '/resources/integrations.pdf',
-        permanent: true,
-      },
-      {
-        source: '/partners/insurers/',
-        destination: '/partners/insurers-brokers',
         permanent: true,
       },
       {
@@ -59,18 +57,26 @@ const nextConfig: NextConfig = {
         destination: '/resources/art-guard-white-paper-osp.pdf',
         permanent: true,
       },
+
+      /*
+      Pages
+      */
+      {
+        source: '/partners/insurers/',
+        destination: '/partners/insurers-brokers',
+        permanent: true,
+      },
+
+      {
+        source:
+          '/about/art-guard-introduces-map-advanced-wireless-protection-system-art-valuables/',
+        destination: '/about/art-guard',
+        permanent: true,
+      },
     ];
   },
 };
 
 export default nextConfig;
 
-// https://www.artguard.net/wp-content/uploads/2019/07/Art-Guard-MAP-System-Gold.pdf
-// https://www.artguard.net/resources/Art-Guard-MAP-345-sensor.pdf
-// https://www.artguard.net/resources/ArtGuard-MAPsensor-DataSheet.pdf
-// https://www.artguard.net/wp-content/uploads/2020/02/integrations2.pdf
 // https://www.artguard.net/partners/insurers/
-// https://www.artguard.net/resources/ArtGuard-MAPConservationist-curator-notes.pdf
-// https://www.artguard.net/resources/ArtGuard-MAPforHistoricalMuseumsAndHouses.pdf
-// https://www.artguard.net/resources/Enroll-MAP-sensors-into-DMP.pdf
-// https://www.artguard.net/resources/Art-Guard-White-Paper_OSP.pdf
