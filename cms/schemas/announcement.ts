@@ -41,7 +41,11 @@ const Announcement = Sanity.defineType({
           name: 'href',
           title: 'Href',
           type: 'url',
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.required().uri({
+              allowRelative: true,
+              scheme: ['http', 'https', 'mailto', 'tel'],
+            }),
         },
       ],
     },

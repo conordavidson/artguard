@@ -12,7 +12,7 @@ import Link from 'next/link';
 const Footer = () => {
   return (
     <div className="grid grid-cols-subgrid col-span-full">
-      <div className="pt-32 pb-16 mx-auto col-span-full max-w-[450px]">
+      <div className="pt-32 pb-16 col-span-full grid grid-cols-subgrid">
         <NewsletterSignup />
       </div>
       <footer className="gradient-dark dark-theme relative min-h-footer-height z-10 grid grid-cols-subgrid col-span-full pt-6 pb-8">

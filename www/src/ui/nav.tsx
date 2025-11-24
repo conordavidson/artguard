@@ -241,7 +241,6 @@ type MobileNavItemProps = {
 const MobileNavItem: React.FC<MobileNavItemProps> = (props) => {
   const content = () => {
     const isPathActive = props.currentPath === props.menuItem.href;
-    const isMenuActive = props.visibleMenu?.label === props.menuItem.label;
 
     return (
       <div className="relative">
@@ -258,7 +257,7 @@ const MobileNavItem: React.FC<MobileNavItemProps> = (props) => {
             'cursor-pointer text-foreground group-hover:opacity-70 transition-all duration-50',
             {
               'text-white': !!props.visibleMenu,
-              'text-brand': isPathActive || isMenuActive,
+              'text-brand': isPathActive,
             }
           )}
         >
@@ -440,25 +439,29 @@ const DesktopNav: React.FC<DesktopNavProps> = (props) => {
           <div className="flex flex-col gap-y-4">
             {props.visibleMenu &&
               'submenu' in props.visibleMenu &&
-              props.visibleMenu.submenu.map((item) => (
-                <Link key={item.label} href={item.href} className="w-fit relative group">
-                  <div className="-z-10 absolute -top-1 -bottom-2 -left-4 -right-4 group-hover:bg-brand/15 blur-sm transition-colors rounded-xl"></div>
-                  <Text.Interface24
-                    className={Utils.cx('text-foreground transition-colors', {
-                      'text-[#fa3d41]': props.currentPath === item.href,
-                    })}
-                  >
-                    {item.label}
-                  </Text.Interface24>
-                  {item.subheading && (
-                    <div className="mt-1">
-                      <Text.Interface16 className={'text-muted'}>
-                        {item.subheading}
-                      </Text.Interface16>
-                    </div>
-                  )}
-                </Link>
-              ))}
+              props.visibleMenu.submenu.map((item) => {
+                const isPathActive = props.currentPath === item.href;
+
+                return (
+                  <Link key={item.label} href={item.href} className="w-fit relative group">
+                    <div className="-z-10 absolute -top-1 -bottom-2 -left-4 -right-4 group-hover:bg-brand/15 blur-sm transition-colors rounded-xl"></div>
+                    <Text.Interface24
+                      className={Utils.cx('text-foreground transition-colors', {
+                        'text-[#fa3d41]': isPathActive,
+                      })}
+                    >
+                      {item.label}
+                    </Text.Interface24>
+                    {item.subheading && (
+                      <div className="mt-1">
+                        <Text.Interface16 className={'text-muted'}>
+                          {item.subheading}
+                        </Text.Interface16>
+                      </div>
+                    )}
+                  </Link>
+                );
+              })}
           </div>
         </Page.Container>
       </div>

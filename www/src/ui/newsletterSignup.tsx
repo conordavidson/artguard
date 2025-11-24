@@ -72,7 +72,7 @@ const NewsletterSignup = () => {
         </Text.Interface20>
         <form
           onSubmit={onSubmit}
-          className="pt-6 flex flex-col md:flex-row items-center justify-center gap-x-4 gap-y-3 max-w-[500px] mx-auto"
+          className="pt-6 flex flex-col md:flex-row items-center justify-center gap-x-4 gap-y-3 max-w-[450px] mx-auto"
         >
           <div className="flex-2 w-full">
             <Inputs.Text
