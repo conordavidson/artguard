@@ -9,14 +9,20 @@ const Announcement = Sanity.defineType({
   icon: Icons.Announcement,
   preview: {
     select: {
-      content: 'content',
+      title: 'content',
     },
   },
   fields: [
     {
       name: 'content',
       title: 'Content',
-      type: 'text',
+      type: 'richtextSimple',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'publishedAt',
+      title: 'Published At',
+      type: 'date',
       validation: (Rule) => Rule.required(),
     },
     {

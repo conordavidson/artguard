@@ -309,6 +309,16 @@ type DesktopNavProps = {
 };
 
 const DesktopNav: React.FC<DesktopNavProps> = (props) => {
+  const hoverSwitchTimeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  React.useEffect(() => {
+    return () => {
+      if (hoverSwitchTimeoutRef.current) {
+        clearTimeout(hoverSwitchTimeoutRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className="hidden lg:grid col-span-full grid-cols-subgrid">
       <Page.Container className="h-nav-height flex relative z-50 items-center gap-x-4 justify-between">
@@ -365,7 +375,25 @@ const DesktopNav: React.FC<DesktopNavProps> = (props) => {
                     className="relative"
                     key={item.label}
                     onClick={() => props.onChangeActiveMenuId(item.label)}
-                    onMouseEnter={() => props.onChangeActiveMenuId(item.label)}
+                    onMouseEnter={() => {
+                      if (hoverSwitchTimeoutRef.current) {
+                        clearTimeout(hoverSwitchTimeoutRef.current);
+                        hoverSwitchTimeoutRef.current = null;
+                      }
+                      if (props.activeMenuId) {
+                        hoverSwitchTimeoutRef.current = setTimeout(() => {
+                          props.onChangeActiveMenuId(item.label);
+                        }, 35);
+                      } else {
+                        props.onChangeActiveMenuId(item.label);
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      if (hoverSwitchTimeoutRef.current) {
+                        clearTimeout(hoverSwitchTimeoutRef.current);
+                        hoverSwitchTimeoutRef.current = null;
+                      }
+                    }}
                   >
                     {content()}
                   </button>

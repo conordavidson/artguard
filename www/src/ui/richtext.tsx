@@ -51,4 +51,8 @@ const Richtext: React.FC<RichtextProps> = (props) => {
   );
 };
 
+export const Inherited: React.FC<RichtextProps> = (props) => {
+  return <Pt.PortableText value={props.content} components={RichtextComponents} />;
+};
+
 export default Richtext;

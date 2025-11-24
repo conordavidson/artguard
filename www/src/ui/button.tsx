@@ -1,8 +1,8 @@
-import * as React from "react";
-import * as Utils from "../lib/utils";
-import * as Text from "./text";
+import * as React from 'react';
+import * as Utils from '../lib/utils';
+import * as Text from './text';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 export type BaseProps = React.PropsWithChildren<
   {
@@ -14,25 +14,25 @@ export type BaseProps = React.PropsWithChildren<
 >;
 
 type ButtonProps = {
-  type?: "button";
+  type?: 'button';
   onClick: () => void;
 };
 
 type SubmitButtonProps = {
-  type: "submit";
+  type: 'submit';
   onClick?: () => void;
 };
 
 type LinkProps = {
-  href: HTMLAnchorElement["href"];
-  target?: HTMLAnchorElement["target"];
+  href: HTMLAnchorElement['href'];
+  target?: HTMLAnchorElement['target'];
 };
 
 const Base: React.FC<BaseProps> = (props) => {
   const className = Utils.cx(
     `inline-flex justify-center items-center h-button-height whitespace-nowrap enabled:cursor-pointer transition-colors disabled:pointer-events-none px-8 rounded-full min-w-[160px]`,
     {
-      "w-full": !props.inline,
+      'w-full': !props.inline,
     },
     props.className
   );
@@ -40,7 +40,7 @@ const Base: React.FC<BaseProps> = (props) => {
   const label = () => {
     if (!props.label) return null;
 
-    if (typeof props.label === "string") {
+    if (typeof props.label === 'string') {
       return (
         <Text.Interface16 className="font-medium!" key="label">
           {props.label}
@@ -54,7 +54,7 @@ const Base: React.FC<BaseProps> = (props) => {
   const children = () => {
     if (!props.children) return null;
 
-    if (typeof props.children === "string") {
+    if (typeof props.children === 'string') {
       return (
         <Text.Interface16 className="font-medium!" key="children">
           {props.children}
@@ -65,13 +65,9 @@ const Base: React.FC<BaseProps> = (props) => {
     return props.children;
   };
 
-  if ("href" in props) {
+  if ('href' in props) {
     return (
-      <Link
-        href={props.href}
-        target={props.target || "_self"}
-        className={className}
-      >
+      <Link href={props.href} target={props.target || '_self'} className={className}>
         {children() || label()}
       </Link>
     );
@@ -83,7 +79,7 @@ const Base: React.FC<BaseProps> = (props) => {
   return (
     <button
       {...propsWithoutAttrs}
-      type={props.type || "button"}
+      type={props.type || 'button'}
       className={className}
       disabled={props.disabled}
       onClick={() => {
@@ -101,7 +97,7 @@ export const Primary: React.FC<BaseProps> = (props) => {
     <Base
       {...props}
       className={Utils.cx(
-        "text-white bg-brand hover:opacity-70 transition-opacity",
+        'text-white bg-brand hover:opacity-70 transition-opacity',
         props.className
       )}
     />
@@ -113,7 +109,7 @@ export const Secondary: React.FC<BaseProps> = (props) => {
     <Base
       {...props}
       className={Utils.cx(
-        "text-white bg-emphasis hover:opacity-70 transition-opacity",
+        'text-white bg-emphasis hover:opacity-70 transition-opacity',
         props.className
       )}
     />
@@ -121,11 +117,11 @@ export const Secondary: React.FC<BaseProps> = (props) => {
 };
 
 export type VariantProps = BaseProps & {
-  variant: "primary" | "secondary";
+  variant: 'primary' | 'secondary';
 };
 
 export const Variant: React.FC<VariantProps> = (props) => {
-  if (props.variant === "primary") return <Primary {...props} />;
-  if (props.variant === "secondary") return <Secondary {...props} />;
+  if (props.variant === 'primary') return <Primary {...props} />;
+  if (props.variant === 'secondary') return <Secondary {...props} />;
   return null;
 };

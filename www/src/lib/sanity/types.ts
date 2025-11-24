@@ -79,6 +79,21 @@ export type RichtextWithImages = Array<
     }
 >;
 
+export type RichtextSimple = Array<{
+  children?: Array<{
+    marks?: Array<string>;
+    text?: string;
+    _type: 'span';
+    _key: string;
+  }>;
+  style?: 'normal';
+  listItem?: never;
+  markDefs?: null;
+  level?: number;
+  _type: 'block';
+  _key: string;
+}>;
+
 export type Richtext = Array<{
   children?: Array<{
     marks?: Array<string>;
@@ -173,7 +188,8 @@ export type Announcement = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  content: string;
+  content: RichtextSimple;
+  publishedAt: string;
   cta: {
     label: string;
     href: string;
@@ -281,6 +297,7 @@ export type AllSanitySchemaTypes =
   | Slug
   | Settings
   | RichtextWithImages
+  | RichtextSimple
   | Richtext
   | Post
   | SanityImageCrop
@@ -496,6 +513,41 @@ export type GET_POST_BY_SLUG_QUERYResult = {
       }
   >;
 } | null;
+// Variable: GET_SETTINGS_QUERY
+// Query: *[_type == "settings" && _id == "settings"][0] {   ...,  activeAnnouncement -> {      ...,  content[] {      ...,  _type == "image" => {      ...,  asset -> {    ...  }  }  },  }, }
+export type GET_SETTINGS_QUERYResult = {
+  _id: string;
+  _type: 'settings';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  activeAnnouncement: {
+    _id: string;
+    _type: 'announcement';
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    content: Array<{
+      children?: Array<{
+        marks?: Array<string>;
+        text?: string;
+        _type: 'span';
+        _key: string;
+      }>;
+      style?: 'normal';
+      listItem?: never;
+      markDefs?: null;
+      level?: number;
+      _type: 'block';
+      _key: string;
+    }>;
+    publishedAt: string;
+    cta: {
+      label: string;
+      href: string;
+    };
+  } | null;
+} | null;
 
 // Query TypeMap
 import '@sanity/client';
@@ -503,5 +555,6 @@ declare module '@sanity/client' {
   interface SanityQueries {
     '*[_type == "post"] | order(publishedAt desc) { \n  ...,\n  author -> {\n    name,\n    slug,\n  },\n  tags[] -> {\n    title,\n    slug,\n  },\n  coverImage {\n    \n  ...,\n  asset -> {\n    ...\n  }\n\n  },\n  content[] {\n    \n  ...,\n  _type == "image" => {\n    \n  ...,\n  asset -> {\n    ...\n  }\n\n  }\n\n  },\n }': INDEX_POSTS_QUERYResult;
     '*[_type == "post" && slug.current == $slug][0] { \n  ...,\n  author -> {\n    name,\n    slug,\n  },\n  tags[] -> {\n    title,\n    slug,\n  },\n  coverImage {\n    \n  ...,\n  asset -> {\n    ...\n  }\n\n  },\n  content[] {\n    \n  ...,\n  _type == "image" => {\n    \n  ...,\n  asset -> {\n    ...\n  }\n\n  }\n\n  },\n }': GET_POST_BY_SLUG_QUERYResult;
+    '*[_type == "settings" && _id == "settings"][0] { \n  ...,\n  activeAnnouncement -> {\n    \n  ...,\n  content[] {\n    \n  ...,\n  _type == "image" => {\n    \n  ...,\n  asset -> {\n    ...\n  }\n\n  }\n\n  },\n\n  },\n }': GET_SETTINGS_QUERYResult;
   }
 }

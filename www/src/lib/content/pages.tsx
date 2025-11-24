@@ -1909,10 +1909,8 @@ export const CONTACT_PAGE: Types.Page = {
   ],
 };
 
-import CompatiblePanels from '@images/compatiblepanels.png';
-import CompatibleAccessControls from '@images/compatileaccesscontrols.png';
-
-import Link from 'next/link';
+import CompatiblePanels from '@images/compatiblepanels.jpg';
+import CompatibleAccessControls from '@images/compatibleaccesscontrols.jpg';
 
 export const SECURITY_INSTALLERS_PAGE: Types.Page = {
   path: Paths.SECURITY_INSTALLERS,
@@ -2046,7 +2044,6 @@ export const SECURITY_INSTALLERS_PAGE: Types.Page = {
       type: 'FeatureGrid',
       heading: 'Compatible Systems',
       subheading: 'MAP integrates with all major security platforms and access control systems',
-      imagePadding: true,
       footerCtas: [
         {
           label: 'Download All Interface Options',

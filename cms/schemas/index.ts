@@ -13,6 +13,7 @@ export default [
   Link,
   Post,
   RichText.Base,
+  RichText.Simple,
   RichText.WithImages,
   Settings,
   Tag,

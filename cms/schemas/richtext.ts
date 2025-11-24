@@ -24,6 +24,26 @@ export const Base = Sanity.defineType({
   ],
 });
 
+export const Simple = Sanity.defineType({
+  name: 'richtextSimple',
+  title: 'Rich Text',
+  type: 'array',
+  of: [
+    {
+      type: 'block',
+      styles: [{ title: 'Normal', value: 'normal' }],
+      marks: {
+        decorators: [
+          { title: 'Strong', value: 'strong' },
+          { title: 'Emphasis', value: 'em' },
+        ],
+        annotations: [],
+      },
+      lists: [],
+    },
+  ],
+});
+
 export const WithImages = Sanity.defineType({
   name: 'richtextWithImages',
   title: 'Rich Text with Images',

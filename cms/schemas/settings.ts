@@ -8,8 +8,10 @@ const Settings = Sanity.defineType({
   type: 'document',
   icon: Icons.Settings,
   preview: {
-    select: {
-      title: 'Settings',
+    prepare() {
+      return {
+        title: 'Settings',
+      };
     },
   },
   fields: [

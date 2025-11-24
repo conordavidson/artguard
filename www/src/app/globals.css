@@ -341,10 +341,6 @@ li {
   font-weight: 700;
 }
 
-.rfm-initial-child-container .announcement-content {
-  padding-left: theme(spacing.3);
-}
-
 @keyframes beacon-dot {
   0% {
     transform: scale(0);

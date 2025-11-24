@@ -2,21 +2,6 @@ import * as Paths from '@/lib/paths';
 import * as Types from '@/lib/types';
 import * as PageContent from './pages';
 
-const WHITEPAPER_ANNOUNCEMENT = {
-  publishedAt: '2025-11-16',
-  message: (
-    <>
-      <i>Whitepaper:</i> Object-specific Protection, The Untapped Market in Home Security
-    </>
-  ),
-  cta: {
-    label: 'Read the Whitepaper',
-    href: '/whitepaper',
-  },
-};
-
-export const CURRENT_ANNOUNCEMENT = WHITEPAPER_ANNOUNCEMENT;
-
 export const NAVIGATION_MENU: Types.MenuItem[] = [
   {
     label: 'Solutions',
