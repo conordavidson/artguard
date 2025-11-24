@@ -659,7 +659,7 @@ export const MUSEUMS_PAGE: Types.Page = {
   sections: [
     {
       type: 'TextImageSplit',
-      heading: 'Security for Museums and Galleries',
+      heading: 'Security for Museums and Large Galleries',
       subheading: 'Object-specific protection for collections of any size',
       body: 'MAP sensors deliver comprehensive, discreet security for artwork, artifacts, and exhibits—from masterpiece paintings to small historical objects.',
       ctas: [
@@ -687,21 +687,20 @@ export const MUSEUMS_PAGE: Types.Page = {
       body: (
         <>
           <p>
-            Museums must balance public engagement with security for irreplaceable objects.
-            Traditional perimeter security goes offline during operating hours, leaving individual
-            pieces vulnerable to the most common threat: grab-and-run theft, which accounts for over
-            50% of art losses. Recovery rates remain at just 3-4%.
+            Museums must find an ideal balance between the public&apos;s desire for intimate
+            engagement with the art and the need to discreetly secure irreplaceable objects. Cameras
+            and guards cannot cover and respond to everything. It&apos;s critical that any
+            unauthorized movement of any object be detected at the point and moment of contact.
           </p>
           <p>
             Museum collections present unique challenges. A single gallery might contain paintings,
             small artifacts, documents, and sculptures—all requiring different protection
-            approaches. Traditional motion sensors can&apos;t distinguish authorized handling from
-            theft, and vibration sensors may be too sensitive for delicate works or high-traffic
-            environments.
+            approaches. Traditional motion sensors are not comprehensive and vibration sensors must
+            allow for ambient conditions.
           </p>
           <p>
             Traveling exhibitions, loans between institutions, and special displays require flexible
-            protection that adapts quickly to changing needs.
+            protection that adapts quickly and easily to changing needs.
           </p>
         </>
       ),
@@ -712,39 +711,40 @@ export const MUSEUMS_PAGE: Types.Page = {
       body: (
         <>
           <p>
-            MAP sensors create an invisible security perimeter around each individual object. A
-            small rare-earth magnet attaches discreetly to the piece using museum-approved
-            adhesives. The sensor is placed nearby—behind hanging works or beneath seated objects.
-            Both are completely hidden from view. Any unauthorized movement triggers an immediate,
+            MAP sensors create an invisible security perimeter around each individual object,
+            regardless of size and shape, whether hanging or seated. A small rare-earth magnet
+            attaches discreetly to the piece using museum-approved adhesives. The sensor is placed
+            nearby—behind hanging works or beneath seated objects or their supporting surface. Both
+            are completely hidden from view. Any unauthorized movement triggers an immediate,
             location-specific alert.
           </p>
           <p>
             Conservators approve MAP because the magnet attachment is less invasive than mounting
             sensors directly on artwork. The system scales from protecting vulnerable pieces to
-            comprehensive gallery coverage, works for permanent installations or temporary
-            exhibitions, and sensors can travel with loaned works to satisfy protection
-            requirements.
+            comprehensive gallery coverage and from works for permanent installations to temporary
+            exhibitions, and sensors can travel with loaned works to satisfy lenders&apos; and
+            insurers&apos; requirements.
+          </p>
+          <p>
+            Whether integrated into a host of popular panels and access control systems or deployed
+            in either of the dedicated MAP Systems, the MAP sensor provides across-the-board
+            security.
           </p>
         </>
       ),
     },
     {
       type: 'TakeoverGrid',
-      heading: 'Why Museums Choose MAP',
+      heading: 'Why Museums Use MAP',
       cards: [
         {
           heading: 'A Favorite of Conservators',
-          body: "MAP's unique technology serves the demands for safety of the object, which often limits the use of other motion or vibration sensors. A small rare earth magnet is affixed to the object with inert museum wax or even wheat or rice paste. The MAP sensor is placed in close proximity. Affixing a tiny magnet instead of the sensor significantly decreases the affect on the fabric of the object and eliminates any danger of battery leakage.",
+          body: "Preserving the integrity of the object is job #1 for museum staff. MAP's unique technology serves the demands for safety of the object, which often limits the use of other sensor attachments. In MAP's case a tiny rare earth magnet is affixed to the object with a variety of methods, including conservation tape, museum wax or even wheat or rice paste. Magnets can even be floated in a piece of foam. The MAP sensor is then placed in safe proximity to the piece, never touching it.",
           icon: 'ShieldLock',
         },
         {
-          heading: 'Dedicated and Versatile',
-          body: "MAP is installed in some of the country's most prestigious museums, protecting nearly every conceivable type of asset from masterpiece paintings to small pieces of jewelry and from wall-mounted to seated pieces to the doors of cabinets and vitrines.",
-          icon: 'Instituion',
-        },
-        {
           heading: 'Flexible and Scalable',
-          body: 'It can be used on just a few vulnerable works of art, as an added layer of protection for works on loan or to alarm entire rooms. Registrars should be aware of the ability of a MAP system to travel with works loaned out, satisfying any legal concerns for protection.',
+          body: "If integrated into the facility's main security MAP sensors can be used on any number of works, from select pieces to the entire collection. If deployed with either of the MAP Systems special exhibitions wherever they appear in the museum are secure. Registrars should be aware of the ability of MAP Systems to rotate within the museum and to travel with shows or works on loan to satisfy any legal concerns for protection.",
           icon: 'Move',
         },
       ],
@@ -755,7 +755,7 @@ export const MUSEUMS_PAGE: Types.Page = {
       cards: [
         {
           heading: 'Reliable',
-          body: 'Employed by some of the most highly regarded institutions in the U.S. Effective and discreet coverage with minimal false alarms. Industry standard check-in and 4-5 year battery life with low battery alert.',
+          body: 'Employed by some of the most highly regarded institutions in the world. Effective and discreet coverage with minimal false alarms. Industry standard check-in and 4-5 year battery life with low battery alert.',
           icon: 'CheckRibbon',
         },
         {
@@ -764,8 +764,8 @@ export const MUSEUMS_PAGE: Types.Page = {
           icon: 'Layered',
         },
         {
-          heading: 'Safety',
-          body: 'The tiny magnet can be attached with an inert adhesive or buffered with another material.',
+          heading: 'Safe',
+          body: 'MAP is a favorite of demanding conservators because the sensor never touches the art and the tiny magnet can be attached with a completely inert adhesive or buffered from contact altogether.',
           icon: 'Leaf',
         },
         {
@@ -786,14 +786,14 @@ export const MUSEUMS_PAGE: Types.Page = {
       heading: 'Trusted by Leading Institutions',
       body: (
         <>
-          &quot;We are a large mid-western museum and have used both Art Guard Safe Hook and the MAP
-          sensors for several years now. MAP in particular has been most helpful in applications
-          where stealth, dependability, and sensitivity to the art material being protected is
-          required. It&apos;s versatility and dependability have helped us protect masterpieces and
-          meet the requirements of lenders from museums around the world.&quot;
+          &quot;As a large mid-western museum we have used the MAP sensors for a number of years.
+          MAP in particular has been most helpful in applications where stealth, dependability, and
+          sensitivity to the art material being protected is required. It&apos;s versatility and
+          dependability have helped us protect masterpieces and meet the requirements of lenders
+          from museums around the world.&quot;
         </>
       ),
-      byline: '—Director of Security, Large Midwest Museum',
+      byline: '—Ross Guthrie, MIA',
     },
     {
       type: 'CtaCard',
@@ -969,17 +969,18 @@ export const HISTORIC_HOMES_PAGE: Types.Page = {
       body: (
         <>
           <p>
-            MAP wireless sensors provide object-specific protection without any permanent
-            installation. Each piece receives individual monitoring—furniture, decorative objects,
-            documents, textiles, even cabinet doors. The system operates during public hours,
-            alerting staff immediately if any object is moved without authorization.
+            MAP wireless sensors provide minimally invasive object-specific protection with or
+            without permanent installation. Each piece receives individual monitoring—furniture,
+            decorative objects, documents, textiles, even cabinet doors. The system operates during
+            public hours, alerting staff immediately if any object is moved without authorization.
           </p>
           <p>
-            Because MAP is completely wireless and sensors attach directly to objects rather than
-            architecture, historic fabric remains untouched. Small magnets affix to pieces using
-            museum-approved adhesives. Sensors place nearby—behind frames, beneath furniture, inside
-            cabinets—completely hidden from visitors. The entire system installs without drilling,
-            wiring, or structural modification.
+            Because MAP is completely wireless and sensors attach directly to supporting surfaces
+            rather than architecture, historic fabric remains relatively untouched. Tiny rare earth
+            magnets affix to pieces using museum-approved adhesives. Sensors are placed
+            nearby—behind frames, beneath furniture, inside cabinets—completely hidden from
+            visitors. The entire system installs without drilling, wiring, or structural
+            modification.
           </p>
         </>
       ),
@@ -1242,9 +1243,9 @@ export const PRIVATE_COLLECTIONS_PAGE: Types.Page = {
     {
       type: 'TextImageSplit',
       heading:
-        'Asset Protection for Private Art Collections and Valuable Stationary Assets Against Theft',
-      subheading: '24/7, dedicated, discreet and pinpoint security for art and assets',
-      body: 'No home is immune to theft. Because many homeowners believe their perimeter security system offers adequate protection they are particularly vulnerable. In fact over 50% of art thefts are from private residences. And once valuable art is stolen the chance that it will ever be recovered is just 4%.',
+        'Total Protection for Private Art Collections and Valuable Stationary Assets Against Theft',
+      subheading: '24/7, dedicated, discreet and pinpoint security for every piece of value',
+      body: 'No home is immune to theft. Because many homeowners believe their perimeter security system offers adequate protection they are particularly vulnerable. In fact over 50% of art thefts are from private residences. And once valuable art is stolen the chance that it will ever be recovered is just 3-5%.',
       ctas: [
         {
           type: 'button',
@@ -1260,35 +1261,23 @@ export const PRIVATE_COLLECTIONS_PAGE: Types.Page = {
         },
       ],
       image: {
-        src: PrivateCollection, // Using existing image from home page
+        src: PrivateCollection,
         alt: 'Private art collection',
       },
     },
 
     {
       type: 'Text',
-      heading: 'Best Practices in Art Security',
+      heading: 'Best Practices in Residential Art Security',
       body: (
         <p>
           Best practices in art security highly recommend a dedicated system for art and valuable
-          assets in a redundant, blended approach to security. Art Guard MAP provides unparalleled
-          around-the-clock protection to individual objects, whether perimeter/intrusion security is
-          on or off to allow for the daily activities of a home&apos;s residents, staff, workers and
-          guests or is compromised.
-        </p>
-      ),
-    },
-
-    {
-      type: 'Text',
-      heading: 'Protection for Each and Every Stationary Object',
-      body: (
-        <p>
-          MAP provides museum-grade security for nearly any stationary object in the home, including
-          art, jewelry, tapestry, antiques, collectibles, memorabilia, wine and firearms. MAP
-          sensors can even tell if a car is moved. Sensors and magnets are completely hidden from
-          view. Real-time alerts allow for a quick response during those crucial seconds before a
-          priceless object is lost forever.
+          assets in a redundant, blended approach to security. MAP sensors, in our stand-alone, full
+          featured MAP Gold System, provide unparalleled around-the-clock protection to individual
+          objects, whether perimeter/intrusion security is on or off to allow for daily activities
+          of a home&apos;s residents, staff, workers and guests or if the main security is
+          compromised. And with the ease of operation of a home automation system everything can be
+          managed from a mobile device.
         </p>
       ),
     },
@@ -1298,25 +1287,15 @@ export const PRIVATE_COLLECTIONS_PAGE: Types.Page = {
       heading: 'Choose Your Solution',
       items: [
         {
-          heading: 'Complete Standalone Solution',
+          heading: 'Standalone Gold System',
           subheading: 'MAP Gold System',
           body: (
-            <>
-              <p>
-                All-in-one wireless system perfect for special exhibitions, traveling shows, or
-                institutions without existing security infrastructure. Control from your phone, no
-                installer required.
-              </p>
-              <p>
-                <strong>Features:</strong>
-              </p>
-              <ul>
-                <li>Award-winning Alula Connect+ panel</li>
-                <li>Up to 96 pre-enrolled sensors</li>
-                <li>Dual-path communication (4G LTE + IP)</li>
-                <li>Mobile app management</li>
-              </ul>
-            </>
+            <p>
+              Gold is an all-in-one, plug-and-play system that requires no professional installation
+              and no wires. It&apos;s a favorite of private collectors for its always-on protection,
+              flexibility and reliability with dual path communication effective anywhere ethernet,
+              cellular or wi-fi is available.
+            </p>
           ),
           image: {
             src: MapGold,
@@ -1332,27 +1311,18 @@ export const PRIVATE_COLLECTIONS_PAGE: Types.Page = {
           ],
         },
         {
-          heading: 'Professional Integration for Established Systems',
-          subheading: 'MAP Sensors',
+          heading: 'Integration of MAP Sensors',
+          subheading: 'Professional Integration',
           body: (
             <>
               <p>
-                Professional-grade wireless sensors that integrate with all major security
-                platforms. Ideal for museums with existing infrastructure seeking comprehensive
-                object-specific protection.
+                Professional installers can interface MAP with a host of existing home security
+                systems or create a separate system dedicated just to art and valuable assets.
               </p>
               <p>
-                <strong>Features:</strong>
+                <strong>Features:</strong> Integrates with Honeywell, Ademco, Resideo, DSC, Qolsys,
+                DMP, 2GIG, Alula and Elk systems.
               </p>
-              <ul>
-                <li>
-                  Integrates with Honeywell, DSC, DMP, Qolsys, 2GIG, and major access control
-                  systems
-                </li>
-                <li>345 and 433 MHz options</li>
-                <li>400+ foot range (extendable with repeaters)</li>
-                <li>Museum-tested reliability</li>
-              </ul>
             </>
           ),
           image: {
@@ -1378,20 +1348,15 @@ export const PRIVATE_COLLECTIONS_PAGE: Types.Page = {
       body: (
         <>
           <p>
-            In any case, sensors and magnets should be applied by a qualified art handler working
-            with the security installer. Whichever system is employed, no other security solution
-            provides the unique ability to protect nearly any object of value and do so with such
-            reliability, safety for the asset, flexibility and affordability, offering the ultimate
-            peace of mind for any private collector.
+            Sensors and magnets should be applied by a qualified art handler working with the
+            installer. However MAP sensors are employed, Art Guard offers full online and video
+            support.
           </p>
           <p>
-            <em>
-              Art Guard sells only the MAP sensor and magnets and the MAP System. Art Guard does not
-              do installations. MAP System DIY installations are completely supported by Art Guard
-              with video and telephone customer support. Standard security panels and associated
-              equipment, installation and monitoring are provided by your local security installer.
-              If you would like information on local installers, please contact us.
-            </em>
+            However MAP is employed no other security solution provides the unique ability to
+            protect nearly any object of value and do so with such reliability, safety for the
+            asset, flexibility and affordability, offering the ultimate peace of mind for any
+            private collector.
           </p>
         </>
       ),
@@ -1407,16 +1372,16 @@ export const PRIVATE_COLLECTIONS_PAGE: Types.Page = {
 
     {
       type: 'ValueGrid',
-      heading: 'Why Private Collectors Choose MAP',
+      heading: 'Why Private Collectors Use MAP',
       cards: [
         {
           heading: 'Reliability',
-          body: "Museum-grade and used by the world's most prestigious institutions. Movement of either the sensor or magnet triggers a customized alert. Backed by the insurance industry. Supervised sensors with 4-5 year battery life and low battery alert. Any attempt to tamper with the sensor produces an alert. Cellular backup immediately takes over in case of Internet interruption. Programmed to minimize false alarms.",
+          body: 'MAP sensors are museum grade and chosen by some of the world&apos;s leading institutions. Sensors and systems are backed by the insurance industry. MAP sensors have been optimized for any work in any environment. Security and safety for the object go hand-in-hand in assuring collectors of optimal performance and peace of mind.',
           icon: 'ShieldLock',
         },
         {
           heading: 'Comprehensive',
-          body: 'Object-specific protection for any piece of art and valuable asset, no matter how small. 400 ft. wireless sensor transmission can be extended with the use of inexpensive repeaters to cover any size home. MAP can be used just as easily for outdoor sculpture or objects within 400 ft. of the home.',
+          body: 'The Gold System can not only cover protection for nearly any piece of art but extends to protection for nearly any object of value—antiques, wine, collectibles, memorabilia and jewelry. And systems can be made to cover the very largest of homes.',
           icon: 'Layered',
         },
         {
@@ -1697,6 +1662,16 @@ export const PRODUCT_SHEETS_PAGE: Types.Page = {
 
 const PRESS_ITEMS = [
   {
+    heading: 'Popular Science, October 2025',
+    body: "Why the Louvre heist doesn't Surprise Museum Security Experts",
+    href: 'https://www.popsci.com/technology/how-louvre-heist-happened/',
+  },
+  {
+    heading: 'Financial Times, October 2025',
+    body: 'How To Catch An Art Thief',
+    href: 'https://www.ft.com/content/8b32d38c-757a-4ed8-a539-d324800a7b89',
+  },
+  {
     heading: 'Artnet News, July 2021',
     body: 'Foiled! How Advanced Technology Is Stopping Art Thieves, Looters, and Fraudsters From Hatching Their Schemes',
     href: 'https://news.artnet.com/art-world/technology-art-theft-1990767',
@@ -1763,7 +1738,7 @@ export const PRESS_PAGE: Types.Page = {
   sections: [
     {
       type: 'LinkGrid',
-      heading: 'Art Risks Press Releases and Published Articles',
+      heading: 'Press Releases and Published Articles',
       links: PRESS_ITEMS.map((press) => ({
         heading: press.heading,
         body: press.body,
@@ -1937,6 +1912,8 @@ export const CONTACT_PAGE: Types.Page = {
 import CompatiblePanels from '@images/compatiblepanels.png';
 import CompatibleAccessControls from '@images/compatileaccesscontrols.png';
 
+import Link from 'next/link';
+
 export const SECURITY_INSTALLERS_PAGE: Types.Page = {
   path: Paths.SECURITY_INSTALLERS,
   metadata: {
@@ -1951,7 +1928,7 @@ export const SECURITY_INSTALLERS_PAGE: Types.Page = {
       heading: 'Think Beyond Intrusion and Fire',
 
       image: {
-        src: Technician,
+        src: Technician, // TODO: Replace with home-related image
         alt: 'Image of technician installing MAP sensors',
       },
       body: (
@@ -1973,7 +1950,7 @@ export const SECURITY_INSTALLERS_PAGE: Types.Page = {
           type: 'button',
           label: 'Download Datasheet',
           variant: 'primary',
-          href: '/resources/ArtGuard-MAPsensor-DataSheet.pdf',
+          href: '/resources/artguard-map-sensor-data-sheet.pdf',
         },
         {
           type: 'button',
@@ -1994,6 +1971,15 @@ export const SECURITY_INSTALLERS_PAGE: Types.Page = {
             of securing art, antiques, jewelry, collectibles, memorabilia, cases, safes, books,
             tapestries and even wine—anything that is portable and of value, large or small, indoors
             or out. With easy enrollment and application.
+          </p>
+          <p>
+            <strong>
+              Learn more about the growing market opportunity for object-specific protection in our
+              whitepaper:
+            </strong>{' '}
+            <a href="/resources/art-guard-white-paper-osp.pdf" target="_blank">
+              Download: Object-Specific Protection, The Untapped Market in Home Security
+            </a>
           </p>
         </>
       ),
@@ -2073,7 +2059,7 @@ export const SECURITY_INSTALLERS_PAGE: Types.Page = {
         {
           heading: 'Panels',
           subheading: 'Honeywell/Ademco, DMP, Qolsys, 2GIG, Resideo, Elk, Alula, DSC',
-          body: ' MAP sensors are available in 345 MHz and 433 MHz frequencies to ensure compatibility with the security panels your clients already use. DSC Neo requires HSM2164RF module.',
+          body: 'MAP sensors are available in 345 MHz and 433 MHz frequencies to ensure compatibility with the security panels your clients already use. DSC Neo requires HSM2164RF module.',
           image: {
             src: CompatiblePanels,
             alt: 'Compatible security panel brands',
@@ -2082,7 +2068,7 @@ export const SECURITY_INSTALLERS_PAGE: Types.Page = {
         {
           heading: 'Access Controls',
           subheading: 'CCure 9000, Kantech, and major access control systems',
-          body: ' MAP sensors interface seamlessly with leading access control platforms, providing object-specific protection alongside your existing perimeter and access security infrastructure.',
+          body: 'MAP sensors interface with leading access control platforms, providing object-specific protection alongside your existing perimeter and access security infrastructure.',
           image: {
             src: CompatibleAccessControls,
             alt: 'Compatible access control brands',
@@ -2092,7 +2078,7 @@ export const SECURITY_INSTALLERS_PAGE: Types.Page = {
     },
     {
       type: 'TakeoverHeading',
-      icon: 'Handshake', // OPTIONS: users, handshake, award
+      icon: 'Handshake',
       heading: 'MAP Partner Program',
       subheading: 'Build a competitive advantage with a recognized solution',
       body: 'Join our partner program for preferred pricing, engineering support, co-branding opportunities, and digital marketing support. We provide the knowledge and dedication to ensure your clients are satisfied with results.',
@@ -2844,7 +2830,7 @@ const PRIVACY_POLICY_HTML = (
       shared. Your use of this website constitutes your acceptance of this Privacy Policy and your
       consent to the practices it describes.
     </p>
-    <p>ArtGuard.net/Vootner Goushe LLC's privacy policies are as follows:</p>
+    <p>ArtGuard.net/Vootner Goushe LLC&apos;s privacy policies are as follows:</p>
     <p>
       <strong>Anonymous Information Collection</strong>
     </p>
