@@ -4,6 +4,8 @@ import * as Inputs from '@/ui/inputs';
 import * as Page from '@/ui/page';
 import * as Text from '@/ui/text';
 
+import Icon from '@/ui/icon';
+
 type State =
   | {
       status: 'IDLE';
@@ -49,12 +51,35 @@ const NewsletterSignup = () => {
       email: state.email,
     });
 
-    setTimeout(() => {
+    const response = await fetch('/api/leads', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: state.email,
+      }),
+    });
+
+    if (!response.ok) {
+      const data = await response.json();
+      if (data.error === 'email_already_subscribed') {
+        setState({
+          status: 'ERROR',
+          email: state.email,
+          error: 'email_already_subscribed',
+        });
+        return;
+      }
       setState({
-        status: 'SUCCESS',
+        status: 'ERROR',
+        error: 'unknown_error',
         email: state.email,
       });
-    }, 1000);
+      return;
+    }
+
+    setState({
+      status: 'SUCCESS',
+      email: state.email,
+    });
   };
 
   const buttonLabel = () => {
@@ -88,6 +113,22 @@ const NewsletterSignup = () => {
             <Button.Primary type="submit">{buttonLabel()}</Button.Primary>
           </div>
         </form>
+        {state.status === 'SUCCESS' && (
+          <div className="text-green-500 text-center mt-4 flex justify-center items-center gap-x-2">
+            <Icon icon="CheckCircle" size={20} />
+            <Text.Interface14 bold>Thanks for subscribing!</Text.Interface14>
+          </div>
+        )}
+        {state.status === 'ERROR' && (
+          <div className="text-red-500 text-center mt-4 flex justify-center items-center gap-x-2">
+            <Icon icon="Alert" size={20} />
+            <Text.Interface14 bold>
+              {state.error === 'email_already_subscribed'
+                ? 'Email already subscribed'
+                : 'Failed to subscribe. Please try again.'}
+            </Text.Interface14>
+          </div>
+        )}
       </Page.Container>
     </div>
   );
