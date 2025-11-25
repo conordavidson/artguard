@@ -5,8 +5,6 @@ import * as Types from '@/lib/types';
 import * as Heading from '@/ui/heading';
 import * as Text from '@/ui/text';
 
-import Marquee from 'react-fast-marquee';
-
 import Link from 'next/link';
 import SanityImage from '@/ui/sanityImage';
 
@@ -36,7 +34,7 @@ const RecentInsights: React.FC<RecentInsightsProps> = async (props) => {
               href={`/insights/${post.slug.current}`}
               key={post._id}
               className={Utils.cx(
-                'block w-[300px] cursor-pointer group shrink-0 first:ml-gutter last:mr-gutter snap-start scroll-mx-gutter'
+                'block w-[300px] cursor-pointer group shrink-0 first:ml-grid-gutter last:mr-grid-gutter snap-start scroll-mx-grid-gutter'
               )}
             >
               <div className="relative aspect-video rounded-xl overflow-hidden">

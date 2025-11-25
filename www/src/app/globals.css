@@ -9,8 +9,6 @@
   --color-white: #fff;
   --color-lime: #e8fda1;
 
-  --color-test: #faffee0c;
-
   --color-emphasis: #1e1e1e;
   --color-muted: #333333;
   --color-subtle: #6a6767;
@@ -81,6 +79,7 @@
   --spacing-gutter: var(--gutter);
   --spacing-footer-height: var(--footer-height);
   --spacing-input-height: var(--input-height);
+  --spacing-grid-gutter: max(var(--gutter), calc((100vw - (12 * 110px)) / 2));
 
   --color-foreground: var(--color-foreground);
   --color-background: var(--color-background);
