@@ -55,6 +55,7 @@ const TextImageSplit: React.FC<TextImageSplitProps> = (props) => {
             src={props.section.image.src}
             alt={props.section.image.alt}
             className="w-full h-full object-cover"
+            placeholder="blur"
           />
         )}
         {'useHomepageHero' in props.section && (
