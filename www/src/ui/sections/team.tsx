@@ -27,8 +27,8 @@ const TeamSection: React.FC<TeamSectionProps> = (props) => {
       </Page.Container>
       <Page.Container className="mt-12">
         <div className="w-full max-w-[1000px] mx-auto">
-          <div className="grid grid-cols-12 lg:gap-x-12">
-            <div className="col-span-12 lg:col-span-6">
+          <div className="grid grid-cols-12 lg:gap-x-16">
+            <div className="col-span-12 lg:col-span-7">
               <Text.Display32 as="h2" className="text-foreground text-pretty">
                 {props.section.featuredFounder.name}
               </Text.Display32>
@@ -38,11 +38,13 @@ const TeamSection: React.FC<TeamSectionProps> = (props) => {
                 </Text.Interface18>
               </div>
               {props.section.featuredFounder.image && (
-                <div className="relative lg:hidden mt-4 aspect-square">
+                <div className="relative lg:hidden mt-4 aspect-square max-w-[400px] mx-auto">
                   <Image
                     src={props.section.featuredFounder.image.src}
                     alt={props.section.featuredFounder.image.alt}
                     className="w-full h-full object-cover"
+                    placeholder="blur"
+                    loading="eager"
                   />
                 </div>
               )}
@@ -64,13 +66,15 @@ const TeamSection: React.FC<TeamSectionProps> = (props) => {
                 </div>
               )}
             </div>
-            <div className="col-span-12 lg:col-span-6 hidden lg:block">
+            <div className="col-span-12 lg:col-span-5 hidden lg:block">
               {props.section.featuredFounder.image && (
                 <div className="relative aspect-square">
                   <Image
                     src={props.section.featuredFounder.image.src}
                     alt={props.section.featuredFounder.image.alt}
                     className="w-full h-full object-cover"
+                    placeholder="blur"
+                    loading="eager"
                   />
                 </div>
               )}

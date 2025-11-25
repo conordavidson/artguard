@@ -4,6 +4,7 @@ import * as Ui from '@/ui';
 import * as Utils from '@/lib/utils';
 
 import localFont from 'next/font/local';
+import Script from 'next/script';
 
 import './globals.css';
 
@@ -101,6 +102,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-66368C288P" />
+      <Script id="g-tag">
+        {`
+          window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-66368C288P');
+        `}
+      </Script>
       <body className={Utils.cx(`${Bradford.variable} ${TrueSans.variable} antialiased`)}>
         <Ui.Layout.Root>
           <Ui.Announcement.Bar />

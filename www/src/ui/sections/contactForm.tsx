@@ -9,6 +9,7 @@ import * as Text from '@/ui/text';
 import * as Inputs from '@/ui/inputs';
 
 import Link from 'next/link';
+import Icon from '@/ui/icon';
 
 type ContactFormSectionProps = {
   section: Types.ContactFormSection;
@@ -114,13 +115,49 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = (props) => {
 
   const onChange = (key: keyof ContactInfo, value: string) => {
     setState((prevState) => ({
-      ...prevState,
+      status: 'IDLE',
       contactInfo: {
         ...prevState.contactInfo,
         [key]: value,
       },
     }));
   };
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (state.status === 'PENDING') return;
+    setState((prevState) => ({ ...prevState, status: 'PENDING' }));
+    const response = await fetch('/api/contact-form-submissions', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: state.contactInfo.name,
+        email: state.contactInfo.email,
+        phone: state.contactInfo.phone || null,
+        typeOfAsset: state.contactInfo.typeOfAsset || null,
+        typeOfFacility: state.contactInfo.typeOfFacility,
+        response: state.contactInfo.response || null,
+        timeline: state.contactInfo.timeline || null,
+        additionalComments: state.contactInfo.additionalComments || null,
+      }),
+    });
+
+    if (!response.ok) {
+      setState((prevState) => ({
+        ...prevState,
+        status: 'ERROR',
+        error: 'Failed to submit form. Please try again.',
+      }));
+      return;
+    }
+
+    setState((prevState) => ({ ...prevState, status: 'SUCCESS' }));
+  };
+
+  const submitButtonLabel = (() => {
+    if (state.status === 'PENDING') return 'Submitting...';
+    if (state.status === 'SUCCESS') return 'Submitted!';
+    return 'Submit';
+  })();
 
   return (
     <section
@@ -171,7 +208,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = (props) => {
               </div>
             </div>
           </div>
-          <form className="mt-8 space-y-6">
+          <form className="mt-8 space-y-6" onSubmit={onSubmit}>
             <section className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-6">
               <Inputs.Input label="Name (Required)" id="name">
                 <Inputs.Text
@@ -179,6 +216,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = (props) => {
                   placeholder="Enter your name"
                   value={state.contactInfo.name}
                   onChange={(value) => onChange('name', value)}
+                  required
                 />
               </Inputs.Input>
               <Inputs.Input label="Email (Required)" id="email">
@@ -187,6 +225,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = (props) => {
                   placeholder="Enter your email"
                   value={state.contactInfo.email}
                   onChange={(value) => onChange('email', value)}
+                  required
                 />
               </Inputs.Input>
             </section>
@@ -262,9 +301,23 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = (props) => {
               </Inputs.Input>
             </section>
             <div className="mt-8 max-w-[300px] mx-auto">
-              <Button.Primary type="submit">Submit</Button.Primary>
+              <Button.Primary type="submit">{submitButtonLabel}</Button.Primary>
             </div>
           </form>
+          {state.status === 'SUCCESS' && (
+            <div className="mt-5 text-center flex justify-center items-center gap-x-2 text-green-500">
+              <Icon icon="CheckCircle" size={20} />
+              <Text.Interface14 bold>
+                Form submitted successfully! We&apos;ll be in touch soon.
+              </Text.Interface14>
+            </div>
+          )}
+          {state.status === 'ERROR' && (
+            <div className="mt-5 text-center flex justify-center items-center gap-x-2 text-red-500">
+              <Icon icon="Alert" size={20} />
+              <Text.Interface14 bold>{state.error}</Text.Interface14>
+            </div>
+          )}
         </div>
       </Page.Container>
     </section>

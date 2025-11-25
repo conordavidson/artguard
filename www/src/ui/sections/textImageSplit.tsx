@@ -56,6 +56,7 @@ const TextImageSplit: React.FC<TextImageSplitProps> = (props) => {
             alt={props.section.image.alt}
             className="w-full h-full object-cover"
             placeholder="blur"
+            loading="eager"
           />
         )}
         {'useHomepageHero' in props.section && (
@@ -65,6 +66,7 @@ const TextImageSplit: React.FC<TextImageSplitProps> = (props) => {
               alt="Image of gallery with active alarm sensors"
               className="w-full h-full object-cover"
               loading="eager"
+              placeholder="blur"
             />
             <svg
               id="homepage-hero-svg"

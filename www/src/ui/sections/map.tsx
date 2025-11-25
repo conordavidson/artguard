@@ -32,7 +32,7 @@ const MapSection: React.FC<MapSectionProps> = (props) => {
         </div>
       </Ui.Page.Container>
       <Ui.Page.Container className="mt-10">
-        <div className="max-w-[800px] mx-auto grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-8 [&>*:last-child:nth-child(odd)]:col-span-2 [&>*:last-child:nth-child(odd)]:justify-self-center sm:[&>*:last-child:nth-child(odd)]:col-span-1">
+        <div className="max-w-[800px] mx-auto grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-8">
           {props.section.columns.map((column) => (
             <div key={column.heading} className="text-center">
               <Text.Interface16 bold className="text-faint uppercase" as="h3">
@@ -75,7 +75,6 @@ const Coordinates = {
     x: 80,
     y: 160,
   },
-
   // Central/South USA
   Dallas: {
     x: 165,
@@ -89,7 +88,6 @@ const Coordinates = {
     x: 190,
     y: 136,
   },
-
   // East Coast North America
   Miami: {
     x: 210,
@@ -111,7 +109,10 @@ const Coordinates = {
     x: 235,
     y: 125,
   },
-
+  MexicoCity: {
+    x: 140,
+    y: 200,
+  },
   // Western Europe
   Madrid: {
     x: 445,
@@ -133,7 +134,6 @@ const Coordinates = {
     x: 470,
     y: 115,
   },
-
   // Central/Northern Europe
   Berlin: {
     x: 485,
@@ -143,7 +143,6 @@ const Coordinates = {
     x: 488,
     y: 105,
   },
-
   // Southern Europe
   Valletta: {
     x: 485,
@@ -157,7 +156,6 @@ const Coordinates = {
     x: 490,
     y: 132,
   },
-
   // Middle East
   TelAviv: {
     x: 540,
@@ -171,7 +169,6 @@ const Coordinates = {
     x: 615,
     y: 178,
   },
-
   // Asia
   Bangkok: {
     x: 760,
@@ -184,6 +181,24 @@ const Coordinates = {
   Tokyo: {
     x: 860,
     y: 160,
+  },
+  // Africa
+  Pretoria: {
+    x: 520,
+    y: 330,
+  },
+  Maputo: {
+    x: 540,
+    y: 335,
+  },
+  // Oceania
+  Sydney: {
+    x: 885,
+    y: 350,
+  },
+  Christchurch: {
+    x: 902,
+    y: 380,
   },
 };
 

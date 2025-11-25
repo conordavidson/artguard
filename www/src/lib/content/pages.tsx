@@ -24,7 +24,7 @@ const STANDARD_CTA_CARD: Types.CtaCardSection = {
   ],
 };
 
-export const HOME_PAGE: Types.Page = {
+export const HOMEPAGE: Types.Page = {
   path: Paths.HOME,
   metadata: {
     title: 'Art Guard',
@@ -200,16 +200,14 @@ export const HOME_PAGE: Types.Page = {
           heading: 'North America',
           children: [
             'New York',
+            'Boston',
+            'Miami',
             'Chicago',
             'Los Angeles',
             'San Francisco',
-            'Houston',
-            'Portland',
-            'Seattle',
-            'Boston',
-            'Miami',
             'Toronto',
             'Montreal',
+            'Mexico City',
           ],
         },
         {
@@ -228,7 +226,11 @@ export const HOME_PAGE: Types.Page = {
         },
         {
           heading: 'Middle East & Asia',
-          children: ['Tel Aviv', 'Dubai', 'Bangkok', 'Hong Kong', 'Abu Dhabi', 'Tokyo', 'Valletta'],
+          children: ['Tel Aviv', 'Dubai', 'Bangkok', 'Hong Kong', 'Abu Dhabi', 'Tokyo'],
+        },
+        {
+          heading: 'Africa & Oceania',
+          children: ['Pretoria', 'Maputo', 'Sydney', 'Christchurch'],
         },
       ],
       image: {
