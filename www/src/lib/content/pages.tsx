@@ -1039,7 +1039,7 @@ export const HISTORIC_HOMES_PAGE: Types.Page = {
   ],
 };
 
-import HotelLobby from '@images/hotellobby.jpg';
+import Hotel from '@images/hotel.jpg';
 
 export const HOTELS_PAGE: Types.Page = {
   path: Paths.HOTELS,
@@ -1070,8 +1070,8 @@ export const HOTELS_PAGE: Types.Page = {
         },
       ],
       image: {
-        src: HotelLobby, // **IMAGE NEEDED: Hotel lobby with artwork displayed**
-        alt: 'Hotel lobby with artwork',
+        src: Hotel,
+        alt: 'Hotel lobby with artwork displayed',
       },
     },
 
@@ -2204,7 +2204,7 @@ export const PARTNER_PROGRAM_PAGE: Types.Page = {
   ],
 };
 
-import GalleryInterior from '@images/galleryinterior.jpg';
+import HomeExterior from '@images/homeexterior.jpg';
 
 export const INSURERS_BROKERS_PAGE: Types.Page = {
   path: Paths.INSURERS_BROKERS,
@@ -2236,8 +2236,8 @@ export const INSURERS_BROKERS_PAGE: Types.Page = {
         },
       ],
       image: {
-        src: GalleryInterior,
-        alt: 'Gallery interior',
+        src: HomeExterior,
+        alt: 'Home exterior',
       },
     },
 
@@ -2359,6 +2359,8 @@ export const INSURERS_BROKERS_PAGE: Types.Page = {
   ],
 };
 
+import MapGoldBg from '@images/mapgoldbg.jpg';
+
 export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
   path: Paths.MAP_SYSTEM_GOLD,
   metadata: {
@@ -2389,7 +2391,7 @@ export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
         },
       ],
       image: {
-        src: MapGold,
+        src: MapGoldBg,
         alt: 'MAP Gold System with sensors',
       },
     },
@@ -2523,6 +2525,8 @@ export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
   ],
 };
 
+import MapSilverBg from '@images/mapsilverbg.jpg';
+
 export const MAP_SYSTEM_SILVER_PAGE: Types.Page = {
   path: Paths.MAP_SYSTEM_SILVER,
   metadata: {
@@ -2553,7 +2557,7 @@ export const MAP_SYSTEM_SILVER_PAGE: Types.Page = {
         },
       ],
       image: {
-        src: MapSilver,
+        src: MapSilverBg,
         alt: 'MAP Silver System with sensors',
       },
     },
