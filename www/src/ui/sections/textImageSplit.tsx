@@ -77,14 +77,20 @@ const TextImageSplit: React.FC<TextImageSplitProps> = (props) => {
               <filter id="blurMe">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="1" />
               </filter>
-              <SvgBeacon cx={875} cy={750} radius={250} numberOfWaves={4} className="text-lime" />
+              <SvgBeacon
+                cx={875}
+                cy={750}
+                radius={250}
+                numberOfWaves={4}
+                className="text-[#dfff03]"
+              />
               <SvgBeacon
                 cx={1700}
                 cy={700}
                 radius={300}
                 numberOfWaves={4}
                 delay={1}
-                className="text-lime"
+                className="text-[#dfff03]"
               />
             </svg>
           </>
@@ -117,7 +123,7 @@ const SvgBeacon: React.FC<SvgBeaconProps> = (props) => {
             cy={props.cy}
             r={props.radius}
             filter="url(#blurMe)"
-            fill="#faffee0c"
+            fill="#faffee10"
             stroke="currentColor"
             strokeWidth={1}
             strokeDasharray={150}
