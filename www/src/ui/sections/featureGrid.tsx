@@ -29,8 +29,9 @@ const FeatureGrid: React.FC<FeatureGridProps> = (props) => {
         </Page.Container>
       )}
       <Page.Container
-        className={Utils.cx('mt-14', {
+        className={Utils.cx({
           'max-w-[1000px] mx-auto': props.section.items.length < 3,
+          'mt-14': !!(props.section.heading || props.section.subheading),
         })}
       >
         <div
