@@ -1,11 +1,11 @@
-import * as Ui from "@/ui";
-import * as Content from "@/lib/content";
-import * as Navigation from "next/navigation";
+import * as Ui from '@/ui';
+import * as Content from '@/lib/content';
+import * as Navigation from 'next/navigation';
 
 const slugAsPath = (slug: string | string[] | undefined) => {
-  if (!slug) return "/";
-  if (typeof slug === "string") return `/${slug}`;
-  return `/${slug.join("/")}`;
+  if (!slug) return '/';
+  if (typeof slug === 'string') return `/${slug}`;
+  return `/${slug.join('/')}`;
 };
 
 const pageForSlug = (slug: string | string[] | undefined) => {
@@ -13,11 +13,7 @@ const pageForSlug = (slug: string | string[] | undefined) => {
   return Content.Pages.find((page) => page.path === path);
 };
 
-export const generateMetadata = async ({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) => {
+export const generateMetadata = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
   const page = pageForSlug(slug);
   if (!page) return Navigation.notFound();
@@ -29,17 +25,7 @@ export const generateMetadata = async ({
   };
 };
 
-// export const generateStaticParams = async () => {
-//   return Content.Pages.map((page) => ({
-//     slug: page.path,
-//   }));
-// };
-
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const page = pageForSlug(slug);
   if (!page) return Navigation.notFound();

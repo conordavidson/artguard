@@ -1,4 +1,5 @@
 export * as Announcement from './announcement';
+export * as Button from './button';
 export * as Graphics from './graphics';
 export * as Heading from './heading';
 export * as Inputs from './inputs';
