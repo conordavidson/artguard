@@ -1754,10 +1754,10 @@ export const PRESS_PAGE: Types.Page = {
 
 import SecurityPartnersLogos from '@images/securitypartnerslogos.png';
 
-export const SATISFIED_CUSTOMERS_PAGE: Types.Page = {
-  path: Paths.SATISFIED_CUSTOMERS,
+export const WHAT_CLIENTS_SAY_PAGE: Types.Page = {
+  path: Paths.WHAT_CLIENTS_SAY,
   metadata: {
-    title: 'Satisfied Customers',
+    title: 'What Clients Say',
     description:
       'Trusted by museums, galleries, private collectors, and security professionals worldwide.',
     keywords: ['Art Guard', 'testimonials', 'clients', 'museums', 'galleries'],

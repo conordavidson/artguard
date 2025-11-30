@@ -22,5 +22,5 @@ export const CONTACT = '/contact';
 export const OUR_STORY = '/about/art-guard';
 export const TEAM = '/about/team';
 export const PRESS = '/about/press';
-export const SATISFIED_CUSTOMERS = '/about/satisfied-customers';
+export const WHAT_CLIENTS_SAY = '/about/what-clients-say';
 export const PRIVACY_POLICY = '/privacy-policy';

@@ -73,6 +73,11 @@ const nextConfig: NextConfig = {
         destination: '/about/art-guard',
         permanent: true,
       },
+      {
+        source: '/about/satisfied-customers/',
+        destination: '/about/what-clients-say',
+        permanent: true,
+      },
     ];
   },
 };

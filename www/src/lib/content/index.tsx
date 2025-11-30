@@ -129,8 +129,8 @@ export const NAVIGATION_MENU: Types.MenuItem[] = [
         href: Paths.PRESS,
       },
       {
-        label: 'Satisfied Customers',
-        href: Paths.SATISFIED_CUSTOMERS,
+        label: 'What Clients Say',
+        href: Paths.WHAT_CLIENTS_SAY,
       },
       {
         label: 'Contact Us',
