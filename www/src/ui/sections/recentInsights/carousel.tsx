@@ -1,33 +1,67 @@
-import * as Utils from '@/lib/utils';
-import * as Page from '@/ui/page';
-import * as Sanity from '@/lib/sanity';
-import * as Types from '@/lib/types';
-import * as Heading from '@/ui/heading';
+'use client';
+
+import * as React from 'react';
+import * as SanityTypes from '@/lib/sanity/types';
 import * as Text from '@/ui/text';
+import * as Utils from '@/lib/utils';
 
 import Link from 'next/link';
+import Icon from '@/ui/icon';
 import SanityImage from '@/ui/sanityImage';
 
-type RecentInsightsProps = {
-  section: Types.RecentInsightsSection;
+type RecentInsightsCarouselProps = {
+  posts: SanityTypes.INDEX_POSTS_QUERYResult;
 };
 
-const RecentInsights: React.FC<RecentInsightsProps> = async (props) => {
-  const posts = await Sanity.Posts.index();
-  const recentPosts = posts.slice(0, 20);
+const RecentInsightsCarousel: React.FC<RecentInsightsCarouselProps> = (props) => {
+  const [isScrolledToStart, setIsScrolledToStart] = React.useState(true);
+  const [isScrolledToEnd, setIsScrolledToEnd] = React.useState(false);
+
+  const carouselRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const carousel = carouselRef.current;
+    const handleScroll = () => {
+      if (!carousel) return;
+      const { scrollLeft, scrollWidth, clientWidth } = carousel;
+      setIsScrolledToEnd(scrollLeft + clientWidth >= scrollWidth - 10);
+      setIsScrolledToStart(scrollLeft === 0);
+    };
+
+    if (carousel) carousel.addEventListener('scroll', handleScroll);
+
+    return () => {
+      if (carousel) carousel.removeEventListener('scroll', handleScroll);
+    };
+  }, [carouselRef]);
 
   return (
-    <section
-      className={Utils.cx(
-        'section recent-insights-section col-span-full grid grid-cols-subgrid',
-        props.section.className
-      )}
-    >
-      <Page.Container>
-        <Heading.Stack heading={props.section.heading} />
-      </Page.Container>
-      <div className="mt-7 col-span-full flex overflow-x-auto pb-6 gap-x-5 snap-x snap-mandatory">
-        {recentPosts.map((post) => {
+    <div className="relative mt-7 col-span-full">
+      <div
+        className={Utils.cx(
+          'absolute z-20 left-0 top-0 bottom-0 w-[64px] pl-3 pt-[72px] bg-linear-to-l from-transparent to-white to-90% transition-opacity duration-500 ease-in-out',
+          {
+            'opacity-0': isScrolledToStart,
+            'opacity-100': !isScrolledToStart,
+          }
+        )}
+      >
+        <Icon icon="BackArrow" size={32} />
+      </div>
+      <div
+        className={Utils.cx(
+          'absolute z-20 right-0 top-0 bottom-0 w-[64px] pr-3 pt-[72px] bg-linear-to-r from-transparent to-white to-90% transition-opacity duration-500 ease-in-out flex justify-end',
+          {
+            'opacity-0': isScrolledToEnd,
+            'opacity-100': !isScrolledToEnd,
+          }
+        )}
+      >
+        <Icon icon="BackArrow" size={32} className="rotate-180" />
+      </div>
+
+      <div className="flex overflow-x-auto pb-6 gap-x-5 snap-x snap-mandatory" ref={carouselRef}>
+        {props.posts.map((post) => {
           const firstTag = post.tags?.[0];
           return (
             <Link
@@ -80,8 +114,8 @@ const RecentInsights: React.FC<RecentInsightsProps> = async (props) => {
           );
         })}
       </div>
-    </section>
+    </div>
   );
 };
 
-export default RecentInsights;
+export default RecentInsightsCarousel;

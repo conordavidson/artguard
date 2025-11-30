@@ -87,13 +87,13 @@ const TeamSection: React.FC<TeamSectionProps> = (props) => {
               </Text.Display32>
               <div className="mt-2">
                 <Text.Interface18 bold className="text-faint text-pretty">
-                  {props.section.featuredFounder.title}
+                  {props.section.secondaryFounder.title}
                 </Text.Interface18>
               </div>
             </div>
             <div className="col-span-12 lg:col-span-8">
               <Text.Interface16 className="text-muted text-pretty">
-                {props.section.featuredFounder.bio}
+                {props.section.secondaryFounder.bio}
               </Text.Interface16>
             </div>
           </div>
