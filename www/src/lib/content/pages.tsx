@@ -1490,7 +1490,7 @@ export const FAQS_PAGE: Types.Page = {
   sections: [
     {
       type: 'Faqs',
-      heading: 'MAP v2 Sensor FAQ’s',
+      heading: 'MAP v3 Sensor FAQ’s',
       faqs: [
         {
           question: 'How is Art Guard’s MAP v3 sensor different from other technologies?',
