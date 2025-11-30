@@ -524,7 +524,7 @@ li {
 
 .sections-container {
   & > *:first-child {
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
 
   & > * {
@@ -532,8 +532,12 @@ li {
   }
 }
 
-.text-image-split-section:first-child {
-  margin-top: 4rem;
+@media (min-width: theme(screens.md)) {
+  .sections-container {
+    & > *:first-child {
+      margin-top: 4rem;
+    }
+  }
 }
 
 .text-image-split-section {
