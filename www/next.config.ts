@@ -48,13 +48,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/resources/Enroll-MAP-sensors-into-DMP.pdf',
-        destination: '/resources/enroll-map-sensors-into-dmp.pdf',
-        permanent: true,
-      },
-      {
         source: '/resources/Art-Guard-White-Paper_OSP.pdf',
-        destination: '/resources/art-guard-white-paper-osp.pdf',
+        destination: '/resources/artguard-whitepaper-osp.pdf',
         permanent: true,
       },
       {

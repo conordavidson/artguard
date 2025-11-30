@@ -75,7 +75,7 @@ export const HOMEPAGE: Types.Page = {
       cards: [
         {
           heading: 'Universal Compatibility',
-          body: 'Protects objects of any shape, size, or material—from sculpture to paintings to installations. A single sensor solution for your entire collection.',
+          body: 'Protects stationary objects of any size and shape and in any environment. A single sensor solution for your entire collection.',
           icon: 'Plugs',
         },
         {
@@ -107,7 +107,7 @@ export const HOMEPAGE: Types.Page = {
         {
           label: "Read the Sotheby's Case Study",
           variant: 'primary',
-          href: '/test',
+          href: '/resources/artguard-sothebys-casestudy.pdf',
           type: 'button',
         },
       ],
@@ -194,7 +194,7 @@ export const HOMEPAGE: Types.Page = {
     {
       type: 'Map',
       heading: 'Global Protection for Global Collections',
-      subheading: 'Trusted in major cities across five continents',
+      subheading: 'Trusted in public and private facilities across five continents.',
       columns: [
         {
           heading: 'North America',
@@ -659,7 +659,7 @@ export const MUSEUMS_PAGE: Types.Page = {
       type: 'TextImageSplit',
       heading: 'Security for Museums and Large Galleries',
       subheading: 'Object-specific protection for collections of any size',
-      body: 'MAP sensors deliver comprehensive, discreet security for artwork, artifacts, and exhibits—from masterpiece paintings to small historical objects.',
+      body: 'MAP sensors deliver discreet, comprehensive security for an entire collections or special exhibitions with multiple custom solutions.',
       ctas: [
         {
           type: 'button',
@@ -1217,7 +1217,7 @@ export const AUCTION_HOUSES_PAGE: Types.Page = {
       icon: 'Quote',
       heading: 'Trusted by Leading Auction Houses',
       body: "Art Guard MAP provided the added security we needed for one of the largest exhibitions we've ever put on. We were very pleased with the ease of set-up and use, and the fantastic service. We felt we had the right amount of protection for such an important collection and will be using the system again and again.",
-      byline: '—Prominent Canadian Gallery/Auction House',
+      byline: '—Heffel Fine Art, Toronto',
     },
 
     STANDARD_CTA_CARD,
@@ -1374,7 +1374,7 @@ export const PRIVATE_COLLECTIONS_PAGE: Types.Page = {
       cards: [
         {
           heading: 'Reliability',
-          body: 'MAP sensors are museum grade and chosen by some of the world&apos;s leading institutions. Sensors and systems are backed by the insurance industry. MAP sensors have been optimized for any work in any environment. Security and safety for the object go hand-in-hand in assuring collectors of optimal performance and peace of mind.',
+          body: "MAP sensors are museum grade and chosen by some of the world's leading institutions. Sensors and systems are backed by the insurance industry. MAP sensors have been optimized for any work in any environment. Security and safety for the object go hand-in-hand in assuring collectors of optimal performance and peace of mind.",
           icon: 'ShieldLock',
         },
         {
@@ -1612,27 +1612,31 @@ export const FAQS_PAGE: Types.Page = {
 const PRODUCT_SHEETS = [
   {
     heading: 'Art Guard MAP Sensor Data Sheet',
-    href: 'https://www.artguard.net/resources/Art-Guard-MAP-345-sensor.pdf',
+    href: '/resources/artguard-map-345-sensor.pdf',
   },
   {
-    heading: 'Art Guard MAP System Data Sheet',
-    href: 'https://www.artguard.net/resources/Art-Guard-MAP-system-Gold.pdf',
+    heading: 'Art Guard MAP Gold System Data Sheet',
+    href: '/resources/artguard-map-system-gold.pdf',
+  },
+  {
+    heading: 'Art Guard MAP Silver System Data Sheet',
+    href: '/resources/artguard-map-system-silver.pdf',
   },
   {
     heading: 'Art Guard MAP Conservationist Curator Notes',
-    href: 'https://www.artguard.net/resources/ArtGuard-MAPConservationist-curator-notes.pdf',
+    href: '/resources/artguard-map-conservationist-curator-notes.pdf',
   },
   {
     heading: 'Art Guard MAP for Historical Museums and Houses',
-    href: 'https://www.artguard.net/resources/ArtGuard-MAPforHistoricalMuseumsAndHouses.pdf',
+    href: '/resources/artguard-map-for-historical-museums-and-houses.pdf',
   },
   {
     heading: 'Enroll MAP sensors into DMP',
-    href: 'https://www.artguard.net/resources/Enroll-MAP-sensors-into-DMP.pdf',
+    href: '/resources/enroll-map-sensors-into-dmp.pdf',
   },
   {
     heading: 'Object-Specific Protection: The Untapped Market in Home Security (2025)',
-    href: 'https://www.artguard.net/resources/Art-Guard-White-Paper_OSP.pdf',
+    href: '/resources/artguard-whitepaper-osp.pdf',
   },
 ];
 
@@ -1802,7 +1806,7 @@ export const SATISFIED_CUSTOMERS_PAGE: Types.Page = {
 
     {
       type: 'TextHighlights',
-      heading: 'What Our Clients Say',
+      heading: 'What Clients Say',
       highlights: [
         {
           heading: "—Michael Seremetis, former Director of Security, Sotheby's Worldwide",
@@ -1973,7 +1977,7 @@ export const SECURITY_INSTALLERS_PAGE: Types.Page = {
               Learn more about the growing market opportunity for object-specific protection in our
               whitepaper:
             </strong>{' '}
-            <a href="/resources/art-guard-white-paper-osp.pdf" target="_blank">
+            <a href="/resources/artguard-whitepaper-osp.pdf" target="_blank">
               Download: Object-Specific Protection, The Untapped Market in Home Security
             </a>
           </p>
@@ -2042,14 +2046,14 @@ export const SECURITY_INSTALLERS_PAGE: Types.Page = {
       type: 'FeatureGrid',
       heading: 'Compatible Systems',
       subheading: 'MAP integrates with all major security platforms and access control systems',
-      footerCtas: [
-        {
-          label: 'Download All Interface Options',
-          href: '/resources/integrations.pdf',
-          type: 'button',
-          variant: 'primary',
-        },
-      ],
+      // footerCtas: [
+      //   {
+      //     label: 'Download All Interface Options',
+      //     href: '/resources/integrations.pdf',
+      //     type: 'button',
+      //     variant: 'primary',
+      //   },
+      // ],
       items: [
         {
           heading: 'Panels',
@@ -2379,7 +2383,8 @@ export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
           type: 'button',
           label: 'Download Datasheet',
           variant: 'primary',
-          href: '/resources/art-guard-map-system-gold.pdf',
+          href: '/resources/artguard-map-system-gold.pdf',
+          target: '_blank',
         },
         {
           type: 'button',
@@ -2446,7 +2451,7 @@ export const MAP_SYSTEM_GOLD_PAGE: Types.Page = {
         },
         {
           heading: 'Communication',
-          value: 'Dual-path: Ethernet (IP) and 4G LTE cellular, Wi-Fi optional',
+          value: ' Ethernet or Wi-Fi with 4G cellular backup',
         },
         {
           heading: 'Backup Battery',
@@ -2545,7 +2550,8 @@ export const MAP_SYSTEM_SILVER_PAGE: Types.Page = {
           type: 'button',
           label: 'Download Datasheet',
           variant: 'primary',
-          href: '/resources/art-guard-map-system-silver.pdf',
+          href: '/resources/artguard-map-system-silver.pdf',
+          target: '_blank',
         },
         {
           type: 'button',
@@ -2580,7 +2586,7 @@ export const MAP_SYSTEM_SILVER_PAGE: Types.Page = {
       cards: [
         {
           heading: 'Dependability',
-          body: "With Honeywell/Resideo panel and Art Guard's latest MAP sensors Silver is a most effective way to alert responders to unauthorized movement and daytime theft attempts. And it has a 24-hr back-up battery.",
+          body: "With the Honeywell/Resideo panel and Art Guard's latest MAP sensors Silver is a most effective way to alert responders to unauthorized movement and daytime theft attempts. And it has a 24-hr back-up battery.",
           icon: 'ShieldLock',
         },
         {
