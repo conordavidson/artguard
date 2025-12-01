@@ -276,7 +276,7 @@ export const TEAM_PAGE: Types.Page = {
       boardOfAdvisors: [
         {
           name: 'Peter Giacalone',
-          bio: 'Peter is a security industry consultant specializing in operational  structuring, strategic planning, market expansion, acquisitions, private equity capital placement and financial restructuring of security  related business. He works with notable global brands in the creation  and implementation of national dealer and affiliate programs,  specializing in central station services and monitoring of PERS  (Personal Emergency Response Systems) and remote video monitoring and  management. His 35 years of experience covers product and compliance  system design, DIY business deployment restructuring, access control  branding, business and sales management and acquisitions.',
+          bio: 'Peter is a career security industry professional and advisor specializing in operational structuring, strategic planning, market expansion, acquisitions, private equity capital placement, and financial restructuring of security related business. He works with notable global brands in the creation and implementation of national dealer and affiliate programs, specializing in central station services and monitoring of PERS (Personal Emergency Response Systems) and remote video monitoring and management. His 45 years of experience covers product and compliance system design, DIY business deployment restructuring, access control branding, business and sales management and acquisitions.',
         },
         {
           name: 'Greg Smith',
