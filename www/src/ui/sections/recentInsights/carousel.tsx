@@ -39,7 +39,7 @@ const RecentInsightsCarousel: React.FC<RecentInsightsCarouselProps> = (props) =>
     <div className="relative mt-7 col-span-full">
       <div
         className={Utils.cx(
-          'absolute z-20 left-0 top-0 bottom-0 w-[64px] pl-3 pt-[72px] bg-linear-to-l from-transparent to-white to-90% transition-opacity duration-500 ease-in-out',
+          'pointer-events-none absolute z-20 left-0 top-0 bottom-0 w-[64px] pl-3 pt-[72px] bg-linear-to-l from-transparent to-white to-90% transition-opacity duration-500 ease-in-out',
           {
             'opacity-0': isScrolledToStart,
             'opacity-100': !isScrolledToStart,
@@ -50,7 +50,7 @@ const RecentInsightsCarousel: React.FC<RecentInsightsCarouselProps> = (props) =>
       </div>
       <div
         className={Utils.cx(
-          'absolute z-20 right-0 top-0 bottom-0 w-[64px] pr-3 pt-[72px] bg-linear-to-r from-transparent to-white to-90% transition-opacity duration-500 ease-in-out flex justify-end',
+          'pointer-events-none absolute z-20 right-0 top-0 bottom-0 w-[64px] pr-3 pt-[72px] bg-linear-to-r from-transparent to-white to-90% transition-opacity duration-500 ease-in-out flex justify-end',
           {
             'opacity-0': isScrolledToEnd,
             'opacity-100': !isScrolledToEnd,
