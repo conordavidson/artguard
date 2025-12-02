@@ -7,5 +7,6 @@ export default SanityCli.defineCliConfig({
   },
   deployment: {
     autoUpdates: true,
+    appId: 'i3nxb2tav6pl7e3aaga1c7hn',
   },
 });
