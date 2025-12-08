@@ -14,7 +14,7 @@
     "@sanity/client": "^7.12.1",
     "@sanity/image-url": "^1.2.0",
     "groq": "^4.15.0",
-    "next": "16.0.3",
+    "next": "16.0.7",
     "posthog-js": "^1.299.0",
     "radix-ui": "^1.4.3",
     "react": "19.2.0",
