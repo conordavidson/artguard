@@ -3,6 +3,7 @@ import * as Types from '@/lib/types';
 import * as Text from '@/ui/text';
 import * as Sanity from '@/lib/sanity';
 
+import Link from 'next/link';
 import SanityImage from '@/ui/sanityImage';
 
 type RichtextProps = {
@@ -27,6 +28,13 @@ type RichtextImage = Extract<
 
 const RichtextComponents: Partial<Pt.PortableTextReactComponents> = {
   ...BaseStyles,
+  marks: {
+    link: ({ children, value }) => (
+      <Link href={value.href} target={value.openInNewTab ? '_blank' : '_self'}>
+        {children}
+      </Link>
+    ),
+  },
   types: {
     image: ({ value }: { value: RichtextImage }) => {
       return (
