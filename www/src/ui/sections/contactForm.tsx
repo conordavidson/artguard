@@ -11,6 +11,9 @@ import * as Inputs from '@/ui/inputs';
 import Link from 'next/link';
 import Icon from '@/ui/icon';
 
+const CLOUDFLARE_TURNSTILE_SITEKEY = process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY!;
+if (!CLOUDFLARE_TURNSTILE_SITEKEY) throw new Error('CLOUDFLARE_TURNSTILE_SITEKEY is not set');
+
 type ContactFormSectionProps = {
   section: Types.ContactFormSection;
 };
@@ -127,6 +130,20 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = (props) => {
     e.preventDefault();
     if (state.status === 'PENDING') return;
     setState((prevState) => ({ ...prevState, status: 'PENDING' }));
+
+    const cloudflareTurnstileToken = (
+      (e.target as HTMLFormElement).elements.namedItem('cf-turnstile-response') as HTMLInputElement
+    )?.value as string;
+
+    if (!cloudflareTurnstileToken) {
+      setState((prevState) => ({
+        ...prevState,
+        status: 'ERROR',
+        error: 'Failed to submit form. Please try again.',
+      }));
+      return;
+    }
+
     const response = await fetch('/api/contact-form-submissions', {
       method: 'POST',
       body: JSON.stringify({
@@ -138,6 +155,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = (props) => {
         response: state.contactInfo.response || null,
         timeline: state.contactInfo.timeline || null,
         additionalComments: state.contactInfo.additionalComments || null,
+        cloudflareTurnstileToken,
       }),
     });
 
@@ -299,6 +317,13 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = (props) => {
                   rows={6}
                 />
               </Inputs.Input>
+            </section>
+            <section>
+              <div
+                className="cf-turnstile"
+                data-sitekey={CLOUDFLARE_TURNSTILE_SITEKEY}
+                data-size="flexible"
+              ></div>
             </section>
             <div className="mt-8 max-w-[300px] mx-auto">
               <Button.Primary type="submit">{submitButtonLabel}</Button.Primary>

@@ -108,6 +108,7 @@ export default function RootLayout({
           window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-66368C288P');
         `}
       </Script>
+      <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></Script>
       <body className={Utils.cx(`${Bradford.variable} ${TrueSans.variable} antialiased`)}>
         <Ui.Layout.Root>
           <Ui.Announcement.Bar />

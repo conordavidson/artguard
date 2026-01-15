@@ -1,3 +1,4 @@
+import * as Cloudflare from '@/lib/cloudflare';
 import * as Resend from '@/lib/resend';
 import * as Z from 'zod';
 
@@ -10,6 +11,7 @@ const contactSubmissionsCreateBody = Z.object({
   response: Z.string().min(1).nullable(),
   timeline: Z.string().min(1).nullable(),
   additionalComments: Z.string().min(1).nullable(),
+  cloudflareTurnstileToken: Z.string().min(1),
 });
 
 export const POST = async (request: Request) => {
@@ -18,6 +20,14 @@ export const POST = async (request: Request) => {
   const contact = contactSubmissionsCreateBody.safeParse(body);
 
   if (!contact.success) return Response.json({ error: contact.error.issues }, { status: 400 });
+
+  const cloudflareTurnstileResponse = await Cloudflare.Turnstile.verify(
+    contact.data.cloudflareTurnstileToken
+  );
+
+  if (!cloudflareTurnstileResponse.success) {
+    return Response.json({ error: 'Failed to verify Cloudflare Turnstile token' }, { status: 400 });
+  }
 
   const formattedName = contact.data.name || 'Empty';
   const formattedEmail = contact.data.email || 'Empty';
