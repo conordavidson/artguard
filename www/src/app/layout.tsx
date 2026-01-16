@@ -102,13 +102,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Script id="turnstile-loader">
+        {`
+          window.onTurnstileReady = new Promise((resolve) => {
+            window.resolveTurnstile = resolve;
+          });
+          
+          window.onTurnstileLoad = () => {
+            window.resolveTurnstile();
+          };
+        `}
+      </Script>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-66368C288P" />
       <Script id="g-tag">
         {`
           window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-66368C288P');
         `}
       </Script>
-      <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></Script>
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad"
+        defer
+      ></Script>
       <body className={Utils.cx(`${Bradford.variable} ${TrueSans.variable} antialiased`)}>
         <Ui.Layout.Root>
           <Ui.Announcement.Bar />

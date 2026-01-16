@@ -101,6 +101,18 @@ const TIMELINE_OPTIONS = [
   },
 ];
 
+type Turnstile = {
+  render: (container: string, options: { sitekey: string; size: string }) => string;
+  getResponse: (widgetId: string) => string;
+};
+
+declare global {
+  interface Window {
+    turnstile: Turnstile;
+    onTurnstileReady: Promise<void>;
+  }
+}
+
 const ContactFormSection: React.FC<ContactFormSectionProps> = (props) => {
   const [state, setState] = React.useState<State>({
     status: 'IDLE',
@@ -126,14 +138,37 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = (props) => {
     }));
   };
 
+  const turnstileRef = React.useRef<Turnstile | null>(null);
+  const widgetIdRef = React.useRef<string | null>(null);
+
+  React.useEffect(() => {
+    window.onTurnstileReady.then(() => {
+      const turnstile = window.turnstile;
+      if (!turnstile) return;
+      if (turnstileRef.current) return;
+      turnstileRef.current = turnstile;
+      widgetIdRef.current = turnstile.render('#cf-turnstile', {
+        sitekey: CLOUDFLARE_TURNSTILE_SITEKEY,
+        size: 'flexible',
+      });
+    });
+  }, []);
+
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (state.status === 'PENDING') return;
     setState((prevState) => ({ ...prevState, status: 'PENDING' }));
 
-    const cloudflareTurnstileToken = (
-      (e.target as HTMLFormElement).elements.namedItem('cf-turnstile-response') as HTMLInputElement
-    )?.value as string;
+    if (!widgetIdRef.current || !turnstileRef.current) {
+      setState((prevState) => ({
+        ...prevState,
+        status: 'ERROR',
+        error: 'Failed to submit form. Please try again.',
+      }));
+      return;
+    }
+
+    const cloudflareTurnstileToken = turnstileRef.current.getResponse(widgetIdRef.current);
 
     if (!cloudflareTurnstileToken) {
       setState((prevState) => ({
@@ -319,11 +354,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = (props) => {
               </Inputs.Input>
             </section>
             <section>
-              <div
-                className="cf-turnstile"
-                data-sitekey={CLOUDFLARE_TURNSTILE_SITEKEY}
-                data-size="flexible"
-              ></div>
+              <div id="cf-turnstile"></div>
             </section>
             <div className="mt-8 max-w-[300px] mx-auto">
               <Button.Primary type="submit">{submitButtonLabel}</Button.Primary>
