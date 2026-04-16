@@ -143,6 +143,7 @@ export const DialogPreview: React.FC = () => {
     >
       <NewsletterSignup
         heading={null}
+        autoFocusEmail
         variant="light"
         formClassName="max-w-none mx-0 items-stretch justify-start md:flex-col md:items-stretch md:justify-start"
         statusClassName="justify-start text-left"

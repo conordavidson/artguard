@@ -8,6 +8,7 @@ type TextProps = {
   onChange: (value: string) => void;
   id: string;
   autoComplete?: React.HTMLInputAutoCompleteAttribute;
+  autoFocus?: boolean;
   required?: boolean;
   variant?: 'default' | 'light';
 };
@@ -28,6 +29,7 @@ export const Text: React.FC<TextProps> = (props) => {
       type="text"
       id={props.id}
       autoComplete={props.autoComplete}
+      autoFocus={props.autoFocus}
       className={Utils.cx(
         INPUT_BASE_CLASSNAME,
         TEXT_INPUT_VARIANT_CLASSNAME[props.variant || 'default'],

@@ -34,9 +34,11 @@ type Props = {
   formClassName?: string;
   statusClassName?: string;
   variant?: 'default' | 'light';
+  autoFocusEmail?: boolean;
 };
 
 const NewsletterSignup: React.FC<Props> = ({
+  autoFocusEmail = false,
   className,
   formClassName,
   heading = 'Subscribe to learn about the latest in Art Security Technology',
@@ -130,6 +132,7 @@ const NewsletterSignup: React.FC<Props> = ({
           <Inputs.Text
             id="email"
             autoComplete="email"
+            autoFocus={autoFocusEmail}
             placeholder="Enter your email"
             value={state.email}
             onChange={onChangeEmail}
