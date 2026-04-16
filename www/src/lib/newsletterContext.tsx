@@ -5,6 +5,8 @@ import * as React from 'react';
 const STORAGE_KEY = 'artguard-newsletter-dialog';
 const CURRENT_VERSION = 'v1';
 const THIRTY_DAYS_IN_MS = 30 * 24 * 60 * 60 * 1000;
+const INITIAL_DELAY_IN_MS = 5 * 1000;
+const FIRST_SCROLL_DELAY_IN_MS = 1 * 1000;
 
 type StoredNewsletterDialogDismissal = {
   version: string;
@@ -44,7 +46,49 @@ export const Provider: React.FC<ProviderProps> = (props) => {
   const [isNewsletterDialogVisible, setIsNewsletterDialogVisible] = React.useState(false);
 
   React.useEffect(() => {
-    setIsNewsletterDialogVisible(shouldShowNewsletterDialog());
+    if (!shouldShowNewsletterDialog()) return;
+
+    let isCancelled = false;
+    let lastScrollY = window.scrollY;
+    let hasScheduledScrollReveal = false;
+
+    let scrollRevealTimeoutId: number | null = null;
+    let initialRevealTimeoutId: number | null = null;
+
+    const clearTimers = () => {
+      if (scrollRevealTimeoutId !== null) window.clearTimeout(scrollRevealTimeoutId);
+      if (initialRevealTimeoutId !== null) window.clearTimeout(initialRevealTimeoutId);
+    };
+
+    const revealDialog = () => {
+      if (isCancelled) return;
+
+      clearTimers();
+      window.removeEventListener('scroll', onScroll);
+      setIsNewsletterDialogVisible(true);
+    };
+
+    const onScroll = () => {
+      const currentScrollY = window.scrollY;
+      const isFirstDownwardScroll = currentScrollY > lastScrollY && currentScrollY > 0;
+
+      lastScrollY = currentScrollY;
+
+      if (!isFirstDownwardScroll || hasScheduledScrollReveal) return;
+
+      hasScheduledScrollReveal = true;
+      window.removeEventListener('scroll', onScroll);
+      scrollRevealTimeoutId = window.setTimeout(revealDialog, FIRST_SCROLL_DELAY_IN_MS);
+    };
+
+    initialRevealTimeoutId = window.setTimeout(revealDialog, INITIAL_DELAY_IN_MS);
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => {
+      isCancelled = true;
+      clearTimers();
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
   const onDismiss = () => {

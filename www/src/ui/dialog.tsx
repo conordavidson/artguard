@@ -15,6 +15,7 @@ export type DialogProps = {
   description: string | React.ReactNode;
   actions?: Button.VariantProps[];
   children?: React.ReactNode;
+  disableBackgroundClose?: boolean;
 };
 
 const CloseIcon = () => {
@@ -37,10 +38,18 @@ const CloseIcon = () => {
   );
 };
 
-const Dialog: React.FC<DialogProps> = ({ actions, children, description, heading, onClose }) => {
+const Dialog: React.FC<DialogProps> = ({
+  actions,
+  children,
+  description,
+  disableBackgroundClose,
+  heading,
+  onClose,
+}) => {
   return (
     <BaseDialog.Root
       open
+      disablePointerDismissal={disableBackgroundClose}
       onOpenChange={(open) => {
         if (!open) onClose();
       }}
@@ -129,6 +138,7 @@ export const DialogPreview: React.FC = () => {
     <Dialog
       heading="Stay Informed. Stay Protected."
       description="Sign up for our general newsletter to learn about Art Guard and the latest in Art Security Technology"
+      disableBackgroundClose
       onClose={onDismiss}
     >
       <NewsletterSignup
