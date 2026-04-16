@@ -10,6 +10,7 @@ export * as Text from './text';
 
 export { default as Icon } from './icon';
 export { default as Nav } from './nav';
+export { default as Dialog, DialogPreview } from './dialog';
 export { default as PowerCard } from './powerCard';
 export { default as Richtext } from './richtext';
 export { default as SanityImage } from './sanityImage';

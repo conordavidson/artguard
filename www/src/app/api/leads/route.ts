@@ -1,4 +1,4 @@
-import * as Wishpond from '@/lib/wishpond';
+import * as Mailchimp from '@/lib/mailchimp';
 import * as Zod from 'zod';
 
 export const LeadsCreateRequest = Zod.object({
@@ -15,11 +15,11 @@ export const POST = async (request: Request) => {
     return Response.json({ error: validated.error.message }, { status: 400 });
   }
 
-  const result = await Wishpond.Leads.create(validated.data);
+  const result = await Mailchimp.upsert(validated.data);
 
   if (!result.success) {
     return Response.json({ error: result.error }, { status: 400 });
   }
 
-  return Response.json({ lead: result.lead }, { status: 201 });
+  return Response.json({ lead: result.member }, { status: 201 });
 };

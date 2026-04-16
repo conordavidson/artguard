@@ -9,10 +9,18 @@ type TextProps = {
   id: string;
   autoComplete?: React.HTMLInputAutoCompleteAttribute;
   required?: boolean;
+  variant?: 'default' | 'light';
 };
 
-const INPUT_CLASSNAME =
-  'w-full block rounded-lg bg-emphasis text-background placeholder:text-faint hover:bg-muted focus:bg-muted outline-none transition-colors px-4 py-2 interface-14 font-medium!';
+const INPUT_BASE_CLASSNAME =
+  'w-full block rounded-lg outline-none transition-colors px-4 py-2 interface-14 font-medium!';
+
+const TEXT_INPUT_VARIANT_CLASSNAME: Record<NonNullable<TextProps['variant']>, string> = {
+  default:
+    'bg-emphasis text-background placeholder:text-faint hover:bg-muted focus:bg-muted',
+  light:
+    'border border-black/10 bg-white text-black placeholder:text-black/45 hover:bg-white focus:bg-white',
+};
 
 export const Text: React.FC<TextProps> = (props) => {
   return (
@@ -20,7 +28,11 @@ export const Text: React.FC<TextProps> = (props) => {
       type="text"
       id={props.id}
       autoComplete={props.autoComplete}
-      className={Utils.cx(INPUT_CLASSNAME, 'h-input-height')}
+      className={Utils.cx(
+        INPUT_BASE_CLASSNAME,
+        TEXT_INPUT_VARIANT_CLASSNAME[props.variant || 'default'],
+        'h-input-height'
+      )}
       placeholder={props.placeholder}
       value={props.value}
       onChange={(e) => props.onChange(e.target.value)}
@@ -42,7 +54,11 @@ export const TextArea: React.FC<TextAreaProps> = (props) => {
     <textarea
       id={props.id}
       rows={props.rows || 4}
-      className={Utils.cx(INPUT_CLASSNAME, 'py-3')}
+      className={Utils.cx(
+        INPUT_BASE_CLASSNAME,
+        TEXT_INPUT_VARIANT_CLASSNAME.default,
+        'py-3'
+      )}
       placeholder={props.placeholder}
       value={props.value}
       onChange={(e) => props.onChange(e.target.value)}
@@ -62,7 +78,7 @@ export const Select: React.FC<SelectProps> = (props) => {
   return (
     <select
       id={props.id}
-      className={Utils.cx(INPUT_CLASSNAME)}
+      className={Utils.cx(INPUT_BASE_CLASSNAME, TEXT_INPUT_VARIANT_CLASSNAME.default)}
       value={props.value}
       onChange={(e) => props.onChange(e.target.value)}
     >

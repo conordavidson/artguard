@@ -1,5 +1,6 @@
 import * as Next from 'next';
 import * as Ui from '@/ui';
+import * as NewsletterContext from '@/lib/newsletterContext';
 
 import * as Utils from '@/lib/utils';
 
@@ -124,12 +125,15 @@ export default function RootLayout({
         defer
       ></Script>
       <body className={Utils.cx(`${Bradford.variable} ${TrueSans.variable} antialiased`)}>
-        <Ui.Layout.Root>
-          <Ui.Announcement.Bar />
-          <Ui.Nav />
-          {children}
-          <Ui.Footer />
-        </Ui.Layout.Root>
+        <NewsletterContext.Provider>
+          <Ui.Layout.Root>
+            <Ui.Announcement.Bar />
+            <Ui.Nav />
+            <Ui.DialogPreview />
+            {children}
+            <Ui.Footer />
+          </Ui.Layout.Root>
+        </NewsletterContext.Provider>
       </body>
     </html>
   );

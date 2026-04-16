@@ -1,8 +1,10 @@
+'use client';
+
 import * as React from 'react';
 import * as Button from '@/ui/button';
 import * as Inputs from '@/ui/inputs';
-import * as Page from '@/ui/page';
 import * as Text from '@/ui/text';
+import * as Utils from '@/lib/utils';
 
 import Icon from '@/ui/icon';
 
@@ -25,7 +27,23 @@ type State =
       email: string;
     };
 
-const NewsletterSignup = () => {
+type Props = {
+  heading?: React.ReactNode;
+  className?: string;
+  headingClassName?: string;
+  formClassName?: string;
+  statusClassName?: string;
+  variant?: 'default' | 'light';
+};
+
+const NewsletterSignup: React.FC<Props> = ({
+  className,
+  formClassName,
+  heading = 'Subscribe to learn about the latest in Art Security Technology',
+  headingClassName,
+  statusClassName,
+  variant = 'default',
+}) => {
   const [state, setState] = React.useState<State>({
     status: 'IDLE',
     email: '',
@@ -90,46 +108,65 @@ const NewsletterSignup = () => {
   };
 
   return (
-    <div className="relative z-10 grid grid-cols-subgrid col-span-full">
-      <Page.Container>
-        <Text.Interface20 className="text-foreground text-center text-balance">
-          Subscribe to learn about the latest in Art Security Technology
-        </Text.Interface20>
-        <form
-          onSubmit={onSubmit}
-          className="pt-6 flex flex-col md:flex-row items-center justify-center gap-x-4 gap-y-3 max-w-[450px] mx-auto"
+    <div className={Utils.cx('relative z-10', className)}>
+      {heading && (
+        <Text.Interface20
+          className={Utils.cx('text-foreground text-center text-balance', headingClassName)}
         >
-          <div className="flex-2 w-full">
-            <Inputs.Text
-              id="email"
-              autoComplete="email"
-              placeholder="Enter your email"
-              value={state.email}
-              onChange={onChangeEmail}
-              required
-            />
-          </div>
-          <div className="flex-1">
-            <Button.Primary type="submit">{buttonLabel()}</Button.Primary>
-          </div>
-        </form>
-        {state.status === 'SUCCESS' && (
-          <div className="text-green-500 text-center mt-4 flex justify-center items-center gap-x-2">
-            <Icon icon="CheckCircle" size={20} />
-            <Text.Interface14 bold>Thanks for subscribing!</Text.Interface14>
-          </div>
+          {heading}
+        </Text.Interface20>
+      )}
+      <form
+        onSubmit={onSubmit}
+        className={Utils.cx(
+          'flex flex-col md:flex-row items-center justify-center gap-x-4 gap-y-3 max-w-[450px] mx-auto',
+          {
+            'pt-6': !!heading,
+          },
+          formClassName,
         )}
-        {state.status === 'ERROR' && (
-          <div className="text-red-500 text-center mt-4 flex justify-center items-center gap-x-2">
-            <Icon icon="Alert" size={20} />
-            <Text.Interface14 bold>
-              {state.error === 'email_already_subscribed'
-                ? 'Email already subscribed'
-                : 'Failed to subscribe. Please try again.'}
-            </Text.Interface14>
-          </div>
-        )}
-      </Page.Container>
+      >
+        <div className="flex-2 w-full">
+          <Inputs.Text
+            id="email"
+            autoComplete="email"
+            placeholder="Enter your email"
+            value={state.email}
+            onChange={onChangeEmail}
+            required
+            variant={variant}
+          />
+        </div>
+        <div className="flex-1">
+          <Button.Primary type="submit">{buttonLabel()}</Button.Primary>
+        </div>
+      </form>
+      {state.status === 'SUCCESS' && (
+        <div
+          className={Utils.cx(
+            'text-green-500 text-center mt-4 flex justify-center items-center gap-x-2',
+            statusClassName,
+          )}
+        >
+          <Icon icon="CheckCircle" size={20} />
+          <Text.Interface14 bold>Thanks for subscribing!</Text.Interface14>
+        </div>
+      )}
+      {state.status === 'ERROR' && (
+        <div
+          className={Utils.cx(
+            'text-red-500 text-center mt-4 flex justify-center items-center gap-x-2',
+            statusClassName,
+          )}
+        >
+          <Icon icon="Alert" size={20} />
+          <Text.Interface14 bold>
+            {state.error === 'email_already_subscribed'
+              ? 'Email already subscribed'
+              : 'Failed to subscribe. Please try again.'}
+          </Text.Interface14>
+        </div>
+      )}
     </div>
   );
 };
