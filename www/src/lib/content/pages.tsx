@@ -1,5 +1,6 @@
 import * as Types from '@/lib/types';
 import * as Paths from '@/lib/paths';
+import * as Quiz from '@/lib/content/quiz';
 
 import Image from 'next/image';
 
@@ -3014,6 +3015,35 @@ export const PRIVACY_POLICY_PAGE: Types.Page = {
       type: 'Text',
       heading: 'Privacy Policy',
       body: PRIVACY_POLICY_HTML,
+    },
+  ],
+};
+
+export const PROTECT_PAGE: Types.Page = {
+  path: Paths.PROTECT,
+  suppressNewsletterDialog: true,
+  metadata: {
+    title: 'Protect Your Art | Art Guard',
+    description:
+      'Answer four quick questions to find the right museum-grade protection for your art.',
+    keywords: ['Art Guard', 'Art Protection', 'Art Security', 'Protection Quiz'],
+    image: {
+      src: GalleryRadar,
+      alt: 'Image of gallery with active alarm sensors',
+    },
+  },
+  sections: [
+    {
+      type: 'QuizHero',
+      heading: 'Give Your Art The Protection It Deserves',
+      subheading: 'Museum-grade sensors protect each piece on its own.',
+      body: 'This is the same security Sotheby’s uses to protect their clients’ art. And the same system the NY Public Library used to protect the Declaration of Independence. Does your art deserve anything less?',
+      quiz: Quiz.PROTECTION_QUIZ,
+      scenes: {
+        home: PrivateCollection,
+        gallery: Gallery,
+        travel: Sothebys,
+      },
     },
   ],
 };

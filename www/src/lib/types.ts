@@ -289,10 +289,90 @@ export type RecentInsightsSection = {
   subheading?: string | React.ReactNode;
 };
 
+export type QuizAnswers = Record<string, string>;
+
+export type QuizOption = {
+  id: string;
+  label: string;
+  sub?: string;
+  points: number;
+  flags?: string[];
+};
+
+export type QuizQuestionContent = {
+  prompt: string;
+  options: QuizOption[];
+};
+
+export type QuizQuestion = QuizQuestionContent & {
+  id: string;
+  // The first variant whose `when` matches the answers so far replaces the prompt and options.
+  variants?: (QuizQuestionContent & { when: QuizAnswers })[];
+};
+
+export type QuizOutcomeCopy = {
+  title: string;
+  summary: string;
+  bullets: string[];
+  note: {
+    label: string;
+    body: string;
+  };
+};
+
+export type QuizOutcome = QuizOutcomeCopy & {
+  id: string;
+  // Short internal name, used in the lead email.
+  label: string;
+  // Omit on the last outcome to make it the fallback.
+  when?: {
+    maxScore?: number;
+    flags?: string[];
+  };
+  cta?: {
+    label: string;
+    href: Path;
+  };
+  // The first variant whose `when` matches the answers overrides the copy above.
+  variants?: (Partial<QuizOutcomeCopy> & { when: QuizAnswers })[];
+};
+
+// Plain data only: a quiz is passed to client components and read by the lead API route.
+export type Quiz = {
+  id: string;
+  // The question whose answer labels the result and picks the background scene.
+  segmentQuestionId: string;
+  questions: QuizQuestion[];
+  // Ordered. The first outcome whose `when` matches wins.
+  outcomes: QuizOutcome[];
+  copy: {
+    eyebrow: string;
+    footnote: string;
+    // Shown beside the quiz name once the result is on screen.
+    matchLabel: string;
+    leadHeading: string;
+    leadCta: string;
+    successHeading: string;
+    successBody: string;
+  };
+};
+
+export type QuizHeroSection = {
+  type: 'QuizHero';
+  className?: string;
+  heading: string;
+  subheading?: string;
+  body?: string;
+  quiz: Quiz;
+  // Background image per answer to the quiz's segment question. Starts on the homepage hero.
+  scenes: Record<string, NextImage.StaticImageData>;
+};
+
 export type Page = {
   className?: string;
   sections: Section[];
   path: Path;
+  suppressNewsletterDialog?: boolean;
   theme?: {
     lightGradientBg?: boolean;
   };
@@ -325,4 +405,5 @@ export type Section =
   | LinkGridSection
   | VideoGridSection
   | ContactFormSection
-  | RecentInsightsSection;
+  | RecentInsightsSection
+  | QuizHeroSection;

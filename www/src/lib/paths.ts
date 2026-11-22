@@ -24,3 +24,4 @@ export const TEAM = '/about/team';
 export const PRESS = '/about/press';
 export const WHAT_CLIENTS_SAY = '/about/what-clients-say';
 export const PRIVACY_POLICY = '/privacy-policy';
+export const PROTECT = '/protect';

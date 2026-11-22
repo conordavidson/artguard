@@ -11,6 +11,9 @@ type TextProps = {
   autoFocus?: boolean;
   required?: boolean;
   variant?: 'default' | 'light';
+  type?: 'text' | 'email';
+  ariaLabel?: string;
+  className?: string;
 };
 
 const INPUT_BASE_CLASSNAME =
@@ -26,14 +29,16 @@ const TEXT_INPUT_VARIANT_CLASSNAME: Record<NonNullable<TextProps['variant']>, st
 export const Text: React.FC<TextProps> = (props) => {
   return (
     <input
-      type="text"
+      type={props.type || 'text'}
       id={props.id}
+      aria-label={props.ariaLabel}
       autoComplete={props.autoComplete}
       autoFocus={props.autoFocus}
       className={Utils.cx(
         INPUT_BASE_CLASSNAME,
         TEXT_INPUT_VARIANT_CLASSNAME[props.variant || 'default'],
-        'h-input-height'
+        'h-input-height',
+        props.className
       )}
       placeholder={props.placeholder}
       value={props.value}

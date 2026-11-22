@@ -30,6 +30,13 @@
     var(--color-white) 100%
   );
 
+  --gradient-white-scrim: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 0.96) 0%,
+    rgb(255 255 255 / 0.9) 45%,
+    rgb(255 255 255 / 0.4) 100%
+  );
+
   --gradient-light: linear-gradient(
     204.96deg,
     rgba(255, 255, 255, 0) 3.18%,
@@ -124,6 +131,10 @@ li {
 
 .gradient-white-vertical {
   background: var(--gradient-white-vertical);
+}
+
+.gradient-white-scrim {
+  background: var(--gradient-white-scrim);
 }
 
 .gradient-power {
@@ -565,6 +576,73 @@ li {
 .takeover-heading-section:first-child {
   margin-top: calc(-1 * var(--nav-height)) !important;
   padding-top: 8rem !important;
+}
+
+.quiz-hero-section:first-child {
+  margin-top: calc(-1 * var(--nav-height));
+}
+
+/*
+From `lg` up, the quiz card sits halfway between the heading copy and the right edge of the
+screen, without ever passing the page's right margin. The values mirror `.root-layout`:
+twelve columns of up to 110px between two gutters.
+
+The breakpoint is written out because `theme(screens.lg)` doesn't resolve here and the whole
+block is silently dropped.
+*/
+@media (min-width: 64rem) {
+  .quiz-hero-section {
+    --quiz-gutter: max(var(--gutter), calc((100vw - 1320px) / 2));
+    --quiz-copy-width: min(430px, calc((100vw - 2 * var(--quiz-gutter)) * 5 / 12));
+    --quiz-card-width: 500px;
+  }
+
+  .quiz-hero-card {
+    width: var(--quiz-card-width);
+    margin-left: min(
+      calc((100vw - var(--quiz-gutter) - var(--quiz-card-width) + var(--quiz-copy-width)) / 2),
+      calc(100vw - 2 * var(--quiz-gutter) - var(--quiz-card-width))
+    );
+  }
+}
+
+.quiz-step-out,
+.quiz-step-in {
+  --quiz-step-direction: 1;
+  will-change: opacity, transform;
+}
+
+.quiz-step-back {
+  --quiz-step-direction: -1;
+}
+
+.quiz-step-out {
+  animation: quiz-step-out 120ms ease-out forwards;
+}
+
+.quiz-step-in {
+  animation: quiz-step-in 240ms ease-out both;
+}
+
+@keyframes quiz-step-out {
+  to {
+    opacity: 0;
+    transform: translateX(calc(var(--quiz-step-direction) * -12px));
+  }
+}
+
+@keyframes quiz-step-in {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--quiz-step-direction) * 16px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quiz-step-out,
+  .quiz-step-in {
+    animation: none;
+  }
 }
 
 .fadeIn {

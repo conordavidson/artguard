@@ -1,5 +1,6 @@
 'use client';
 
+import * as Analytics from '@/lib/analytics';
 import * as Button from '@/ui/button';
 import * as React from 'react';
 import * as Utils from '@/lib/utils';
@@ -7,12 +8,10 @@ import * as Page from '@/ui/page';
 import * as Types from '@/lib/types';
 import * as Text from '@/ui/text';
 import * as Inputs from '@/ui/inputs';
+import * as Turnstile from '@/ui/turnstile';
 
 import Link from 'next/link';
 import Icon from '@/ui/icon';
-
-const CLOUDFLARE_TURNSTILE_SITEKEY = process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY!;
-if (!CLOUDFLARE_TURNSTILE_SITEKEY) throw new Error('CLOUDFLARE_TURNSTILE_SITEKEY is not set');
 
 type ContactFormSectionProps = {
   section: Types.ContactFormSection;
@@ -101,18 +100,6 @@ const TIMELINE_OPTIONS = [
   },
 ];
 
-type Turnstile = {
-  render: (container: string, options: { sitekey: string; size: string }) => string;
-  getResponse: (widgetId: string) => string;
-};
-
-declare global {
-  interface Window {
-    turnstile: Turnstile;
-    onTurnstileReady: Promise<void>;
-  }
-}
-
 const ContactFormSection: React.FC<ContactFormSectionProps> = (props) => {
   const [state, setState] = React.useState<State>({
     status: 'IDLE',
@@ -138,39 +125,17 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = (props) => {
     }));
   };
 
-  const turnstileRef = React.useRef<Turnstile | null>(null);
-  const widgetIdRef = React.useRef<string | null>(null);
-
-  React.useEffect(() => {
-    window.onTurnstileReady.then(() => {
-      const turnstile = window.turnstile;
-      if (!turnstile) return;
-      if (turnstileRef.current) return;
-      turnstileRef.current = turnstile;
-      widgetIdRef.current = turnstile.render('#cf-turnstile', {
-        sitekey: CLOUDFLARE_TURNSTILE_SITEKEY,
-        size: 'flexible',
-      });
-    });
-  }, []);
+  const { containerRef: turnstileRef, getToken: getTurnstileToken } = Turnstile.useTurnstile();
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (state.status === 'PENDING') return;
     setState((prevState) => ({ ...prevState, status: 'PENDING' }));
 
-    if (!widgetIdRef.current || !turnstileRef.current) {
-      setState((prevState) => ({
-        ...prevState,
-        status: 'ERROR',
-        error: 'Failed to submit form. Please try again.',
-      }));
-      return;
-    }
-
-    const cloudflareTurnstileToken = turnstileRef.current.getResponse(widgetIdRef.current);
+    const cloudflareTurnstileToken = getTurnstileToken();
 
     if (!cloudflareTurnstileToken) {
+      Analytics.track('contact_form_failed', { reason: 'security_check' });
       setState((prevState) => ({
         ...prevState,
         status: 'ERROR',
@@ -195,6 +160,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = (props) => {
     });
 
     if (!response.ok) {
+      Analytics.track('contact_form_failed', { reason: 'request_failed' });
       setState((prevState) => ({
         ...prevState,
         status: 'ERROR',
@@ -202,6 +168,12 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = (props) => {
       }));
       return;
     }
+
+    Analytics.track('contact_form_submitted', {
+      type_of_facility: state.contactInfo.typeOfFacility || null,
+      response: state.contactInfo.response || null,
+      timeline: state.contactInfo.timeline || null,
+    });
 
     setState((prevState) => ({ ...prevState, status: 'SUCCESS' }));
   };
@@ -354,7 +326,7 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = (props) => {
               </Inputs.Input>
             </section>
             <section>
-              <div id="cf-turnstile"></div>
+              <div ref={turnstileRef}></div>
             </section>
             <div className="mt-8 max-w-[300px] mx-auto">
               <Button.Primary type="submit">{submitButtonLabel}</Button.Primary>

@@ -5,6 +5,7 @@ export { default as Faqs } from './faqs';
 export { default as FeatureGrid } from './featureGrid';
 export { default as Map } from './map';
 export { default as LinkGrid } from './linkGrid';
+export { default as QuizHero } from './quizHero';
 export { default as SpecTable } from './specTable';
 export { default as TakeoverGrid } from './takeoverGrid';
 export { default as TakeoverHeading } from './takeoverHeading';
