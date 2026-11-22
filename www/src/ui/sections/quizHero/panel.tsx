@@ -66,7 +66,7 @@ const OptionCard: React.FC<OptionCardProps> = (props) => {
       aria-pressed={props.selected}
       onClick={props.onClick}
       className={Utils.cx(
-        'flex w-full cursor-pointer flex-col justify-center gap-y-0.5 rounded-xl px-4 py-[18px] text-left transition-colors',
+        'flex w-full cursor-pointer flex-col justify-center gap-y-0.5 rounded-xl px-4 py-3.5 text-left transition-colors md:py-[18px]',
         FOCUS_RING,
         {
           'bg-shim hover:bg-outline': !props.selected,
@@ -113,8 +113,10 @@ const ProgressBar: React.FC<{ value: number; max: number; label: string }> = (pr
 const Panel: React.FC<PanelProps> = (props) => {
   const { quiz, step, answers } = props;
 
-  const total = quiz.questions.length;
-  const isDone = step >= total;
+  // Paths differ in length: later questions depend on earlier answers.
+  const questions = Quiz.askedQuestions(quiz, answers);
+  const isDone = step >= questions.length;
+  const longestPath = Quiz.longestPath(quiz, answers);
 
   // Move focus to the new heading on each step, so keyboard and screen reader users follow along.
   const headingRef = React.useRef<HTMLHeadingElement | null>(null);
@@ -173,7 +175,7 @@ const Panel: React.FC<PanelProps> = (props) => {
 
   const body = (() => {
     if (!isDone) {
-      const question = quiz.questions[step];
+      const question = questions[step];
       const content = Quiz.questionFor(question, answers);
       const selectedOptionId =
         held?.questionId === question.id ? held.optionId : answers[question.id];
@@ -183,7 +185,8 @@ const Panel: React.FC<PanelProps> = (props) => {
           <Text.Display24 as="h2" ref={headingRef} tabIndex={-1} className="text-pretty outline-none">
             {content.prompt}
           </Text.Display24>
-          <div className="mt-4 flex flex-col gap-y-2.5 md:mt-5">
+          {/* Equal rows: every choice is as tall as the tallest one. */}
+          <div className="mt-4 grid auto-rows-fr gap-y-2.5 md:mt-5">
             {content.options.map((option) => (
               <OptionCard
                 key={option.id}
@@ -262,11 +265,15 @@ const Panel: React.FC<PanelProps> = (props) => {
           {quiz.copy.eyebrow}
         </Text.Interface14>
         <Text.Interface14 className="text-subtle">
-          {isDone ? quiz.copy.matchLabel : `Question ${step + 1} of ${total}`}
+          {isDone ? quiz.copy.matchLabel : `Question ${step + 1}`}
         </Text.Interface14>
       </div>
       <div className="mt-3">
-        <ProgressBar value={Math.min(step + 1, total)} max={total} label={quiz.copy.eyebrow} />
+        <ProgressBar
+          value={Math.min(step + 1, longestPath)}
+          max={longestPath}
+          label={quiz.copy.eyebrow}
+        />
       </div>
       {/* The padding and negative margin leave room for focus rings inside the clipped area. */}
       <AnimatedHeight className="-m-1 mt-3 md:mt-5">

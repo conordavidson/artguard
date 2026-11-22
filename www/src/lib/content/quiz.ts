@@ -5,9 +5,18 @@ import * as Types from '@/lib/types';
 /*
 The protection quiz on /protect.
 
-Each option carries points. The outcomes are checked in order against the total score and the
-flags of the chosen options, and the first match wins. Questions and outcome copy can vary by
-earlier answers through `variants`.
+A branching set of questions: each answer decides which question comes next, and the answers
+decide the outcome. A question with `when` is only asked on the paths listed. Outcomes are
+checked in order and the first whose `when` matches wins. Questions and outcome copy can vary
+by earlier answers through `variants`.
+
+  Private facility  ->  solution: integrate -> MAP Sensors
+                        solution: separate  -> MAP Gold
+  Public space      ->  solution: integrate -> MAP Sensors
+                        solution: separate  -> alert: audible -> MAP Silver
+                                               alert: alerts  -> MAP Gold
+  Traveling art     ->  alert: audible -> MAP Silver
+                        alert: alerts  -> MAP Gold
 */
 export const PROTECTION_QUIZ: Types.Quiz = {
   id: 'protection',
@@ -26,246 +35,131 @@ export const PROTECTION_QUIZ: Types.Quiz = {
       id: 'location',
       prompt: 'Where do you want to protect your art?',
       options: [
-        { id: 'home', label: 'Home', sub: 'A private residence or collection', points: 0 },
         {
-          id: 'gallery',
-          label: 'Gallery / public space',
-          sub: 'Gallery, museum, office or other public-facing space',
-          points: 1,
+          id: 'private',
+          label: 'Private facility',
+          sub: 'Home, yacht, office, rental property',
+        },
+        {
+          id: 'public',
+          label: 'Public-facing space',
+          sub: 'Museum, gallery, hotel, library, etc.',
         },
         {
           id: 'travel',
-          label: 'Traveling exhibition',
-          sub: 'Works on tour, on loan or at fairs',
-          points: 1,
+          label: 'Traveling art',
+          sub: 'In-house works on loan, traveling exhibitions, fairs',
         },
       ],
     },
     {
-      id: 'protection',
-      prompt: 'How is your home protected today?',
+      id: 'solution',
+      when: [{ location: 'private' }, { location: 'public' }],
+      prompt: 'What type of solution are you looking for?',
       options: [
         {
-          id: 'consistent',
-          label: 'A monitored alarm we use consistently',
-          sub: "Armed whenever we're out or asleep",
-          points: 0,
-          flags: ['has-system'],
+          id: 'integrate',
+          label: 'Integrate object-specific sensors into your existing security system',
+          sub: 'Work with installer/integrator',
         },
         {
-          id: 'often-off',
-          label: 'A system we often leave off',
-          sub: 'Switched off for guests, staff or routine',
-          points: 2,
-          flags: ['has-system'],
-        },
-        { id: 'none', label: 'Nothing beyond basic locks', sub: 'No alarm yet', points: 2 },
-      ],
-      variants: [
-        {
-          when: { location: 'gallery' },
-          prompt: 'What protects the space today?',
-          options: [
-            {
-              id: 'consistent',
-              label: 'A monitored alarm and guards, used consistently',
-              sub: 'Active during open hours too',
-              points: 0,
-              flags: ['has-system'],
-            },
-            {
-              id: 'often-off',
-              label: "Cameras or an alarm that's often off",
-              sub: 'Off during open hours, or covers the room, not each object',
-              points: 2,
-              flags: ['has-system'],
-            },
-            {
-              id: 'none',
-              label: 'Little or nothing at the object level',
-              sub: 'We rely on visitors behaving',
-              points: 2,
-            },
-          ],
-        },
-        {
-          when: { location: 'travel' },
-          prompt: 'What protects the work on the road?',
-          options: [
-            {
-              id: 'own-protocol',
-              label: 'Our own crew, cases and a set routine',
-              sub: 'The same protocol at every stop',
-              points: 0,
-            },
-            {
-              id: 'host-venue',
-              label: 'Whatever each host venue provides',
-              sub: 'Varies from stop to stop',
-              points: 1,
-            },
-            {
-              id: 'insurance-only',
-              label: 'Not much beyond insurance',
-              sub: 'We improvise at each venue',
-              points: 2,
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: 'access',
-      prompt: 'Who has regular access to your home?',
-      options: [
-        { id: 'family', label: 'Mostly family', sub: 'Occasional visitors', points: 0 },
-        {
-          id: 'staff',
-          label: 'Staff, cleaners or contractors',
-          sub: 'People come and go on a schedule',
-          points: 1,
-        },
-        {
-          id: 'guests',
-          label: 'Frequent guests, events or rentals',
-          sub: 'Many people, many days',
-          points: 2,
+          id: 'separate',
+          label:
+            'Deploy a separate 24-hour security system for art with text, email and phone alerts and emergency dispatch',
+          sub: 'Separate dedicated system',
         },
       ],
       variants: [
         {
-          when: { location: 'gallery' },
-          prompt: 'Who is around the work?',
-          options: [
-            { id: 'invited', label: 'Staff and invited guests', sub: 'Controlled access', points: 0 },
-            {
-              id: 'appointment',
-              label: 'Visitors by appointment',
-              sub: 'Docents, staff and scheduled groups',
-              points: 1,
-            },
-            {
-              id: 'public',
-              label: 'Open to the public daily',
-              sub: 'Heavy foot traffic',
-              points: 2,
-            },
-          ],
-        },
-        {
-          when: { location: 'travel' },
-          prompt: 'Who handles the work?',
+          when: { location: 'public' },
+          prompt: 'What type of solution are you looking for?',
           options: [
             {
-              id: 'trusted-team',
-              label: 'A small trusted team',
-              sub: 'The same people at every stop',
-              points: 0,
+              id: 'integrate',
+              label: 'Integrate object-specific sensors into your existing security system',
+              sub: 'Work with installer/integrator',
             },
-            {
-              id: 'several-hands',
-              label: 'Couriers, installers and venue staff',
-              sub: 'Several hands at each stop',
-              points: 1,
-            },
-            {
-              id: 'many-venues',
-              label: 'Many people at many venues',
-              sub: 'Hard to know who touches what',
-              points: 2,
-            },
+            { id: 'separate', label: 'Separate system for art' },
           ],
         },
       ],
     },
     {
-      id: 'collection',
-      prompt: 'How significant is the collection?',
+      id: 'alert',
+      when: [{ location: 'travel' }, { location: 'public', solution: 'separate' }],
+      prompt: 'How would you prefer to be alerted to an event?',
       options: [
+        { id: 'audible', label: 'Audible alarm from panel or a remote siren' },
         {
-          id: 'few',
-          label: 'A few key pieces',
-          sub: 'Up to 5 objects, or under $250K',
-          points: 0,
+          id: 'alerts',
+          label: '24-hour alerts via text, email, phone or emergency dispatch',
         },
+      ],
+      variants: [
         {
-          id: 'serious',
-          label: 'A serious collection',
-          sub: '6 to 25 objects, or $250K to $2M',
-          points: 1,
-        },
-        {
-          id: 'major',
-          label: 'A major collection',
-          sub: '25+ objects, or over $2M',
-          points: 2,
+          when: { location: 'public' },
+          prompt: 'How would you prefer to be alerted to an event?',
+          options: [
+            {
+              id: 'audible',
+              label: 'Audible alarm from panel or a remote siren',
+              sub: 'Specific for daytime protection',
+            },
+            {
+              id: 'alerts',
+              label: '24-hour alerts via text, email, phone or emergency dispatch',
+            },
+          ],
         },
       ],
     },
   ],
+  // The client's outline names the product for each path. The summaries below are DRAFTS written
+  // from the product pages and need client sign-off, as do the lines marked DRAFT.
   outcomes: [
     {
-      // No traveling answer carries the has-system flag, so there is no traveling variant.
       id: 'integrated',
-      label: 'MAP Sensor Integration',
-      when: { maxScore: 1, flags: ['has-system'] },
+      label: 'MAP Sensors',
+      when: [{ solution: 'integrate' }],
       cta: { label: 'Explore MAP Sensors', href: Paths.MAP_SENSORS },
-      title: 'Start by integrating with your home system',
+      title: 'MAP Sensors',
       summary:
-        'Your answers point to a focused collection and a home alarm you already rely on. Adding MAP sensors to your existing panel is the fastest, most economical way to protect each piece.',
+        'You want to protect your art through the security system you already have. MAP sensors are added to your existing panel by an installer or integrator, so each piece is alarmed on its own.',
       bullets: [
         'Sensors added to the alarm panel you already own',
         'Each piece alarmed individually, not just the doors',
-        'Simple to move to a dedicated system as you grow',
+        // DRAFT. Replaces "Simple to move to a dedicated system as you grow".
+        'Installed with your installer or integrator',
       ],
       note: {
         label: 'Worth knowing',
         body: 'On a shared system, art is protected only while that system is armed. A dedicated MAP system closes that gap.',
       },
-      variants: [
-        {
-          when: { location: 'gallery' },
-          title: "Start by integrating with your building's security system",
-          summary:
-            'Your answers point to a focused collection and a security system you already rely on. Adding MAP sensors to your existing panel is the fastest, most economical way to protect each piece.',
-        },
-      ],
     },
     {
       id: 'silver',
       label: 'MAP Silver',
-      when: { maxScore: 4 },
+      when: [{ alert: 'audible' }],
       cta: { label: 'Explore the MAP Silver System', href: Paths.MAP_SYSTEM_SILVER },
       title: 'MAP Silver',
       summary:
-        'Your answers point to a collection worth protecting independently of your home alarm. MAP Silver gives your most important pieces their own dedicated protection.',
+        'You want a separate system that sounds an alarm the moment a piece is moved. MAP Silver is a stand-alone system with an audible siren, built for daytime protection.',
       bullets: [
         "Protection that doesn't depend on your alarm's schedule",
         'Individual sensors on each piece you choose',
-        // DRAFT, needs client sign-off. The prototype had "[Confirm with Bill: Silver capacity
-        // and alert options]". Written from the MAP Silver spec table.
+        // DRAFT, from the MAP Silver spec table.
         'Up to 127 sensors on one panel, with a siren that sounds the moment a piece is moved',
       ],
       note: {
         label: 'Next step',
-        body: 'A specialist can walk you through Silver and Gold side by side for your home.',
+        body: 'A specialist can walk you through Silver and Gold side by side for your space.',
       },
       variants: [
         {
-          when: { location: 'gallery' },
-          summary:
-            "Your answers point to a collection worth protecting independently of your building's security. MAP Silver gives your most important pieces their own dedicated protection.",
-          note: {
-            label: 'Next step',
-            body: 'A specialist can walk you through Silver and Gold side by side for your space.',
-          },
-        },
-        {
           when: { location: 'travel' },
           summary:
-            "Your answers point to a collection worth protecting independently of each venue's security. MAP Silver gives your most important pieces their own dedicated protection.",
-          // DRAFT, needs client sign-off. The prototype had "[Confirm portability options with
-          // Bill.]". Written from the portability lines on the MAP Gold and Silver pages.
+            'You want an audible alarm that travels with the work. MAP Silver is a stand-alone system with an audible siren that moves from show to show.',
+          // DRAFT, from the portability lines on the MAP Gold and Silver pages.
           note: {
             label: 'Next step',
             body: 'Both MAP systems are completely portable and move from venue to venue with your exhibition. A specialist will confirm the right setup for your tour.',
@@ -279,7 +173,7 @@ export const PROTECTION_QUIZ: Types.Quiz = {
       cta: { label: 'Explore the MAP Gold System', href: Paths.MAP_SYSTEM_GOLD },
       title: 'MAP Gold',
       summary:
-        "Your answers describe the profile Gold was built for: a significant collection, regular access by others, and an alarm that can't be the only line of defense.",
+        'You want a separate system that watches your art around the clock and alerts you wherever you are. MAP Gold is a dedicated system that works independently of your main security.',
       bullets: [
         'Completely dedicated and entirely discreet',
         '24/7. Turn it on, leave it on',
@@ -287,19 +181,14 @@ export const PROTECTION_QUIZ: Types.Quiz = {
       ],
       note: {
         label: 'Why dedicated matters',
-        body: "Gold keeps working on its own, so a compromised or disarmed home alarm doesn't leave your art exposed.",
+        body: "Gold keeps working on its own, so a compromised or disarmed primary alarm doesn't leave your art exposed.",
       },
       variants: [
         {
-          when: { location: 'gallery' },
-          note: {
-            label: 'Why dedicated matters',
-            body: "Gold keeps working on its own, so a compromised or disarmed primary alarm doesn't leave your art exposed.",
-          },
-        },
-        {
           when: { location: 'travel' },
-          // DRAFT, needs client sign-off. Same replacement as the traveling Silver note.
+          summary:
+            "You want round-the-clock alerts that travel with the work. MAP Gold is a dedicated, portable system that works independently of each venue's security.",
+          // DRAFT. Same note as the traveling Silver result.
           note: {
             label: 'Next step',
             body: 'Both MAP systems are completely portable and move from venue to venue with your exhibition. A specialist will confirm the right setup for your tour.',

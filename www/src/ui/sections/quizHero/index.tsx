@@ -71,7 +71,8 @@ const QuizHero: React.FC<QuizHeroProps> = (props) => {
   }, [state.step]);
 
   const onAnswer = (questionId: string, optionId: string) => {
-    const index = quiz.questions.findIndex((question) => question.id === questionId);
+    const questions = Quiz.askedQuestions(quiz, state.answers);
+    const index = questions.findIndex((question) => question.id === questionId);
     const step = index + 1;
 
     // Re-picking the same answer keeps what follows. A new answer can change the later
@@ -81,7 +82,7 @@ const QuizHero: React.FC<QuizHeroProps> = (props) => {
         ? state.answers
         : {
             ...Object.fromEntries(
-              quiz.questions
+              questions
                 .slice(0, index)
                 .map((question) => [question.id, state.answers[question.id]])
             ),
@@ -98,7 +99,8 @@ const QuizHero: React.FC<QuizHeroProps> = (props) => {
       ...Analytics.quizAnswerProperties(answers),
     });
 
-    if (step < quiz.questions.length) return;
+    // The answer just given decides whether another question follows.
+    if (step < Quiz.askedQuestions(quiz, answers).length) return;
 
     const result = Quiz.resolve(quiz, answers);
     if (result) Analytics.track('quiz_completed', Analytics.quizResultProperties(quiz, answers, result));
@@ -132,7 +134,7 @@ const QuizHero: React.FC<QuizHeroProps> = (props) => {
         props.section.className
       )}
     >
-      <div className="relative col-span-full grid grid-cols-subgrid gap-y-5 pb-10 pt-[calc(var(--nav-height)+0.5rem)] md:min-h-[1096px] md:pb-16 md:pt-32 lg:min-h-[950px]">
+      <div className="relative col-span-full grid grid-cols-subgrid gap-y-5 pb-10 pt-[calc(var(--nav-height)+0.5rem)] md:min-h-[1076px] md:pb-16 md:pt-32 lg:min-h-[920px]">
         {/*
           From `md` up the section is tall enough for the longest result, so the card can grow
           without moving anything below it. The photo has the same fixed height, so it never
@@ -140,7 +142,7 @@ const QuizHero: React.FC<QuizHeroProps> = (props) => {
         */}
         <div
           aria-hidden
-          className="absolute inset-0 overflow-hidden md:bottom-auto md:left-[30%] md:h-[1096px] lg:h-[950px]"
+          className="absolute inset-0 overflow-hidden md:bottom-auto md:left-[30%] md:h-[1076px] lg:h-[920px]"
         >
           <div className="absolute inset-0 isolate">
             <HomepageHero />

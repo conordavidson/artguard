@@ -46,7 +46,6 @@ export const POST = async (request: Request) => {
     ['Name', submission.data.name],
     ['Email', submission.data.email],
     ['Recommendation', result.outcome.label],
-    ['Score', String(result.score)],
     ...result.steps.map((step) => [step.prompt, step.option.label]),
     ['Page', submission.data.pageUrl || 'Empty'],
   ];

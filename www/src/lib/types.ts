@@ -295,8 +295,6 @@ export type QuizOption = {
   id: string;
   label: string;
   sub?: string;
-  points: number;
-  flags?: string[];
 };
 
 export type QuizQuestionContent = {
@@ -306,6 +304,8 @@ export type QuizQuestionContent = {
 
 export type QuizQuestion = QuizQuestionContent & {
   id: string;
+  // Asked only when one of these matches the answers so far. Omit to always ask.
+  when?: QuizAnswers[];
   // The first variant whose `when` matches the answers so far replaces the prompt and options.
   variants?: (QuizQuestionContent & { when: QuizAnswers })[];
 };
@@ -324,11 +324,9 @@ export type QuizOutcome = QuizOutcomeCopy & {
   id: string;
   // Short internal name, used in the lead email.
   label: string;
-  // Omit on the last outcome to make it the fallback.
-  when?: {
-    maxScore?: number;
-    flags?: string[];
-  };
+  // Chosen when one of these matches the answers. Omit on the last outcome to make it the
+  // fallback.
+  when?: QuizAnswers[];
   cta?: {
     label: string;
     href: Path;

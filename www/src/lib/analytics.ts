@@ -3,14 +3,13 @@ import * as Types from '@/lib/types';
 
 import posthog from 'posthog-js';
 
-// One property per answered question, e.g. `answer_location: 'home'`.
+// One property per answered question, e.g. `answer_location: 'private'`.
 type QuizAnswerProperties = Record<`answer_${string}`, string>;
 
 type QuizResultProperties = QuizAnswerProperties & {
   quiz_id: string;
   outcome_id: string;
   outcome_label: string;
-  score: number;
 };
 
 type FailureReason = 'security_check' | 'request_failed';
@@ -58,7 +57,6 @@ export const quizResultProperties = (
     quiz_id: quiz.id,
     outcome_id: result.outcome.id,
     outcome_label: result.outcome.label,
-    score: result.score,
     ...quizAnswerProperties(answers),
   };
 };

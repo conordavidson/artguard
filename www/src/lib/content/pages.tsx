@@ -3036,12 +3036,12 @@ export const PROTECT_PAGE: Types.Page = {
     {
       type: 'QuizHero',
       heading: 'Give Your Art The Protection It Deserves',
-      subheading: 'Museum-grade sensors protect each piece on its own.',
-      body: 'This is the same security Sotheby’s uses to protect their clients’ art. And the same system the NY Public Library used to protect the Declaration of Independence. Does your art deserve anything less?',
+      subheading: 'Museum-grade sensors and systems are your first layer of security.',
+      body: 'This is the same security Sotheby’s, MOMA and Gagosian use to protect their own and their clients’ art. Does yours deserve anything less?',
       quiz: Quiz.PROTECTION_QUIZ,
       scenes: {
-        home: PrivateCollection,
-        gallery: Gallery,
+        private: PrivateCollection,
+        public: Gallery,
         travel: Sothebys,
       },
     },

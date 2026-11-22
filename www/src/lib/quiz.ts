@@ -4,6 +4,10 @@ const matches = (when: Types.QuizAnswers, answers: Types.QuizAnswers) => {
   return Object.entries(when).every(([questionId, optionId]) => answers[questionId] === optionId);
 };
 
+const matchesAny = (alternatives: Types.QuizAnswers[] | undefined, answers: Types.QuizAnswers) => {
+  return !alternatives || alternatives.some((when) => matches(when, answers));
+};
+
 /*
 The prompt and options to show for a question, given the answers so far.
 */
@@ -15,6 +19,14 @@ export const questionFor = (
   return variant ?? question;
 };
 
+/*
+The questions a visitor with these answers is asked, in order.
+A question that depends on an earlier answer only appears once that answer is given.
+*/
+export const askedQuestions = (quiz: Types.Quiz, answers: Types.QuizAnswers) => {
+  return quiz.questions.filter((question) => matchesAny(question.when, answers));
+};
+
 export type Step = {
   questionId: string;
   prompt: string;
@@ -23,42 +35,36 @@ export type Step = {
 
 export type Result = {
   steps: Step[];
-  score: number;
   outcome: Types.QuizOutcomeCopy & Pick<Types.QuizOutcome, 'id' | 'label' | 'cta'>;
-};
-
-const outcomeMatches = (outcome: Types.QuizOutcome, score: number, flags: Set<string>) => {
-  if (!outcome.when) return true;
-  if (outcome.when.maxScore !== undefined && score > outcome.when.maxScore) return false;
-  if (outcome.when.flags && !outcome.when.flags.every((flag) => flags.has(flag))) return false;
-  return true;
 };
 
 /*
 Resolves a full set of answers to an outcome.
-Returns null when a question is unanswered or an answer isn't one of that question's options.
+Returns null when a question on the visitor's path is unanswered or an answer isn't one of that
+question's options. Answers to questions that aren't on the path are ignored.
 */
 export const resolve = (quiz: Types.Quiz, answers: Types.QuizAnswers): Result | null => {
   const steps: Step[] = [];
+  const given: Types.QuizAnswers = {};
 
   for (const question of quiz.questions) {
-    const content = questionFor(question, answers);
+    if (!matchesAny(question.when, given)) continue;
+
+    const content = questionFor(question, given);
     const option = content.options.find((option) => option.id === answers[question.id]);
     if (!option) return null;
+
+    given[question.id] = option.id;
     steps.push({ questionId: question.id, prompt: content.prompt, option });
   }
 
-  const score = steps.reduce((total, step) => total + step.option.points, 0);
-  const flags = new Set(steps.flatMap((step) => step.option.flags ?? []));
-
-  const outcome = quiz.outcomes.find((outcome) => outcomeMatches(outcome, score, flags));
+  const outcome = quiz.outcomes.find((outcome) => matchesAny(outcome.when, given));
   if (!outcome) return null;
 
-  const variant = outcome.variants?.find((variant) => matches(variant.when, answers));
+  const variant = outcome.variants?.find((variant) => matches(variant.when, given));
 
   return {
     steps,
-    score,
     outcome: {
       id: outcome.id,
       label: outcome.label,
@@ -71,16 +77,32 @@ export const resolve = (quiz: Types.Quiz, answers: Types.QuizAnswers): Result | 
   };
 };
 
-const everyPath = (quiz: Types.Quiz): Types.QuizAnswers[] => {
+/*
+Every complete set of answers that continues from the answers given.
+*/
+const completions = (quiz: Types.Quiz, answers: Types.QuizAnswers): Types.QuizAnswers[] => {
   return quiz.questions.reduce<Types.QuizAnswers[]>(
     (paths, question) =>
-      paths.flatMap((answers) =>
-        questionFor(question, answers).options.map((option) => ({
-          ...answers,
+      paths.flatMap((path) => {
+        if (!matchesAny(question.when, path)) return [path];
+        if (path[question.id] !== undefined) return [path];
+
+        return questionFor(question, path).options.map((option) => ({
+          ...path,
           [question.id]: option.id,
-        }))
-      ),
-    [{}]
+        }));
+      }),
+    [answers]
+  );
+};
+
+/*
+The most questions a visitor with these answers could still be asked in total.
+Paths differ in length, so this is what progress is measured against.
+*/
+export const longestPath = (quiz: Types.Quiz, answers: Types.QuizAnswers) => {
+  return Math.max(
+    ...completions(quiz, answers).map((path) => askedQuestions(quiz, path).length)
   );
 };
 
@@ -90,7 +112,7 @@ Counts how many answer paths reach each outcome, grouped by the answer to the se
 export const tally = (quiz: Types.Quiz) => {
   const counts: Record<string, Record<string, number>> = {};
 
-  for (const answers of everyPath(quiz)) {
+  for (const answers of completions(quiz, {})) {
     const result = resolve(quiz, answers);
     if (!result) throw new Error(`Quiz "${quiz.id}": no outcome for ${JSON.stringify(answers)}`);
     const segment = answers[quiz.segmentQuestionId];
@@ -134,12 +156,17 @@ export const assertValid = (quiz: Types.Quiz) => {
   };
 
   quiz.questions.forEach((question, index) => {
+    const earlierQuestionIds = questionIds.slice(0, index);
+
     for (const content of [question, ...(question.variants ?? [])]) {
       const optionIds = content.options.map((option) => option.id);
       if (duplicates(optionIds).length) fail(`duplicate option ids in "${question.id}"`);
     }
+    for (const when of question.when ?? []) {
+      assertWhen(when, earlierQuestionIds, `question "${question.id}"`);
+    }
     for (const variant of question.variants ?? []) {
-      assertWhen(variant.when, questionIds.slice(0, index), `a variant of "${question.id}"`);
+      assertWhen(variant.when, earlierQuestionIds, `a variant of "${question.id}"`);
     }
   });
 
@@ -147,6 +174,9 @@ export const assertValid = (quiz: Types.Quiz) => {
   if (duplicates(outcomeIds).length) fail(`duplicate outcome ids ${duplicates(outcomeIds)}`);
 
   for (const outcome of quiz.outcomes) {
+    for (const when of outcome.when ?? []) {
+      assertWhen(when, questionIds, `outcome "${outcome.id}"`);
+    }
     for (const variant of outcome.variants ?? []) {
       assertWhen(variant.when, questionIds, `a variant of outcome "${outcome.id}"`);
     }
