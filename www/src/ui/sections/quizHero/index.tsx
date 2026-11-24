@@ -237,17 +237,20 @@ const QuizHero: React.FC<QuizHeroProps> = (props) => {
           A compact section shares out the height the card doesn't use: one part above the card
           to two below. The part above stops at the heading's own offset, so on a tall screen the
           card lines up with the heading, and it rises to the top as the card fills up.
+
+          From `lg` up this wrapper spans the full width and lies over the heading column, so it
+          lets clicks through to the buttons there. The card takes them back.
         */}
         <div
           className={Utils.cx(
-            'relative z-10 col-start-2 col-end-14 flex flex-col md:col-start-8 md:row-start-1 lg:col-start-2 lg:col-end-15',
+            'pointer-events-none relative z-10 col-start-2 col-end-14 flex flex-col md:col-start-8 md:row-start-1 lg:col-start-2 lg:col-end-15',
             { 'md:before:max-h-20 md:before:flex-1 md:after:flex-[2]': compact }
           )}
         >
           <div
             id="quiz"
             ref={cardRef}
-            className="quiz-hero-card w-full scroll-mb-4 scroll-mt-24 gradient-power-light rounded-[20px] px-6 py-5 shadow-[0_28px_70px_rgba(0,0,0,0.16)] backdrop-blur-md md:max-w-[500px] md:self-end md:p-8 lg:max-w-none lg:self-start"
+            className="quiz-hero-card pointer-events-auto w-full scroll-mb-4 scroll-mt-24 gradient-power-light rounded-[20px] px-6 py-5 shadow-[0_28px_70px_rgba(0,0,0,0.16)] backdrop-blur-md md:max-w-[500px] md:self-end md:p-8 lg:max-w-none lg:self-start"
           >
             <Panel
               quiz={quiz}
