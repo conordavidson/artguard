@@ -273,6 +273,20 @@ export type TextHighlightsSection = {
   }[];
 };
 
+export type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+};
+
+export type TestimonialMarqueeSection = {
+  type: 'TestimonialMarquee';
+  className?: string;
+  // Read by screen readers only.
+  heading: string;
+  testimonials: Testimonial[];
+};
+
 export type ContactFormSection = {
   type: 'ContactForm';
   className?: string;
@@ -345,7 +359,6 @@ export type Quiz = {
   outcomes: QuizOutcome[];
   copy: {
     eyebrow: string;
-    footnote: string;
     // Shown beside the quiz name once the result is on screen.
     matchLabel: string;
     leadHeading: string;
@@ -361,9 +374,13 @@ export type QuizHeroSection = {
   heading: string;
   subheading?: string;
   body?: string;
+  ctas?: Cta[];
+  // Stops the section short of the bottom of a laptop screen, so the section after it shows.
+  compact?: boolean;
   quiz: Quiz;
-  // Background image per answer to the quiz's segment question. Starts on the homepage hero.
-  scenes: Record<string, NextImage.StaticImageData>;
+  // Background image per answer to the quiz's segment question. Starts on the homepage hero,
+  // and stays on it when omitted.
+  scenes?: Record<string, NextImage.StaticImageData>;
 };
 
 export type Page = {
@@ -404,4 +421,5 @@ export type Section =
   | VideoGridSection
   | ContactFormSection
   | RecentInsightsSection
-  | QuizHeroSection;
+  | QuizHeroSection
+  | TestimonialMarqueeSection;

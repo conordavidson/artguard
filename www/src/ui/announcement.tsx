@@ -3,6 +3,7 @@ import * as Sanity from '@/lib/sanity';
 import * as Text from '@/ui/text';
 import * as Utils from '@/lib/utils';
 
+import Beacon from '@/ui/beacon';
 import Marquee from 'react-fast-marquee';
 import Link from 'next/link';
 
@@ -56,15 +57,5 @@ export const Bar = async () => {
         </div>
       </div>
     </Link>
-  );
-};
-
-const Beacon = () => {
-  return (
-    <div className="flex items-center justify-center relative">
-      <div className="beacon-dot absolute bg-brand/90 text-brand w-[5px] h-[5px] rounded-full"></div>
-      <div className="beacon-ring-inner absolute border border-brand/50 w-[11px] h-[11px] rounded-full"></div>
-      <div className="beacon-ring-outer border border-brand/30 w-[17px] h-[17px] rounded-full"></div>
-    </div>
   );
 };

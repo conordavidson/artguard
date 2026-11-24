@@ -3,7 +3,7 @@ import * as Quiz from '@/lib/quiz';
 import * as Types from '@/lib/types';
 
 /*
-The protection quiz on /protect.
+The protection quiz on the homepage and /protect.
 
 A branching set of questions: each answer decides which question comes next, and the answers
 decide the outcome. A question with `when` is only asked on the paths listed. Outcomes are
@@ -23,7 +23,6 @@ export const PROTECTION_QUIZ: Types.Quiz = {
   segmentQuestionId: 'location',
   copy: {
     eyebrow: 'Protection quiz',
-    footnote: 'Free. No email needed to see your result.',
     matchLabel: 'Your match',
     leadHeading: 'Get your plan from an Art Guard specialist',
     leadCta: 'Send my plan',
@@ -60,13 +59,11 @@ export const PROTECTION_QUIZ: Types.Quiz = {
         {
           id: 'integrate',
           label: 'Integrate object-specific sensors into your existing security system',
-          sub: 'Work with installer/integrator',
         },
         {
           id: 'separate',
           label:
             'Deploy a separate 24-hour security system for art with text, email and phone alerts and emergency dispatch',
-          sub: 'Separate dedicated system',
         },
       ],
       variants: [
@@ -77,7 +74,6 @@ export const PROTECTION_QUIZ: Types.Quiz = {
             {
               id: 'integrate',
               label: 'Integrate object-specific sensors into your existing security system',
-              sub: 'Work with installer/integrator',
             },
             { id: 'separate', label: 'Separate system for art' },
           ],
@@ -133,7 +129,7 @@ export const PROTECTION_QUIZ: Types.Quiz = {
       ],
       note: {
         label: 'Worth knowing',
-        body: 'On a shared system, art is protected only while that system is armed. A dedicated MAP system closes that gap.',
+        body: 'MAP protects at the point of contact, whether other security is on or off. Art stays covered while staff and visitors can move around freely.',
       },
     },
     {
@@ -151,19 +147,14 @@ export const PROTECTION_QUIZ: Types.Quiz = {
         'Up to 127 sensors on one panel, with a siren that sounds the moment a piece is moved',
       ],
       note: {
-        label: 'Next step',
-        body: 'A specialist can walk you through Silver and Gold side by side for your space.',
+        label: 'Worth knowing',
+        body: 'MAP Silver is completely portable and simple to install, making it a versatile, dependable security option that easily moves across locations with your exhibit.',
       },
       variants: [
         {
           when: { location: 'travel' },
           summary:
             'You want an audible alarm that travels with the work. MAP Silver is a stand-alone system with an audible siren that moves from show to show.',
-          // DRAFT, from the portability lines on the MAP Gold and Silver pages.
-          note: {
-            label: 'Next step',
-            body: 'Both MAP systems are completely portable and move from venue to venue with your exhibition. A specialist will confirm the right setup for your tour.',
-          },
         },
       ],
     },
@@ -188,10 +179,9 @@ export const PROTECTION_QUIZ: Types.Quiz = {
           when: { location: 'travel' },
           summary:
             "You want round-the-clock alerts that travel with the work. MAP Gold is a dedicated, portable system that works independently of each venue's security.",
-          // DRAFT. Same note as the traveling Silver result.
           note: {
-            label: 'Next step',
-            body: 'Both MAP systems are completely portable and move from venue to venue with your exhibition. A specialist will confirm the right setup for your tour.',
+            label: 'Worth knowing',
+            body: 'MAP Gold protects art, memorabilia, and jewelry of any size with insurer-approved security, a low initial investment, and negligible lifetime costs.',
           },
         },
       ],

@@ -8,6 +8,7 @@ export * as Layout from './layout';
 export * as Sections from './sections';
 export * as Text from './text';
 
+export { default as Beacon } from './beacon';
 export { default as Icon } from './icon';
 export { default as Nav } from './nav';
 export { default as Dialog, DialogPreview } from './dialog';

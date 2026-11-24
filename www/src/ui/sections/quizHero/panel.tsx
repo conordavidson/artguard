@@ -7,6 +7,7 @@ import * as Types from '@/lib/types';
 import * as Utils from '@/lib/utils';
 
 import AnimatedHeight from '@/ui/animatedHeight';
+import Beacon from '@/ui/beacon';
 import Icon from '@/ui/icon';
 import Link from 'next/link';
 
@@ -66,7 +67,7 @@ const OptionCard: React.FC<OptionCardProps> = (props) => {
       aria-pressed={props.selected}
       onClick={props.onClick}
       className={Utils.cx(
-        'flex w-full cursor-pointer flex-col justify-center gap-y-0.5 rounded-xl px-4 py-3.5 text-left transition-colors md:py-[18px]',
+        'group flex w-full cursor-pointer items-center gap-x-4 rounded-xl px-4 py-3.5 text-left transition-colors md:py-[18px]',
         FOCUS_RING,
         {
           'bg-shim hover:bg-outline': !props.selected,
@@ -74,20 +75,34 @@ const OptionCard: React.FC<OptionCardProps> = (props) => {
         }
       )}
     >
-      <Text.Interface16 bold as="span">
-        {props.option.label}
-      </Text.Interface16>
-      {props.option.sub && (
-        <Text.Interface16
-          as="span"
-          className={Utils.cx({
-            'text-subtle': !props.selected,
-            'text-white/70': props.selected,
-          })}
-        >
-          {props.option.sub}
+      <span className="flex min-w-0 flex-1 flex-col gap-y-0.5">
+        <Text.Interface16 bold as="span">
+          {props.option.label}
         </Text.Interface16>
-      )}
+        {props.option.sub && (
+          <Text.Interface16
+            as="span"
+            className={Utils.cx({
+              'text-subtle': !props.selected,
+              'text-white/70': props.selected,
+            })}
+          >
+            {props.option.sub}
+          </Text.Interface16>
+        )}
+      </span>
+      {/* The arrow marks the row as something to press, and leans forward under the pointer. */}
+      <Icon
+        icon="BackArrow"
+        size={20}
+        className={Utils.cx(
+          'shrink-0 rotate-180 transition-[translate,color] duration-200 group-hover:translate-x-1',
+          {
+            'text-faint group-hover:text-foreground': !props.selected,
+            'text-white': props.selected,
+          }
+        )}
+      />
     </button>
   );
 };
@@ -196,15 +211,11 @@ const Panel: React.FC<PanelProps> = (props) => {
               />
             ))}
           </div>
-          <div className="mt-3 flex min-h-9 items-center">
-            {step === 0 ? (
-              <Text.Interface12 className="ml-auto text-right text-subtle">
-                {quiz.copy.footnote}
-              </Text.Interface12>
-            ) : (
+          {step > 0 && (
+            <div className="mt-3 flex min-h-9 items-center">
               <TextButton onClick={onBack}>Back</TextButton>
-            )}
-          </div>
+            </div>
+          )}
         </>
       );
     }
@@ -214,9 +225,23 @@ const Panel: React.FC<PanelProps> = (props) => {
 
     return (
       <>
-        <Text.Display32 as="h2" ref={headingRef} tabIndex={-1} className="text-pretty outline-none">
-          {result.outcome.title}
-        </Text.Display32>
+        {/* On a narrow card the link wraps under the heading. */}
+        <div className="flex flex-wrap items-center justify-between gap-x-5">
+          <Text.Display32 as="h2" ref={headingRef} tabIndex={-1} className="text-pretty outline-none">
+            {result.outcome.title}
+          </Text.Display32>
+          {result.outcome.cta && (
+            <Link
+              href={result.outcome.cta.href}
+              className={Utils.cx(
+                'interface-14-bold py-2 text-brand underline underline-offset-2 transition-opacity hover:opacity-70',
+                FOCUS_RING
+              )}
+            >
+              {result.outcome.cta.label}
+            </Link>
+          )}
+        </div>
         <Text.Interface16 className="mt-3 text-subtle">{result.outcome.summary}</Text.Interface16>
         <ul className="mt-4 flex list-none! flex-col gap-y-2">
           {result.outcome.bullets.map((bullet) => (
@@ -226,7 +251,9 @@ const Panel: React.FC<PanelProps> = (props) => {
             </li>
           ))}
         </ul>
-        <div className="mt-6 rounded-lg bg-shim px-4 py-3">
+        {/* The top margin centres the icon on the first line of the text. */}
+        <div className="mt-6 flex items-start gap-x-1.5 rounded-lg bg-shim py-3 pl-3.5 pr-4">
+          <Icon icon="Info" size={16} className="mt-0.5 shrink-0 text-muted" />
           <Text.Interface16 className="text-muted">
             <strong className="text-foreground">{result.outcome.note.label}.</strong>{' '}
             {result.outcome.note.body}
@@ -240,19 +267,8 @@ const Panel: React.FC<PanelProps> = (props) => {
             onLeadChange={props.onLeadChange}
           />
         </div>
-        <div className="mt-3 flex flex-wrap items-center gap-x-5">
+        <div className="mt-3">
           <TextButton onClick={onRestart}>Retake the quiz</TextButton>
-          {result.outcome.cta && (
-            <Link
-              href={result.outcome.cta.href}
-              className={Utils.cx(
-                'interface-14-bold ml-auto py-2 text-brand underline underline-offset-2 transition-opacity hover:opacity-70',
-                FOCUS_RING
-              )}
-            >
-              {result.outcome.cta.label}
-            </Link>
-          )}
         </div>
       </>
     );
@@ -261,9 +277,12 @@ const Panel: React.FC<PanelProps> = (props) => {
   return (
     <div>
       <div className="flex items-center justify-between gap-x-4">
-        <Text.Interface14 bold className="text-brand">
-          {quiz.copy.eyebrow}
-        </Text.Interface14>
+        <div className="flex items-center gap-x-2">
+          <Beacon />
+          <Text.Interface14 bold className="text-brand">
+            {quiz.copy.eyebrow}
+          </Text.Interface14>
+        </div>
         <Text.Interface14 className="text-subtle">
           {isDone ? quiz.copy.matchLabel : `Question ${step + 1}`}
         </Text.Interface14>

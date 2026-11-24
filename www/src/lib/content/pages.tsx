@@ -25,6 +25,34 @@ const STANDARD_CTA_CARD: Types.CtaCardSection = {
   ],
 };
 
+// Shown on the homepage marquee and the What Clients Say page.
+const TESTIMONIALS: Types.Testimonial[] = [
+  {
+    name: 'Michael Seremetis',
+    role: "former Director of Security, Sotheby's Worldwide",
+    quote:
+      "The UK's incomparable Chatsworth House collection presented at Sotheby's NY would not have happened without Art Guard's MAP Gold System.",
+  },
+  {
+    name: 'Jack Quigley',
+    role: 'former Director of Security, The Morgan Library, NYC',
+    quote:
+      "Art Guard's MAP sensor has given both security and the conservators a genuine sense of comfort that no other security product has been able to. Providing this type of object-specific security is vital for museums and private collectors looking for a heightened level of protection.",
+  },
+  {
+    name: 'Matt Townsend',
+    role: 'TriStar Commercial',
+    quote:
+      "The Art Guard sensors have been extremely useful for us in commercial installations where accommodating the limitations of existing security systems makes the availability of dependable and comprehensive sensors slim. We have enrolled MAP in a way that other sensors won't. Their utility is unique. And Art Guard's support has been superb.",
+  },
+  {
+    name: 'Madan Devaiah',
+    role: 'The Crescent Group for private collector, Dubai, UAE',
+    quote:
+      'The Art Guard Gold System is straightforward and quick. The way it communicates between its components is seamless and easy to set up. And the system allows the flexibility to create multiple arming options in different zones of the home. Gold is ideal for high-end clients.',
+  },
+];
+
 export const HOMEPAGE: Types.Page = {
   path: Paths.HOME,
   metadata: {
@@ -38,7 +66,7 @@ export const HOMEPAGE: Types.Page = {
   },
   sections: [
     {
-      type: 'TextImageSplit',
+      type: 'QuizHero',
       heading: 'Museum-Grade Art Protection for Any Environment',
       subheading:
         "Wireless sensor technology trusted by Sotheby's, MOMA, and leading collectors worldwide",
@@ -56,7 +84,13 @@ export const HOMEPAGE: Types.Page = {
           href: Paths.SECURITY_INSTALLERS,
         },
       ],
-      useHomepageHero: true,
+      compact: true,
+      quiz: Quiz.PROTECTION_QUIZ,
+    },
+    {
+      type: 'TestimonialMarquee',
+      heading: 'What Clients Say',
+      testimonials: TESTIMONIALS,
     },
     {
       type: 'RecentInsights',
@@ -1808,24 +1842,10 @@ export const WHAT_CLIENTS_SAY_PAGE: Types.Page = {
     {
       type: 'TextHighlights',
       heading: 'What Clients Say',
-      highlights: [
-        {
-          heading: "—Michael Seremetis, former Director of Security, Sotheby's Worldwide",
-          body: "“The UK's incomparable Chatsworth House collection presented at Sotheby's NY would not have happened without Art Guard's MAP Gold System.”",
-        },
-        {
-          heading: '—Jack Quigley, former Director of Security, The Morgan Library, NYC',
-          body: "“Art Guard's MAP sensor has given both security and the conservators a genuine sense of comfort that no other security product has been able to. Providing this type of object-specific security is vital for museums and private collectors looking for a heightened level of protection.”",
-        },
-        {
-          heading: '—Matt Townsend, TriStar Commercial',
-          body: "“The Art Guard sensors have been extremely useful for us in commercial installations where accommodating the limitations of existing security systems makes the availability of dependable and comprehensive sensors slim. We have enrolled MAP in a way that other sensors won't. Their utility is unique. And Art Guard's support has been superb.”",
-        },
-        {
-          heading: '—Madan Devaiah, The Crescent Group for private collector, Dubai, UAE',
-          body: '“The Art Guard Gold System is straightforward and quick. The way it communicates between its components is seamless and easy to set up. And the system allows the flexibility to create multiple arming options in different zones of the home. Gold is ideal for high-end clients.”',
-        },
-      ],
+      highlights: TESTIMONIALS.map((testimonial) => ({
+        heading: `—${testimonial.name}, ${testimonial.role}`,
+        body: `“${testimonial.quote}”`,
+      })),
     },
     {
       type: 'Text',

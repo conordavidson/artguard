@@ -1,5 +1,6 @@
 'use client';
 
+import * as Config from '@/lib/config';
 import * as React from 'react';
 
 const STORAGE_KEY = 'artguard-newsletter-dialog';
@@ -46,6 +47,7 @@ export const Provider: React.FC<ProviderProps> = (props) => {
   const [isNewsletterDialogVisible, setIsNewsletterDialogVisible] = React.useState(false);
 
   React.useEffect(() => {
+    if (!Config.NEWSLETTER_POPUP_ENABLED) return;
     if (!shouldShowNewsletterDialog()) return;
 
     let isCancelled = false;

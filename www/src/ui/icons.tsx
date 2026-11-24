@@ -678,6 +678,18 @@ export const Sculpture = () => {
   );
 };
 
+export const Info = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 50 50">
+      <path
+        d="M 25 2 C 12.317 2 2 12.317 2 25 C 2 37.683 12.317 48 25 48 C 37.683 48 48 37.683 48 25 C 48 12.317 37.683 2 25 2 z M 25 4 C 36.579 4 46 13.421 46 25 C 46 36.579 36.579 46 25 46 C 13.421 46 4 36.579 4 25 C 4 13.421 13.421 4 25 4 z M 25 12.5 C 24.172 12.5 23.5 13.172 23.5 14 C 23.5 14.828 24.172 15.5 25 15.5 C 25.828 15.5 26.5 14.828 26.5 14 C 26.5 13.172 25.828 12.5 25 12.5 z M 24 20 L 24 37 L 26 37 L 26 20 z"
+        fill="currentColor"
+        fillRule="evenodd"
+      ></path>
+    </svg>
+  );
+};
+
 export const CheckCircle = () => {
   return (
     <svg
